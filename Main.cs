@@ -512,7 +512,7 @@ namespace CFS_Latam_cashApplicationTool
 
         private void pictExcel_Click(object sender, EventArgs e)
         {
-
+            //PRUEBA GIT
             try
             {
                 Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
