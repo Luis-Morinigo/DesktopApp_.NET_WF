@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SSC_Finance_DWModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CASH APPLICATION - Users Desktop App">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="SSC_Finance_DWModelStoreContainer">
+          <EntitySet Name="CASH APPLICATION - Users Desktop App" EntityType="Self.CASH APPLICATION - Users Desktop App" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SSC_Finance_DWModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CASH_APPLICATION___Users_Desktop_App">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SSC_Finance_DWEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CASH_APPLICATION___Users_Desktop_App" EntityType="Self.CASH_APPLICATION___Users_Desktop_App" />
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SSC_Finance_DWModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SSC_Finance_DWModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="SP_SELECTFBL5N_Result">
+          <Property Type="String" Name="Company_Code" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Account" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Document_Type" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Document_Type_Description" Nullable="true" MaxLength="255" />
+          <Property Type="Decimal" Name="Document_Number" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Reference" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="Document_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Baseline_Payment_Dte" Nullable="true" />
+          <Property Type="DateTime" Name="Net_due_date" Nullable="true" />
+          <Property Type="Decimal" Name="Arrears_for_discount_1" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Amount_in_doc__curr_" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Document_currency" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Amount_in_local_currency" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Local_Currency" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Text" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="SP_SELECTFBL5N_Result1">
+          <Property Type="String" Name="Company_Code" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Account" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Document_Type" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Document_Type_Description" Nullable="true" MaxLength="255" />
+          <Property Type="Decimal" Name="Document_Number" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Reference" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="Document_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Baseline_Payment_Dte" Nullable="true" />
+          <Property Type="DateTime" Name="Net_due_date" Nullable="true" />
+          <Property Type="Decimal" Name="Arrears_for_discount_1" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Amount_in_doc__curr_" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Document_currency" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Amount_in_local_currency" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Local_Currency" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Text" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="SP_SELECTPAYMENTS_Result">
+          <Property Type="String" Name="Company_Code" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Account" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Document_Type" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Document_Type_Description" Nullable="true" MaxLength="255" />
+          <Property Type="Decimal" Name="Document_Number" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Reference" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="Document_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Baseline_Payment_Dte" Nullable="true" />
+          <Property Type="DateTime" Name="Net_due_date" Nullable="true" />
+          <Property Type="Decimal" Name="Arrears_for_discount_1" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Amount_in_doc__curr_" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Document_currency" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Amount_in_local_currency" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Local_Currency" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Text" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="SP_SELECTFBL5N_Result2">
+          <Property Type="String" Name="Company_Code" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Alt_Payer" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Account" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Customer_Name" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Document_Type" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Document_Type_Description" Nullable="true" MaxLength="255" />
+          <Property Type="Decimal" Name="Amount_in_doc__curr_" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Document_currency" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Document_Number" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Reference" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="Document_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Baseline_Payment_Dte" Nullable="true" />
+          <Property Type="DateTime" Name="Net_due_date" Nullable="true" />
+          <Property Type="Decimal" Name="Arrears_for_discount_1" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Amount_in_local_currency" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Local_Currency" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Text" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="SP_SELECTFBL5N_Result3">
+          <Property Type="String" Name="Company_Code" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Alt_Payer" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Account" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Customer_Name" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Document_Type" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Document_Type_Description" Nullable="true" MaxLength="255" />
+          <Property Type="Decimal" Name="Amount_in_doc__curr_" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Document_currency" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Document_Number" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Reference" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="Document_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Baseline_Payment_Dte" Nullable="true" />
+          <Property Type="DateTime" Name="Net_due_date" Nullable="true" />
+          <Property Type="Decimal" Name="Arrears_for_discount_1" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Amount_in_local_currency" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Local_Currency" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Text" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="SP_SELECTCREDITBALANCE_Result">
+          <Property Type="String" Name="Company_Code" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Alt_Payer" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Account" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Customer_Name" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Document_Type" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Document_Type_Description" Nullable="true" MaxLength="255" />
+          <Property Type="Decimal" Name="Amount_in_doc__curr_" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Document_currency" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Document_Number" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Reference" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="Document_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Baseline_Payment_Dte" Nullable="true" />
+          <Property Type="DateTime" Name="Net_due_date" Nullable="true" />
+          <Property Type="Decimal" Name="Arrears_for_discount_1" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Amount_in_local_currency" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Local_Currency" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Text" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="SP_SELECTCREDITNOTES_Result">
+          <Property Type="String" Name="Company_Code" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Alt_Payer" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Account" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Customer_Name" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Document_Type" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Document_Type_Description" Nullable="true" MaxLength="255" />
+          <Property Type="Decimal" Name="Amount_in_doc__curr_" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Document_currency" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Document_Number" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Reference" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="Document_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Baseline_Payment_Dte" Nullable="true" />
+          <Property Type="DateTime" Name="Net_due_date" Nullable="true" />
+          <Property Type="Decimal" Name="Arrears_for_discount_1" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Amount_in_local_currency" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Local_Currency" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Text" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="SP_SELECTINVOICES_Result">
+          <Property Type="String" Name="Company_Code" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Alt_Payer" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Account" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Customer_Name" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Document_Type" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Document_Type_Description" Nullable="true" MaxLength="255" />
+          <Property Type="Decimal" Name="Amount_in_doc__curr_" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Document_currency" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Document_Number" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Reference" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="Document_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Baseline_Payment_Dte" Nullable="true" />
+          <Property Type="DateTime" Name="Net_due_date" Nullable="true" />
+          <Property Type="Decimal" Name="Arrears_for_discount_1" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Amount_in_local_currency" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Local_Currency" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Text" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="SP_SELECTPAYMENTS_Result1">
+          <Property Type="String" Name="Company_Code" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Alt_Payer" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Account" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Customer_Name" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Document_Type" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Document_Type_Description" Nullable="true" MaxLength="255" />
+          <Property Type="Decimal" Name="Amount_in_doc__curr_" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Document_currency" Nullable="true" MaxLength="10" />
+          <Property Type="Decimal" Name="Document_Number" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="String" Name="Reference" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="Document_Date" Nullable="true" />
+          <Property Type="DateTime" Name="Baseline_Payment_Dte" Nullable="true" />
+          <Property Type="DateTime" Name="Net_due_date" Nullable="true" />
+          <Property Type="Decimal" Name="Arrears_for_discount_1" Nullable="true" Precision="18" Scale="0" />
+          <Property Type="Decimal" Name="Amount_in_local_currency" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="String" Name="Local_Currency" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Text" Nullable="true" MaxLength="255" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SSC_Finance_DWModelStoreContainer" CdmEntityContainer="SSC_Finance_DWEntities">
+          <EntitySetMapping Name="CASH_APPLICATION___Users_Desktop_App">
+            <EntityTypeMapping TypeName="SSC_Finance_DWModel.CASH_APPLICATION___Users_Desktop_App">
+              <MappingFragment StoreEntitySet="CASH APPLICATION - Users Desktop App">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="SSC_Finance_DWModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="SSC_Finance_DWModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="SSC_Finance_DWModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="SSC_Finance_DWModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSC_Finance_DWModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="SSC_Finance_DWModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SSC_Finance_DWModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="SSC_Finance_DWModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="SSC_Finance_DWModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
