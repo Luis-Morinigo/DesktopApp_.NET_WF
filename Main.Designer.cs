@@ -76,105 +76,18 @@ namespace CFS_Latam_cashApplicationTool
             this.tabControlCustomerLine = new System.Windows.Forms.TabControl();
             this.tabPageCustomerPayment = new System.Windows.Forms.TabPage();
             this.AdtvgCustomerPay = new Zuby.ADGV.AdvancedDataGridView();
-            this.companyCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.altPayerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documentTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documentTypeDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountInDocCurrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documentCurrencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documentNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.referenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.baselinePaymentDteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.netDueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.arrearsForDiscount1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountInLocalCurrencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.localCurrencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPSELECTPAYMENTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsFbl5nBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsFbl5n = new CFS_Latam_cashApplicationTool.DsFbl5n();
             this.tabPageInvoices = new System.Windows.Forms.TabPage();
             this.AdtvgInvoices = new Zuby.ADGV.AdvancedDataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPSELECTINVOICESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageCreditNotes = new System.Windows.Forms.TabPage();
             this.AdtvgCreditNotes = new Zuby.ADGV.AdvancedDataGridView();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPSELECTCREDITNOTESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageCreditBalance = new System.Windows.Forms.TabPage();
             this.AdtvgCreditBalance = new Zuby.ADGV.AdvancedDataGridView();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPSELECTCREDITBALANCEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageAllDocuments = new System.Windows.Forms.TabPage();
             this.AdtvgAllDoc = new Zuby.ADGV.AdvancedDataGridView();
-            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn66 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn67 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn68 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPSELECTFBL5NBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelArrow = new System.Windows.Forms.Panel();
             this.pictUnselectAll = new System.Windows.Forms.PictureBox();
@@ -217,12 +130,99 @@ namespace CFS_Latam_cashApplicationTool
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.pictDisputes = new System.Windows.Forms.PictureBox();
             this.pictSubmit = new System.Windows.Forms.PictureBox();
+            this.TtMessage = new System.Windows.Forms.ToolTip(this.components);
+            this.companyCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.altPayerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentTypeDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountInDocCurrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentCurrencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.baselinePaymentDteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.netDueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrearsForDiscount1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountInLocalCurrencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.localCurrencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dsFbl5nBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsFbl5n = new CFS_Latam_cashApplicationTool.DsFbl5n();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn66 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn67 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn68 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sP_SELECTFBL5NTableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_SELECTFBL5NTableAdapter();
             this.sP_SELECTCREDITBALANCETableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_SELECTCREDITBALANCETableAdapter();
             this.sP_SELECTCREDITNOTESTableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_SELECTCREDITNOTESTableAdapter();
             this.sP_SELECTINVOICESTableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_SELECTINVOICESTableAdapter();
             this.sP_SELECTPAYMENTSTableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_SELECTPAYMENTSTableAdapter();
-            this.TtMessage = new System.Windows.Forms.ToolTip(this.components);
             this.panelBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictUser)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -237,8 +237,6 @@ namespace CFS_Latam_cashApplicationTool
             this.tabPageCustomerPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdtvgCustomerPay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPSELECTPAYMENTSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5nBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5n)).BeginInit();
             this.tabPageInvoices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdtvgInvoices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPSELECTINVOICESBindingSource)).BeginInit();
@@ -261,6 +259,8 @@ namespace CFS_Latam_cashApplicationTool
             this.tableLayoutPanelTotals.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictDisputes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictSubmit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5nBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5n)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBar
@@ -389,6 +389,7 @@ namespace CFS_Latam_cashApplicationTool
             // 
             // lblExpExcel
             // 
+            this.lblExpExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExpExcel.AutoSize = true;
             this.lblExpExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -400,6 +401,7 @@ namespace CFS_Latam_cashApplicationTool
             // 
             // pictExcel
             // 
+            this.pictExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictExcel.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
             this.pictExcel.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
             this.pictExcel.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
@@ -701,173 +703,10 @@ namespace CFS_Latam_cashApplicationTool
             this.AdtvgCustomerPay.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgCustomerPay.TabIndex = 1;
             // 
-            // companyCodeDataGridViewTextBoxColumn
-            // 
-            this.companyCodeDataGridViewTextBoxColumn.DataPropertyName = "Company Code";
-            this.companyCodeDataGridViewTextBoxColumn.HeaderText = "Company Code";
-            this.companyCodeDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.companyCodeDataGridViewTextBoxColumn.Name = "companyCodeDataGridViewTextBoxColumn";
-            this.companyCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.companyCodeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // altPayerDataGridViewTextBoxColumn
-            // 
-            this.altPayerDataGridViewTextBoxColumn.DataPropertyName = "Alt Payer";
-            this.altPayerDataGridViewTextBoxColumn.HeaderText = "Alt Payer";
-            this.altPayerDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.altPayerDataGridViewTextBoxColumn.Name = "altPayerDataGridViewTextBoxColumn";
-            this.altPayerDataGridViewTextBoxColumn.ReadOnly = true;
-            this.altPayerDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // accountDataGridViewTextBoxColumn
-            // 
-            this.accountDataGridViewTextBoxColumn.DataPropertyName = "Account";
-            this.accountDataGridViewTextBoxColumn.HeaderText = "Account";
-            this.accountDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.accountDataGridViewTextBoxColumn.Name = "accountDataGridViewTextBoxColumn";
-            this.accountDataGridViewTextBoxColumn.ReadOnly = true;
-            this.accountDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // customerNameDataGridViewTextBoxColumn
-            // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "Customer Name";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "Customer Name";
-            this.customerNameDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.customerNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // documentTypeDataGridViewTextBoxColumn
-            // 
-            this.documentTypeDataGridViewTextBoxColumn.DataPropertyName = "Document Type";
-            this.documentTypeDataGridViewTextBoxColumn.HeaderText = "Document Type";
-            this.documentTypeDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.documentTypeDataGridViewTextBoxColumn.Name = "documentTypeDataGridViewTextBoxColumn";
-            this.documentTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.documentTypeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // documentTypeDescriptionDataGridViewTextBoxColumn
-            // 
-            this.documentTypeDescriptionDataGridViewTextBoxColumn.DataPropertyName = "Document Type Description";
-            this.documentTypeDescriptionDataGridViewTextBoxColumn.HeaderText = "Document Type Description";
-            this.documentTypeDescriptionDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.documentTypeDescriptionDataGridViewTextBoxColumn.Name = "documentTypeDescriptionDataGridViewTextBoxColumn";
-            this.documentTypeDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.documentTypeDescriptionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // amountInDocCurrDataGridViewTextBoxColumn
-            // 
-            this.amountInDocCurrDataGridViewTextBoxColumn.DataPropertyName = "Amount in doc_ curr_";
-            this.amountInDocCurrDataGridViewTextBoxColumn.HeaderText = "Amount in doc_ curr_";
-            this.amountInDocCurrDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.amountInDocCurrDataGridViewTextBoxColumn.Name = "amountInDocCurrDataGridViewTextBoxColumn";
-            this.amountInDocCurrDataGridViewTextBoxColumn.ReadOnly = true;
-            this.amountInDocCurrDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // documentCurrencyDataGridViewTextBoxColumn
-            // 
-            this.documentCurrencyDataGridViewTextBoxColumn.DataPropertyName = "Document currency";
-            this.documentCurrencyDataGridViewTextBoxColumn.HeaderText = "Document currency";
-            this.documentCurrencyDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.documentCurrencyDataGridViewTextBoxColumn.Name = "documentCurrencyDataGridViewTextBoxColumn";
-            this.documentCurrencyDataGridViewTextBoxColumn.ReadOnly = true;
-            this.documentCurrencyDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // documentNumberDataGridViewTextBoxColumn
-            // 
-            this.documentNumberDataGridViewTextBoxColumn.DataPropertyName = "Document Number";
-            this.documentNumberDataGridViewTextBoxColumn.HeaderText = "Document Number";
-            this.documentNumberDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.documentNumberDataGridViewTextBoxColumn.Name = "documentNumberDataGridViewTextBoxColumn";
-            this.documentNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            this.documentNumberDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // referenceDataGridViewTextBoxColumn
-            // 
-            this.referenceDataGridViewTextBoxColumn.DataPropertyName = "Reference";
-            this.referenceDataGridViewTextBoxColumn.HeaderText = "Reference";
-            this.referenceDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.referenceDataGridViewTextBoxColumn.Name = "referenceDataGridViewTextBoxColumn";
-            this.referenceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.referenceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // documentDateDataGridViewTextBoxColumn
-            // 
-            this.documentDateDataGridViewTextBoxColumn.DataPropertyName = "Document Date";
-            this.documentDateDataGridViewTextBoxColumn.HeaderText = "Document Date";
-            this.documentDateDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.documentDateDataGridViewTextBoxColumn.Name = "documentDateDataGridViewTextBoxColumn";
-            this.documentDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.documentDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // baselinePaymentDteDataGridViewTextBoxColumn
-            // 
-            this.baselinePaymentDteDataGridViewTextBoxColumn.DataPropertyName = "Baseline Payment Dte";
-            this.baselinePaymentDteDataGridViewTextBoxColumn.HeaderText = "Baseline Payment Dte";
-            this.baselinePaymentDteDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.baselinePaymentDteDataGridViewTextBoxColumn.Name = "baselinePaymentDteDataGridViewTextBoxColumn";
-            this.baselinePaymentDteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.baselinePaymentDteDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // netDueDateDataGridViewTextBoxColumn
-            // 
-            this.netDueDateDataGridViewTextBoxColumn.DataPropertyName = "Net due date";
-            this.netDueDateDataGridViewTextBoxColumn.HeaderText = "Net due date";
-            this.netDueDateDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.netDueDateDataGridViewTextBoxColumn.Name = "netDueDateDataGridViewTextBoxColumn";
-            this.netDueDateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.netDueDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // arrearsForDiscount1DataGridViewTextBoxColumn
-            // 
-            this.arrearsForDiscount1DataGridViewTextBoxColumn.DataPropertyName = "Arrears for discount 1";
-            this.arrearsForDiscount1DataGridViewTextBoxColumn.HeaderText = "Arrears for discount 1";
-            this.arrearsForDiscount1DataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.arrearsForDiscount1DataGridViewTextBoxColumn.Name = "arrearsForDiscount1DataGridViewTextBoxColumn";
-            this.arrearsForDiscount1DataGridViewTextBoxColumn.ReadOnly = true;
-            this.arrearsForDiscount1DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // amountInLocalCurrencyDataGridViewTextBoxColumn
-            // 
-            this.amountInLocalCurrencyDataGridViewTextBoxColumn.DataPropertyName = "Amount in local currency";
-            this.amountInLocalCurrencyDataGridViewTextBoxColumn.HeaderText = "Amount in local currency";
-            this.amountInLocalCurrencyDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.amountInLocalCurrencyDataGridViewTextBoxColumn.Name = "amountInLocalCurrencyDataGridViewTextBoxColumn";
-            this.amountInLocalCurrencyDataGridViewTextBoxColumn.ReadOnly = true;
-            this.amountInLocalCurrencyDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // localCurrencyDataGridViewTextBoxColumn
-            // 
-            this.localCurrencyDataGridViewTextBoxColumn.DataPropertyName = "Local Currency";
-            this.localCurrencyDataGridViewTextBoxColumn.HeaderText = "Local Currency";
-            this.localCurrencyDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.localCurrencyDataGridViewTextBoxColumn.Name = "localCurrencyDataGridViewTextBoxColumn";
-            this.localCurrencyDataGridViewTextBoxColumn.ReadOnly = true;
-            this.localCurrencyDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // textDataGridViewTextBoxColumn
-            // 
-            this.textDataGridViewTextBoxColumn.DataPropertyName = "Text";
-            this.textDataGridViewTextBoxColumn.HeaderText = "Text";
-            this.textDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.textDataGridViewTextBoxColumn.Name = "textDataGridViewTextBoxColumn";
-            this.textDataGridViewTextBoxColumn.ReadOnly = true;
-            this.textDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
             // sPSELECTPAYMENTSBindingSource
             // 
             this.sPSELECTPAYMENTSBindingSource.DataMember = "SP_SELECTPAYMENTS";
             this.sPSELECTPAYMENTSBindingSource.DataSource = this.dsFbl5nBindingSource;
-            // 
-            // dsFbl5nBindingSource
-            // 
-            this.dsFbl5nBindingSource.DataSource = this.dsFbl5n;
-            this.dsFbl5nBindingSource.Position = 0;
-            // 
-            // dsFbl5n
-            // 
-            this.dsFbl5n.DataSetName = "DsFbl5n";
-            this.dsFbl5n.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPageInvoices
             // 
@@ -877,7 +716,7 @@ namespace CFS_Latam_cashApplicationTool
             this.tabPageInvoices.Controls.Add(this.AdtvgInvoices);
             this.tabPageInvoices.Location = new System.Drawing.Point(4, 24);
             this.tabPageInvoices.Name = "tabPageInvoices";
-            this.tabPageInvoices.Size = new System.Drawing.Size(635, 426);
+            this.tabPageInvoices.Size = new System.Drawing.Size(660, 426);
             this.tabPageInvoices.TabIndex = 1;
             this.tabPageInvoices.Text = "Invoices";
             // 
@@ -930,162 +769,9 @@ namespace CFS_Latam_cashApplicationTool
             this.AdtvgInvoices.Name = "AdtvgInvoices";
             this.AdtvgInvoices.ReadOnly = true;
             this.AdtvgInvoices.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgInvoices.Size = new System.Drawing.Size(633, 424);
+            this.AdtvgInvoices.Size = new System.Drawing.Size(658, 424);
             this.AdtvgInvoices.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgInvoices.TabIndex = 2;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Company Code";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Company Code";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Alt Payer";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Alt Payer";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Account";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Account";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Customer Name";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Customer Name";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Document Type";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Document Type";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Document Type Description";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Document Type Description";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Amount in doc_ curr_";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Amount in doc_ curr_";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Document currency";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Document currency";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Document Number";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Document Number";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Reference";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Reference";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Document Date";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Document Date";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Baseline Payment Dte";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Baseline Payment Dte";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Net due date";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Net due date";
-            this.dataGridViewTextBoxColumn13.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Arrears for discount 1";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Arrears for discount 1";
-            this.dataGridViewTextBoxColumn14.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "Amount in local currency";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Amount in local currency";
-            this.dataGridViewTextBoxColumn15.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "Local Currency";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Local Currency";
-            this.dataGridViewTextBoxColumn16.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "Text";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Text";
-            this.dataGridViewTextBoxColumn17.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            this.dataGridViewTextBoxColumn17.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // sPSELECTINVOICESBindingSource
             // 
@@ -1100,7 +786,7 @@ namespace CFS_Latam_cashApplicationTool
             this.tabPageCreditNotes.Controls.Add(this.AdtvgCreditNotes);
             this.tabPageCreditNotes.Location = new System.Drawing.Point(4, 24);
             this.tabPageCreditNotes.Name = "tabPageCreditNotes";
-            this.tabPageCreditNotes.Size = new System.Drawing.Size(635, 426);
+            this.tabPageCreditNotes.Size = new System.Drawing.Size(660, 426);
             this.tabPageCreditNotes.TabIndex = 2;
             this.tabPageCreditNotes.Text = "Credit Notes";
             // 
@@ -1153,162 +839,9 @@ namespace CFS_Latam_cashApplicationTool
             this.AdtvgCreditNotes.Name = "AdtvgCreditNotes";
             this.AdtvgCreditNotes.ReadOnly = true;
             this.AdtvgCreditNotes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgCreditNotes.Size = new System.Drawing.Size(633, 424);
+            this.AdtvgCreditNotes.Size = new System.Drawing.Size(658, 424);
             this.AdtvgCreditNotes.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgCreditNotes.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "Company Code";
-            this.dataGridViewTextBoxColumn18.HeaderText = "Company Code";
-            this.dataGridViewTextBoxColumn18.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            this.dataGridViewTextBoxColumn18.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "Alt Payer";
-            this.dataGridViewTextBoxColumn19.HeaderText = "Alt Payer";
-            this.dataGridViewTextBoxColumn19.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.ReadOnly = true;
-            this.dataGridViewTextBoxColumn19.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "Account";
-            this.dataGridViewTextBoxColumn20.HeaderText = "Account";
-            this.dataGridViewTextBoxColumn20.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.ReadOnly = true;
-            this.dataGridViewTextBoxColumn20.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "Customer Name";
-            this.dataGridViewTextBoxColumn21.HeaderText = "Customer Name";
-            this.dataGridViewTextBoxColumn21.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            this.dataGridViewTextBoxColumn21.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "Document Type";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Document Type";
-            this.dataGridViewTextBoxColumn22.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.ReadOnly = true;
-            this.dataGridViewTextBoxColumn22.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "Document Type Description";
-            this.dataGridViewTextBoxColumn23.HeaderText = "Document Type Description";
-            this.dataGridViewTextBoxColumn23.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.ReadOnly = true;
-            this.dataGridViewTextBoxColumn23.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "Amount in doc_ curr_";
-            this.dataGridViewTextBoxColumn24.HeaderText = "Amount in doc_ curr_";
-            this.dataGridViewTextBoxColumn24.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.ReadOnly = true;
-            this.dataGridViewTextBoxColumn24.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "Document currency";
-            this.dataGridViewTextBoxColumn25.HeaderText = "Document currency";
-            this.dataGridViewTextBoxColumn25.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.ReadOnly = true;
-            this.dataGridViewTextBoxColumn25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "Document Number";
-            this.dataGridViewTextBoxColumn26.HeaderText = "Document Number";
-            this.dataGridViewTextBoxColumn26.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.ReadOnly = true;
-            this.dataGridViewTextBoxColumn26.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "Reference";
-            this.dataGridViewTextBoxColumn27.HeaderText = "Reference";
-            this.dataGridViewTextBoxColumn27.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.ReadOnly = true;
-            this.dataGridViewTextBoxColumn27.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "Document Date";
-            this.dataGridViewTextBoxColumn28.HeaderText = "Document Date";
-            this.dataGridViewTextBoxColumn28.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.ReadOnly = true;
-            this.dataGridViewTextBoxColumn28.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "Baseline Payment Dte";
-            this.dataGridViewTextBoxColumn29.HeaderText = "Baseline Payment Dte";
-            this.dataGridViewTextBoxColumn29.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            this.dataGridViewTextBoxColumn29.ReadOnly = true;
-            this.dataGridViewTextBoxColumn29.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn30
-            // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "Net due date";
-            this.dataGridViewTextBoxColumn30.HeaderText = "Net due date";
-            this.dataGridViewTextBoxColumn30.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            this.dataGridViewTextBoxColumn30.ReadOnly = true;
-            this.dataGridViewTextBoxColumn30.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn31
-            // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "Arrears for discount 1";
-            this.dataGridViewTextBoxColumn31.HeaderText = "Arrears for discount 1";
-            this.dataGridViewTextBoxColumn31.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            this.dataGridViewTextBoxColumn31.ReadOnly = true;
-            this.dataGridViewTextBoxColumn31.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn32
-            // 
-            this.dataGridViewTextBoxColumn32.DataPropertyName = "Amount in local currency";
-            this.dataGridViewTextBoxColumn32.HeaderText = "Amount in local currency";
-            this.dataGridViewTextBoxColumn32.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            this.dataGridViewTextBoxColumn32.ReadOnly = true;
-            this.dataGridViewTextBoxColumn32.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn33
-            // 
-            this.dataGridViewTextBoxColumn33.DataPropertyName = "Local Currency";
-            this.dataGridViewTextBoxColumn33.HeaderText = "Local Currency";
-            this.dataGridViewTextBoxColumn33.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            this.dataGridViewTextBoxColumn33.ReadOnly = true;
-            this.dataGridViewTextBoxColumn33.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn34
-            // 
-            this.dataGridViewTextBoxColumn34.DataPropertyName = "Text";
-            this.dataGridViewTextBoxColumn34.HeaderText = "Text";
-            this.dataGridViewTextBoxColumn34.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            this.dataGridViewTextBoxColumn34.ReadOnly = true;
-            this.dataGridViewTextBoxColumn34.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // sPSELECTCREDITNOTESBindingSource
             // 
@@ -1323,7 +856,7 @@ namespace CFS_Latam_cashApplicationTool
             this.tabPageCreditBalance.Controls.Add(this.AdtvgCreditBalance);
             this.tabPageCreditBalance.Location = new System.Drawing.Point(4, 24);
             this.tabPageCreditBalance.Name = "tabPageCreditBalance";
-            this.tabPageCreditBalance.Size = new System.Drawing.Size(635, 426);
+            this.tabPageCreditBalance.Size = new System.Drawing.Size(660, 426);
             this.tabPageCreditBalance.TabIndex = 3;
             this.tabPageCreditBalance.Text = "Credit Balance";
             // 
@@ -1376,162 +909,9 @@ namespace CFS_Latam_cashApplicationTool
             this.AdtvgCreditBalance.Name = "AdtvgCreditBalance";
             this.AdtvgCreditBalance.ReadOnly = true;
             this.AdtvgCreditBalance.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgCreditBalance.Size = new System.Drawing.Size(633, 424);
+            this.AdtvgCreditBalance.Size = new System.Drawing.Size(658, 424);
             this.AdtvgCreditBalance.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgCreditBalance.TabIndex = 4;
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.DataPropertyName = "Company Code";
-            this.dataGridViewTextBoxColumn35.HeaderText = "Company Code";
-            this.dataGridViewTextBoxColumn35.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            this.dataGridViewTextBoxColumn35.ReadOnly = true;
-            this.dataGridViewTextBoxColumn35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn36
-            // 
-            this.dataGridViewTextBoxColumn36.DataPropertyName = "Alt Payer";
-            this.dataGridViewTextBoxColumn36.HeaderText = "Alt Payer";
-            this.dataGridViewTextBoxColumn36.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            this.dataGridViewTextBoxColumn36.ReadOnly = true;
-            this.dataGridViewTextBoxColumn36.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn37
-            // 
-            this.dataGridViewTextBoxColumn37.DataPropertyName = "Account";
-            this.dataGridViewTextBoxColumn37.HeaderText = "Account";
-            this.dataGridViewTextBoxColumn37.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
-            this.dataGridViewTextBoxColumn37.ReadOnly = true;
-            this.dataGridViewTextBoxColumn37.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn38
-            // 
-            this.dataGridViewTextBoxColumn38.DataPropertyName = "Customer Name";
-            this.dataGridViewTextBoxColumn38.HeaderText = "Customer Name";
-            this.dataGridViewTextBoxColumn38.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
-            this.dataGridViewTextBoxColumn38.ReadOnly = true;
-            this.dataGridViewTextBoxColumn38.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn39
-            // 
-            this.dataGridViewTextBoxColumn39.DataPropertyName = "Document Type";
-            this.dataGridViewTextBoxColumn39.HeaderText = "Document Type";
-            this.dataGridViewTextBoxColumn39.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
-            this.dataGridViewTextBoxColumn39.ReadOnly = true;
-            this.dataGridViewTextBoxColumn39.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn40
-            // 
-            this.dataGridViewTextBoxColumn40.DataPropertyName = "Document Type Description";
-            this.dataGridViewTextBoxColumn40.HeaderText = "Document Type Description";
-            this.dataGridViewTextBoxColumn40.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
-            this.dataGridViewTextBoxColumn40.ReadOnly = true;
-            this.dataGridViewTextBoxColumn40.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn41
-            // 
-            this.dataGridViewTextBoxColumn41.DataPropertyName = "Amount in doc_ curr_";
-            this.dataGridViewTextBoxColumn41.HeaderText = "Amount in doc_ curr_";
-            this.dataGridViewTextBoxColumn41.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
-            this.dataGridViewTextBoxColumn41.ReadOnly = true;
-            this.dataGridViewTextBoxColumn41.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn42
-            // 
-            this.dataGridViewTextBoxColumn42.DataPropertyName = "Document currency";
-            this.dataGridViewTextBoxColumn42.HeaderText = "Document currency";
-            this.dataGridViewTextBoxColumn42.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
-            this.dataGridViewTextBoxColumn42.ReadOnly = true;
-            this.dataGridViewTextBoxColumn42.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn43
-            // 
-            this.dataGridViewTextBoxColumn43.DataPropertyName = "Document Number";
-            this.dataGridViewTextBoxColumn43.HeaderText = "Document Number";
-            this.dataGridViewTextBoxColumn43.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
-            this.dataGridViewTextBoxColumn43.ReadOnly = true;
-            this.dataGridViewTextBoxColumn43.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn44
-            // 
-            this.dataGridViewTextBoxColumn44.DataPropertyName = "Reference";
-            this.dataGridViewTextBoxColumn44.HeaderText = "Reference";
-            this.dataGridViewTextBoxColumn44.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
-            this.dataGridViewTextBoxColumn44.ReadOnly = true;
-            this.dataGridViewTextBoxColumn44.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn45
-            // 
-            this.dataGridViewTextBoxColumn45.DataPropertyName = "Document Date";
-            this.dataGridViewTextBoxColumn45.HeaderText = "Document Date";
-            this.dataGridViewTextBoxColumn45.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
-            this.dataGridViewTextBoxColumn45.ReadOnly = true;
-            this.dataGridViewTextBoxColumn45.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn46
-            // 
-            this.dataGridViewTextBoxColumn46.DataPropertyName = "Baseline Payment Dte";
-            this.dataGridViewTextBoxColumn46.HeaderText = "Baseline Payment Dte";
-            this.dataGridViewTextBoxColumn46.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
-            this.dataGridViewTextBoxColumn46.ReadOnly = true;
-            this.dataGridViewTextBoxColumn46.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn47
-            // 
-            this.dataGridViewTextBoxColumn47.DataPropertyName = "Net due date";
-            this.dataGridViewTextBoxColumn47.HeaderText = "Net due date";
-            this.dataGridViewTextBoxColumn47.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
-            this.dataGridViewTextBoxColumn47.ReadOnly = true;
-            this.dataGridViewTextBoxColumn47.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn48
-            // 
-            this.dataGridViewTextBoxColumn48.DataPropertyName = "Arrears for discount 1";
-            this.dataGridViewTextBoxColumn48.HeaderText = "Arrears for discount 1";
-            this.dataGridViewTextBoxColumn48.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
-            this.dataGridViewTextBoxColumn48.ReadOnly = true;
-            this.dataGridViewTextBoxColumn48.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn49
-            // 
-            this.dataGridViewTextBoxColumn49.DataPropertyName = "Amount in local currency";
-            this.dataGridViewTextBoxColumn49.HeaderText = "Amount in local currency";
-            this.dataGridViewTextBoxColumn49.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
-            this.dataGridViewTextBoxColumn49.ReadOnly = true;
-            this.dataGridViewTextBoxColumn49.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn50
-            // 
-            this.dataGridViewTextBoxColumn50.DataPropertyName = "Local Currency";
-            this.dataGridViewTextBoxColumn50.HeaderText = "Local Currency";
-            this.dataGridViewTextBoxColumn50.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
-            this.dataGridViewTextBoxColumn50.ReadOnly = true;
-            this.dataGridViewTextBoxColumn50.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn51
-            // 
-            this.dataGridViewTextBoxColumn51.DataPropertyName = "Text";
-            this.dataGridViewTextBoxColumn51.HeaderText = "Text";
-            this.dataGridViewTextBoxColumn51.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
-            this.dataGridViewTextBoxColumn51.ReadOnly = true;
-            this.dataGridViewTextBoxColumn51.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // sPSELECTCREDITBALANCEBindingSource
             // 
@@ -1546,7 +926,7 @@ namespace CFS_Latam_cashApplicationTool
             this.tabPageAllDocuments.Controls.Add(this.AdtvgAllDoc);
             this.tabPageAllDocuments.Location = new System.Drawing.Point(4, 24);
             this.tabPageAllDocuments.Name = "tabPageAllDocuments";
-            this.tabPageAllDocuments.Size = new System.Drawing.Size(635, 426);
+            this.tabPageAllDocuments.Size = new System.Drawing.Size(660, 426);
             this.tabPageAllDocuments.TabIndex = 4;
             this.tabPageAllDocuments.Text = "All Documents";
             // 
@@ -1599,162 +979,9 @@ namespace CFS_Latam_cashApplicationTool
             this.AdtvgAllDoc.Name = "AdtvgAllDoc";
             this.AdtvgAllDoc.ReadOnly = true;
             this.AdtvgAllDoc.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgAllDoc.Size = new System.Drawing.Size(633, 424);
+            this.AdtvgAllDoc.Size = new System.Drawing.Size(658, 424);
             this.AdtvgAllDoc.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgAllDoc.TabIndex = 5;
-            // 
-            // dataGridViewTextBoxColumn52
-            // 
-            this.dataGridViewTextBoxColumn52.DataPropertyName = "Company Code";
-            this.dataGridViewTextBoxColumn52.HeaderText = "Company Code";
-            this.dataGridViewTextBoxColumn52.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
-            this.dataGridViewTextBoxColumn52.ReadOnly = true;
-            this.dataGridViewTextBoxColumn52.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn53
-            // 
-            this.dataGridViewTextBoxColumn53.DataPropertyName = "Alt Payer";
-            this.dataGridViewTextBoxColumn53.HeaderText = "Alt Payer";
-            this.dataGridViewTextBoxColumn53.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
-            this.dataGridViewTextBoxColumn53.ReadOnly = true;
-            this.dataGridViewTextBoxColumn53.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn54
-            // 
-            this.dataGridViewTextBoxColumn54.DataPropertyName = "Account";
-            this.dataGridViewTextBoxColumn54.HeaderText = "Account";
-            this.dataGridViewTextBoxColumn54.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
-            this.dataGridViewTextBoxColumn54.ReadOnly = true;
-            this.dataGridViewTextBoxColumn54.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn55
-            // 
-            this.dataGridViewTextBoxColumn55.DataPropertyName = "Customer Name";
-            this.dataGridViewTextBoxColumn55.HeaderText = "Customer Name";
-            this.dataGridViewTextBoxColumn55.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
-            this.dataGridViewTextBoxColumn55.ReadOnly = true;
-            this.dataGridViewTextBoxColumn55.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn56
-            // 
-            this.dataGridViewTextBoxColumn56.DataPropertyName = "Document Type";
-            this.dataGridViewTextBoxColumn56.HeaderText = "Document Type";
-            this.dataGridViewTextBoxColumn56.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
-            this.dataGridViewTextBoxColumn56.ReadOnly = true;
-            this.dataGridViewTextBoxColumn56.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn57
-            // 
-            this.dataGridViewTextBoxColumn57.DataPropertyName = "Document Type Description";
-            this.dataGridViewTextBoxColumn57.HeaderText = "Document Type Description";
-            this.dataGridViewTextBoxColumn57.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
-            this.dataGridViewTextBoxColumn57.ReadOnly = true;
-            this.dataGridViewTextBoxColumn57.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn58
-            // 
-            this.dataGridViewTextBoxColumn58.DataPropertyName = "Amount in doc_ curr_";
-            this.dataGridViewTextBoxColumn58.HeaderText = "Amount in doc_ curr_";
-            this.dataGridViewTextBoxColumn58.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
-            this.dataGridViewTextBoxColumn58.ReadOnly = true;
-            this.dataGridViewTextBoxColumn58.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn59
-            // 
-            this.dataGridViewTextBoxColumn59.DataPropertyName = "Document currency";
-            this.dataGridViewTextBoxColumn59.HeaderText = "Document currency";
-            this.dataGridViewTextBoxColumn59.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
-            this.dataGridViewTextBoxColumn59.ReadOnly = true;
-            this.dataGridViewTextBoxColumn59.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn60
-            // 
-            this.dataGridViewTextBoxColumn60.DataPropertyName = "Document Number";
-            this.dataGridViewTextBoxColumn60.HeaderText = "Document Number";
-            this.dataGridViewTextBoxColumn60.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
-            this.dataGridViewTextBoxColumn60.ReadOnly = true;
-            this.dataGridViewTextBoxColumn60.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn61
-            // 
-            this.dataGridViewTextBoxColumn61.DataPropertyName = "Reference";
-            this.dataGridViewTextBoxColumn61.HeaderText = "Reference";
-            this.dataGridViewTextBoxColumn61.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn61.Name = "dataGridViewTextBoxColumn61";
-            this.dataGridViewTextBoxColumn61.ReadOnly = true;
-            this.dataGridViewTextBoxColumn61.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn62
-            // 
-            this.dataGridViewTextBoxColumn62.DataPropertyName = "Document Date";
-            this.dataGridViewTextBoxColumn62.HeaderText = "Document Date";
-            this.dataGridViewTextBoxColumn62.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
-            this.dataGridViewTextBoxColumn62.ReadOnly = true;
-            this.dataGridViewTextBoxColumn62.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn63
-            // 
-            this.dataGridViewTextBoxColumn63.DataPropertyName = "Baseline Payment Dte";
-            this.dataGridViewTextBoxColumn63.HeaderText = "Baseline Payment Dte";
-            this.dataGridViewTextBoxColumn63.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn63.Name = "dataGridViewTextBoxColumn63";
-            this.dataGridViewTextBoxColumn63.ReadOnly = true;
-            this.dataGridViewTextBoxColumn63.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn64
-            // 
-            this.dataGridViewTextBoxColumn64.DataPropertyName = "Net due date";
-            this.dataGridViewTextBoxColumn64.HeaderText = "Net due date";
-            this.dataGridViewTextBoxColumn64.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn64.Name = "dataGridViewTextBoxColumn64";
-            this.dataGridViewTextBoxColumn64.ReadOnly = true;
-            this.dataGridViewTextBoxColumn64.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn65
-            // 
-            this.dataGridViewTextBoxColumn65.DataPropertyName = "Arrears for discount 1";
-            this.dataGridViewTextBoxColumn65.HeaderText = "Arrears for discount 1";
-            this.dataGridViewTextBoxColumn65.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn65.Name = "dataGridViewTextBoxColumn65";
-            this.dataGridViewTextBoxColumn65.ReadOnly = true;
-            this.dataGridViewTextBoxColumn65.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn66
-            // 
-            this.dataGridViewTextBoxColumn66.DataPropertyName = "Amount in local currency";
-            this.dataGridViewTextBoxColumn66.HeaderText = "Amount in local currency";
-            this.dataGridViewTextBoxColumn66.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn66.Name = "dataGridViewTextBoxColumn66";
-            this.dataGridViewTextBoxColumn66.ReadOnly = true;
-            this.dataGridViewTextBoxColumn66.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn67
-            // 
-            this.dataGridViewTextBoxColumn67.DataPropertyName = "Local Currency";
-            this.dataGridViewTextBoxColumn67.HeaderText = "Local Currency";
-            this.dataGridViewTextBoxColumn67.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn67.Name = "dataGridViewTextBoxColumn67";
-            this.dataGridViewTextBoxColumn67.ReadOnly = true;
-            this.dataGridViewTextBoxColumn67.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // dataGridViewTextBoxColumn68
-            // 
-            this.dataGridViewTextBoxColumn68.DataPropertyName = "Text";
-            this.dataGridViewTextBoxColumn68.HeaderText = "Text";
-            this.dataGridViewTextBoxColumn68.MinimumWidth = 22;
-            this.dataGridViewTextBoxColumn68.Name = "dataGridViewTextBoxColumn68";
-            this.dataGridViewTextBoxColumn68.ReadOnly = true;
-            this.dataGridViewTextBoxColumn68.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // sPSELECTFBL5NBindingSource
             // 
@@ -1834,7 +1061,7 @@ namespace CFS_Latam_cashApplicationTool
             // 
             // lblReceiptNumber
             // 
-            this.lblReceiptNumber.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblReceiptNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblReceiptNumber.AutoSize = true;
             this.lblReceiptNumber.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReceiptNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -2186,6 +1413,7 @@ namespace CFS_Latam_cashApplicationTool
             // 
             // pictDisputes
             // 
+            this.pictDisputes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictDisputes.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Disputes;
             this.pictDisputes.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Disputes;
             this.pictDisputes.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Disputes;
@@ -2198,6 +1426,7 @@ namespace CFS_Latam_cashApplicationTool
             // 
             // pictSubmit
             // 
+            this.pictSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictSubmit.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
             this.pictSubmit.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
             this.pictSubmit.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
@@ -2208,6 +1437,785 @@ namespace CFS_Latam_cashApplicationTool
             this.pictSubmit.TabIndex = 0;
             this.pictSubmit.TabStop = false;
             this.pictSubmit.Click += new System.EventHandler(this.PictSubmit_Click);
+            // 
+            // TtMessage
+            // 
+            this.TtMessage.IsBalloon = true;
+            // 
+            // companyCodeDataGridViewTextBoxColumn
+            // 
+            this.companyCodeDataGridViewTextBoxColumn.DataPropertyName = "Company Code";
+            this.companyCodeDataGridViewTextBoxColumn.HeaderText = "Company Code";
+            this.companyCodeDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.companyCodeDataGridViewTextBoxColumn.Name = "companyCodeDataGridViewTextBoxColumn";
+            this.companyCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.companyCodeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // altPayerDataGridViewTextBoxColumn
+            // 
+            this.altPayerDataGridViewTextBoxColumn.DataPropertyName = "Alt Payer";
+            this.altPayerDataGridViewTextBoxColumn.HeaderText = "Alt Payer";
+            this.altPayerDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.altPayerDataGridViewTextBoxColumn.Name = "altPayerDataGridViewTextBoxColumn";
+            this.altPayerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.altPayerDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // accountDataGridViewTextBoxColumn
+            // 
+            this.accountDataGridViewTextBoxColumn.DataPropertyName = "Account";
+            this.accountDataGridViewTextBoxColumn.HeaderText = "Account";
+            this.accountDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.accountDataGridViewTextBoxColumn.Name = "accountDataGridViewTextBoxColumn";
+            this.accountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.accountDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // customerNameDataGridViewTextBoxColumn
+            // 
+            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "Customer Name";
+            this.customerNameDataGridViewTextBoxColumn.HeaderText = "Customer Name";
+            this.customerNameDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
+            this.customerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.customerNameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // documentTypeDataGridViewTextBoxColumn
+            // 
+            this.documentTypeDataGridViewTextBoxColumn.DataPropertyName = "Document Type";
+            this.documentTypeDataGridViewTextBoxColumn.HeaderText = "Document Type";
+            this.documentTypeDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.documentTypeDataGridViewTextBoxColumn.Name = "documentTypeDataGridViewTextBoxColumn";
+            this.documentTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.documentTypeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // documentTypeDescriptionDataGridViewTextBoxColumn
+            // 
+            this.documentTypeDescriptionDataGridViewTextBoxColumn.DataPropertyName = "Document Type Description";
+            this.documentTypeDescriptionDataGridViewTextBoxColumn.HeaderText = "Document Type Description";
+            this.documentTypeDescriptionDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.documentTypeDescriptionDataGridViewTextBoxColumn.Name = "documentTypeDescriptionDataGridViewTextBoxColumn";
+            this.documentTypeDescriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.documentTypeDescriptionDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // amountInDocCurrDataGridViewTextBoxColumn
+            // 
+            this.amountInDocCurrDataGridViewTextBoxColumn.DataPropertyName = "Amount in doc_ curr_";
+            this.amountInDocCurrDataGridViewTextBoxColumn.HeaderText = "Amount in doc_ curr_";
+            this.amountInDocCurrDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.amountInDocCurrDataGridViewTextBoxColumn.Name = "amountInDocCurrDataGridViewTextBoxColumn";
+            this.amountInDocCurrDataGridViewTextBoxColumn.ReadOnly = true;
+            this.amountInDocCurrDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // documentCurrencyDataGridViewTextBoxColumn
+            // 
+            this.documentCurrencyDataGridViewTextBoxColumn.DataPropertyName = "Document currency";
+            this.documentCurrencyDataGridViewTextBoxColumn.HeaderText = "Document currency";
+            this.documentCurrencyDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.documentCurrencyDataGridViewTextBoxColumn.Name = "documentCurrencyDataGridViewTextBoxColumn";
+            this.documentCurrencyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.documentCurrencyDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // documentNumberDataGridViewTextBoxColumn
+            // 
+            this.documentNumberDataGridViewTextBoxColumn.DataPropertyName = "Document Number";
+            this.documentNumberDataGridViewTextBoxColumn.HeaderText = "Document Number";
+            this.documentNumberDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.documentNumberDataGridViewTextBoxColumn.Name = "documentNumberDataGridViewTextBoxColumn";
+            this.documentNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            this.documentNumberDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // referenceDataGridViewTextBoxColumn
+            // 
+            this.referenceDataGridViewTextBoxColumn.DataPropertyName = "Reference";
+            this.referenceDataGridViewTextBoxColumn.HeaderText = "Reference";
+            this.referenceDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.referenceDataGridViewTextBoxColumn.Name = "referenceDataGridViewTextBoxColumn";
+            this.referenceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.referenceDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // documentDateDataGridViewTextBoxColumn
+            // 
+            this.documentDateDataGridViewTextBoxColumn.DataPropertyName = "Document Date";
+            this.documentDateDataGridViewTextBoxColumn.HeaderText = "Document Date";
+            this.documentDateDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.documentDateDataGridViewTextBoxColumn.Name = "documentDateDataGridViewTextBoxColumn";
+            this.documentDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.documentDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // baselinePaymentDteDataGridViewTextBoxColumn
+            // 
+            this.baselinePaymentDteDataGridViewTextBoxColumn.DataPropertyName = "Baseline Payment Dte";
+            this.baselinePaymentDteDataGridViewTextBoxColumn.HeaderText = "Baseline Payment Dte";
+            this.baselinePaymentDteDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.baselinePaymentDteDataGridViewTextBoxColumn.Name = "baselinePaymentDteDataGridViewTextBoxColumn";
+            this.baselinePaymentDteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.baselinePaymentDteDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // netDueDateDataGridViewTextBoxColumn
+            // 
+            this.netDueDateDataGridViewTextBoxColumn.DataPropertyName = "Net due date";
+            this.netDueDateDataGridViewTextBoxColumn.HeaderText = "Net due date";
+            this.netDueDateDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.netDueDateDataGridViewTextBoxColumn.Name = "netDueDateDataGridViewTextBoxColumn";
+            this.netDueDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.netDueDateDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // arrearsForDiscount1DataGridViewTextBoxColumn
+            // 
+            this.arrearsForDiscount1DataGridViewTextBoxColumn.DataPropertyName = "Arrears for discount 1";
+            this.arrearsForDiscount1DataGridViewTextBoxColumn.HeaderText = "Arrears for discount 1";
+            this.arrearsForDiscount1DataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.arrearsForDiscount1DataGridViewTextBoxColumn.Name = "arrearsForDiscount1DataGridViewTextBoxColumn";
+            this.arrearsForDiscount1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.arrearsForDiscount1DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // amountInLocalCurrencyDataGridViewTextBoxColumn
+            // 
+            this.amountInLocalCurrencyDataGridViewTextBoxColumn.DataPropertyName = "Amount in local currency";
+            this.amountInLocalCurrencyDataGridViewTextBoxColumn.HeaderText = "Amount in local currency";
+            this.amountInLocalCurrencyDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.amountInLocalCurrencyDataGridViewTextBoxColumn.Name = "amountInLocalCurrencyDataGridViewTextBoxColumn";
+            this.amountInLocalCurrencyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.amountInLocalCurrencyDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // localCurrencyDataGridViewTextBoxColumn
+            // 
+            this.localCurrencyDataGridViewTextBoxColumn.DataPropertyName = "Local Currency";
+            this.localCurrencyDataGridViewTextBoxColumn.HeaderText = "Local Currency";
+            this.localCurrencyDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.localCurrencyDataGridViewTextBoxColumn.Name = "localCurrencyDataGridViewTextBoxColumn";
+            this.localCurrencyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.localCurrencyDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // textDataGridViewTextBoxColumn
+            // 
+            this.textDataGridViewTextBoxColumn.DataPropertyName = "Text";
+            this.textDataGridViewTextBoxColumn.HeaderText = "Text";
+            this.textDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.textDataGridViewTextBoxColumn.Name = "textDataGridViewTextBoxColumn";
+            this.textDataGridViewTextBoxColumn.ReadOnly = true;
+            this.textDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dsFbl5nBindingSource
+            // 
+            this.dsFbl5nBindingSource.DataSource = this.dsFbl5n;
+            this.dsFbl5nBindingSource.Position = 0;
+            // 
+            // dsFbl5n
+            // 
+            this.dsFbl5n.DataSetName = "DsFbl5n";
+            this.dsFbl5n.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "Company Code";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Company Code";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Alt Payer";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Alt Payer";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Account";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Account";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Customer Name";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Customer Name";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Document Type";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Document Type";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Document Type Description";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Document Type Description";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Amount in doc_ curr_";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Amount in doc_ curr_";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Document currency";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Document currency";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Document Number";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Document Number";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Reference";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Reference";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Document Date";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Document Date";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Baseline Payment Dte";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Baseline Payment Dte";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Net due date";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Net due date";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Arrears for discount 1";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Arrears for discount 1";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Amount in local currency";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Amount in local currency";
+            this.dataGridViewTextBoxColumn15.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "Local Currency";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Local Currency";
+            this.dataGridViewTextBoxColumn16.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "Text";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Text";
+            this.dataGridViewTextBoxColumn17.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "Company Code";
+            this.dataGridViewTextBoxColumn18.HeaderText = "Company Code";
+            this.dataGridViewTextBoxColumn18.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.dataGridViewTextBoxColumn18.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "Alt Payer";
+            this.dataGridViewTextBoxColumn19.HeaderText = "Alt Payer";
+            this.dataGridViewTextBoxColumn19.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "Account";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Account";
+            this.dataGridViewTextBoxColumn20.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            this.dataGridViewTextBoxColumn20.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "Customer Name";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Customer Name";
+            this.dataGridViewTextBoxColumn21.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "Document Type";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Document Type";
+            this.dataGridViewTextBoxColumn22.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.ReadOnly = true;
+            this.dataGridViewTextBoxColumn22.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "Document Type Description";
+            this.dataGridViewTextBoxColumn23.HeaderText = "Document Type Description";
+            this.dataGridViewTextBoxColumn23.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.ReadOnly = true;
+            this.dataGridViewTextBoxColumn23.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "Amount in doc_ curr_";
+            this.dataGridViewTextBoxColumn24.HeaderText = "Amount in doc_ curr_";
+            this.dataGridViewTextBoxColumn24.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.ReadOnly = true;
+            this.dataGridViewTextBoxColumn24.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "Document currency";
+            this.dataGridViewTextBoxColumn25.HeaderText = "Document currency";
+            this.dataGridViewTextBoxColumn25.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.ReadOnly = true;
+            this.dataGridViewTextBoxColumn25.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "Document Number";
+            this.dataGridViewTextBoxColumn26.HeaderText = "Document Number";
+            this.dataGridViewTextBoxColumn26.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.ReadOnly = true;
+            this.dataGridViewTextBoxColumn26.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "Reference";
+            this.dataGridViewTextBoxColumn27.HeaderText = "Reference";
+            this.dataGridViewTextBoxColumn27.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.ReadOnly = true;
+            this.dataGridViewTextBoxColumn27.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "Document Date";
+            this.dataGridViewTextBoxColumn28.HeaderText = "Document Date";
+            this.dataGridViewTextBoxColumn28.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.ReadOnly = true;
+            this.dataGridViewTextBoxColumn28.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "Baseline Payment Dte";
+            this.dataGridViewTextBoxColumn29.HeaderText = "Baseline Payment Dte";
+            this.dataGridViewTextBoxColumn29.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dataGridViewTextBoxColumn29.ReadOnly = true;
+            this.dataGridViewTextBoxColumn29.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn30
+            // 
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "Net due date";
+            this.dataGridViewTextBoxColumn30.HeaderText = "Net due date";
+            this.dataGridViewTextBoxColumn30.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.dataGridViewTextBoxColumn30.ReadOnly = true;
+            this.dataGridViewTextBoxColumn30.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "Arrears for discount 1";
+            this.dataGridViewTextBoxColumn31.HeaderText = "Arrears for discount 1";
+            this.dataGridViewTextBoxColumn31.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.dataGridViewTextBoxColumn31.ReadOnly = true;
+            this.dataGridViewTextBoxColumn31.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "Amount in local currency";
+            this.dataGridViewTextBoxColumn32.HeaderText = "Amount in local currency";
+            this.dataGridViewTextBoxColumn32.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.dataGridViewTextBoxColumn32.ReadOnly = true;
+            this.dataGridViewTextBoxColumn32.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn33
+            // 
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "Local Currency";
+            this.dataGridViewTextBoxColumn33.HeaderText = "Local Currency";
+            this.dataGridViewTextBoxColumn33.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.ReadOnly = true;
+            this.dataGridViewTextBoxColumn33.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "Text";
+            this.dataGridViewTextBoxColumn34.HeaderText = "Text";
+            this.dataGridViewTextBoxColumn34.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.ReadOnly = true;
+            this.dataGridViewTextBoxColumn34.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "Company Code";
+            this.dataGridViewTextBoxColumn35.HeaderText = "Company Code";
+            this.dataGridViewTextBoxColumn35.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.ReadOnly = true;
+            this.dataGridViewTextBoxColumn35.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn36
+            // 
+            this.dataGridViewTextBoxColumn36.DataPropertyName = "Alt Payer";
+            this.dataGridViewTextBoxColumn36.HeaderText = "Alt Payer";
+            this.dataGridViewTextBoxColumn36.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            this.dataGridViewTextBoxColumn36.ReadOnly = true;
+            this.dataGridViewTextBoxColumn36.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn37
+            // 
+            this.dataGridViewTextBoxColumn37.DataPropertyName = "Account";
+            this.dataGridViewTextBoxColumn37.HeaderText = "Account";
+            this.dataGridViewTextBoxColumn37.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.ReadOnly = true;
+            this.dataGridViewTextBoxColumn37.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn38
+            // 
+            this.dataGridViewTextBoxColumn38.DataPropertyName = "Customer Name";
+            this.dataGridViewTextBoxColumn38.HeaderText = "Customer Name";
+            this.dataGridViewTextBoxColumn38.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
+            this.dataGridViewTextBoxColumn38.ReadOnly = true;
+            this.dataGridViewTextBoxColumn38.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn39
+            // 
+            this.dataGridViewTextBoxColumn39.DataPropertyName = "Document Type";
+            this.dataGridViewTextBoxColumn39.HeaderText = "Document Type";
+            this.dataGridViewTextBoxColumn39.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
+            this.dataGridViewTextBoxColumn39.ReadOnly = true;
+            this.dataGridViewTextBoxColumn39.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn40
+            // 
+            this.dataGridViewTextBoxColumn40.DataPropertyName = "Document Type Description";
+            this.dataGridViewTextBoxColumn40.HeaderText = "Document Type Description";
+            this.dataGridViewTextBoxColumn40.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
+            this.dataGridViewTextBoxColumn40.ReadOnly = true;
+            this.dataGridViewTextBoxColumn40.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn41
+            // 
+            this.dataGridViewTextBoxColumn41.DataPropertyName = "Amount in doc_ curr_";
+            this.dataGridViewTextBoxColumn41.HeaderText = "Amount in doc_ curr_";
+            this.dataGridViewTextBoxColumn41.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
+            this.dataGridViewTextBoxColumn41.ReadOnly = true;
+            this.dataGridViewTextBoxColumn41.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn42
+            // 
+            this.dataGridViewTextBoxColumn42.DataPropertyName = "Document currency";
+            this.dataGridViewTextBoxColumn42.HeaderText = "Document currency";
+            this.dataGridViewTextBoxColumn42.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
+            this.dataGridViewTextBoxColumn42.ReadOnly = true;
+            this.dataGridViewTextBoxColumn42.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn43
+            // 
+            this.dataGridViewTextBoxColumn43.DataPropertyName = "Document Number";
+            this.dataGridViewTextBoxColumn43.HeaderText = "Document Number";
+            this.dataGridViewTextBoxColumn43.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
+            this.dataGridViewTextBoxColumn43.ReadOnly = true;
+            this.dataGridViewTextBoxColumn43.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn44
+            // 
+            this.dataGridViewTextBoxColumn44.DataPropertyName = "Reference";
+            this.dataGridViewTextBoxColumn44.HeaderText = "Reference";
+            this.dataGridViewTextBoxColumn44.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
+            this.dataGridViewTextBoxColumn44.ReadOnly = true;
+            this.dataGridViewTextBoxColumn44.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn45
+            // 
+            this.dataGridViewTextBoxColumn45.DataPropertyName = "Document Date";
+            this.dataGridViewTextBoxColumn45.HeaderText = "Document Date";
+            this.dataGridViewTextBoxColumn45.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
+            this.dataGridViewTextBoxColumn45.ReadOnly = true;
+            this.dataGridViewTextBoxColumn45.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn46
+            // 
+            this.dataGridViewTextBoxColumn46.DataPropertyName = "Baseline Payment Dte";
+            this.dataGridViewTextBoxColumn46.HeaderText = "Baseline Payment Dte";
+            this.dataGridViewTextBoxColumn46.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
+            this.dataGridViewTextBoxColumn46.ReadOnly = true;
+            this.dataGridViewTextBoxColumn46.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn47
+            // 
+            this.dataGridViewTextBoxColumn47.DataPropertyName = "Net due date";
+            this.dataGridViewTextBoxColumn47.HeaderText = "Net due date";
+            this.dataGridViewTextBoxColumn47.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
+            this.dataGridViewTextBoxColumn47.ReadOnly = true;
+            this.dataGridViewTextBoxColumn47.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn48
+            // 
+            this.dataGridViewTextBoxColumn48.DataPropertyName = "Arrears for discount 1";
+            this.dataGridViewTextBoxColumn48.HeaderText = "Arrears for discount 1";
+            this.dataGridViewTextBoxColumn48.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
+            this.dataGridViewTextBoxColumn48.ReadOnly = true;
+            this.dataGridViewTextBoxColumn48.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn49
+            // 
+            this.dataGridViewTextBoxColumn49.DataPropertyName = "Amount in local currency";
+            this.dataGridViewTextBoxColumn49.HeaderText = "Amount in local currency";
+            this.dataGridViewTextBoxColumn49.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
+            this.dataGridViewTextBoxColumn49.ReadOnly = true;
+            this.dataGridViewTextBoxColumn49.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn50
+            // 
+            this.dataGridViewTextBoxColumn50.DataPropertyName = "Local Currency";
+            this.dataGridViewTextBoxColumn50.HeaderText = "Local Currency";
+            this.dataGridViewTextBoxColumn50.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
+            this.dataGridViewTextBoxColumn50.ReadOnly = true;
+            this.dataGridViewTextBoxColumn50.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn51
+            // 
+            this.dataGridViewTextBoxColumn51.DataPropertyName = "Text";
+            this.dataGridViewTextBoxColumn51.HeaderText = "Text";
+            this.dataGridViewTextBoxColumn51.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
+            this.dataGridViewTextBoxColumn51.ReadOnly = true;
+            this.dataGridViewTextBoxColumn51.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn52
+            // 
+            this.dataGridViewTextBoxColumn52.DataPropertyName = "Company Code";
+            this.dataGridViewTextBoxColumn52.HeaderText = "Company Code";
+            this.dataGridViewTextBoxColumn52.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
+            this.dataGridViewTextBoxColumn52.ReadOnly = true;
+            this.dataGridViewTextBoxColumn52.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn53
+            // 
+            this.dataGridViewTextBoxColumn53.DataPropertyName = "Alt Payer";
+            this.dataGridViewTextBoxColumn53.HeaderText = "Alt Payer";
+            this.dataGridViewTextBoxColumn53.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
+            this.dataGridViewTextBoxColumn53.ReadOnly = true;
+            this.dataGridViewTextBoxColumn53.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn54
+            // 
+            this.dataGridViewTextBoxColumn54.DataPropertyName = "Account";
+            this.dataGridViewTextBoxColumn54.HeaderText = "Account";
+            this.dataGridViewTextBoxColumn54.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
+            this.dataGridViewTextBoxColumn54.ReadOnly = true;
+            this.dataGridViewTextBoxColumn54.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn55
+            // 
+            this.dataGridViewTextBoxColumn55.DataPropertyName = "Customer Name";
+            this.dataGridViewTextBoxColumn55.HeaderText = "Customer Name";
+            this.dataGridViewTextBoxColumn55.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
+            this.dataGridViewTextBoxColumn55.ReadOnly = true;
+            this.dataGridViewTextBoxColumn55.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn56
+            // 
+            this.dataGridViewTextBoxColumn56.DataPropertyName = "Document Type";
+            this.dataGridViewTextBoxColumn56.HeaderText = "Document Type";
+            this.dataGridViewTextBoxColumn56.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
+            this.dataGridViewTextBoxColumn56.ReadOnly = true;
+            this.dataGridViewTextBoxColumn56.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn57
+            // 
+            this.dataGridViewTextBoxColumn57.DataPropertyName = "Document Type Description";
+            this.dataGridViewTextBoxColumn57.HeaderText = "Document Type Description";
+            this.dataGridViewTextBoxColumn57.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
+            this.dataGridViewTextBoxColumn57.ReadOnly = true;
+            this.dataGridViewTextBoxColumn57.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn58
+            // 
+            this.dataGridViewTextBoxColumn58.DataPropertyName = "Amount in doc_ curr_";
+            this.dataGridViewTextBoxColumn58.HeaderText = "Amount in doc_ curr_";
+            this.dataGridViewTextBoxColumn58.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
+            this.dataGridViewTextBoxColumn58.ReadOnly = true;
+            this.dataGridViewTextBoxColumn58.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn59
+            // 
+            this.dataGridViewTextBoxColumn59.DataPropertyName = "Document currency";
+            this.dataGridViewTextBoxColumn59.HeaderText = "Document currency";
+            this.dataGridViewTextBoxColumn59.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
+            this.dataGridViewTextBoxColumn59.ReadOnly = true;
+            this.dataGridViewTextBoxColumn59.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn60
+            // 
+            this.dataGridViewTextBoxColumn60.DataPropertyName = "Document Number";
+            this.dataGridViewTextBoxColumn60.HeaderText = "Document Number";
+            this.dataGridViewTextBoxColumn60.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
+            this.dataGridViewTextBoxColumn60.ReadOnly = true;
+            this.dataGridViewTextBoxColumn60.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn61
+            // 
+            this.dataGridViewTextBoxColumn61.DataPropertyName = "Reference";
+            this.dataGridViewTextBoxColumn61.HeaderText = "Reference";
+            this.dataGridViewTextBoxColumn61.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn61.Name = "dataGridViewTextBoxColumn61";
+            this.dataGridViewTextBoxColumn61.ReadOnly = true;
+            this.dataGridViewTextBoxColumn61.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn62
+            // 
+            this.dataGridViewTextBoxColumn62.DataPropertyName = "Document Date";
+            this.dataGridViewTextBoxColumn62.HeaderText = "Document Date";
+            this.dataGridViewTextBoxColumn62.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
+            this.dataGridViewTextBoxColumn62.ReadOnly = true;
+            this.dataGridViewTextBoxColumn62.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn63
+            // 
+            this.dataGridViewTextBoxColumn63.DataPropertyName = "Baseline Payment Dte";
+            this.dataGridViewTextBoxColumn63.HeaderText = "Baseline Payment Dte";
+            this.dataGridViewTextBoxColumn63.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn63.Name = "dataGridViewTextBoxColumn63";
+            this.dataGridViewTextBoxColumn63.ReadOnly = true;
+            this.dataGridViewTextBoxColumn63.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn64
+            // 
+            this.dataGridViewTextBoxColumn64.DataPropertyName = "Net due date";
+            this.dataGridViewTextBoxColumn64.HeaderText = "Net due date";
+            this.dataGridViewTextBoxColumn64.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn64.Name = "dataGridViewTextBoxColumn64";
+            this.dataGridViewTextBoxColumn64.ReadOnly = true;
+            this.dataGridViewTextBoxColumn64.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn65
+            // 
+            this.dataGridViewTextBoxColumn65.DataPropertyName = "Arrears for discount 1";
+            this.dataGridViewTextBoxColumn65.HeaderText = "Arrears for discount 1";
+            this.dataGridViewTextBoxColumn65.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn65.Name = "dataGridViewTextBoxColumn65";
+            this.dataGridViewTextBoxColumn65.ReadOnly = true;
+            this.dataGridViewTextBoxColumn65.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn66
+            // 
+            this.dataGridViewTextBoxColumn66.DataPropertyName = "Amount in local currency";
+            this.dataGridViewTextBoxColumn66.HeaderText = "Amount in local currency";
+            this.dataGridViewTextBoxColumn66.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn66.Name = "dataGridViewTextBoxColumn66";
+            this.dataGridViewTextBoxColumn66.ReadOnly = true;
+            this.dataGridViewTextBoxColumn66.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn67
+            // 
+            this.dataGridViewTextBoxColumn67.DataPropertyName = "Local Currency";
+            this.dataGridViewTextBoxColumn67.HeaderText = "Local Currency";
+            this.dataGridViewTextBoxColumn67.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn67.Name = "dataGridViewTextBoxColumn67";
+            this.dataGridViewTextBoxColumn67.ReadOnly = true;
+            this.dataGridViewTextBoxColumn67.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // dataGridViewTextBoxColumn68
+            // 
+            this.dataGridViewTextBoxColumn68.DataPropertyName = "Text";
+            this.dataGridViewTextBoxColumn68.HeaderText = "Text";
+            this.dataGridViewTextBoxColumn68.MinimumWidth = 22;
+            this.dataGridViewTextBoxColumn68.Name = "dataGridViewTextBoxColumn68";
+            this.dataGridViewTextBoxColumn68.ReadOnly = true;
+            this.dataGridViewTextBoxColumn68.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
             // sP_SELECTFBL5NTableAdapter
             // 
@@ -2228,10 +2236,6 @@ namespace CFS_Latam_cashApplicationTool
             // sP_SELECTPAYMENTSTableAdapter
             // 
             this.sP_SELECTPAYMENTSTableAdapter.ClearBeforeFill = true;
-            // 
-            // TtMessage
-            // 
-            this.TtMessage.IsBalloon = true;
             // 
             // FrmMain
             // 
@@ -2273,8 +2277,6 @@ namespace CFS_Latam_cashApplicationTool
             this.tabPageCustomerPayment.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AdtvgCustomerPay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPSELECTPAYMENTSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5nBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5n)).EndInit();
             this.tabPageInvoices.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AdtvgInvoices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPSELECTINVOICESBindingSource)).EndInit();
@@ -2299,6 +2301,8 @@ namespace CFS_Latam_cashApplicationTool
             this.tableLayoutPanelTotals.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictDisputes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictSubmit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5nBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5n)).EndInit();
             this.ResumeLayout(false);
 
         }

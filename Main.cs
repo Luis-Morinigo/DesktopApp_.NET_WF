@@ -27,7 +27,6 @@ namespace CFS_Latam_cashApplicationTool
             this.TtMessage.SetToolTip(this.pictSubmit, "Send customer conciliation");
             this.TtMessage.SetToolTip(this.pictUnselectAll, "Remove all rows");
             this.TtMessage.SetToolTip(this.pictExcel, "Export    Shift+F1");
-
         }
 
         //Conexión GLOBAL a Data Set
@@ -254,13 +253,6 @@ namespace CFS_Latam_cashApplicationTool
 
         }
 
-        private void PictSubmit_Click(object sender, EventArgs e)
-        {
-         
-            MessageBox.Show("Your conciliation was sent successfully", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-        }
-
         private void AdtgvCustPay_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -304,6 +296,23 @@ namespace CFS_Latam_cashApplicationTool
             txtSubtotal.Text = Convert.ToString(subtotal);
 
         }
+
+        private void PictSubmit_Click(object sender, EventArgs e)
+        {
+            double totalsub = Convert.ToDouble(txtSubtotal.Text);
+
+            if (totalsub <= 10 && totalsub >= -10)
+            {
+                MessageBox.Show("Your conciliation was sent successfully", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                MessageBox.Show("Please review your reconciliation, the subtotal must be between the ranges 10 and -10", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+
+        }
+
         private void PictureRight_Click(object sender, EventArgs e)
         {
             // Recorremos la colección de filas seleccionadas en el control --------------- Tab Customer Payment
