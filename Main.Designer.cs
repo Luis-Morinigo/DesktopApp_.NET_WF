@@ -354,6 +354,7 @@ namespace CFS_Latam_cashApplicationTool
             this.exportExcelToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F1)));
             this.exportExcelToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.exportExcelToolStripMenuItem.Text = "Export Excel";
+            this.exportExcelToolStripMenuItem.Click += new System.EventHandler(this.exportExcelToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 

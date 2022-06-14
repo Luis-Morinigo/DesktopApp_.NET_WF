@@ -512,7 +512,11 @@ namespace CFS_Latam_cashApplicationTool
 
         private void pictExcel_Click(object sender, EventArgs e)
         {
-            //PRUEBA GIT
+            exportExcel();
+        }
+
+        void exportExcel()
+        {
             try
             {
                 Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
@@ -567,10 +571,15 @@ namespace CFS_Latam_cashApplicationTool
                     worksheet = null;
                 }
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message.ToString()); }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
-
-}
+        private void exportExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exportExcel();
+        }
+    }
 }
