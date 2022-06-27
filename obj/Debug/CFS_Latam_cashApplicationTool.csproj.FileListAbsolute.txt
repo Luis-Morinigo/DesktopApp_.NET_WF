@@ -13,6 +13,8 @@ C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\Resources\
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\Resources\Icon_Right.png
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\Resources\Icon_Left.png
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\CFS_Latam_cashApplicationTool.exe.config
+C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\CFS_Latam_cashApplicationTool.exe.manifest
+C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\CFS_Latam_cashApplicationTool.application
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\CFS_Latam_cashApplicationTool.exe
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\CFS_Latam_cashApplicationTool.pdb
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\AdvancedDataGridView.dll
@@ -32,13 +34,12 @@ C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Debug\CFS_Latam_
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Debug\CFS_Latam_cashApplicationTool.FrmLogin.resources
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Debug\CFS_Latam_cashApplicationTool.FrmMain.resources
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Debug\CFS_Latam_cashApplicationTool.Properties.Resources.resources
+C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Debug\CFS_Latam_cashApplicationTool.SearchCustomerName.resources
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Debug\CFS_Latam_cashApplicationTool.csproj.GenerateResource.cache
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Debug\CFS_Latam_cashApplicationTool.csproj.CoreCompileInputs.cache
+C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Debug\CFS_Latam_cashApplicationTool.exe.manifest
+C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Debug\CFS_Latam_cashApplicationTool.application
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Debug\CFS_Latam_cashApplicationTool.csproj.CopyComplete
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Debug\CFS_Latam_cashApplicationTool.exe
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Debug\CFS_Latam_cashApplicationTool.pdb
-C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\CFS_Latam_cashApplicationTool.exe.manifest
-C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\CFS_Latam_cashApplicationTool.application
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Debug\CFS_Latam_cashApplicationTool.csproj.AssemblyReference.cache
-C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Debug\CFS_Latam_cashApplicationTool.exe.manifest
-C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Debug\CFS_Latam_cashApplicationTool.application

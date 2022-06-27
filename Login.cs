@@ -19,56 +19,32 @@ namespace CFS_Latam_cashApplicationTool
 
         //Obtenemos ID de usuario
         private readonly string userName = Environment.UserName;
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-            txtUserId.Text = userName;            
-        }
-
-        private void panelLogin_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+ 
         private void pictLogin_Click(object sender, EventArgs e)
         {
-            //Obtenemos password ingresada por usuario
-            string sPass = txtPasword.Text.Trim();
-            //Obtenemos ID de usuario
-            string sUser = txtUserId.Text.Trim();
+            //Genero conexión a la base de datos
+            using (Models.SSC_Finance_DWEntities DataBaseUser = new Models.SSC_Finance_DWEntities())
+            {
+                //Consulta mediante Linq
+                var lst = from d in DataBaseUser.CASH_APPLICATION___Users_Desktop_App
+                            where d.user_id == userName
+                            select d;
 
-            if (sPass == string.Empty)
-            {
-                MessageBox.Show("Please enter Password..!!", "Cash Application Tool");
-            }
-            else
-            {
-                //Genero conexión a la base de datos
-                using (Models.SSC_Finance_DWEntities DataBaseUser = new Models.SSC_Finance_DWEntities())
+                if (lst.Count() > 0)
                 {
-                    //Consulta mediante Linq
-                    var lst = from d in DataBaseUser.CASH_APPLICATION___Users_Desktop_App
-                              where d.user_id == txtUserId.Text
-                              && d.password == sPass
-                              select d;
+                    //Oculta ventana Login
+                    this.Hide();
+                    //Creo objteo del formulario Main
+                    FrmMain frmIn = new FrmMain();
 
-                    if (lst.Count() > 0)
-                    {
-                        MessageBox.Show("Welcome to Cash Application Tool..!!", "Cash Application Tool");
-
-                        //Oculta ventana Login
-                        this.Hide();
-                        //Creo objteo del formulario Main
-                        FrmMain frmIn = new FrmMain();
-
-                        //Evento lambda para cerrar ventana Login
-                        frmIn.FormClosed += (s, args) => this.Close();
-                        //Open Form frmMain
-                        frmIn.Show();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Unregistered user or wrong password", "Cash Application Tool");
-                    }
+                    //Evento lambda para cerrar ventana Login
+                    frmIn.FormClosed += (s, args) => this.Close();
+                    //Open Form frmMain
+                    frmIn.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Unregistered user", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
 
@@ -76,9 +52,5 @@ namespace CFS_Latam_cashApplicationTool
 
         }
 
-        private void panelLogo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

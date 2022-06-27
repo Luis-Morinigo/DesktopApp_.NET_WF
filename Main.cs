@@ -34,10 +34,6 @@ namespace CFS_Latam_cashApplicationTool
         //Creamos objeto de Clase MainInput
         MainInput objMain = new MainInput();
 
-        //Arrays de company codes
-        private static readonly string[] company = { "AR1", "BR1", "CH4", "CL1", "CO1", "CR1", "EC1", "MX3", "PE1", "PY1", "UY1", "VE5" };
-        //Crea objeto arrays de company codes
-        private static readonly ArrayList cocd = new ArrayList(company);
         // Obtenemos ID de usuario (Ex: B082193) 
         private readonly string userName = Environment.UserName;
 
@@ -45,16 +41,21 @@ namespace CFS_Latam_cashApplicationTool
         {           
             //Carga User ID en header
             lblUserId.Text = "User: " + userName;
-            
-            //Carga combobox de company codes en base a objeto "cocd" (Linea 19)
-            foreach (string c in cocd)
-            {
-                cboCompanyCode.Items.Add(c);
-                cboCompanyCode.Text = "Select Company";
-            }            
 
+            //Carga combobox de company codes
+            fillCompanyCodes();            
         }
-            
+
+        void fillCompanyCodes()
+        {
+            DsFbl5nTableAdapters.SP_COMPANYCODESTableAdapter daCoCd = new DsFbl5nTableAdapters.SP_COMPANYCODESTableAdapter();
+            daCoCd.Fill(ds.SP_COMPANYCODES);
+            cboCompanyCode.DataSource = ds.SP_COMPANYCODES;
+            cboCompanyCode.DisplayMember = "Company Code";
+            cboCompanyCode.ValueMember = "Company Code";
+            cboCompanyCode.Text = "-- Select Company -- ";
+        }
+
         //Cierra ventana Main desde el menu PROGRAM - EXIT
         private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -62,7 +63,12 @@ namespace CFS_Latam_cashApplicationTool
         }
 
         private void PictSearch_Click(object sender, EventArgs e)
-        {            
+        {
+
+            clearConciliation(); 
+            //adtvgConciliation.Rows.Clear();
+            clearSubtotales();
+
             try
             {
                 objMain.CompanyCode = cboCompanyCode.Text.ToString();
@@ -70,7 +76,7 @@ namespace CFS_Latam_cashApplicationTool
                 objMain.AltNumber = TxtAltNumber.Text;
                 objMain.DocDZ = "DZ";
 
-                // Valida que los campos de busqueda esten completos ********************************************************************
+                // Step 1: Valida que los campos de busqueda esten completos ********************************************************************
                 //
                 if (string.IsNullOrEmpty(objMain.CompanyCode) || cboCompanyCode.Text == "Select Company")
                 {
@@ -83,7 +89,7 @@ namespace CFS_Latam_cashApplicationTool
                     return;
                 }
 
-                // Creamos objetos TablaAdapter con procedimientos almacenados en SQL **********************************************************
+                // Step 2: Creamos objetos TableAdapter con procedimientos almacenados en SQL **********************************************************
                 //
                 // Completa Tab CUSTOMER PAYMENT ---------------------------------- 01
                 //               
@@ -101,7 +107,7 @@ namespace CFS_Latam_cashApplicationTool
                 //
                 DsFbl5nTableAdapters.SP_SELECTFBL5NTableAdapter daAll = new DsFbl5nTableAdapters.SP_SELECTFBL5NTableAdapter();
 
-                // Pasa variables Customer Number o AltNumber a null si corresponde 
+                // Step 3: Pasa variables Customer Number o AltNumber a null si corresponde 
                 //
                 if (objMain.CustomerNumber == string.Empty && objMain.AltNumber != string.Empty)
                 {
@@ -185,7 +191,7 @@ namespace CFS_Latam_cashApplicationTool
                     AdtvgAllDoc.DataSource = ds.SP_SELECTFBL5N;
                 }
 
-                // Completamos lbl de Company Code - Customer Nuumber  o Alt Number - Customer Name
+                // Step 4: Completamos lbl de Company Code - Customer Nuumber  o Alt Number - Customer Name
                 //
 
                 string nameSelect = AdtvgAllDoc.CurrentRow.Cells[3].Value.ToString();
@@ -215,6 +221,8 @@ namespace CFS_Latam_cashApplicationTool
            
         }
 
+        // Valida que solo se ingresen numeros en textbox Customer Number
+        //
         private void TxtCustomerNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
@@ -225,8 +233,11 @@ namespace CFS_Latam_cashApplicationTool
             }
         }
 
+        // Valida que solo se ingresen numeros en textbox Receip Number
+        //
         private void TxtReceiptNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
+
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
                 MessageBox.Show("This field only supports numbers", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -234,6 +245,9 @@ namespace CFS_Latam_cashApplicationTool
                 return;
             }
         }
+
+        // Valida que solo se ingresen numeros en textbox Alternative Number
+        //
         private void TxtAltNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
@@ -243,20 +257,7 @@ namespace CFS_Latam_cashApplicationTool
                 return;
             }
         }
-        private void DtgvConciliation_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-  
-        private void PanelTitleFilter_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void AdtgvCustPay_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void pictLeft_Click(object sender, EventArgs e)
         {
@@ -269,7 +270,11 @@ namespace CFS_Latam_cashApplicationTool
             adtvgConciliation.ClearSelection();
             // Suma valores de columna Amount in Doc Curre (Col 6) de DataGridView Conciliation
             //            
-            // Total Payments
+            sumTotal();
+        }
+
+        void sumTotal()
+        {
             double totalPayments = adtvgConciliation.Rows.OfType<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DZ").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
             txtCustomerPayTotal.Text = Convert.ToString(totalPayments);
 
@@ -294,7 +299,6 @@ namespace CFS_Latam_cashApplicationTool
 
             double subtotal = totalRV + totalDV + totalDR + totalRG + totalDG + totalAB + totalRC;
             txtSubtotal.Text = Convert.ToString(subtotal);
-
         }
 
         private void PictSubmit_Click(object sender, EventArgs e)
@@ -463,7 +467,9 @@ namespace CFS_Latam_cashApplicationTool
 
                 // Añadimos la nueva fila al segundo control DataGridView.
                 //
-                adtvgConciliation.Rows.Add(row);    
+                adtvgConciliation.Rows.Add(row);                
+
+
             }
 
             AdtvgCustomerPay.ClearSelection();
@@ -474,49 +480,19 @@ namespace CFS_Latam_cashApplicationTool
 
             // Suma valores de columna Amount in Doc Curre (Col 6) de DataGridView Conciliation
             //            
-            // Total Payments
-            double totalPayments = adtvgConciliation.Rows.OfType<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DZ").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            txtCustomerPayTotal.Text = Convert.ToString(totalPayments);
-            
-            // Total Invoices
-            double totalRV = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "RV").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            double totalDV = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DV").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            double totalDR = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DR").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            double totalInvoce = totalRV + totalDV + totalDR;
-            txtInvoicesTotal.Text = Convert.ToString(totalInvoce);
-
-            // Total Credit Notes
-            double totalRG = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "RG").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            double totalDG = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DG").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            double totalCreditNote = totalRG + totalDG;
-            txtCreditNotesTotal.Text = Convert.ToString(totalCreditNote);
-
-            // Total Credit Balance
-            double totalAB = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "AB").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            double totalRC = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "RC").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            double totalCreditBalance = totalAB + totalRC;
-            txtCreditBalanceTotal.Text = Convert.ToString(totalCreditBalance);
-
-            double subtotal = totalRV + totalDV + totalDR + totalRG + totalDG + totalAB + totalRC;
-            txtSubtotal.Text= Convert.ToString(subtotal);
-
+            sumTotal();
         }
-
-        private void AdtvgAllDoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void PanelBar_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
+       
         private void pictUnselectAll_Click(object sender, EventArgs e)
         {
-            adtvgConciliation.Rows.Clear();
+            //adtvgConciliation.Rows.Clear();
+            clearConciliation();
+            sumTotal();
         }
-        private void advancedDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
+        void clearConciliation()
+        {
+            adtvgConciliation.Rows.Clear();
         }
 
         private void pictExcel_Click(object sender, EventArgs e)
@@ -524,6 +500,13 @@ namespace CFS_Latam_cashApplicationTool
             exportExcel();
         }
 
+        private void exportExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            exportExcel();
+        }
+
+        // Función para exportar DataGrid Conciliation a Excel
+        //
         void exportExcel()
         {
             try
@@ -586,9 +569,43 @@ namespace CFS_Latam_cashApplicationTool
             }
         }
 
-        private void exportExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        void clearSubtotales()
         {
-            exportExcel();
+            txtInvoicesTotal.Clear();
+            txtCustomerPayTotal.Clear();
+            txtCreditNotesTotal.Clear();
+            txtCreditBalanceTotal.Clear();
+            txtSubtotal.Clear();
+        }
+
+        private void DtgvConciliation_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void PanelTitleFilter_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void AdtgvCustPay_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void AdtvgAllDoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void PanelBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void advancedDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

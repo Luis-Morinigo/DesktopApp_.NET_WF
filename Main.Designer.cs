@@ -1,5 +1,4 @@
-﻿
-namespace CFS_Latam_cashApplicationTool
+﻿namespace CFS_Latam_cashApplicationTool
 {
     partial class FrmMain
     {
@@ -76,18 +75,105 @@ namespace CFS_Latam_cashApplicationTool
             this.tabControlCustomerLine = new System.Windows.Forms.TabControl();
             this.tabPageCustomerPayment = new System.Windows.Forms.TabPage();
             this.AdtvgCustomerPay = new Zuby.ADGV.AdvancedDataGridView();
+            this.companyCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.altPayerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentTypeDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountInDocCurrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentCurrencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.referenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.documentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.baselinePaymentDteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.netDueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.arrearsForDiscount1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountInLocalCurrencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.localCurrencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPSELECTPAYMENTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsFbl5nBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsFbl5n = new CFS_Latam_cashApplicationTool.DsFbl5n();
             this.tabPageInvoices = new System.Windows.Forms.TabPage();
             this.AdtvgInvoices = new Zuby.ADGV.AdvancedDataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPSELECTINVOICESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageCreditNotes = new System.Windows.Forms.TabPage();
             this.AdtvgCreditNotes = new Zuby.ADGV.AdvancedDataGridView();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPSELECTCREDITNOTESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageCreditBalance = new System.Windows.Forms.TabPage();
             this.AdtvgCreditBalance = new Zuby.ADGV.AdvancedDataGridView();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPSELECTCREDITBALANCEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageAllDocuments = new System.Windows.Forms.TabPage();
             this.AdtvgAllDoc = new Zuby.ADGV.AdvancedDataGridView();
+            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn66 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn67 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn68 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPSELECTFBL5NBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panelArrow = new System.Windows.Forms.Panel();
             this.pictUnselectAll = new System.Windows.Forms.PictureBox();
@@ -116,6 +202,7 @@ namespace CFS_Latam_cashApplicationTool
             this.TextSAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReceiptNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PartialAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panFooter = new System.Windows.Forms.Panel();
             this.tableLayoutPanelTotals = new System.Windows.Forms.TableLayoutPanel();
             this.txtCreditBalanceTotal = new System.Windows.Forms.TextBox();
@@ -131,93 +218,6 @@ namespace CFS_Latam_cashApplicationTool
             this.pictDisputes = new System.Windows.Forms.PictureBox();
             this.pictSubmit = new System.Windows.Forms.PictureBox();
             this.TtMessage = new System.Windows.Forms.ToolTip(this.components);
-            this.companyCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.altPayerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documentTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documentTypeDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountInDocCurrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documentCurrencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documentNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.referenceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.baselinePaymentDteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.netDueDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.arrearsForDiscount1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountInLocalCurrencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.localCurrencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dsFbl5nBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsFbl5n = new CFS_Latam_cashApplicationTool.DsFbl5n();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn60 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn61 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn64 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn65 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn66 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn67 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn68 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sP_SELECTFBL5NTableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_SELECTFBL5NTableAdapter();
             this.sP_SELECTCREDITBALANCETableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_SELECTCREDITBALANCETableAdapter();
             this.sP_SELECTCREDITNOTESTableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_SELECTCREDITNOTESTableAdapter();
@@ -237,6 +237,8 @@ namespace CFS_Latam_cashApplicationTool
             this.tabPageCustomerPayment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdtvgCustomerPay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPSELECTPAYMENTSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5nBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5n)).BeginInit();
             this.tabPageInvoices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdtvgInvoices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPSELECTINVOICESBindingSource)).BeginInit();
@@ -259,8 +261,6 @@ namespace CFS_Latam_cashApplicationTool
             this.tableLayoutPanelTotals.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictDisputes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictSubmit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5nBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5n)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBar
@@ -274,7 +274,7 @@ namespace CFS_Latam_cashApplicationTool
             this.panelBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBar.Location = new System.Drawing.Point(0, 0);
             this.panelBar.Name = "panelBar";
-            this.panelBar.Size = new System.Drawing.Size(1353, 64);
+            this.panelBar.Size = new System.Drawing.Size(1370, 64);
             this.panelBar.TabIndex = 0;
             this.panelBar.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBar_Paint);
             // 
@@ -306,7 +306,7 @@ namespace CFS_Latam_cashApplicationTool
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblTitle.Location = new System.Drawing.Point(520, 29);
+            this.lblTitle.Location = new System.Drawing.Point(529, 29);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(313, 25);
             this.lblTitle.TabIndex = 1;
@@ -320,7 +320,7 @@ namespace CFS_Latam_cashApplicationTool
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1351, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1368, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -384,16 +384,15 @@ namespace CFS_Latam_cashApplicationTool
             this.panelFilters.Location = new System.Drawing.Point(0, 64);
             this.panelFilters.Name = "panelFilters";
             this.panelFilters.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelFilters.Size = new System.Drawing.Size(1353, 89);
+            this.panelFilters.Size = new System.Drawing.Size(1370, 89);
             this.panelFilters.TabIndex = 1;
             // 
             // lblExpExcel
             // 
-            this.lblExpExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExpExcel.AutoSize = true;
             this.lblExpExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblExpExcel.Location = new System.Drawing.Point(1261, 67);
+            this.lblExpExcel.Location = new System.Drawing.Point(1272, 67);
             this.lblExpExcel.Name = "lblExpExcel";
             this.lblExpExcel.Size = new System.Drawing.Size(62, 13);
             this.lblExpExcel.TabIndex = 8;
@@ -401,11 +400,10 @@ namespace CFS_Latam_cashApplicationTool
             // 
             // pictExcel
             // 
-            this.pictExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictExcel.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
             this.pictExcel.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
             this.pictExcel.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
-            this.pictExcel.Location = new System.Drawing.Point(1273, 29);
+            this.pictExcel.Location = new System.Drawing.Point(1284, 29);
             this.pictExcel.Name = "pictExcel";
             this.pictExcel.Size = new System.Drawing.Size(39, 37);
             this.pictExcel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -535,7 +533,7 @@ namespace CFS_Latam_cashApplicationTool
             this.panelTitleFilter.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleFilter.Location = new System.Drawing.Point(0, 0);
             this.panelTitleFilter.Name = "panelTitleFilter";
-            this.panelTitleFilter.Size = new System.Drawing.Size(1351, 25);
+            this.panelTitleFilter.Size = new System.Drawing.Size(1368, 25);
             this.panelTitleFilter.TabIndex = 0;
             this.panelTitleFilter.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelTitleFilter_Paint);
             // 
@@ -559,7 +557,7 @@ namespace CFS_Latam_cashApplicationTool
             this.panelGeneral.Location = new System.Drawing.Point(0, 153);
             this.panelGeneral.Name = "panelGeneral";
             this.panelGeneral.Padding = new System.Windows.Forms.Padding(5);
-            this.panelGeneral.Size = new System.Drawing.Size(1353, 522);
+            this.panelGeneral.Size = new System.Drawing.Size(1370, 522);
             this.panelGeneral.TabIndex = 2;
             // 
             // tableLayoutPanelGeneral
@@ -583,7 +581,7 @@ namespace CFS_Latam_cashApplicationTool
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(1341, 510);
+            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(1358, 510);
             this.tableLayoutPanelGeneral.TabIndex = 0;
             // 
             // lblCustomerLine
@@ -604,7 +602,7 @@ namespace CFS_Latam_cashApplicationTool
             this.lblConciliation.AutoSize = true;
             this.lblConciliation.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConciliation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblConciliation.Location = new System.Drawing.Point(693, 2);
+            this.lblConciliation.Location = new System.Drawing.Point(702, 2);
             this.lblConciliation.Name = "lblConciliation";
             this.lblConciliation.Size = new System.Drawing.Size(170, 20);
             this.lblConciliation.TabIndex = 5;
@@ -634,7 +632,7 @@ namespace CFS_Latam_cashApplicationTool
             this.tabControlCustomerLine.Name = "tabControlCustomerLine";
             this.tabControlCustomerLine.SelectedIndex = 0;
             this.tabControlCustomerLine.ShowToolTips = true;
-            this.tabControlCustomerLine.Size = new System.Drawing.Size(643, 454);
+            this.tabControlCustomerLine.Size = new System.Drawing.Size(652, 454);
             this.tabControlCustomerLine.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlCustomerLine.TabIndex = 1;
             // 
@@ -646,7 +644,7 @@ namespace CFS_Latam_cashApplicationTool
             this.tabPageCustomerPayment.Controls.Add(this.AdtvgCustomerPay);
             this.tabPageCustomerPayment.Location = new System.Drawing.Point(4, 24);
             this.tabPageCustomerPayment.Name = "tabPageCustomerPayment";
-            this.tabPageCustomerPayment.Size = new System.Drawing.Size(635, 426);
+            this.tabPageCustomerPayment.Size = new System.Drawing.Size(644, 426);
             this.tabPageCustomerPayment.TabIndex = 0;
             this.tabPageCustomerPayment.Text = "Customer Payment";
             // 
@@ -699,748 +697,9 @@ namespace CFS_Latam_cashApplicationTool
             this.AdtvgCustomerPay.Name = "AdtvgCustomerPay";
             this.AdtvgCustomerPay.ReadOnly = true;
             this.AdtvgCustomerPay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgCustomerPay.Size = new System.Drawing.Size(633, 424);
+            this.AdtvgCustomerPay.Size = new System.Drawing.Size(642, 424);
             this.AdtvgCustomerPay.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgCustomerPay.TabIndex = 1;
-            // 
-            // sPSELECTPAYMENTSBindingSource
-            // 
-            this.sPSELECTPAYMENTSBindingSource.DataMember = "SP_SELECTPAYMENTS";
-            this.sPSELECTPAYMENTSBindingSource.DataSource = this.dsFbl5nBindingSource;
-            // 
-            // tabPageInvoices
-            // 
-            this.tabPageInvoices.AutoScroll = true;
-            this.tabPageInvoices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tabPageInvoices.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPageInvoices.Controls.Add(this.AdtvgInvoices);
-            this.tabPageInvoices.Location = new System.Drawing.Point(4, 24);
-            this.tabPageInvoices.Name = "tabPageInvoices";
-            this.tabPageInvoices.Size = new System.Drawing.Size(660, 426);
-            this.tabPageInvoices.TabIndex = 1;
-            this.tabPageInvoices.Text = "Invoices";
-            // 
-            // AdtvgInvoices
-            // 
-            this.AdtvgInvoices.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdtvgInvoices.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.AdtvgInvoices.AutoGenerateColumns = false;
-            this.AdtvgInvoices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.AdtvgInvoices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdtvgInvoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.AdtvgInvoices.ColumnHeadersHeight = 34;
-            this.AdtvgInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.AdtvgInvoices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17});
-            this.AdtvgInvoices.DataSource = this.sPSELECTINVOICESBindingSource;
-            this.AdtvgInvoices.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AdtvgInvoices.EnableHeadersVisualStyles = false;
-            this.AdtvgInvoices.FilterAndSortEnabled = true;
-            this.AdtvgInvoices.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.AdtvgInvoices.Location = new System.Drawing.Point(0, 0);
-            this.AdtvgInvoices.Name = "AdtvgInvoices";
-            this.AdtvgInvoices.ReadOnly = true;
-            this.AdtvgInvoices.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgInvoices.Size = new System.Drawing.Size(658, 424);
-            this.AdtvgInvoices.SortStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.AdtvgInvoices.TabIndex = 2;
-            // 
-            // sPSELECTINVOICESBindingSource
-            // 
-            this.sPSELECTINVOICESBindingSource.DataMember = "SP_SELECTINVOICES";
-            this.sPSELECTINVOICESBindingSource.DataSource = this.dsFbl5nBindingSource;
-            // 
-            // tabPageCreditNotes
-            // 
-            this.tabPageCreditNotes.AutoScroll = true;
-            this.tabPageCreditNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tabPageCreditNotes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPageCreditNotes.Controls.Add(this.AdtvgCreditNotes);
-            this.tabPageCreditNotes.Location = new System.Drawing.Point(4, 24);
-            this.tabPageCreditNotes.Name = "tabPageCreditNotes";
-            this.tabPageCreditNotes.Size = new System.Drawing.Size(660, 426);
-            this.tabPageCreditNotes.TabIndex = 2;
-            this.tabPageCreditNotes.Text = "Credit Notes";
-            // 
-            // AdtvgCreditNotes
-            // 
-            this.AdtvgCreditNotes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdtvgCreditNotes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.AdtvgCreditNotes.AutoGenerateColumns = false;
-            this.AdtvgCreditNotes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.AdtvgCreditNotes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdtvgCreditNotes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.AdtvgCreditNotes.ColumnHeadersHeight = 34;
-            this.AdtvgCreditNotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.AdtvgCreditNotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30,
-            this.dataGridViewTextBoxColumn31,
-            this.dataGridViewTextBoxColumn32,
-            this.dataGridViewTextBoxColumn33,
-            this.dataGridViewTextBoxColumn34});
-            this.AdtvgCreditNotes.DataSource = this.sPSELECTCREDITNOTESBindingSource;
-            this.AdtvgCreditNotes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AdtvgCreditNotes.EnableHeadersVisualStyles = false;
-            this.AdtvgCreditNotes.FilterAndSortEnabled = true;
-            this.AdtvgCreditNotes.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.AdtvgCreditNotes.Location = new System.Drawing.Point(0, 0);
-            this.AdtvgCreditNotes.Name = "AdtvgCreditNotes";
-            this.AdtvgCreditNotes.ReadOnly = true;
-            this.AdtvgCreditNotes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgCreditNotes.Size = new System.Drawing.Size(658, 424);
-            this.AdtvgCreditNotes.SortStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.AdtvgCreditNotes.TabIndex = 3;
-            // 
-            // sPSELECTCREDITNOTESBindingSource
-            // 
-            this.sPSELECTCREDITNOTESBindingSource.DataMember = "SP_SELECTCREDITNOTES";
-            this.sPSELECTCREDITNOTESBindingSource.DataSource = this.dsFbl5nBindingSource;
-            // 
-            // tabPageCreditBalance
-            // 
-            this.tabPageCreditBalance.AutoScroll = true;
-            this.tabPageCreditBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tabPageCreditBalance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPageCreditBalance.Controls.Add(this.AdtvgCreditBalance);
-            this.tabPageCreditBalance.Location = new System.Drawing.Point(4, 24);
-            this.tabPageCreditBalance.Name = "tabPageCreditBalance";
-            this.tabPageCreditBalance.Size = new System.Drawing.Size(660, 426);
-            this.tabPageCreditBalance.TabIndex = 3;
-            this.tabPageCreditBalance.Text = "Credit Balance";
-            // 
-            // AdtvgCreditBalance
-            // 
-            this.AdtvgCreditBalance.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdtvgCreditBalance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.AdtvgCreditBalance.AutoGenerateColumns = false;
-            this.AdtvgCreditBalance.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.AdtvgCreditBalance.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdtvgCreditBalance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.AdtvgCreditBalance.ColumnHeadersHeight = 34;
-            this.AdtvgCreditBalance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.AdtvgCreditBalance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn35,
-            this.dataGridViewTextBoxColumn36,
-            this.dataGridViewTextBoxColumn37,
-            this.dataGridViewTextBoxColumn38,
-            this.dataGridViewTextBoxColumn39,
-            this.dataGridViewTextBoxColumn40,
-            this.dataGridViewTextBoxColumn41,
-            this.dataGridViewTextBoxColumn42,
-            this.dataGridViewTextBoxColumn43,
-            this.dataGridViewTextBoxColumn44,
-            this.dataGridViewTextBoxColumn45,
-            this.dataGridViewTextBoxColumn46,
-            this.dataGridViewTextBoxColumn47,
-            this.dataGridViewTextBoxColumn48,
-            this.dataGridViewTextBoxColumn49,
-            this.dataGridViewTextBoxColumn50,
-            this.dataGridViewTextBoxColumn51});
-            this.AdtvgCreditBalance.DataSource = this.sPSELECTCREDITBALANCEBindingSource;
-            this.AdtvgCreditBalance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AdtvgCreditBalance.EnableHeadersVisualStyles = false;
-            this.AdtvgCreditBalance.FilterAndSortEnabled = true;
-            this.AdtvgCreditBalance.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.AdtvgCreditBalance.Location = new System.Drawing.Point(0, 0);
-            this.AdtvgCreditBalance.Name = "AdtvgCreditBalance";
-            this.AdtvgCreditBalance.ReadOnly = true;
-            this.AdtvgCreditBalance.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgCreditBalance.Size = new System.Drawing.Size(658, 424);
-            this.AdtvgCreditBalance.SortStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.AdtvgCreditBalance.TabIndex = 4;
-            // 
-            // sPSELECTCREDITBALANCEBindingSource
-            // 
-            this.sPSELECTCREDITBALANCEBindingSource.DataMember = "SP_SELECTCREDITBALANCE";
-            this.sPSELECTCREDITBALANCEBindingSource.DataSource = this.dsFbl5nBindingSource;
-            // 
-            // tabPageAllDocuments
-            // 
-            this.tabPageAllDocuments.AutoScroll = true;
-            this.tabPageAllDocuments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tabPageAllDocuments.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPageAllDocuments.Controls.Add(this.AdtvgAllDoc);
-            this.tabPageAllDocuments.Location = new System.Drawing.Point(4, 24);
-            this.tabPageAllDocuments.Name = "tabPageAllDocuments";
-            this.tabPageAllDocuments.Size = new System.Drawing.Size(660, 426);
-            this.tabPageAllDocuments.TabIndex = 4;
-            this.tabPageAllDocuments.Text = "All Documents";
-            // 
-            // AdtvgAllDoc
-            // 
-            this.AdtvgAllDoc.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdtvgAllDoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-            this.AdtvgAllDoc.AutoGenerateColumns = false;
-            this.AdtvgAllDoc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.AdtvgAllDoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdtvgAllDoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.AdtvgAllDoc.ColumnHeadersHeight = 34;
-            this.AdtvgAllDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.AdtvgAllDoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn52,
-            this.dataGridViewTextBoxColumn53,
-            this.dataGridViewTextBoxColumn54,
-            this.dataGridViewTextBoxColumn55,
-            this.dataGridViewTextBoxColumn56,
-            this.dataGridViewTextBoxColumn57,
-            this.dataGridViewTextBoxColumn58,
-            this.dataGridViewTextBoxColumn59,
-            this.dataGridViewTextBoxColumn60,
-            this.dataGridViewTextBoxColumn61,
-            this.dataGridViewTextBoxColumn62,
-            this.dataGridViewTextBoxColumn63,
-            this.dataGridViewTextBoxColumn64,
-            this.dataGridViewTextBoxColumn65,
-            this.dataGridViewTextBoxColumn66,
-            this.dataGridViewTextBoxColumn67,
-            this.dataGridViewTextBoxColumn68});
-            this.AdtvgAllDoc.DataSource = this.sPSELECTFBL5NBindingSource;
-            this.AdtvgAllDoc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AdtvgAllDoc.EnableHeadersVisualStyles = false;
-            this.AdtvgAllDoc.FilterAndSortEnabled = true;
-            this.AdtvgAllDoc.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.AdtvgAllDoc.Location = new System.Drawing.Point(0, 0);
-            this.AdtvgAllDoc.Name = "AdtvgAllDoc";
-            this.AdtvgAllDoc.ReadOnly = true;
-            this.AdtvgAllDoc.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgAllDoc.Size = new System.Drawing.Size(658, 424);
-            this.AdtvgAllDoc.SortStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.AdtvgAllDoc.TabIndex = 5;
-            // 
-            // sPSELECTFBL5NBindingSource
-            // 
-            this.sPSELECTFBL5NBindingSource.DataMember = "SP_SELECTFBL5N";
-            this.sPSELECTFBL5NBindingSource.DataSource = this.dsFbl5nBindingSource;
-            // 
-            // panelArrow
-            // 
-            this.panelArrow.Controls.Add(this.pictUnselectAll);
-            this.panelArrow.Controls.Add(this.pictLeft);
-            this.panelArrow.Controls.Add(this.PictureRight);
-            this.panelArrow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelArrow.Location = new System.Drawing.Point(652, 53);
-            this.panelArrow.Name = "panelArrow";
-            this.panelArrow.Size = new System.Drawing.Size(35, 454);
-            this.panelArrow.TabIndex = 8;
-            // 
-            // pictUnselectAll
-            // 
-            this.pictUnselectAll.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_UnselectAll;
-            this.pictUnselectAll.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_UnselectAll;
-            this.pictUnselectAll.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_UnselectAll;
-            this.pictUnselectAll.Location = new System.Drawing.Point(0, 261);
-            this.pictUnselectAll.Name = "pictUnselectAll";
-            this.pictUnselectAll.Size = new System.Drawing.Size(35, 35);
-            this.pictUnselectAll.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictUnselectAll.TabIndex = 2;
-            this.pictUnselectAll.TabStop = false;
-            this.pictUnselectAll.Click += new System.EventHandler(this.pictUnselectAll_Click);
-            // 
-            // pictLeft
-            // 
-            this.pictLeft.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Left;
-            this.pictLeft.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Left;
-            this.pictLeft.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Left;
-            this.pictLeft.Location = new System.Drawing.Point(0, 220);
-            this.pictLeft.Name = "pictLeft";
-            this.pictLeft.Size = new System.Drawing.Size(35, 35);
-            this.pictLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictLeft.TabIndex = 1;
-            this.pictLeft.TabStop = false;
-            this.pictLeft.Click += new System.EventHandler(this.pictLeft_Click);
-            // 
-            // PictureRight
-            // 
-            this.PictureRight.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Right;
-            this.PictureRight.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Right;
-            this.PictureRight.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Right;
-            this.PictureRight.Location = new System.Drawing.Point(0, 179);
-            this.PictureRight.Name = "PictureRight";
-            this.PictureRight.Size = new System.Drawing.Size(35, 35);
-            this.PictureRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureRight.TabIndex = 0;
-            this.PictureRight.TabStop = false;
-            this.PictureRight.Click += new System.EventHandler(this.PictureRight_Click);
-            // 
-            // panelReceiptNumber
-            // 
-            this.panelReceiptNumber.Controls.Add(this.txtReceiptNumber);
-            this.panelReceiptNumber.Controls.Add(this.lblReceiptNumber);
-            this.panelReceiptNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelReceiptNumber.Location = new System.Drawing.Point(690, 25);
-            this.panelReceiptNumber.Margin = new System.Windows.Forms.Padding(0);
-            this.panelReceiptNumber.Name = "panelReceiptNumber";
-            this.panelReceiptNumber.Size = new System.Drawing.Size(651, 25);
-            this.panelReceiptNumber.TabIndex = 9;
-            // 
-            // txtReceiptNumber
-            // 
-            this.txtReceiptNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtReceiptNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReceiptNumber.Location = new System.Drawing.Point(98, 2);
-            this.txtReceiptNumber.Name = "txtReceiptNumber";
-            this.txtReceiptNumber.Size = new System.Drawing.Size(126, 23);
-            this.txtReceiptNumber.TabIndex = 3;
-            this.txtReceiptNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtReceiptNumber_KeyPress);
-            // 
-            // lblReceiptNumber
-            // 
-            this.lblReceiptNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblReceiptNumber.AutoSize = true;
-            this.lblReceiptNumber.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReceiptNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblReceiptNumber.Location = new System.Drawing.Point(4, 7);
-            this.lblReceiptNumber.Name = "lblReceiptNumber";
-            this.lblReceiptNumber.Size = new System.Drawing.Size(89, 13);
-            this.lblReceiptNumber.TabIndex = 4;
-            this.lblReceiptNumber.Text = "Receipt Number";
-            // 
-            // adtvgConciliation
-            // 
-            this.adtvgConciliation.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.adtvgConciliation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.adtvgConciliation.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.adtvgConciliation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.adtvgConciliation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.adtvgConciliation.ColumnHeadersHeight = 34;
-            this.adtvgConciliation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.adtvgConciliation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CompanyCode,
-            this.AltPayer,
-            this.Account,
-            this.CustomerName,
-            this.DocumentType,
-            this.DocumentTypeDescription,
-            this.Amountindoc_curr_,
-            this.Documentcurrency,
-            this.DocumentNumber,
-            this.Reference,
-            this.DocumentDate,
-            this.BaselinePaymentDte,
-            this.Netduedate,
-            this.Arrearsfordiscount1,
-            this.Amountinlocalcurrency,
-            this.LocalCurrency,
-            this.TextSAP,
-            this.ReceiptNumber,
-            this.PartialAmount});
-            this.adtvgConciliation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.adtvgConciliation.EnableHeadersVisualStyles = false;
-            this.adtvgConciliation.FilterAndSortEnabled = true;
-            this.adtvgConciliation.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.adtvgConciliation.Location = new System.Drawing.Point(693, 77);
-            this.adtvgConciliation.Margin = new System.Windows.Forms.Padding(3, 27, 3, 5);
-            this.adtvgConciliation.Name = "adtvgConciliation";
-            this.adtvgConciliation.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.adtvgConciliation.Size = new System.Drawing.Size(645, 428);
-            this.adtvgConciliation.SortStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.adtvgConciliation.TabIndex = 10;
-            this.adtvgConciliation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView1_CellContentClick);
-            // 
-            // CompanyCode
-            // 
-            this.CompanyCode.HeaderText = "Company Code";
-            this.CompanyCode.MinimumWidth = 22;
-            this.CompanyCode.Name = "CompanyCode";
-            this.CompanyCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // AltPayer
-            // 
-            this.AltPayer.HeaderText = "Alt Payer";
-            this.AltPayer.MinimumWidth = 22;
-            this.AltPayer.Name = "AltPayer";
-            this.AltPayer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Account
-            // 
-            this.Account.HeaderText = "Account";
-            this.Account.MinimumWidth = 22;
-            this.Account.Name = "Account";
-            this.Account.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // CustomerName
-            // 
-            this.CustomerName.HeaderText = "Customer Name";
-            this.CustomerName.MinimumWidth = 22;
-            this.CustomerName.Name = "CustomerName";
-            this.CustomerName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // DocumentType
-            // 
-            this.DocumentType.HeaderText = "Document Type";
-            this.DocumentType.MinimumWidth = 22;
-            this.DocumentType.Name = "DocumentType";
-            this.DocumentType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // DocumentTypeDescription
-            // 
-            this.DocumentTypeDescription.HeaderText = "Document Type Description";
-            this.DocumentTypeDescription.MinimumWidth = 22;
-            this.DocumentTypeDescription.Name = "DocumentTypeDescription";
-            this.DocumentTypeDescription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Amountindoc_curr_
-            // 
-            this.Amountindoc_curr_.HeaderText = "Amount in doc_curr_";
-            this.Amountindoc_curr_.MinimumWidth = 22;
-            this.Amountindoc_curr_.Name = "Amountindoc_curr_";
-            this.Amountindoc_curr_.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Documentcurrency
-            // 
-            this.Documentcurrency.HeaderText = "Document currency";
-            this.Documentcurrency.MinimumWidth = 22;
-            this.Documentcurrency.Name = "Documentcurrency";
-            this.Documentcurrency.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // DocumentNumber
-            // 
-            this.DocumentNumber.HeaderText = "Document Number";
-            this.DocumentNumber.MinimumWidth = 22;
-            this.DocumentNumber.Name = "DocumentNumber";
-            this.DocumentNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Reference
-            // 
-            this.Reference.HeaderText = "Reference";
-            this.Reference.MinimumWidth = 22;
-            this.Reference.Name = "Reference";
-            this.Reference.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // DocumentDate
-            // 
-            this.DocumentDate.HeaderText = "Document Date";
-            this.DocumentDate.MinimumWidth = 22;
-            this.DocumentDate.Name = "DocumentDate";
-            this.DocumentDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // BaselinePaymentDte
-            // 
-            this.BaselinePaymentDte.HeaderText = "Baseline Payment Dte";
-            this.BaselinePaymentDte.MinimumWidth = 22;
-            this.BaselinePaymentDte.Name = "BaselinePaymentDte";
-            this.BaselinePaymentDte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Netduedate
-            // 
-            this.Netduedate.HeaderText = "Net due date";
-            this.Netduedate.MinimumWidth = 22;
-            this.Netduedate.Name = "Netduedate";
-            this.Netduedate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Arrearsfordiscount1
-            // 
-            this.Arrearsfordiscount1.HeaderText = "Arrears for discount 1";
-            this.Arrearsfordiscount1.MinimumWidth = 22;
-            this.Arrearsfordiscount1.Name = "Arrearsfordiscount1";
-            this.Arrearsfordiscount1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Amountinlocalcurrency
-            // 
-            this.Amountinlocalcurrency.HeaderText = "Amount  in local currency";
-            this.Amountinlocalcurrency.MinimumWidth = 22;
-            this.Amountinlocalcurrency.Name = "Amountinlocalcurrency";
-            this.Amountinlocalcurrency.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // LocalCurrency
-            // 
-            this.LocalCurrency.HeaderText = "Local Currency";
-            this.LocalCurrency.MinimumWidth = 22;
-            this.LocalCurrency.Name = "LocalCurrency";
-            this.LocalCurrency.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // TextSAP
-            // 
-            this.TextSAP.HeaderText = "Text SAP";
-            this.TextSAP.MinimumWidth = 22;
-            this.TextSAP.Name = "TextSAP";
-            this.TextSAP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // ReceiptNumber
-            // 
-            this.ReceiptNumber.HeaderText = "Receipt Number";
-            this.ReceiptNumber.MinimumWidth = 22;
-            this.ReceiptNumber.Name = "ReceiptNumber";
-            this.ReceiptNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // PartialAmount
-            // 
-            this.PartialAmount.HeaderText = "Partial Amount";
-            this.PartialAmount.MinimumWidth = 22;
-            this.PartialAmount.Name = "PartialAmount";
-            this.PartialAmount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // panFooter
-            // 
-            this.panFooter.BackColor = System.Drawing.Color.White;
-            this.panFooter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panFooter.Controls.Add(this.tableLayoutPanelTotals);
-            this.panFooter.Controls.Add(this.pictDisputes);
-            this.panFooter.Controls.Add(this.pictSubmit);
-            this.panFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panFooter.Location = new System.Drawing.Point(0, 675);
-            this.panFooter.Name = "panFooter";
-            this.panFooter.Padding = new System.Windows.Forms.Padding(10);
-            this.panFooter.Size = new System.Drawing.Size(1353, 100);
-            this.panFooter.TabIndex = 3;
-            // 
-            // tableLayoutPanelTotals
-            // 
-            this.tableLayoutPanelTotals.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanelTotals.ColumnCount = 4;
-            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelTotals.Controls.Add(this.txtCreditBalanceTotal, 3, 1);
-            this.tableLayoutPanelTotals.Controls.Add(this.txtCreditNotesTotal, 1, 1);
-            this.tableLayoutPanelTotals.Controls.Add(this.txtInvoicesTotal, 3, 0);
-            this.tableLayoutPanelTotals.Controls.Add(this.lblCustPayTotal, 0, 0);
-            this.tableLayoutPanelTotals.Controls.Add(this.lblCreditNotesTotal, 0, 1);
-            this.tableLayoutPanelTotals.Controls.Add(this.lblInvoicesTotal, 2, 0);
-            this.tableLayoutPanelTotals.Controls.Add(this.lblCreditBalanceTotal, 2, 1);
-            this.tableLayoutPanelTotals.Controls.Add(this.lblSubtotal, 2, 2);
-            this.tableLayoutPanelTotals.Controls.Add(this.txtCustomerPayTotal, 1, 0);
-            this.tableLayoutPanelTotals.Controls.Add(this.txtSubtotal, 3, 2);
-            this.tableLayoutPanelTotals.Location = new System.Drawing.Point(13, 6);
-            this.tableLayoutPanelTotals.Name = "tableLayoutPanelTotals";
-            this.tableLayoutPanelTotals.RowCount = 3;
-            this.tableLayoutPanelTotals.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelTotals.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelTotals.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelTotals.Size = new System.Drawing.Size(629, 81);
-            this.tableLayoutPanelTotals.TabIndex = 2;
-            // 
-            // txtCreditBalanceTotal
-            // 
-            this.txtCreditBalanceTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtCreditBalanceTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCreditBalanceTotal.Location = new System.Drawing.Point(474, 30);
-            this.txtCreditBalanceTotal.Name = "txtCreditBalanceTotal";
-            this.txtCreditBalanceTotal.ReadOnly = true;
-            this.txtCreditBalanceTotal.Size = new System.Drawing.Size(152, 23);
-            this.txtCreditBalanceTotal.TabIndex = 7;
-            // 
-            // txtCreditNotesTotal
-            // 
-            this.txtCreditNotesTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtCreditNotesTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCreditNotesTotal.Location = new System.Drawing.Point(160, 30);
-            this.txtCreditNotesTotal.Name = "txtCreditNotesTotal";
-            this.txtCreditNotesTotal.ReadOnly = true;
-            this.txtCreditNotesTotal.Size = new System.Drawing.Size(151, 23);
-            this.txtCreditNotesTotal.TabIndex = 6;
-            // 
-            // txtInvoicesTotal
-            // 
-            this.txtInvoicesTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtInvoicesTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInvoicesTotal.Location = new System.Drawing.Point(474, 3);
-            this.txtInvoicesTotal.Name = "txtInvoicesTotal";
-            this.txtInvoicesTotal.ReadOnly = true;
-            this.txtInvoicesTotal.Size = new System.Drawing.Size(152, 23);
-            this.txtInvoicesTotal.TabIndex = 5;
-            // 
-            // lblCustPayTotal
-            // 
-            this.lblCustPayTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblCustPayTotal.AutoSize = true;
-            this.lblCustPayTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCustPayTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblCustPayTotal.Location = new System.Drawing.Point(43, 6);
-            this.lblCustPayTotal.Name = "lblCustPayTotal";
-            this.lblCustPayTotal.Size = new System.Drawing.Size(111, 15);
-            this.lblCustPayTotal.TabIndex = 5;
-            this.lblCustPayTotal.Text = "Customer Payment:";
-            // 
-            // lblCreditNotesTotal
-            // 
-            this.lblCreditNotesTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblCreditNotesTotal.AutoSize = true;
-            this.lblCreditNotesTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreditNotesTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblCreditNotesTotal.Location = new System.Drawing.Point(79, 33);
-            this.lblCreditNotesTotal.Name = "lblCreditNotesTotal";
-            this.lblCreditNotesTotal.Size = new System.Drawing.Size(75, 15);
-            this.lblCreditNotesTotal.TabIndex = 6;
-            this.lblCreditNotesTotal.Text = "Credit Notes:";
-            // 
-            // lblInvoicesTotal
-            // 
-            this.lblInvoicesTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblInvoicesTotal.AutoSize = true;
-            this.lblInvoicesTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInvoicesTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblInvoicesTotal.Location = new System.Drawing.Point(414, 6);
-            this.lblInvoicesTotal.Name = "lblInvoicesTotal";
-            this.lblInvoicesTotal.Size = new System.Drawing.Size(54, 15);
-            this.lblInvoicesTotal.TabIndex = 9;
-            this.lblInvoicesTotal.Text = "Invoices:";
-            // 
-            // lblCreditBalanceTotal
-            // 
-            this.lblCreditBalanceTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblCreditBalanceTotal.AutoSize = true;
-            this.lblCreditBalanceTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreditBalanceTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblCreditBalanceTotal.Location = new System.Drawing.Point(383, 33);
-            this.lblCreditBalanceTotal.Name = "lblCreditBalanceTotal";
-            this.lblCreditBalanceTotal.Size = new System.Drawing.Size(85, 15);
-            this.lblCreditBalanceTotal.TabIndex = 7;
-            this.lblCreditBalanceTotal.Text = "Credit Balance:";
-            // 
-            // lblSubtotal
-            // 
-            this.lblSubtotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblSubtotal.AutoSize = true;
-            this.lblSubtotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblSubtotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubtotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblSubtotal.Location = new System.Drawing.Point(406, 59);
-            this.lblSubtotal.Name = "lblSubtotal";
-            this.lblSubtotal.Size = new System.Drawing.Size(62, 17);
-            this.lblSubtotal.TabIndex = 8;
-            this.lblSubtotal.Text = "Subtotal:";
-            // 
-            // txtCustomerPayTotal
-            // 
-            this.txtCustomerPayTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtCustomerPayTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerPayTotal.Location = new System.Drawing.Point(160, 3);
-            this.txtCustomerPayTotal.Name = "txtCustomerPayTotal";
-            this.txtCustomerPayTotal.ReadOnly = true;
-            this.txtCustomerPayTotal.Size = new System.Drawing.Size(151, 23);
-            this.txtCustomerPayTotal.TabIndex = 4;
-            // 
-            // txtSubtotal
-            // 
-            this.txtSubtotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtSubtotal.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtSubtotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubtotal.Location = new System.Drawing.Point(474, 57);
-            this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.ReadOnly = true;
-            this.txtSubtotal.Size = new System.Drawing.Size(152, 23);
-            this.txtSubtotal.TabIndex = 8;
-            // 
-            // pictDisputes
-            // 
-            this.pictDisputes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictDisputes.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Disputes;
-            this.pictDisputes.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Disputes;
-            this.pictDisputes.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Disputes;
-            this.pictDisputes.Location = new System.Drawing.Point(1216, 39);
-            this.pictDisputes.Name = "pictDisputes";
-            this.pictDisputes.Size = new System.Drawing.Size(104, 46);
-            this.pictDisputes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictDisputes.TabIndex = 1;
-            this.pictDisputes.TabStop = false;
-            // 
-            // pictSubmit
-            // 
-            this.pictSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictSubmit.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
-            this.pictSubmit.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
-            this.pictSubmit.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
-            this.pictSubmit.Location = new System.Drawing.Point(1095, 39);
-            this.pictSubmit.Name = "pictSubmit";
-            this.pictSubmit.Size = new System.Drawing.Size(104, 46);
-            this.pictSubmit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictSubmit.TabIndex = 0;
-            this.pictSubmit.TabStop = false;
-            this.pictSubmit.Click += new System.EventHandler(this.PictSubmit_Click);
-            // 
-            // TtMessage
-            // 
-            this.TtMessage.IsBalloon = true;
             // 
             // companyCodeDataGridViewTextBoxColumn
             // 
@@ -1595,6 +854,11 @@ namespace CFS_Latam_cashApplicationTool
             this.textDataGridViewTextBoxColumn.ReadOnly = true;
             this.textDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
+            // sPSELECTPAYMENTSBindingSource
+            // 
+            this.sPSELECTPAYMENTSBindingSource.DataMember = "SP_SELECTPAYMENTS";
+            this.sPSELECTPAYMENTSBindingSource.DataSource = this.dsFbl5nBindingSource;
+            // 
             // dsFbl5nBindingSource
             // 
             this.dsFbl5nBindingSource.DataSource = this.dsFbl5n;
@@ -1604,6 +868,71 @@ namespace CFS_Latam_cashApplicationTool
             // 
             this.dsFbl5n.DataSetName = "DsFbl5n";
             this.dsFbl5n.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabPageInvoices
+            // 
+            this.tabPageInvoices.AutoScroll = true;
+            this.tabPageInvoices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabPageInvoices.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPageInvoices.Controls.Add(this.AdtvgInvoices);
+            this.tabPageInvoices.Location = new System.Drawing.Point(4, 24);
+            this.tabPageInvoices.Name = "tabPageInvoices";
+            this.tabPageInvoices.Size = new System.Drawing.Size(635, 426);
+            this.tabPageInvoices.TabIndex = 1;
+            this.tabPageInvoices.Text = "Invoices";
+            // 
+            // AdtvgInvoices
+            // 
+            this.AdtvgInvoices.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdtvgInvoices.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.AdtvgInvoices.AutoGenerateColumns = false;
+            this.AdtvgInvoices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.AdtvgInvoices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdtvgInvoices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.AdtvgInvoices.ColumnHeadersHeight = 34;
+            this.AdtvgInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.AdtvgInvoices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17});
+            this.AdtvgInvoices.DataSource = this.sPSELECTINVOICESBindingSource;
+            this.AdtvgInvoices.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AdtvgInvoices.EnableHeadersVisualStyles = false;
+            this.AdtvgInvoices.FilterAndSortEnabled = true;
+            this.AdtvgInvoices.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.AdtvgInvoices.Location = new System.Drawing.Point(0, 0);
+            this.AdtvgInvoices.Name = "AdtvgInvoices";
+            this.AdtvgInvoices.ReadOnly = true;
+            this.AdtvgInvoices.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.AdtvgInvoices.Size = new System.Drawing.Size(633, 424);
+            this.AdtvgInvoices.SortStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.AdtvgInvoices.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1758,6 +1087,76 @@ namespace CFS_Latam_cashApplicationTool
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
             this.dataGridViewTextBoxColumn17.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
+            // sPSELECTINVOICESBindingSource
+            // 
+            this.sPSELECTINVOICESBindingSource.DataMember = "SP_SELECTINVOICES";
+            this.sPSELECTINVOICESBindingSource.DataSource = this.dsFbl5nBindingSource;
+            // 
+            // tabPageCreditNotes
+            // 
+            this.tabPageCreditNotes.AutoScroll = true;
+            this.tabPageCreditNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabPageCreditNotes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPageCreditNotes.Controls.Add(this.AdtvgCreditNotes);
+            this.tabPageCreditNotes.Location = new System.Drawing.Point(4, 24);
+            this.tabPageCreditNotes.Name = "tabPageCreditNotes";
+            this.tabPageCreditNotes.Size = new System.Drawing.Size(635, 426);
+            this.tabPageCreditNotes.TabIndex = 2;
+            this.tabPageCreditNotes.Text = "Credit Notes";
+            // 
+            // AdtvgCreditNotes
+            // 
+            this.AdtvgCreditNotes.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdtvgCreditNotes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.AdtvgCreditNotes.AutoGenerateColumns = false;
+            this.AdtvgCreditNotes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.AdtvgCreditNotes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdtvgCreditNotes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.AdtvgCreditNotes.ColumnHeadersHeight = 34;
+            this.AdtvgCreditNotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.AdtvgCreditNotes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25,
+            this.dataGridViewTextBoxColumn26,
+            this.dataGridViewTextBoxColumn27,
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn30,
+            this.dataGridViewTextBoxColumn31,
+            this.dataGridViewTextBoxColumn32,
+            this.dataGridViewTextBoxColumn33,
+            this.dataGridViewTextBoxColumn34});
+            this.AdtvgCreditNotes.DataSource = this.sPSELECTCREDITNOTESBindingSource;
+            this.AdtvgCreditNotes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AdtvgCreditNotes.EnableHeadersVisualStyles = false;
+            this.AdtvgCreditNotes.FilterAndSortEnabled = true;
+            this.AdtvgCreditNotes.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.AdtvgCreditNotes.Location = new System.Drawing.Point(0, 0);
+            this.AdtvgCreditNotes.Name = "AdtvgCreditNotes";
+            this.AdtvgCreditNotes.ReadOnly = true;
+            this.AdtvgCreditNotes.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.AdtvgCreditNotes.Size = new System.Drawing.Size(633, 424);
+            this.AdtvgCreditNotes.SortStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.AdtvgCreditNotes.TabIndex = 3;
+            // 
             // dataGridViewTextBoxColumn18
             // 
             this.dataGridViewTextBoxColumn18.DataPropertyName = "Company Code";
@@ -1910,6 +1309,76 @@ namespace CFS_Latam_cashApplicationTool
             this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
             this.dataGridViewTextBoxColumn34.ReadOnly = true;
             this.dataGridViewTextBoxColumn34.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // sPSELECTCREDITNOTESBindingSource
+            // 
+            this.sPSELECTCREDITNOTESBindingSource.DataMember = "SP_SELECTCREDITNOTES";
+            this.sPSELECTCREDITNOTESBindingSource.DataSource = this.dsFbl5nBindingSource;
+            // 
+            // tabPageCreditBalance
+            // 
+            this.tabPageCreditBalance.AutoScroll = true;
+            this.tabPageCreditBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabPageCreditBalance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPageCreditBalance.Controls.Add(this.AdtvgCreditBalance);
+            this.tabPageCreditBalance.Location = new System.Drawing.Point(4, 24);
+            this.tabPageCreditBalance.Name = "tabPageCreditBalance";
+            this.tabPageCreditBalance.Size = new System.Drawing.Size(635, 426);
+            this.tabPageCreditBalance.TabIndex = 3;
+            this.tabPageCreditBalance.Text = "Credit Balance";
+            // 
+            // AdtvgCreditBalance
+            // 
+            this.AdtvgCreditBalance.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdtvgCreditBalance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.AdtvgCreditBalance.AutoGenerateColumns = false;
+            this.AdtvgCreditBalance.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.AdtvgCreditBalance.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdtvgCreditBalance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.AdtvgCreditBalance.ColumnHeadersHeight = 34;
+            this.AdtvgCreditBalance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.AdtvgCreditBalance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn35,
+            this.dataGridViewTextBoxColumn36,
+            this.dataGridViewTextBoxColumn37,
+            this.dataGridViewTextBoxColumn38,
+            this.dataGridViewTextBoxColumn39,
+            this.dataGridViewTextBoxColumn40,
+            this.dataGridViewTextBoxColumn41,
+            this.dataGridViewTextBoxColumn42,
+            this.dataGridViewTextBoxColumn43,
+            this.dataGridViewTextBoxColumn44,
+            this.dataGridViewTextBoxColumn45,
+            this.dataGridViewTextBoxColumn46,
+            this.dataGridViewTextBoxColumn47,
+            this.dataGridViewTextBoxColumn48,
+            this.dataGridViewTextBoxColumn49,
+            this.dataGridViewTextBoxColumn50,
+            this.dataGridViewTextBoxColumn51});
+            this.AdtvgCreditBalance.DataSource = this.sPSELECTCREDITBALANCEBindingSource;
+            this.AdtvgCreditBalance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AdtvgCreditBalance.EnableHeadersVisualStyles = false;
+            this.AdtvgCreditBalance.FilterAndSortEnabled = true;
+            this.AdtvgCreditBalance.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.AdtvgCreditBalance.Location = new System.Drawing.Point(0, 0);
+            this.AdtvgCreditBalance.Name = "AdtvgCreditBalance";
+            this.AdtvgCreditBalance.ReadOnly = true;
+            this.AdtvgCreditBalance.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.AdtvgCreditBalance.Size = new System.Drawing.Size(633, 424);
+            this.AdtvgCreditBalance.SortStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.AdtvgCreditBalance.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn35
             // 
@@ -2064,6 +1533,76 @@ namespace CFS_Latam_cashApplicationTool
             this.dataGridViewTextBoxColumn51.ReadOnly = true;
             this.dataGridViewTextBoxColumn51.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
+            // sPSELECTCREDITBALANCEBindingSource
+            // 
+            this.sPSELECTCREDITBALANCEBindingSource.DataMember = "SP_SELECTCREDITBALANCE";
+            this.sPSELECTCREDITBALANCEBindingSource.DataSource = this.dsFbl5nBindingSource;
+            // 
+            // tabPageAllDocuments
+            // 
+            this.tabPageAllDocuments.AutoScroll = true;
+            this.tabPageAllDocuments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tabPageAllDocuments.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPageAllDocuments.Controls.Add(this.AdtvgAllDoc);
+            this.tabPageAllDocuments.Location = new System.Drawing.Point(4, 24);
+            this.tabPageAllDocuments.Name = "tabPageAllDocuments";
+            this.tabPageAllDocuments.Size = new System.Drawing.Size(635, 426);
+            this.tabPageAllDocuments.TabIndex = 4;
+            this.tabPageAllDocuments.Text = "All Documents";
+            // 
+            // AdtvgAllDoc
+            // 
+            this.AdtvgAllDoc.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdtvgAllDoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.AdtvgAllDoc.AutoGenerateColumns = false;
+            this.AdtvgAllDoc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.AdtvgAllDoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdtvgAllDoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.AdtvgAllDoc.ColumnHeadersHeight = 34;
+            this.AdtvgAllDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.AdtvgAllDoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn52,
+            this.dataGridViewTextBoxColumn53,
+            this.dataGridViewTextBoxColumn54,
+            this.dataGridViewTextBoxColumn55,
+            this.dataGridViewTextBoxColumn56,
+            this.dataGridViewTextBoxColumn57,
+            this.dataGridViewTextBoxColumn58,
+            this.dataGridViewTextBoxColumn59,
+            this.dataGridViewTextBoxColumn60,
+            this.dataGridViewTextBoxColumn61,
+            this.dataGridViewTextBoxColumn62,
+            this.dataGridViewTextBoxColumn63,
+            this.dataGridViewTextBoxColumn64,
+            this.dataGridViewTextBoxColumn65,
+            this.dataGridViewTextBoxColumn66,
+            this.dataGridViewTextBoxColumn67,
+            this.dataGridViewTextBoxColumn68});
+            this.AdtvgAllDoc.DataSource = this.sPSELECTFBL5NBindingSource;
+            this.AdtvgAllDoc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.AdtvgAllDoc.EnableHeadersVisualStyles = false;
+            this.AdtvgAllDoc.FilterAndSortEnabled = true;
+            this.AdtvgAllDoc.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.AdtvgAllDoc.Location = new System.Drawing.Point(0, 0);
+            this.AdtvgAllDoc.Name = "AdtvgAllDoc";
+            this.AdtvgAllDoc.ReadOnly = true;
+            this.AdtvgAllDoc.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.AdtvgAllDoc.Size = new System.Drawing.Size(633, 424);
+            this.AdtvgAllDoc.SortStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.AdtvgAllDoc.TabIndex = 5;
+            // 
             // dataGridViewTextBoxColumn52
             // 
             this.dataGridViewTextBoxColumn52.DataPropertyName = "Company Code";
@@ -2217,6 +1756,483 @@ namespace CFS_Latam_cashApplicationTool
             this.dataGridViewTextBoxColumn68.ReadOnly = true;
             this.dataGridViewTextBoxColumn68.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
+            // sPSELECTFBL5NBindingSource
+            // 
+            this.sPSELECTFBL5NBindingSource.DataMember = "SP_SELECTFBL5N";
+            this.sPSELECTFBL5NBindingSource.DataSource = this.dsFbl5nBindingSource;
+            // 
+            // panelArrow
+            // 
+            this.panelArrow.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelArrow.Controls.Add(this.pictUnselectAll);
+            this.panelArrow.Controls.Add(this.pictLeft);
+            this.panelArrow.Controls.Add(this.PictureRight);
+            this.panelArrow.Location = new System.Drawing.Point(661, 53);
+            this.panelArrow.Name = "panelArrow";
+            this.panelArrow.Size = new System.Drawing.Size(35, 454);
+            this.panelArrow.TabIndex = 8;
+            // 
+            // pictUnselectAll
+            // 
+            this.pictUnselectAll.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictUnselectAll.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_UnselectAll;
+            this.pictUnselectAll.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_UnselectAll;
+            this.pictUnselectAll.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_UnselectAll;
+            this.pictUnselectAll.Location = new System.Drawing.Point(0, 261);
+            this.pictUnselectAll.Name = "pictUnselectAll";
+            this.pictUnselectAll.Size = new System.Drawing.Size(35, 35);
+            this.pictUnselectAll.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictUnselectAll.TabIndex = 2;
+            this.pictUnselectAll.TabStop = false;
+            this.pictUnselectAll.Click += new System.EventHandler(this.pictUnselectAll_Click);
+            // 
+            // pictLeft
+            // 
+            this.pictLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictLeft.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Left;
+            this.pictLeft.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Left;
+            this.pictLeft.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Left;
+            this.pictLeft.Location = new System.Drawing.Point(0, 220);
+            this.pictLeft.Name = "pictLeft";
+            this.pictLeft.Size = new System.Drawing.Size(35, 35);
+            this.pictLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictLeft.TabIndex = 1;
+            this.pictLeft.TabStop = false;
+            this.pictLeft.Click += new System.EventHandler(this.pictLeft_Click);
+            // 
+            // PictureRight
+            // 
+            this.PictureRight.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.PictureRight.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Right;
+            this.PictureRight.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Right;
+            this.PictureRight.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Right;
+            this.PictureRight.Location = new System.Drawing.Point(0, 179);
+            this.PictureRight.Name = "PictureRight";
+            this.PictureRight.Size = new System.Drawing.Size(35, 35);
+            this.PictureRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureRight.TabIndex = 0;
+            this.PictureRight.TabStop = false;
+            this.PictureRight.Click += new System.EventHandler(this.PictureRight_Click);
+            // 
+            // panelReceiptNumber
+            // 
+            this.panelReceiptNumber.Controls.Add(this.txtReceiptNumber);
+            this.panelReceiptNumber.Controls.Add(this.lblReceiptNumber);
+            this.panelReceiptNumber.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelReceiptNumber.Location = new System.Drawing.Point(699, 25);
+            this.panelReceiptNumber.Margin = new System.Windows.Forms.Padding(0);
+            this.panelReceiptNumber.Name = "panelReceiptNumber";
+            this.panelReceiptNumber.Size = new System.Drawing.Size(659, 25);
+            this.panelReceiptNumber.TabIndex = 9;
+            // 
+            // txtReceiptNumber
+            // 
+            this.txtReceiptNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtReceiptNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReceiptNumber.Location = new System.Drawing.Point(98, 2);
+            this.txtReceiptNumber.Name = "txtReceiptNumber";
+            this.txtReceiptNumber.Size = new System.Drawing.Size(126, 23);
+            this.txtReceiptNumber.TabIndex = 3;
+            this.txtReceiptNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtReceiptNumber_KeyPress);
+            // 
+            // lblReceiptNumber
+            // 
+            this.lblReceiptNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblReceiptNumber.AutoSize = true;
+            this.lblReceiptNumber.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReceiptNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblReceiptNumber.Location = new System.Drawing.Point(4, 7);
+            this.lblReceiptNumber.Name = "lblReceiptNumber";
+            this.lblReceiptNumber.Size = new System.Drawing.Size(89, 13);
+            this.lblReceiptNumber.TabIndex = 4;
+            this.lblReceiptNumber.Text = "Receipt Number";
+            // 
+            // adtvgConciliation
+            // 
+            this.adtvgConciliation.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.adtvgConciliation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            this.adtvgConciliation.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.adtvgConciliation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.adtvgConciliation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.adtvgConciliation.ColumnHeadersHeight = 34;
+            this.adtvgConciliation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.adtvgConciliation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CompanyCode,
+            this.AltPayer,
+            this.Account,
+            this.CustomerName,
+            this.DocumentType,
+            this.DocumentTypeDescription,
+            this.Amountindoc_curr_,
+            this.Documentcurrency,
+            this.DocumentNumber,
+            this.Reference,
+            this.DocumentDate,
+            this.BaselinePaymentDte,
+            this.Netduedate,
+            this.Arrearsfordiscount1,
+            this.Amountinlocalcurrency,
+            this.LocalCurrency,
+            this.TextSAP,
+            this.ReceiptNumber,
+            this.PartialAmount,
+            this.Balance});
+            this.adtvgConciliation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.adtvgConciliation.EnableHeadersVisualStyles = false;
+            this.adtvgConciliation.FilterAndSortEnabled = true;
+            this.adtvgConciliation.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.adtvgConciliation.Location = new System.Drawing.Point(702, 77);
+            this.adtvgConciliation.Margin = new System.Windows.Forms.Padding(3, 27, 3, 5);
+            this.adtvgConciliation.Name = "adtvgConciliation";
+            this.adtvgConciliation.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.adtvgConciliation.Size = new System.Drawing.Size(653, 428);
+            this.adtvgConciliation.SortStringChangedInvokeBeforeDatasourceUpdate = true;
+            this.adtvgConciliation.TabIndex = 10;
+            this.adtvgConciliation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView1_CellContentClick);
+            // 
+            // CompanyCode
+            // 
+            this.CompanyCode.HeaderText = "Company Code";
+            this.CompanyCode.MinimumWidth = 22;
+            this.CompanyCode.Name = "CompanyCode";
+            this.CompanyCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // AltPayer
+            // 
+            this.AltPayer.HeaderText = "Alt Payer";
+            this.AltPayer.MinimumWidth = 22;
+            this.AltPayer.Name = "AltPayer";
+            this.AltPayer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Account
+            // 
+            this.Account.HeaderText = "Account";
+            this.Account.MinimumWidth = 22;
+            this.Account.Name = "Account";
+            this.Account.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.HeaderText = "Customer Name";
+            this.CustomerName.MinimumWidth = 22;
+            this.CustomerName.Name = "CustomerName";
+            this.CustomerName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // DocumentType
+            // 
+            this.DocumentType.HeaderText = "Document Type";
+            this.DocumentType.MinimumWidth = 22;
+            this.DocumentType.Name = "DocumentType";
+            this.DocumentType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // DocumentTypeDescription
+            // 
+            this.DocumentTypeDescription.HeaderText = "Document Type Description";
+            this.DocumentTypeDescription.MinimumWidth = 22;
+            this.DocumentTypeDescription.Name = "DocumentTypeDescription";
+            this.DocumentTypeDescription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Amountindoc_curr_
+            // 
+            this.Amountindoc_curr_.HeaderText = "Amount in doc_curr_";
+            this.Amountindoc_curr_.MinimumWidth = 22;
+            this.Amountindoc_curr_.Name = "Amountindoc_curr_";
+            this.Amountindoc_curr_.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Documentcurrency
+            // 
+            this.Documentcurrency.HeaderText = "Document currency";
+            this.Documentcurrency.MinimumWidth = 22;
+            this.Documentcurrency.Name = "Documentcurrency";
+            this.Documentcurrency.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // DocumentNumber
+            // 
+            this.DocumentNumber.HeaderText = "Document Number";
+            this.DocumentNumber.MinimumWidth = 22;
+            this.DocumentNumber.Name = "DocumentNumber";
+            this.DocumentNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Reference
+            // 
+            this.Reference.HeaderText = "Reference";
+            this.Reference.MinimumWidth = 22;
+            this.Reference.Name = "Reference";
+            this.Reference.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // DocumentDate
+            // 
+            this.DocumentDate.HeaderText = "Document Date";
+            this.DocumentDate.MinimumWidth = 22;
+            this.DocumentDate.Name = "DocumentDate";
+            this.DocumentDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // BaselinePaymentDte
+            // 
+            this.BaselinePaymentDte.HeaderText = "Baseline Payment Dte";
+            this.BaselinePaymentDte.MinimumWidth = 22;
+            this.BaselinePaymentDte.Name = "BaselinePaymentDte";
+            this.BaselinePaymentDte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Netduedate
+            // 
+            this.Netduedate.HeaderText = "Net due date";
+            this.Netduedate.MinimumWidth = 22;
+            this.Netduedate.Name = "Netduedate";
+            this.Netduedate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Arrearsfordiscount1
+            // 
+            this.Arrearsfordiscount1.HeaderText = "Arrears for discount 1";
+            this.Arrearsfordiscount1.MinimumWidth = 22;
+            this.Arrearsfordiscount1.Name = "Arrearsfordiscount1";
+            this.Arrearsfordiscount1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Amountinlocalcurrency
+            // 
+            this.Amountinlocalcurrency.HeaderText = "Amount  in local currency";
+            this.Amountinlocalcurrency.MinimumWidth = 22;
+            this.Amountinlocalcurrency.Name = "Amountinlocalcurrency";
+            this.Amountinlocalcurrency.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // LocalCurrency
+            // 
+            this.LocalCurrency.HeaderText = "Local Currency";
+            this.LocalCurrency.MinimumWidth = 22;
+            this.LocalCurrency.Name = "LocalCurrency";
+            this.LocalCurrency.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // TextSAP
+            // 
+            this.TextSAP.HeaderText = "Text SAP";
+            this.TextSAP.MinimumWidth = 22;
+            this.TextSAP.Name = "TextSAP";
+            this.TextSAP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // ReceiptNumber
+            // 
+            this.ReceiptNumber.HeaderText = "Receipt Number";
+            this.ReceiptNumber.MinimumWidth = 22;
+            this.ReceiptNumber.Name = "ReceiptNumber";
+            this.ReceiptNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // PartialAmount
+            // 
+            this.PartialAmount.HeaderText = "Partial Amount";
+            this.PartialAmount.MinimumWidth = 22;
+            this.PartialAmount.Name = "PartialAmount";
+            this.PartialAmount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Balance
+            // 
+            this.Balance.HeaderText = "Balance";
+            this.Balance.MinimumWidth = 22;
+            this.Balance.Name = "Balance";
+            this.Balance.ReadOnly = true;
+            this.Balance.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // panFooter
+            // 
+            this.panFooter.BackColor = System.Drawing.Color.White;
+            this.panFooter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panFooter.Controls.Add(this.tableLayoutPanelTotals);
+            this.panFooter.Controls.Add(this.pictDisputes);
+            this.panFooter.Controls.Add(this.pictSubmit);
+            this.panFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panFooter.Location = new System.Drawing.Point(0, 675);
+            this.panFooter.Name = "panFooter";
+            this.panFooter.Padding = new System.Windows.Forms.Padding(10);
+            this.panFooter.Size = new System.Drawing.Size(1370, 100);
+            this.panFooter.TabIndex = 3;
+            // 
+            // tableLayoutPanelTotals
+            // 
+            this.tableLayoutPanelTotals.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanelTotals.ColumnCount = 4;
+            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelTotals.Controls.Add(this.txtCreditBalanceTotal, 3, 1);
+            this.tableLayoutPanelTotals.Controls.Add(this.txtCreditNotesTotal, 1, 1);
+            this.tableLayoutPanelTotals.Controls.Add(this.txtInvoicesTotal, 3, 0);
+            this.tableLayoutPanelTotals.Controls.Add(this.lblCustPayTotal, 0, 0);
+            this.tableLayoutPanelTotals.Controls.Add(this.lblCreditNotesTotal, 0, 1);
+            this.tableLayoutPanelTotals.Controls.Add(this.lblInvoicesTotal, 2, 0);
+            this.tableLayoutPanelTotals.Controls.Add(this.lblCreditBalanceTotal, 2, 1);
+            this.tableLayoutPanelTotals.Controls.Add(this.lblSubtotal, 2, 2);
+            this.tableLayoutPanelTotals.Controls.Add(this.txtCustomerPayTotal, 1, 0);
+            this.tableLayoutPanelTotals.Controls.Add(this.txtSubtotal, 3, 2);
+            this.tableLayoutPanelTotals.Location = new System.Drawing.Point(13, 6);
+            this.tableLayoutPanelTotals.Name = "tableLayoutPanelTotals";
+            this.tableLayoutPanelTotals.RowCount = 3;
+            this.tableLayoutPanelTotals.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelTotals.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelTotals.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelTotals.Size = new System.Drawing.Size(629, 81);
+            this.tableLayoutPanelTotals.TabIndex = 2;
+            // 
+            // txtCreditBalanceTotal
+            // 
+            this.txtCreditBalanceTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtCreditBalanceTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCreditBalanceTotal.Location = new System.Drawing.Point(474, 30);
+            this.txtCreditBalanceTotal.Name = "txtCreditBalanceTotal";
+            this.txtCreditBalanceTotal.ReadOnly = true;
+            this.txtCreditBalanceTotal.Size = new System.Drawing.Size(152, 23);
+            this.txtCreditBalanceTotal.TabIndex = 7;
+            // 
+            // txtCreditNotesTotal
+            // 
+            this.txtCreditNotesTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtCreditNotesTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCreditNotesTotal.Location = new System.Drawing.Point(160, 30);
+            this.txtCreditNotesTotal.Name = "txtCreditNotesTotal";
+            this.txtCreditNotesTotal.ReadOnly = true;
+            this.txtCreditNotesTotal.Size = new System.Drawing.Size(151, 23);
+            this.txtCreditNotesTotal.TabIndex = 6;
+            // 
+            // txtInvoicesTotal
+            // 
+            this.txtInvoicesTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtInvoicesTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInvoicesTotal.Location = new System.Drawing.Point(474, 3);
+            this.txtInvoicesTotal.Name = "txtInvoicesTotal";
+            this.txtInvoicesTotal.ReadOnly = true;
+            this.txtInvoicesTotal.Size = new System.Drawing.Size(152, 23);
+            this.txtInvoicesTotal.TabIndex = 5;
+            // 
+            // lblCustPayTotal
+            // 
+            this.lblCustPayTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblCustPayTotal.AutoSize = true;
+            this.lblCustPayTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCustPayTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblCustPayTotal.Location = new System.Drawing.Point(43, 6);
+            this.lblCustPayTotal.Name = "lblCustPayTotal";
+            this.lblCustPayTotal.Size = new System.Drawing.Size(111, 15);
+            this.lblCustPayTotal.TabIndex = 5;
+            this.lblCustPayTotal.Text = "Customer Payment:";
+            // 
+            // lblCreditNotesTotal
+            // 
+            this.lblCreditNotesTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblCreditNotesTotal.AutoSize = true;
+            this.lblCreditNotesTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreditNotesTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblCreditNotesTotal.Location = new System.Drawing.Point(79, 33);
+            this.lblCreditNotesTotal.Name = "lblCreditNotesTotal";
+            this.lblCreditNotesTotal.Size = new System.Drawing.Size(75, 15);
+            this.lblCreditNotesTotal.TabIndex = 6;
+            this.lblCreditNotesTotal.Text = "Credit Notes:";
+            // 
+            // lblInvoicesTotal
+            // 
+            this.lblInvoicesTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblInvoicesTotal.AutoSize = true;
+            this.lblInvoicesTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInvoicesTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblInvoicesTotal.Location = new System.Drawing.Point(414, 6);
+            this.lblInvoicesTotal.Name = "lblInvoicesTotal";
+            this.lblInvoicesTotal.Size = new System.Drawing.Size(54, 15);
+            this.lblInvoicesTotal.TabIndex = 9;
+            this.lblInvoicesTotal.Text = "Invoices:";
+            // 
+            // lblCreditBalanceTotal
+            // 
+            this.lblCreditBalanceTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblCreditBalanceTotal.AutoSize = true;
+            this.lblCreditBalanceTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreditBalanceTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblCreditBalanceTotal.Location = new System.Drawing.Point(383, 33);
+            this.lblCreditBalanceTotal.Name = "lblCreditBalanceTotal";
+            this.lblCreditBalanceTotal.Size = new System.Drawing.Size(85, 15);
+            this.lblCreditBalanceTotal.TabIndex = 7;
+            this.lblCreditBalanceTotal.Text = "Credit Balance:";
+            // 
+            // lblSubtotal
+            // 
+            this.lblSubtotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblSubtotal.AutoSize = true;
+            this.lblSubtotal.BackColor = System.Drawing.Color.Transparent;
+            this.lblSubtotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblSubtotal.Location = new System.Drawing.Point(406, 59);
+            this.lblSubtotal.Name = "lblSubtotal";
+            this.lblSubtotal.Size = new System.Drawing.Size(62, 17);
+            this.lblSubtotal.TabIndex = 8;
+            this.lblSubtotal.Text = "Subtotal:";
+            // 
+            // txtCustomerPayTotal
+            // 
+            this.txtCustomerPayTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtCustomerPayTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerPayTotal.Location = new System.Drawing.Point(160, 3);
+            this.txtCustomerPayTotal.Name = "txtCustomerPayTotal";
+            this.txtCustomerPayTotal.ReadOnly = true;
+            this.txtCustomerPayTotal.Size = new System.Drawing.Size(151, 23);
+            this.txtCustomerPayTotal.TabIndex = 4;
+            // 
+            // txtSubtotal
+            // 
+            this.txtSubtotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtSubtotal.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtSubtotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubtotal.Location = new System.Drawing.Point(474, 57);
+            this.txtSubtotal.Name = "txtSubtotal";
+            this.txtSubtotal.ReadOnly = true;
+            this.txtSubtotal.Size = new System.Drawing.Size(152, 23);
+            this.txtSubtotal.TabIndex = 8;
+            // 
+            // pictDisputes
+            // 
+            this.pictDisputes.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Disputes;
+            this.pictDisputes.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Disputes;
+            this.pictDisputes.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Disputes;
+            this.pictDisputes.Location = new System.Drawing.Point(1216, 39);
+            this.pictDisputes.Name = "pictDisputes";
+            this.pictDisputes.Size = new System.Drawing.Size(104, 46);
+            this.pictDisputes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictDisputes.TabIndex = 1;
+            this.pictDisputes.TabStop = false;
+            // 
+            // pictSubmit
+            // 
+            this.pictSubmit.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
+            this.pictSubmit.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
+            this.pictSubmit.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
+            this.pictSubmit.Location = new System.Drawing.Point(1095, 39);
+            this.pictSubmit.Name = "pictSubmit";
+            this.pictSubmit.Size = new System.Drawing.Size(104, 46);
+            this.pictSubmit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictSubmit.TabIndex = 0;
+            this.pictSubmit.TabStop = false;
+            this.pictSubmit.Click += new System.EventHandler(this.PictSubmit_Click);
+            // 
+            // TtMessage
+            // 
+            this.TtMessage.IsBalloon = true;
+            // 
             // sP_SELECTFBL5NTableAdapter
             // 
             this.sP_SELECTFBL5NTableAdapter.ClearBeforeFill = true;
@@ -2243,7 +2259,7 @@ namespace CFS_Latam_cashApplicationTool
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 721);
+            this.ClientSize = new System.Drawing.Size(1387, 721);
             this.Controls.Add(this.panFooter);
             this.Controls.Add(this.panelGeneral);
             this.Controls.Add(this.panelFilters);
@@ -2277,6 +2293,8 @@ namespace CFS_Latam_cashApplicationTool
             this.tabPageCustomerPayment.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AdtvgCustomerPay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPSELECTPAYMENTSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5nBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5n)).EndInit();
             this.tabPageInvoices.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.AdtvgInvoices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPSELECTINVOICESBindingSource)).EndInit();
@@ -2301,8 +2319,6 @@ namespace CFS_Latam_cashApplicationTool
             this.tableLayoutPanelTotals.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictDisputes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictSubmit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5nBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsFbl5n)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2489,5 +2505,6 @@ namespace CFS_Latam_cashApplicationTool
         private System.Windows.Forms.DataGridViewTextBoxColumn TextSAP;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReceiptNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn PartialAmount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Balance;
     }
 }
