@@ -274,7 +274,7 @@
             this.panelBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBar.Location = new System.Drawing.Point(0, 0);
             this.panelBar.Name = "panelBar";
-            this.panelBar.Size = new System.Drawing.Size(1370, 64);
+            this.panelBar.Size = new System.Drawing.Size(1353, 64);
             this.panelBar.TabIndex = 0;
             this.panelBar.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBar_Paint);
             // 
@@ -306,7 +306,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblTitle.Location = new System.Drawing.Point(529, 29);
+            this.lblTitle.Location = new System.Drawing.Point(520, 29);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(313, 25);
             this.lblTitle.TabIndex = 1;
@@ -320,7 +320,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1368, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1351, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -369,6 +369,7 @@
             this.aboutCashApplicationToolToolStripMenuItem.Name = "aboutCashApplicationToolToolStripMenuItem";
             this.aboutCashApplicationToolToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.aboutCashApplicationToolToolStripMenuItem.Text = "About Cash Application Tool";
+            this.aboutCashApplicationToolToolStripMenuItem.Click += new System.EventHandler(this.aboutCashApplicationToolToolStripMenuItem_Click);
             // 
             // panelFilters
             // 
@@ -384,7 +385,7 @@
             this.panelFilters.Location = new System.Drawing.Point(0, 64);
             this.panelFilters.Name = "panelFilters";
             this.panelFilters.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelFilters.Size = new System.Drawing.Size(1370, 89);
+            this.panelFilters.Size = new System.Drawing.Size(1353, 89);
             this.panelFilters.TabIndex = 1;
             // 
             // lblExpExcel
@@ -533,7 +534,7 @@
             this.panelTitleFilter.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleFilter.Location = new System.Drawing.Point(0, 0);
             this.panelTitleFilter.Name = "panelTitleFilter";
-            this.panelTitleFilter.Size = new System.Drawing.Size(1368, 25);
+            this.panelTitleFilter.Size = new System.Drawing.Size(1351, 25);
             this.panelTitleFilter.TabIndex = 0;
             this.panelTitleFilter.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelTitleFilter_Paint);
             // 
@@ -557,7 +558,7 @@
             this.panelGeneral.Location = new System.Drawing.Point(0, 153);
             this.panelGeneral.Name = "panelGeneral";
             this.panelGeneral.Padding = new System.Windows.Forms.Padding(5);
-            this.panelGeneral.Size = new System.Drawing.Size(1370, 522);
+            this.panelGeneral.Size = new System.Drawing.Size(1353, 522);
             this.panelGeneral.TabIndex = 2;
             // 
             // tableLayoutPanelGeneral
@@ -581,7 +582,7 @@
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(1358, 510);
+            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(1341, 510);
             this.tableLayoutPanelGeneral.TabIndex = 0;
             // 
             // lblCustomerLine
@@ -602,7 +603,7 @@
             this.lblConciliation.AutoSize = true;
             this.lblConciliation.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConciliation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblConciliation.Location = new System.Drawing.Point(702, 2);
+            this.lblConciliation.Location = new System.Drawing.Point(693, 2);
             this.lblConciliation.Name = "lblConciliation";
             this.lblConciliation.Size = new System.Drawing.Size(170, 20);
             this.lblConciliation.TabIndex = 5;
@@ -632,7 +633,7 @@
             this.tabControlCustomerLine.Name = "tabControlCustomerLine";
             this.tabControlCustomerLine.SelectedIndex = 0;
             this.tabControlCustomerLine.ShowToolTips = true;
-            this.tabControlCustomerLine.Size = new System.Drawing.Size(652, 454);
+            this.tabControlCustomerLine.Size = new System.Drawing.Size(643, 454);
             this.tabControlCustomerLine.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlCustomerLine.TabIndex = 1;
             // 
@@ -644,7 +645,7 @@
             this.tabPageCustomerPayment.Controls.Add(this.AdtvgCustomerPay);
             this.tabPageCustomerPayment.Location = new System.Drawing.Point(4, 24);
             this.tabPageCustomerPayment.Name = "tabPageCustomerPayment";
-            this.tabPageCustomerPayment.Size = new System.Drawing.Size(644, 426);
+            this.tabPageCustomerPayment.Size = new System.Drawing.Size(635, 426);
             this.tabPageCustomerPayment.TabIndex = 0;
             this.tabPageCustomerPayment.Text = "Customer Payment";
             // 
@@ -697,7 +698,7 @@
             this.AdtvgCustomerPay.Name = "AdtvgCustomerPay";
             this.AdtvgCustomerPay.ReadOnly = true;
             this.AdtvgCustomerPay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgCustomerPay.Size = new System.Drawing.Size(642, 424);
+            this.AdtvgCustomerPay.Size = new System.Drawing.Size(633, 424);
             this.AdtvgCustomerPay.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgCustomerPay.TabIndex = 1;
             // 
@@ -1769,7 +1770,7 @@
             this.panelArrow.Controls.Add(this.pictUnselectAll);
             this.panelArrow.Controls.Add(this.pictLeft);
             this.panelArrow.Controls.Add(this.PictureRight);
-            this.panelArrow.Location = new System.Drawing.Point(661, 53);
+            this.panelArrow.Location = new System.Drawing.Point(652, 53);
             this.panelArrow.Name = "panelArrow";
             this.panelArrow.Size = new System.Drawing.Size(35, 454);
             this.panelArrow.TabIndex = 8;
@@ -1827,10 +1828,10 @@
             this.panelReceiptNumber.Controls.Add(this.txtReceiptNumber);
             this.panelReceiptNumber.Controls.Add(this.lblReceiptNumber);
             this.panelReceiptNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelReceiptNumber.Location = new System.Drawing.Point(699, 25);
+            this.panelReceiptNumber.Location = new System.Drawing.Point(690, 25);
             this.panelReceiptNumber.Margin = new System.Windows.Forms.Padding(0);
             this.panelReceiptNumber.Name = "panelReceiptNumber";
-            this.panelReceiptNumber.Size = new System.Drawing.Size(659, 25);
+            this.panelReceiptNumber.Size = new System.Drawing.Size(651, 25);
             this.panelReceiptNumber.TabIndex = 9;
             // 
             // txtReceiptNumber
@@ -1901,11 +1902,11 @@
             this.adtvgConciliation.EnableHeadersVisualStyles = false;
             this.adtvgConciliation.FilterAndSortEnabled = true;
             this.adtvgConciliation.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.adtvgConciliation.Location = new System.Drawing.Point(702, 77);
+            this.adtvgConciliation.Location = new System.Drawing.Point(693, 77);
             this.adtvgConciliation.Margin = new System.Windows.Forms.Padding(3, 27, 3, 5);
             this.adtvgConciliation.Name = "adtvgConciliation";
             this.adtvgConciliation.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.adtvgConciliation.Size = new System.Drawing.Size(653, 428);
+            this.adtvgConciliation.Size = new System.Drawing.Size(645, 428);
             this.adtvgConciliation.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.adtvgConciliation.TabIndex = 10;
             this.adtvgConciliation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView1_CellContentClick);
@@ -2062,7 +2063,7 @@
             this.panFooter.Location = new System.Drawing.Point(0, 675);
             this.panFooter.Name = "panFooter";
             this.panFooter.Padding = new System.Windows.Forms.Padding(10);
-            this.panFooter.Size = new System.Drawing.Size(1370, 100);
+            this.panFooter.Size = new System.Drawing.Size(1353, 100);
             this.panFooter.TabIndex = 3;
             // 
             // tableLayoutPanelTotals
@@ -2259,7 +2260,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1387, 721);
+            this.ClientSize = new System.Drawing.Size(1370, 721);
             this.Controls.Add(this.panFooter);
             this.Controls.Add(this.panelGeneral);
             this.Controls.Add(this.panelFilters);

@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CFS_Latam_cashApplicationTool.exe" size="1057208">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CFS_Latam_cashApplicationTool.exe" size="1043384">
       <assemblyIdentity name="CFS_Latam_cashApplicationTool" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sKdicIE9lrylL7NatjXJWTCdlVPkJ/luc2D+PznsAGM=</dsig:DigestValue>
+        <dsig:DigestValue>WvRrCvS4U6HP7DaUeBg9W+aOwzH7HsMDWTJaNohE4wo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -24,10 +24,10 @@ namespace CFS_Latam_cashApplicationTool
         {
             //Genero conexión a la base de datos
             using (Models.SSC_Finance_DWEntities DataBaseUser = new Models.SSC_Finance_DWEntities())
-            {
+            {               
                 //Consulta mediante Linq
                 var lst = from d in DataBaseUser.CASH_APPLICATION___Users_Desktop_App
-                            where d.user_id == userName
+                          where d.user_id == userName
                             select d;
 
                 if (lst.Count() > 0)
@@ -52,5 +52,9 @@ namespace CFS_Latam_cashApplicationTool
 
         }
 
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

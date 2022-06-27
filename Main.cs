@@ -607,5 +607,10 @@ namespace CFS_Latam_cashApplicationTool
         {
 
         }
+
+        private void aboutCashApplicationToolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("HOLAAA", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
