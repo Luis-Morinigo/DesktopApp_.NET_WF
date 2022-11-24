@@ -8,6 +8,7 @@ C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Release\Resource
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Release\Resources\Logo_SCJ.png
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Release\Resources\Icon_CFS.ico
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Release\Resources\Icon_Login.png
+C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Release\Resources\Icon_SearchCustomerCfs.png
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Release\Resources\Gif_Loading.gif
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Release\Resources\Icon_UnselectAll.png
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Release\Resources\Icon_Right.png
@@ -28,13 +29,13 @@ C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Release\Document
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Release\EntityFramework.xml
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Release\EntityFramework.SqlServer.xml
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Release\System.IO.Packaging.xml
-C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\CFS_Latam_cashApplicationTool.csproj.AssemblyReference.cache
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\Interop.InteropExtensionLib.dll
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\CFS_Latam_cashApplicationTool.csproj.ResolveComReference.cache
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\CFS_Latam_cashApplicationTool.FrmDisputes.resources
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\CFS_Latam_cashApplicationTool.FrmLogin.resources
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\CFS_Latam_cashApplicationTool.FrmMain.resources
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\CFS_Latam_cashApplicationTool.Properties.Resources.resources
+C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\CFS_Latam_cashApplicationTool.FrmSearchCustomerName.resources
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\CFS_Latam_cashApplicationTool.csproj.GenerateResource.cache
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\CFS_Latam_cashApplicationTool.csproj.CoreCompileInputs.cache
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\CFS_Latam_cashApplicationTool.exe.manifest
@@ -42,4 +43,3 @@ C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\CFS_Lata
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\CFS_Latam_cashApplicationTool.csproj.CopyComplete
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\CFS_Latam_cashApplicationTool.exe
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\CFS_Latam_cashApplicationTool.pdb
-C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\obj\Release\CFS_Latam_cashApplicationTool.SearchCustomerName.resources

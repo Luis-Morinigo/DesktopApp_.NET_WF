@@ -13,6 +13,7 @@ using System.Data.Entity;
 // Libreria ADO NET
 using System.Data.SqlClient;
 using System.Threading;
+using DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
 
 namespace CFS_Latam_cashApplicationTool
 {
@@ -41,11 +42,34 @@ namespace CFS_Latam_cashApplicationTool
         {           
             //Carga User ID en header
             lblUserId.Text = "User: " + userName;
-
             //Carga combobox de company codes
-            fillCompanyCodes();            
+            fillCompanyCodes();
+            objetos();
         }
 
+        // Variables para obtener valores de Formulario Search Customer
+        private TextBox _txtCustNumberMain;
+        public TextBox TxtCustNumberMain { get => _txtCustNumberMain; set => _txtCustNumberMain = value; }
+
+        private TextBox _txtAltNumberMain;
+        public TextBox TxtAltNumberMain { get => _txtAltNumberMain; set => _txtAltNumberMain = value; }
+        
+        private ComboBox _cboCoCdMain;
+        public ComboBox CboCoCdMain { get => _cboCoCdMain; set => _cboCoCdMain = value; }
+
+        private Label _lblCustNameMain;
+        public Label LblCustNameMain { get => _lblCustNameMain; set => _lblCustNameMain = value; }
+
+        private void objetos()
+        {
+            _txtCustNumberMain = txtCustomerNumber;
+            _txtAltNumberMain = TxtAltNumber;
+            _cboCoCdMain = cboCompanyCode;
+            _lblCustNameMain = lblCustomerSearch;
+
+        }
+
+        // Método para completar combobox de company codes
         void fillCompanyCodes()
         {
             DsFbl5nTableAdapters.SP_COMPANYCODESTableAdapter daCoCd = new DsFbl5nTableAdapters.SP_COMPANYCODESTableAdapter();
@@ -53,7 +77,8 @@ namespace CFS_Latam_cashApplicationTool
             cboCompanyCode.DataSource = ds.SP_COMPANYCODES;
             cboCompanyCode.DisplayMember = "Company Code";
             cboCompanyCode.ValueMember = "Company Code";
-            cboCompanyCode.Text = "-- Select Company -- ";
+            cboCompanyCode.Text = "-- Select Company --";
+            cboCompanyCode.ForeColor = Color.Black;
         }
 
         //Cierra ventana Main desde el menu PROGRAM - EXIT
@@ -64,9 +89,7 @@ namespace CFS_Latam_cashApplicationTool
 
         private void PictSearch_Click(object sender, EventArgs e)
         {
-
             clearConciliation(); 
-            //adtvgConciliation.Rows.Clear();
             clearSubtotales();
 
             try
@@ -193,32 +216,37 @@ namespace CFS_Latam_cashApplicationTool
 
                 // Step 4: Completamos lbl de Company Code - Customer Nuumber  o Alt Number - Customer Name
                 //
-
                 string nameSelect = AdtvgAllDoc.CurrentRow.Cells[3].Value.ToString();
 
-                if (nameSelect != string.Empty && objMain.CustomerNumber != string.Empty)
-                {
-                    lblCustomerSearch.Text = objMain.CompanyCode + " - " + objMain.CustomerNumber + " - " + nameSelect;
-                }
-                else if (nameSelect != string.Empty && objMain.CustomerNumber == string.Empty && objMain.AltNumber != string.Empty)
-                {
-                    lblCustomerSearch.Text = objMain.CompanyCode + " - Alternative " + objMain.AltNumber;
-                }
-                else if (nameSelect != string.Empty && objMain.CustomerNumber != string.Empty && objMain.AltNumber != string.Empty)
-                {
-                    lblCustomerSearch.Text = objMain.CompanyCode + " - " + objMain.CustomerNumber + " - " + nameSelect;
-                }
-                else if (nameSelect == string.Empty && objMain.CustomerNumber != string.Empty)
-                {
-                    lblCustomerSearch.Text = objMain.CompanyCode + " - " + objMain.CustomerNumber;
-                }                 
-
+                lblCustomerLoadName(nameSelect);          
             }
             catch(Exception)
             {                
                 MessageBox.Show("Customer number " + objMain.CustomerNumber + " not found in database.", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
            
+        }
+        // Carga nombre de cliente
+        //
+        public void lblCustomerLoadName(string nameSelect)
+        {
+
+            if (nameSelect != string.Empty && objMain.CustomerNumber != string.Empty)
+            {
+                lblCustomerSearch.Text = objMain.CompanyCode + " - " + objMain.CustomerNumber + " - " + nameSelect;
+            }
+            else if (nameSelect != string.Empty && objMain.CustomerNumber == string.Empty && objMain.AltNumber != string.Empty)
+            {
+                lblCustomerSearch.Text = objMain.CompanyCode + " - Alternative " + objMain.AltNumber;
+            }
+            else if (nameSelect != string.Empty && objMain.CustomerNumber != string.Empty && objMain.AltNumber != string.Empty)
+            {
+                lblCustomerSearch.Text = objMain.CompanyCode + " - " + objMain.CustomerNumber + " - " + nameSelect;
+            }
+            else if (nameSelect == string.Empty && objMain.CustomerNumber != string.Empty)
+            {
+                lblCustomerSearch.Text = objMain.CompanyCode + " - " + objMain.CustomerNumber;
+            }
         }
 
         // Valida que solo se ingresen numeros en textbox Customer Number
@@ -297,8 +325,10 @@ namespace CFS_Latam_cashApplicationTool
             double totalCreditBalance = totalAB + totalRC;
             txtCreditBalanceTotal.Text = Convert.ToString(totalCreditBalance);
 
-            double subtotal = totalRV + totalDV + totalDR + totalRG + totalDG + totalAB + totalRC;
-            txtSubtotal.Text = Convert.ToString(subtotal);
+            double subtotal = totalRV + totalDV + totalDR + totalRG + totalDG + totalAB + totalRC + totalPayments;
+            //Math.Round(subtotal, 2);
+            //txtSubtotal.Text = Convert.ToString(subtotal);
+            txtSubtotal.Text = Convert.ToString(Math.Round(subtotal, 2));
         }
 
         private void PictSubmit_Click(object sender, EventArgs e)
@@ -313,8 +343,6 @@ namespace CFS_Latam_cashApplicationTool
             {
                 MessageBox.Show("Please review your reconciliation, the subtotal must be between the ranges 10 and -10", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-
-
         }
 
         private void PictureRight_Click(object sender, EventArgs e)
@@ -425,7 +453,8 @@ namespace CFS_Latam_cashApplicationTool
                                     rowPrincipal.Cells[10].Value, rowPrincipal.Cells[11].Value,
                                     rowPrincipal.Cells[12].Value, rowPrincipal.Cells[13].Value,
                                     rowPrincipal.Cells[14].Value, rowPrincipal.Cells[15].Value,
-                                    rowPrincipal.Cells[16].Value};
+                                    rowPrincipal.Cells[16].Value
+                };
 
                 // Creamos un nuevo objeto DataGridViewRow.
                 //
@@ -455,7 +484,10 @@ namespace CFS_Latam_cashApplicationTool
                                     rowPrincipal.Cells[10].Value, rowPrincipal.Cells[11].Value,
                                     rowPrincipal.Cells[12].Value, rowPrincipal.Cells[13].Value,
                                     rowPrincipal.Cells[14].Value, rowPrincipal.Cells[15].Value,
-                                    rowPrincipal.Cells[16].Value};
+                                    rowPrincipal.Cells[16].Value
+                };
+
+                AdtvgAllDoc.Rows.RemoveAt(rowPrincipal.Cells[0].RowIndex);
 
                 // Creamos un nuevo objeto DataGridViewRow.
                 //
@@ -467,8 +499,7 @@ namespace CFS_Latam_cashApplicationTool
 
                 // Añadimos la nueva fila al segundo control DataGridView.
                 //
-                adtvgConciliation.Rows.Add(row);                
-
+                adtvgConciliation.Rows.Add(row);
 
             }
 
@@ -515,8 +546,11 @@ namespace CFS_Latam_cashApplicationTool
                 Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
                 Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
                 app.Visible = true;
-                worksheet = workbook.Sheets["Sheet1"];
-                worksheet = workbook.ActiveSheet;
+                worksheet = (Microsoft.Office.Interop.Excel._Worksheet)workbook.Sheets["Sheet1"];
+                worksheet = (Microsoft.Office.Interop.Excel._Worksheet)workbook.ActiveSheet;
+                //worksheet = workbook.Sheets["Sheet1"];
+                //worksheet = workbook.ActiveSheet;
+
                 worksheet.Name = "Records";
 
                 try
@@ -548,7 +582,7 @@ namespace CFS_Latam_cashApplicationTool
                     if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                     {
                         workbook.SaveAs(saveDialog.FileName);
-                        MessageBox.Show("Export Successful", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Export Successful", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (System.Exception ex)
@@ -578,39 +612,112 @@ namespace CFS_Latam_cashApplicationTool
             txtSubtotal.Clear();
         }
 
-        private void DtgvConciliation_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void pictFormSearch_Click(object sender, EventArgs e)
         {
+            FrmSearchCustomerName frmSearch = new FrmSearchCustomerName();
+            AddOwnedForm(frmSearch);
+            frmSearch.Show();
 
         }
 
-        private void PanelTitleFilter_Paint(object sender, PaintEventArgs e)
+        //Hover & Leave
+        private void pictSearch_MouseHover(object sender, EventArgs e)
         {
-
+            this.pictSearch.Size = new System.Drawing.Size(46, 40);
+            this.pictSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictSearch.Cursor = System.Windows.Forms.Cursors.Hand;
         }
 
-        private void AdtgvCustPay_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void pictSearch_MouseLeave(object sender, EventArgs e)
         {
-
+            this.pictSearch.Size = new System.Drawing.Size(43, 37);
+            this.pictSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
         }
 
-        private void AdtvgAllDoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void pictFormSearch_MouseHover(object sender, EventArgs e)
         {
-
+            this.pictFormSearch.Size = new System.Drawing.Size(46, 40);
+            this.pictFormSearch.BorderStyle = BorderStyle.FixedSingle;
+            this.pictFormSearch.Cursor = System.Windows.Forms.Cursors.Hand;
         }
 
-        private void PanelBar_Paint(object sender, PaintEventArgs e)
+        private void pictFormSearch_MouseLeave(object sender, EventArgs e)
         {
-
+            this.pictFormSearch.Size = new System.Drawing.Size(43, 37);
+            this.pictFormSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
         }
 
-        private void advancedDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+        private void pictExcel_MouseHover(object sender, EventArgs e)
+        {            
+            this.pictExcel.Size = new System.Drawing.Size(46, 40);
+            this.pictExcel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictExcel.Cursor = System.Windows.Forms.Cursors.Hand;
         }
 
-        private void aboutCashApplicationToolToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pictExcel_MouseLeave(object sender, EventArgs e)
         {
-            MessageBox.Show("HOLAAA", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.pictExcel.Size = new System.Drawing.Size(43, 37);
+            this.pictExcel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        }
+
+        private void PictureRight_MouseHover(object sender, EventArgs e)
+        {
+            this.PictureRight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PictureRight.Cursor = System.Windows.Forms.Cursors.Hand;
+        }
+
+        private void PictureRight_MouseLeave(object sender, EventArgs e)
+        {
+            this.PictureRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        }
+
+        private void pictLeft_MouseHover(object sender, EventArgs e)
+        {
+            this.pictLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictLeft.Cursor = System.Windows.Forms.Cursors.Hand;
+        }
+
+        private void pictLeft_MouseLeave(object sender, EventArgs e)
+        {
+            this.pictLeft.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        }
+
+        private void pictUnselectAll_MouseHover(object sender, EventArgs e)
+        {
+            this.pictUnselectAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictUnselectAll.Cursor = System.Windows.Forms.Cursors.Hand;
+        }
+
+        private void pictUnselectAll_MouseLeave(object sender, EventArgs e)
+        {
+            this.pictUnselectAll.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        }
+
+        private void pictSubmit_MouseHover(object sender, EventArgs e)
+        {
+            this.pictSubmit.Size = new System.Drawing.Size(110, 52);
+            this.pictSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+        }
+
+        private void pictSubmit_MouseLeave(object sender, EventArgs e)
+        {
+            this.pictSubmit.Size = new System.Drawing.Size(104, 46);
+        }
+
+        private void pictDisputes_MouseHover(object sender, EventArgs e)
+        {
+            this.pictDisputes.Size = new System.Drawing.Size(110, 52);
+            this.pictDisputes.Cursor = System.Windows.Forms.Cursors.Hand;
+        }
+
+        private void pictDisputes_MouseLeave(object sender, EventArgs e)
+        {
+            this.pictDisputes.Size = new System.Drawing.Size(104, 46);
+        }
+
+        private void adtvgConciliation_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

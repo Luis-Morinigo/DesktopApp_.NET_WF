@@ -153,6 +153,16 @@ namespace CFS_Latam_cashApplicationTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_SearchCustomerCfs {
+            get {
+                object obj = ResourceManager.GetObject("Icon_SearchCustomerCfs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_Submit {
             get {
                 object obj = ResourceManager.GetObject("Icon_Submit", resourceCulture);

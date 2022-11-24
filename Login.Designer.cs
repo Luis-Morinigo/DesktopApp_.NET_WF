@@ -126,7 +126,7 @@
             this.lblPolitic.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPolitic.Location = new System.Drawing.Point(10, 9);
             this.lblPolitic.Name = "lblPolitic";
-            this.lblPolitic.Size = new System.Drawing.Size(458, 80);
+            this.lblPolitic.Size = new System.Drawing.Size(457, 80);
             this.lblPolitic.TabIndex = 1;
             this.lblPolitic.Text = resources.GetString("lblPolitic.Text");
             // 
@@ -151,6 +151,8 @@
             this.pictLogin.TabIndex = 1;
             this.pictLogin.TabStop = false;
             this.pictLogin.Click += new System.EventHandler(this.pictLogin_Click);
+            this.pictLogin.MouseLeave += new System.EventHandler(this.pictLogin_MouseLeave);
+            this.pictLogin.MouseHover += new System.EventHandler(this.pictLogin_MouseHover);
             // 
             // panelTitle
             // 
@@ -192,6 +194,7 @@
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(478, 160);
             this.panelLogo.TabIndex = 0;
+            this.panelLogo.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLogo_Paint);
             // 
             // pictLogoScj
             // 
@@ -211,6 +214,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(488, 561);
             this.Controls.Add(this.panelGeneral);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FrmLogin";

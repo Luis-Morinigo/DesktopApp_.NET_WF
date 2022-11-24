@@ -56,5 +56,22 @@ namespace CFS_Latam_cashApplicationTool
         {
 
         }
+
+        private void panelLogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictLogin_MouseHover(object sender, EventArgs e)
+        {
+            this.pictLogin.Size = new System.Drawing.Size(162, 59);
+            this.pictLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+
+        }
+
+        private void pictLogin_MouseLeave(object sender, EventArgs e)
+        {
+            this.pictLogin.Size = new System.Drawing.Size(156, 53);
+        }
     }
 }

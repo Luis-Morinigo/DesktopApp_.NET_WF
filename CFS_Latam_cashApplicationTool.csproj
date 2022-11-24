@@ -27,7 +27,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>http://localhost/CFS_Latam_cashApplicationTool/</UpdateUrl>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>3</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -113,12 +113,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Disputes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Disputes.Designer.cs">
-      <DependentUpon>Disputes.cs</DependentUpon>
-    </Compile>
     <Compile Include="DsFbl5n.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -163,9 +157,7 @@
     <Compile Include="SearchCustomerName.Designer.cs">
       <DependentUpon>SearchCustomerName.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Disputes.resx">
-      <DependentUpon>Disputes.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="TxtAltNumber\Text.cs" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,6 +275,9 @@
       <DependentUpon>DataBase.edmx</DependentUpon>
       <LastGenOutput>DataBase.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\Icon_SearchCustomerCfs.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\Gif_Loading.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

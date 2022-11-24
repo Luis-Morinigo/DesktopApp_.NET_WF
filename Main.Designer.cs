@@ -54,6 +54,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutCashApplicationToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelFilters = new System.Windows.Forms.Panel();
+            this.lblFrmSearch = new System.Windows.Forms.Label();
+            this.pictFormSearch = new System.Windows.Forms.PictureBox();
             this.lblExpExcel = new System.Windows.Forms.Label();
             this.pictExcel = new System.Windows.Forms.PictureBox();
             this.pictSearch = new System.Windows.Forms.PictureBox();
@@ -183,26 +185,6 @@
             this.txtReceiptNumber = new System.Windows.Forms.TextBox();
             this.lblReceiptNumber = new System.Windows.Forms.Label();
             this.adtvgConciliation = new Zuby.ADGV.AdvancedDataGridView();
-            this.CompanyCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AltPayer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DocumentType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DocumentTypeDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amountindoc_curr_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Documentcurrency = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DocumentNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Reference = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DocumentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BaselinePaymentDte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Netduedate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Arrearsfordiscount1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amountinlocalcurrency = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LocalCurrency = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TextSAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ReceiptNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PartialAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Balance = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panFooter = new System.Windows.Forms.Panel();
             this.tableLayoutPanelTotals = new System.Windows.Forms.TableLayoutPanel();
             this.txtCreditBalanceTotal = new System.Windows.Forms.TextBox();
@@ -223,10 +205,33 @@
             this.sP_SELECTCREDITNOTESTableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_SELECTCREDITNOTESTableAdapter();
             this.sP_SELECTINVOICESTableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_SELECTINVOICESTableAdapter();
             this.sP_SELECTPAYMENTSTableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_SELECTPAYMENTSTableAdapter();
+            this.CompanyCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AltPayer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Account = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DocumentType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DocumentTypeDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amountindoc_curr_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Documentcurrency = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DocumentNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Reference = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DocumentDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BaselinePaymentDte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Netduedate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arrearsfordiscount1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amountinlocalcurrency = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LocalCurrency = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TextSAP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReceiptNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DisputeAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ReasonCode = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Agreement = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Description = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.panelBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictUser)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panelFilters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictFormSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictExcel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictSearch)).BeginInit();
             this.tableLayoutPanelFilters1.SuspendLayout();
@@ -276,7 +281,6 @@
             this.panelBar.Name = "panelBar";
             this.panelBar.Size = new System.Drawing.Size(1353, 64);
             this.panelBar.TabIndex = 0;
-            this.panelBar.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelBar_Paint);
             // 
             // lblUserId
             // 
@@ -369,12 +373,13 @@
             this.aboutCashApplicationToolToolStripMenuItem.Name = "aboutCashApplicationToolToolStripMenuItem";
             this.aboutCashApplicationToolToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.aboutCashApplicationToolToolStripMenuItem.Text = "About Cash Application Tool";
-            this.aboutCashApplicationToolToolStripMenuItem.Click += new System.EventHandler(this.aboutCashApplicationToolToolStripMenuItem_Click);
             // 
             // panelFilters
             // 
             this.panelFilters.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelFilters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFilters.Controls.Add(this.lblFrmSearch);
+            this.panelFilters.Controls.Add(this.pictFormSearch);
             this.panelFilters.Controls.Add(this.lblExpExcel);
             this.panelFilters.Controls.Add(this.pictExcel);
             this.panelFilters.Controls.Add(this.pictSearch);
@@ -388,12 +393,39 @@
             this.panelFilters.Size = new System.Drawing.Size(1353, 89);
             this.panelFilters.TabIndex = 1;
             // 
+            // lblFrmSearch
+            // 
+            this.lblFrmSearch.AutoSize = true;
+            this.lblFrmSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFrmSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblFrmSearch.Location = new System.Drawing.Point(932, 72);
+            this.lblFrmSearch.Name = "lblFrmSearch";
+            this.lblFrmSearch.Size = new System.Drawing.Size(120, 13);
+            this.lblFrmSearch.TabIndex = 10;
+            this.lblFrmSearch.Text = "Help - Find Customers";
+            // 
+            // pictFormSearch
+            // 
+            this.pictFormSearch.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_SearchCustomerCfs;
+            this.pictFormSearch.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_SearchCustomerCfs;
+            this.pictFormSearch.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_SearchCustomerCfs;
+            this.pictFormSearch.Location = new System.Drawing.Point(971, 31);
+            this.pictFormSearch.Name = "pictFormSearch";
+            this.pictFormSearch.Size = new System.Drawing.Size(43, 37);
+            this.pictFormSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictFormSearch.TabIndex = 9;
+            this.pictFormSearch.TabStop = false;
+            this.pictFormSearch.Click += new System.EventHandler(this.pictFormSearch_Click);
+            this.pictFormSearch.MouseLeave += new System.EventHandler(this.pictFormSearch_MouseLeave);
+            this.pictFormSearch.MouseHover += new System.EventHandler(this.pictFormSearch_MouseHover);
+            // 
             // lblExpExcel
             // 
+            this.lblExpExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExpExcel.AutoSize = true;
             this.lblExpExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblExpExcel.Location = new System.Drawing.Point(1272, 67);
+            this.lblExpExcel.Location = new System.Drawing.Point(1272, 70);
             this.lblExpExcel.Name = "lblExpExcel";
             this.lblExpExcel.Size = new System.Drawing.Size(62, 13);
             this.lblExpExcel.TabIndex = 8;
@@ -401,6 +433,7 @@
             // 
             // pictExcel
             // 
+            this.pictExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictExcel.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
             this.pictExcel.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
             this.pictExcel.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
@@ -411,9 +444,12 @@
             this.pictExcel.TabIndex = 4;
             this.pictExcel.TabStop = false;
             this.pictExcel.Click += new System.EventHandler(this.pictExcel_Click);
+            this.pictExcel.MouseLeave += new System.EventHandler(this.pictExcel_MouseLeave);
+            this.pictExcel.MouseHover += new System.EventHandler(this.pictExcel_MouseHover);
             // 
             // pictSearch
             // 
+            this.pictSearch.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pictSearch.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Search;
             this.pictSearch.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Search;
             this.pictSearch.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Search;
@@ -424,13 +460,15 @@
             this.pictSearch.TabIndex = 3;
             this.pictSearch.TabStop = false;
             this.pictSearch.Click += new System.EventHandler(this.PictSearch_Click);
+            this.pictSearch.MouseLeave += new System.EventHandler(this.pictSearch_MouseLeave);
+            this.pictSearch.MouseHover += new System.EventHandler(this.pictSearch_MouseHover);
             // 
             // lblSearch
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblSearch.Location = new System.Drawing.Point(864, 69);
+            this.lblSearch.Location = new System.Drawing.Point(864, 72);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(40, 13);
             this.lblSearch.TabIndex = 7;
@@ -536,7 +574,6 @@
             this.panelTitleFilter.Name = "panelTitleFilter";
             this.panelTitleFilter.Size = new System.Drawing.Size(1351, 25);
             this.panelTitleFilter.TabIndex = 0;
-            this.panelTitleFilter.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelTitleFilter_Paint);
             // 
             // lblTitleFilter
             // 
@@ -1790,6 +1827,8 @@
             this.pictUnselectAll.TabIndex = 2;
             this.pictUnselectAll.TabStop = false;
             this.pictUnselectAll.Click += new System.EventHandler(this.pictUnselectAll_Click);
+            this.pictUnselectAll.MouseLeave += new System.EventHandler(this.pictUnselectAll_MouseLeave);
+            this.pictUnselectAll.MouseHover += new System.EventHandler(this.pictUnselectAll_MouseHover);
             // 
             // pictLeft
             // 
@@ -1806,6 +1845,8 @@
             this.pictLeft.TabIndex = 1;
             this.pictLeft.TabStop = false;
             this.pictLeft.Click += new System.EventHandler(this.pictLeft_Click);
+            this.pictLeft.MouseLeave += new System.EventHandler(this.pictLeft_MouseLeave);
+            this.pictLeft.MouseHover += new System.EventHandler(this.pictLeft_MouseHover);
             // 
             // PictureRight
             // 
@@ -1822,6 +1863,8 @@
             this.PictureRight.TabIndex = 0;
             this.PictureRight.TabStop = false;
             this.PictureRight.Click += new System.EventHandler(this.PictureRight_Click);
+            this.PictureRight.MouseLeave += new System.EventHandler(this.PictureRight_MouseLeave);
+            this.PictureRight.MouseHover += new System.EventHandler(this.PictureRight_MouseHover);
             // 
             // panelReceiptNumber
             // 
@@ -1896,8 +1939,10 @@
             this.LocalCurrency,
             this.TextSAP,
             this.ReceiptNumber,
-            this.PartialAmount,
-            this.Balance});
+            this.DisputeAmount,
+            this.ReasonCode,
+            this.Agreement,
+            this.Description});
             this.adtvgConciliation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.adtvgConciliation.EnableHeadersVisualStyles = false;
             this.adtvgConciliation.FilterAndSortEnabled = true;
@@ -1909,148 +1954,7 @@
             this.adtvgConciliation.Size = new System.Drawing.Size(645, 428);
             this.adtvgConciliation.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.adtvgConciliation.TabIndex = 10;
-            this.adtvgConciliation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView1_CellContentClick);
-            // 
-            // CompanyCode
-            // 
-            this.CompanyCode.HeaderText = "Company Code";
-            this.CompanyCode.MinimumWidth = 22;
-            this.CompanyCode.Name = "CompanyCode";
-            this.CompanyCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // AltPayer
-            // 
-            this.AltPayer.HeaderText = "Alt Payer";
-            this.AltPayer.MinimumWidth = 22;
-            this.AltPayer.Name = "AltPayer";
-            this.AltPayer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Account
-            // 
-            this.Account.HeaderText = "Account";
-            this.Account.MinimumWidth = 22;
-            this.Account.Name = "Account";
-            this.Account.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // CustomerName
-            // 
-            this.CustomerName.HeaderText = "Customer Name";
-            this.CustomerName.MinimumWidth = 22;
-            this.CustomerName.Name = "CustomerName";
-            this.CustomerName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // DocumentType
-            // 
-            this.DocumentType.HeaderText = "Document Type";
-            this.DocumentType.MinimumWidth = 22;
-            this.DocumentType.Name = "DocumentType";
-            this.DocumentType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // DocumentTypeDescription
-            // 
-            this.DocumentTypeDescription.HeaderText = "Document Type Description";
-            this.DocumentTypeDescription.MinimumWidth = 22;
-            this.DocumentTypeDescription.Name = "DocumentTypeDescription";
-            this.DocumentTypeDescription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Amountindoc_curr_
-            // 
-            this.Amountindoc_curr_.HeaderText = "Amount in doc_curr_";
-            this.Amountindoc_curr_.MinimumWidth = 22;
-            this.Amountindoc_curr_.Name = "Amountindoc_curr_";
-            this.Amountindoc_curr_.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Documentcurrency
-            // 
-            this.Documentcurrency.HeaderText = "Document currency";
-            this.Documentcurrency.MinimumWidth = 22;
-            this.Documentcurrency.Name = "Documentcurrency";
-            this.Documentcurrency.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // DocumentNumber
-            // 
-            this.DocumentNumber.HeaderText = "Document Number";
-            this.DocumentNumber.MinimumWidth = 22;
-            this.DocumentNumber.Name = "DocumentNumber";
-            this.DocumentNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Reference
-            // 
-            this.Reference.HeaderText = "Reference";
-            this.Reference.MinimumWidth = 22;
-            this.Reference.Name = "Reference";
-            this.Reference.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // DocumentDate
-            // 
-            this.DocumentDate.HeaderText = "Document Date";
-            this.DocumentDate.MinimumWidth = 22;
-            this.DocumentDate.Name = "DocumentDate";
-            this.DocumentDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // BaselinePaymentDte
-            // 
-            this.BaselinePaymentDte.HeaderText = "Baseline Payment Dte";
-            this.BaselinePaymentDte.MinimumWidth = 22;
-            this.BaselinePaymentDte.Name = "BaselinePaymentDte";
-            this.BaselinePaymentDte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Netduedate
-            // 
-            this.Netduedate.HeaderText = "Net due date";
-            this.Netduedate.MinimumWidth = 22;
-            this.Netduedate.Name = "Netduedate";
-            this.Netduedate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Arrearsfordiscount1
-            // 
-            this.Arrearsfordiscount1.HeaderText = "Arrears for discount 1";
-            this.Arrearsfordiscount1.MinimumWidth = 22;
-            this.Arrearsfordiscount1.Name = "Arrearsfordiscount1";
-            this.Arrearsfordiscount1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Amountinlocalcurrency
-            // 
-            this.Amountinlocalcurrency.HeaderText = "Amount  in local currency";
-            this.Amountinlocalcurrency.MinimumWidth = 22;
-            this.Amountinlocalcurrency.Name = "Amountinlocalcurrency";
-            this.Amountinlocalcurrency.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // LocalCurrency
-            // 
-            this.LocalCurrency.HeaderText = "Local Currency";
-            this.LocalCurrency.MinimumWidth = 22;
-            this.LocalCurrency.Name = "LocalCurrency";
-            this.LocalCurrency.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // TextSAP
-            // 
-            this.TextSAP.HeaderText = "Text SAP";
-            this.TextSAP.MinimumWidth = 22;
-            this.TextSAP.Name = "TextSAP";
-            this.TextSAP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // ReceiptNumber
-            // 
-            this.ReceiptNumber.HeaderText = "Receipt Number";
-            this.ReceiptNumber.MinimumWidth = 22;
-            this.ReceiptNumber.Name = "ReceiptNumber";
-            this.ReceiptNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // PartialAmount
-            // 
-            this.PartialAmount.HeaderText = "Partial Amount";
-            this.PartialAmount.MinimumWidth = 22;
-            this.PartialAmount.Name = "PartialAmount";
-            this.PartialAmount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Balance
-            // 
-            this.Balance.HeaderText = "Balance";
-            this.Balance.MinimumWidth = 22;
-            this.Balance.Name = "Balance";
-            this.Balance.ReadOnly = true;
-            this.Balance.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.adtvgConciliation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adtvgConciliation_CellContentClick);
             // 
             // panFooter
             // 
@@ -2207,6 +2111,7 @@
             // 
             // pictDisputes
             // 
+            this.pictDisputes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictDisputes.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Disputes;
             this.pictDisputes.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Disputes;
             this.pictDisputes.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Disputes;
@@ -2216,9 +2121,12 @@
             this.pictDisputes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictDisputes.TabIndex = 1;
             this.pictDisputes.TabStop = false;
+            this.pictDisputes.MouseLeave += new System.EventHandler(this.pictDisputes_MouseLeave);
+            this.pictDisputes.MouseHover += new System.EventHandler(this.pictDisputes_MouseHover);
             // 
             // pictSubmit
             // 
+            this.pictSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictSubmit.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
             this.pictSubmit.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
             this.pictSubmit.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
@@ -2229,6 +2137,8 @@
             this.pictSubmit.TabIndex = 0;
             this.pictSubmit.TabStop = false;
             this.pictSubmit.Click += new System.EventHandler(this.PictSubmit_Click);
+            this.pictSubmit.MouseLeave += new System.EventHandler(this.pictSubmit_MouseLeave);
+            this.pictSubmit.MouseHover += new System.EventHandler(this.pictSubmit_MouseHover);
             // 
             // TtMessage
             // 
@@ -2254,6 +2164,187 @@
             // 
             this.sP_SELECTPAYMENTSTableAdapter.ClearBeforeFill = true;
             // 
+            // CompanyCode
+            // 
+            this.CompanyCode.HeaderText = "Company Code";
+            this.CompanyCode.MinimumWidth = 22;
+            this.CompanyCode.Name = "CompanyCode";
+            this.CompanyCode.ReadOnly = true;
+            this.CompanyCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // AltPayer
+            // 
+            this.AltPayer.HeaderText = "Alt Payer";
+            this.AltPayer.MinimumWidth = 22;
+            this.AltPayer.Name = "AltPayer";
+            this.AltPayer.ReadOnly = true;
+            this.AltPayer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Account
+            // 
+            this.Account.HeaderText = "Account";
+            this.Account.MinimumWidth = 22;
+            this.Account.Name = "Account";
+            this.Account.ReadOnly = true;
+            this.Account.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // CustomerName
+            // 
+            this.CustomerName.HeaderText = "Customer Name";
+            this.CustomerName.MinimumWidth = 22;
+            this.CustomerName.Name = "CustomerName";
+            this.CustomerName.ReadOnly = true;
+            this.CustomerName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // DocumentType
+            // 
+            this.DocumentType.HeaderText = "Document Type";
+            this.DocumentType.MinimumWidth = 22;
+            this.DocumentType.Name = "DocumentType";
+            this.DocumentType.ReadOnly = true;
+            this.DocumentType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // DocumentTypeDescription
+            // 
+            this.DocumentTypeDescription.HeaderText = "Document Type Description";
+            this.DocumentTypeDescription.MinimumWidth = 22;
+            this.DocumentTypeDescription.Name = "DocumentTypeDescription";
+            this.DocumentTypeDescription.ReadOnly = true;
+            this.DocumentTypeDescription.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Amountindoc_curr_
+            // 
+            this.Amountindoc_curr_.HeaderText = "Amount in doc_curr_";
+            this.Amountindoc_curr_.MinimumWidth = 22;
+            this.Amountindoc_curr_.Name = "Amountindoc_curr_";
+            this.Amountindoc_curr_.ReadOnly = true;
+            this.Amountindoc_curr_.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Documentcurrency
+            // 
+            this.Documentcurrency.HeaderText = "Document currency";
+            this.Documentcurrency.MinimumWidth = 22;
+            this.Documentcurrency.Name = "Documentcurrency";
+            this.Documentcurrency.ReadOnly = true;
+            this.Documentcurrency.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // DocumentNumber
+            // 
+            this.DocumentNumber.HeaderText = "Document Number";
+            this.DocumentNumber.MinimumWidth = 22;
+            this.DocumentNumber.Name = "DocumentNumber";
+            this.DocumentNumber.ReadOnly = true;
+            this.DocumentNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Reference
+            // 
+            this.Reference.HeaderText = "Reference";
+            this.Reference.MinimumWidth = 22;
+            this.Reference.Name = "Reference";
+            this.Reference.ReadOnly = true;
+            this.Reference.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // DocumentDate
+            // 
+            this.DocumentDate.HeaderText = "Document Date";
+            this.DocumentDate.MinimumWidth = 22;
+            this.DocumentDate.Name = "DocumentDate";
+            this.DocumentDate.ReadOnly = true;
+            this.DocumentDate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // BaselinePaymentDte
+            // 
+            this.BaselinePaymentDte.HeaderText = "Baseline Payment Dte";
+            this.BaselinePaymentDte.MinimumWidth = 22;
+            this.BaselinePaymentDte.Name = "BaselinePaymentDte";
+            this.BaselinePaymentDte.ReadOnly = true;
+            this.BaselinePaymentDte.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Netduedate
+            // 
+            this.Netduedate.HeaderText = "Net due date";
+            this.Netduedate.MinimumWidth = 22;
+            this.Netduedate.Name = "Netduedate";
+            this.Netduedate.ReadOnly = true;
+            this.Netduedate.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Arrearsfordiscount1
+            // 
+            this.Arrearsfordiscount1.HeaderText = "Arrears for discount 1";
+            this.Arrearsfordiscount1.MinimumWidth = 22;
+            this.Arrearsfordiscount1.Name = "Arrearsfordiscount1";
+            this.Arrearsfordiscount1.ReadOnly = true;
+            this.Arrearsfordiscount1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Amountinlocalcurrency
+            // 
+            this.Amountinlocalcurrency.HeaderText = "Amount  in local currency";
+            this.Amountinlocalcurrency.MinimumWidth = 22;
+            this.Amountinlocalcurrency.Name = "Amountinlocalcurrency";
+            this.Amountinlocalcurrency.ReadOnly = true;
+            this.Amountinlocalcurrency.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // LocalCurrency
+            // 
+            this.LocalCurrency.HeaderText = "Local Currency";
+            this.LocalCurrency.MinimumWidth = 22;
+            this.LocalCurrency.Name = "LocalCurrency";
+            this.LocalCurrency.ReadOnly = true;
+            this.LocalCurrency.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // TextSAP
+            // 
+            this.TextSAP.HeaderText = "Text SAP";
+            this.TextSAP.MinimumWidth = 22;
+            this.TextSAP.Name = "TextSAP";
+            this.TextSAP.ReadOnly = true;
+            this.TextSAP.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // ReceiptNumber
+            // 
+            this.ReceiptNumber.HeaderText = "Receipt Number";
+            this.ReceiptNumber.MinimumWidth = 22;
+            this.ReceiptNumber.Name = "ReceiptNumber";
+            this.ReceiptNumber.ReadOnly = true;
+            this.ReceiptNumber.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // DisputeAmount
+            // 
+            this.DisputeAmount.HeaderText = "Dispute Amount";
+            this.DisputeAmount.MinimumWidth = 22;
+            this.DisputeAmount.Name = "DisputeAmount";
+            this.DisputeAmount.ReadOnly = true;
+            this.DisputeAmount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // ReasonCode
+            // 
+            this.ReasonCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ReasonCode.HeaderText = "Reason Code";
+            this.ReasonCode.Items.AddRange(new object[] {
+            "TEST 2",
+            "TEST 3",
+            "TEST 4",
+            "TEST 5"});
+            this.ReasonCode.MinimumWidth = 22;
+            this.ReasonCode.Name = "ReasonCode";
+            this.ReasonCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Agreement
+            // 
+            this.Agreement.HeaderText = "Agreement";
+            this.Agreement.MinimumWidth = 22;
+            this.Agreement.Name = "Agreement";
+            this.Agreement.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Agreement.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Description
+            // 
+            this.Description.HeaderText = "Description";
+            this.Description.MinimumWidth = 22;
+            this.Description.Name = "Description";
+            this.Description.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Description.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2265,6 +2356,8 @@
             this.Controls.Add(this.panelGeneral);
             this.Controls.Add(this.panelFilters);
             this.Controls.Add(this.panelBar);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(640, 480);
@@ -2281,6 +2374,7 @@
             this.menuStrip1.PerformLayout();
             this.panelFilters.ResumeLayout(false);
             this.panelFilters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictFormSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictExcel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictSearch)).EndInit();
             this.tableLayoutPanelFilters1.ResumeLayout(false);
@@ -2350,7 +2444,6 @@
         private System.Windows.Forms.Label lblCompanyCode;
         private System.Windows.Forms.Label lblCustomerNumber;
         private System.Windows.Forms.ComboBox cboCompanyCode;
-        private System.Windows.Forms.TextBox txtCustomerNumber;
         private System.Windows.Forms.Label lblSearch;
         private System.Windows.Forms.Label lblExpExcel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelGeneral;
@@ -2381,7 +2474,6 @@
         private System.Windows.Forms.TextBox txtReceiptNumber;
         private System.Windows.Forms.Label lblReceiptNumber;
         private System.Windows.Forms.Label lblAltNumber;
-        private System.Windows.Forms.TextBox TxtAltNumber;
         private System.Windows.Forms.BindingSource sPSELECTPAYMENTSBindingSource;
         private System.Windows.Forms.BindingSource dsFbl5nBindingSource;
         private DsFbl5n dsFbl5n;
@@ -2487,6 +2579,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn67;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn68;
         private Zuby.ADGV.AdvancedDataGridView adtvgConciliation;
+        private System.Windows.Forms.PictureBox pictFormSearch;
+        private System.Windows.Forms.TextBox txtCustomerNumber;
+        private System.Windows.Forms.TextBox TxtAltNumber;
+        private System.Windows.Forms.Label lblFrmSearch;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn AltPayer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Account;
@@ -2505,7 +2601,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn LocalCurrency;
         private System.Windows.Forms.DataGridViewTextBoxColumn TextSAP;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReceiptNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PartialAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Balance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DisputeAmount;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ReasonCode;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Agreement;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Description;
     }
 }
