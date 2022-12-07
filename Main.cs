@@ -14,6 +14,16 @@ using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Threading;
 using DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle;
+using System.Windows.Controls;
+using System.Drawing.Design;
+using System.Globalization;
+using DocumentFormat.OpenXml.Vml;
+using TextBox = System.Windows.Forms.TextBox;
+using DocumentFormat.OpenXml.Spreadsheet;
+using Color = System.Drawing.Color;
+using Microsoft.Office.Tools.Excel.Controls;
+using ComboBox = System.Windows.Forms.ComboBox;
+using Label = System.Windows.Forms.Label;
 
 namespace CFS_Latam_cashApplicationTool
 {
@@ -45,6 +55,11 @@ namespace CFS_Latam_cashApplicationTool
             //Carga combobox de company codes
             fillCompanyCodes();
             objetos();
+            //Color a header de columnas Disputes
+            adtvgConciliation.Columns[18].HeaderCell.Style.BackColor = Color.LightGreen; adtvgConciliation.Columns[19].HeaderCell.Style.BackColor = Color.LightGreen;
+            adtvgConciliation.Columns[20].HeaderCell.Style.BackColor = Color.LightGreen; adtvgConciliation.Columns[21].HeaderCell.Style.BackColor = Color.LightGreen;
+            //Convierte a formato 1,000.00 números de columna de Dispute Amount
+            //adtvgConciliation.Columns[18].ValueType = typeof(double);
         }
 
         // Variables para obtener valores de Formulario Search Customer
@@ -129,11 +144,18 @@ namespace CFS_Latam_cashApplicationTool
                 // Completa Tab ALL DOCUMENTS ------------------------------------- 05
                 //
                 DsFbl5nTableAdapters.SP_SELECTFBL5NTableAdapter daAll = new DsFbl5nTableAdapters.SP_SELECTFBL5NTableAdapter();
+                // Completa Filas AGREEMENTS ------------------------------------- 05
+                //
+                DsFbl5nTableAdapters.SP_AGREEMENTTableAdapter daAg = new DsFbl5nTableAdapters.SP_AGREEMENTTableAdapter();                
+                // Completa Filas REASON CODES ------------------------------------- 07
+                //
+                DsFbl5nTableAdapters.SP_REASONCODETableAdapter daRc = new DsFbl5nTableAdapters.SP_REASONCODETableAdapter();
 
                 // Step 3: Pasa variables Customer Number o AltNumber a null si corresponde 
                 //
                 if (objMain.CustomerNumber == string.Empty && objMain.AltNumber != string.Empty)
                 {
+
                     // Completa Tab CUSTOMER PAYMENT ---------------------------------- 01
                     //               
                     daPay.Fill(ds.SP_SELECTPAYMENTS, objMain.CompanyCode, null, Convert.ToDecimal(objMain.AltNumber), "DZ");
@@ -185,7 +207,27 @@ namespace CFS_Latam_cashApplicationTool
                     //
                     daAll.Fill(ds.SP_SELECTFBL5N, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), null);
                     AdtvgAllDoc.DataSource = ds.SP_SELECTFBL5N;
-                }
+
+                    // Completa combobox de columna AGREEMENTS ------------------------------------- 06
+                    //
+                    daAg.Fill(ds.SP_AGREEMENT, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber));
+
+                    DataGridViewComboBoxColumn comboAgreement = adtvgConciliation.Columns[20] as DataGridViewComboBoxColumn;
+
+                    comboAgreement.DataSource = ds.SP_AGREEMENT;
+                    comboAgreement.DisplayMember = "Agreement";
+                    comboAgreement.ValueMember = "Agreement";
+
+                    //Carga Reason codes ------------------------------------- 07
+                    //
+                    daRc.Fill(ds.SP_REASONCODE, objMain.CompanyCode);
+
+                    DataGridViewComboBoxColumn comboReason = adtvgConciliation.Columns[19] as DataGridViewComboBoxColumn;
+
+                    comboReason.DataSource = ds.SP_REASONCODE;
+                    comboReason.DisplayMember = "Reason Code";
+                    comboReason.ValueMember = "Reason Code";
+                }   
                 else
                 {
                     // Completa Tab CUSTOMER PAYMENT ---------------------------------- 01
@@ -265,7 +307,6 @@ namespace CFS_Latam_cashApplicationTool
         //
         private void TxtReceiptNumber_KeyPress(object sender, KeyPressEventArgs e)
         {
-
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
                 MessageBox.Show("This field only supports numbers", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -286,7 +327,6 @@ namespace CFS_Latam_cashApplicationTool
             }
         }
 
-
         private void pictLeft_Click(object sender, EventArgs e)
         {
             foreach (DataGridViewRow rowPrincipal in adtvgConciliation.SelectedRows)
@@ -304,31 +344,37 @@ namespace CFS_Latam_cashApplicationTool
         void sumTotal()
         {
             double totalPayments = adtvgConciliation.Rows.OfType<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DZ").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            txtCustomerPayTotal.Text = Convert.ToString(totalPayments);
-
+            //txtCustomerPayTotal.Text = Convert.ToString(totalPayments);
+            txtCustomerPayTotal.Text = (totalPayments.ToString("#,#0.00", CultureInfo.InvariantCulture));
+                
             // Total Invoices
             double totalRV = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "RV").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
             double totalDV = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DV").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
             double totalDR = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DR").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
             double totalInvoce = totalRV + totalDV + totalDR;
-            txtInvoicesTotal.Text = Convert.ToString(totalInvoce);
+            //txtInvoicesTotal.Text = Convert.ToString(totalInvoce);
+            txtInvoicesTotal.Text = (totalInvoce.ToString("#,#0.00", CultureInfo.InvariantCulture));
 
             // Total Credit Notes
             double totalRG = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "RG").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
             double totalDG = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DG").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
             double totalCreditNote = totalRG + totalDG;
-            txtCreditNotesTotal.Text = Convert.ToString(totalCreditNote);
+            //txtCreditNotesTotal.Text = Convert.ToString(totalCreditNote);
+            txtCreditNotesTotal.Text = (totalCreditNote.ToString("#,#0.00", CultureInfo.InvariantCulture));
 
             // Total Credit Balance
             double totalAB = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "AB").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
             double totalRC = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "RC").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
             double totalCreditBalance = totalAB + totalRC;
-            txtCreditBalanceTotal.Text = Convert.ToString(totalCreditBalance);
+            //txtCreditBalanceTotal.Text = Convert.ToString(totalCreditBalance);
+            txtCreditBalanceTotal.Text = (totalCreditBalance.ToString("#,#0.00", CultureInfo.InvariantCulture));
 
+            // Subtotal
             double subtotal = totalRV + totalDV + totalDR + totalRG + totalDG + totalAB + totalRC + totalPayments;
-            //Math.Round(subtotal, 2);
-            //txtSubtotal.Text = Convert.ToString(subtotal);
-            txtSubtotal.Text = Convert.ToString(Math.Round(subtotal, 2));
+
+            //Convierto a formato coma y punto
+            //txtSubtotal.Text = Convert.ToString(Math.Round(subtotal, 2));
+            txtSubtotal.Text = (subtotal.ToString("#,#0.00", CultureInfo.InvariantCulture));
         }
 
         private void PictSubmit_Click(object sender, EventArgs e)
@@ -487,7 +533,7 @@ namespace CFS_Latam_cashApplicationTool
                                     rowPrincipal.Cells[16].Value
                 };
 
-                AdtvgAllDoc.Rows.RemoveAt(rowPrincipal.Cells[0].RowIndex);
+                //AdtvgAllDoc.Rows.RemoveAt(rowPrincipal.Cells[0].RowIndex);
 
                 // Creamos un nuevo objeto DataGridViewRow.
                 //
@@ -524,6 +570,7 @@ namespace CFS_Latam_cashApplicationTool
         void clearConciliation()
         {
             adtvgConciliation.Rows.Clear();
+            txtReceiptNumber.Clear();   
         }
 
         private void pictExcel_Click(object sender, EventArgs e)
@@ -616,10 +663,8 @@ namespace CFS_Latam_cashApplicationTool
         {
             FrmSearchCustomerName frmSearch = new FrmSearchCustomerName();
             AddOwnedForm(frmSearch);
-            frmSearch.Show();
-
+            frmSearch.ShowDialog();
         }
-
         //Hover & Leave
         private void pictSearch_MouseHover(object sender, EventArgs e)
         {
@@ -627,39 +672,33 @@ namespace CFS_Latam_cashApplicationTool
             this.pictSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictSearch.Cursor = System.Windows.Forms.Cursors.Hand;
         }
-
         private void pictSearch_MouseLeave(object sender, EventArgs e)
         {
             this.pictSearch.Size = new System.Drawing.Size(43, 37);
             this.pictSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
         }
-
         private void pictFormSearch_MouseHover(object sender, EventArgs e)
         {
             this.pictFormSearch.Size = new System.Drawing.Size(46, 40);
             this.pictFormSearch.BorderStyle = BorderStyle.FixedSingle;
             this.pictFormSearch.Cursor = System.Windows.Forms.Cursors.Hand;
         }
-
         private void pictFormSearch_MouseLeave(object sender, EventArgs e)
         {
             this.pictFormSearch.Size = new System.Drawing.Size(43, 37);
             this.pictFormSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
         }
-
         private void pictExcel_MouseHover(object sender, EventArgs e)
         {            
             this.pictExcel.Size = new System.Drawing.Size(46, 40);
             this.pictExcel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictExcel.Cursor = System.Windows.Forms.Cursors.Hand;
         }
-
         private void pictExcel_MouseLeave(object sender, EventArgs e)
         {
             this.pictExcel.Size = new System.Drawing.Size(43, 37);
             this.pictExcel.BorderStyle = System.Windows.Forms.BorderStyle.None;
         }
-
         private void PictureRight_MouseHover(object sender, EventArgs e)
         {
             this.PictureRight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -692,7 +731,6 @@ namespace CFS_Latam_cashApplicationTool
         {
             this.pictUnselectAll.BorderStyle = System.Windows.Forms.BorderStyle.None;
         }
-
         private void pictSubmit_MouseHover(object sender, EventArgs e)
         {
             this.pictSubmit.Size = new System.Drawing.Size(110, 52);
@@ -704,20 +742,129 @@ namespace CFS_Latam_cashApplicationTool
             this.pictSubmit.Size = new System.Drawing.Size(104, 46);
         }
 
-        private void pictDisputes_MouseHover(object sender, EventArgs e)
+        // Ingresa número de recibo en campo Receipt number
+        private void txtReceiptNumber_TextChanged(object sender, EventArgs e)
         {
-            this.pictDisputes.Size = new System.Drawing.Size(110, 52);
-            this.pictDisputes.Cursor = System.Windows.Forms.Cursors.Hand;
+            for (int i = 0; i <= adtvgConciliation.Rows.Count; i++)
+            {
+                if (i != adtvgConciliation.Rows.Count)
+                {
+                    adtvgConciliation.Rows[i].Cells[17].Value = txtReceiptNumber.Text;
+                }
+            }
         }
 
-        private void pictDisputes_MouseLeave(object sender, EventArgs e)
+        private void adtvgConciliation_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            this.pictDisputes.Size = new System.Drawing.Size(104, 46);
+            int columnNumber = adtvgConciliation.CurrentCell.ColumnIndex;
+            try
+            {
+                if(columnNumber == 20)
+                {
+                    cboDescriptionAgreement.Visible = true;
+
+                    objMain.CompanyCode = Convert.ToString(adtvgConciliation.Rows[e.RowIndex].Cells[0].Value);
+                    objMain.CustomerNumber = Convert.ToString(adtvgConciliation.Rows[e.RowIndex].Cells[2].Value);
+                    string agreementNumber = Convert.ToString(adtvgConciliation.Rows[e.RowIndex].Cells[20].Value);
+                    
+                    //Carga números de acuerdo
+                    DsFbl5nTableAdapters.SP_DESCRIPTIONAGREEMENTTableAdapter daDs = new DsFbl5nTableAdapters.SP_DESCRIPTIONAGREEMENTTableAdapter();
+
+                    daDs.Fill(ds.SP_DESCRIPTIONAGREEMENT, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), Convert.ToDecimal(agreementNumber));
+
+                    cboDescriptionAgreement.DataSource = ds.SP_DESCRIPTIONAGREEMENT;
+                    cboDescriptionAgreement.DisplayMember = "Descript_";
+
+                    adtvgConciliation.Rows[e.RowIndex].Cells[21].Value = cboDescriptionAgreement.Text;                    
+                }
+            }
+            catch (Exception)
+            {
+
+            }
+            cboDescriptionAgreement.Visible = false;
         }
 
-        private void adtvgConciliation_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void adtvgConciliation_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
+            if(e.Exception.Message == "DataGridViewComboBoxCell value is not valid.")
+            {
+                object value = adtvgConciliation.Rows[e.RowIndex].Cells[e.ColumnIndex].Value;
+                if (!((DataGridViewComboBoxColumn)adtvgConciliation.Columns[e.ColumnIndex]).Items.Contains(value))
+                {
+                    e.ThrowException = false;
+                }
+            }
+        }
 
+        void fillPlaceHolder()
+        {
+            if (cboCompanyCode.Text == "")
+            {
+                cboCompanyCode.Text = "-- Select Company --";
+                cboCompanyCode.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void cboCompanyCode_Click(object sender, EventArgs e)
+        {
+            if (cboCompanyCode.Text == "-- Select Company --")
+            {
+                cboCompanyCode.Text = "";
+                cboCompanyCode.ForeColor = Color.Black;
+            }                        
+        }
+
+        private void cboCompanyCode_Leave(object sender, EventArgs e)
+        {
+            fillPlaceHolder();
+        }
+
+        private void validOnlyNumber(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("This field only supports numbers", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private bool ValidNumber(string value)
+        {
+            //Obtenemos la longitud de la celda
+            int len = value.Length;
+            for (int i = 0; i != len; ++i)
+            {
+                //Detectamos si la celda tiene únicamente números
+                if (!(value[i] >= '0' && value[i] <= '9') || value[i] <= '.')
+                    return true;
+            }
+            return false;
+        }
+
+        private void adtvgConciliation_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            e.Control.KeyPress -= new KeyPressEventHandler(Columns_KeyPress);
+
+            if (adtvgConciliation.CurrentCell.ColumnIndex == 18)
+            {
+                TextBox tb = e.Control as TextBox;
+
+                if (tb != null)
+                {
+                     tb.KeyPress += new KeyPressEventHandler(Columns_KeyPress);
+                     adtvgConciliation.Columns[18].ValueType = typeof(double);                    
+                }
+            }
+        }
+
+        private void Columns_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 45) || (e.KeyChar >= 58 && e.KeyChar <= 255) || (e.KeyChar == 47))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

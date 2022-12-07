@@ -98,7 +98,7 @@ namespace CFS_Latam_cashApplicationTool
         // Valida que se ingrese solo letras en textbox de busqueda
         private void txtLettersFind_KeyPress(object sender, KeyPressEventArgs e)
         {
-            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))            
+            //if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
             //{
             //    MessageBox.Show("Only letters are allowed", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             //    e.Handled = true;
@@ -117,12 +117,12 @@ namespace CFS_Latam_cashApplicationTool
 
         private void cboCoCdSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsLetter(e.KeyChar)) || (e.KeyChar != (char)Keys.Back))
-            {
-                MessageBox.Show("Locked for manual entry, please select from the list", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
+            //if (!(char.IsLetter(e.KeyChar)) || (e.KeyChar != (char)Keys.Back))
+            //{
+            //    MessageBox.Show("Locked for manual entry, please select from the list", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    e.Handled = true;
+            //    return;
+            //}
         }
 
         // Método para pasar información de celda seleccionada a Formulario Main
@@ -154,6 +154,28 @@ namespace CFS_Latam_cashApplicationTool
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void cboCoCdSearch_Click(object sender, EventArgs e)
+        {
+            if (cboCoCdSearch.Text == "-- Select Company --")
+            {
+                cboCoCdSearch.Text = "";
+                cboCoCdSearch.ForeColor = Color.Black;
+            }
+        }
+
+        private void cboCoCdSearch_Leave(object sender, EventArgs e)
+        {
+            fillPlaceHolder();
+        }
+        void fillPlaceHolder()
+        {
+            if (cboCoCdSearch.Text == "")
+            {
+                cboCoCdSearch.Text = "-- Select Company --";
+                cboCoCdSearch.ForeColor = Color.DimGray;
             }
         }
     }

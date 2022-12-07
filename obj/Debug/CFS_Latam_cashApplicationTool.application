@@ -14,14 +14,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="CFS_Latam_cashApplicationTool.exe.manifest" size="9653">
+    <dependentAssembly dependencyType="install" codebase="CFS_Latam_cashApplicationTool.exe.manifest" size="10393">
       <assemblyIdentity name="CFS_Latam_cashApplicationTool.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xVp1Q46JhSXFt+PvcV4zsZqUn8xzUn8syn7KaZLaSJQ=</dsig:DigestValue>
+        <dsig:DigestValue>+b6Qc4IwUtCWTr+MxPMXDvH5jKe3q1HXB0tmohiYGnk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

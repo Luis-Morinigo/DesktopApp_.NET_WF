@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters;
+using DocumentFormat.OpenXml.Bibliography;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +27,7 @@ namespace CFS_Latam_cashApplicationTool
             //Genero conexión a la base de datos
             using (Models.SSC_Finance_DWEntities DataBaseUser = new Models.SSC_Finance_DWEntities())
             {               
-                //Consulta mediante Linq
+                //Consulta mediante Linq si el Usuario se encuentra activo en la base de datos
                 var lst = from d in DataBaseUser.CASH_APPLICATION___Users_Desktop_App
                           where d.user_id == userName
                             select d;
@@ -45,28 +47,30 @@ namespace CFS_Latam_cashApplicationTool
                 else
                 {
                     MessageBox.Show("Unregistered user", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
                 }
-
             }
-
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
+            //Valida que exista información en base de datos FBL5N
+            //
+            using (var countDb = new SP_SELECTFBL5NTableAdapter())
+            {
+                int DbRows = countDb.CountDbFBL5N().Value;
 
-        }
-
-        private void panelLogo_Paint(object sender, PaintEventArgs e)
-        {
-
+                if (DbRows == 0)
+                {
+                    MessageBox.Show("Sorry, the system is updating, please try again in 5 minutes. Thanks", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.Close();
+                }
+            }
         }
 
         private void pictLogin_MouseHover(object sender, EventArgs e)
         {
             this.pictLogin.Size = new System.Drawing.Size(162, 59);
             this.pictLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-
         }
 
         private void pictLogin_MouseLeave(object sender, EventArgs e)

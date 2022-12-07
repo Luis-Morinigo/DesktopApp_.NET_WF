@@ -44,14 +44,14 @@ namespace CFS_Latam_cashApplicationTool
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblTitleFilter = new System.Windows.Forms.Label();
             this.AdtvgSearchCustomer = new Zuby.ADGV.AdvancedDataGridView();
-            this.sPFINDCUSTOMERBYTEXTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsFbl5n = new CFS_Latam_cashApplicationTool.DsFbl5n();
-            this.sP_FINDCUSTOMERBYTEXTTableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_FINDCUSTOMERBYTEXTTableAdapter();
-            this.panelGridView = new System.Windows.Forms.Panel();
             this.customerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.altPayerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPFINDCUSTOMERBYTEXTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsFbl5n = new CFS_Latam_cashApplicationTool.DsFbl5n();
+            this.sP_FINDCUSTOMERBYTEXTTableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_FINDCUSTOMERBYTEXTTableAdapter();
+            this.panelGridView = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -115,6 +115,8 @@ namespace CFS_Latam_cashApplicationTool
             // cboCoCdSearch
             // 
             this.cboCoCdSearch.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cboCoCdSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cboCoCdSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboCoCdSearch.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCoCdSearch.FormattingEnabled = true;
             this.cboCoCdSearch.Location = new System.Drawing.Point(108, 4);
@@ -122,7 +124,9 @@ namespace CFS_Latam_cashApplicationTool
             this.cboCoCdSearch.Size = new System.Drawing.Size(139, 23);
             this.cboCoCdSearch.TabIndex = 2;
             this.cboCoCdSearch.SelectedIndexChanged += new System.EventHandler(this.cboCoCdSearch_SelectedIndexChanged);
+            this.cboCoCdSearch.Click += new System.EventHandler(this.cboCoCdSearch_Click);
             this.cboCoCdSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboCoCdSearch_KeyPress);
+            this.cboCoCdSearch.Leave += new System.EventHandler(this.cboCoCdSearch_Leave);
             // 
             // lblCompanyCode
             // 
@@ -139,7 +143,7 @@ namespace CFS_Latam_cashApplicationTool
             // txtLettersFind
             // 
             this.txtLettersFind.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLettersFind.Location = new System.Drawing.Point(334, 3);
+            this.txtLettersFind.Location = new System.Drawing.Point(335, 3);
             this.txtLettersFind.Name = "txtLettersFind";
             this.txtLettersFind.Size = new System.Drawing.Size(223, 23);
             this.txtLettersFind.TabIndex = 7;
@@ -172,6 +176,7 @@ namespace CFS_Latam_cashApplicationTool
             // AdtvgSearchCustomer
             // 
             this.AdtvgSearchCustomer.AllowUserToDeleteRows = false;
+            this.AdtvgSearchCustomer.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
@@ -219,29 +224,6 @@ namespace CFS_Latam_cashApplicationTool
             this.AdtvgSearchCustomer.TabIndex = 2;
             this.AdtvgSearchCustomer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.AdtvgSearchCustomer_CellDoubleClick);
             // 
-            // sPFINDCUSTOMERBYTEXTBindingSource
-            // 
-            this.sPFINDCUSTOMERBYTEXTBindingSource.DataMember = "SP_FINDCUSTOMERBYTEXT";
-            this.sPFINDCUSTOMERBYTEXTBindingSource.DataSource = this.dsFbl5n;
-            // 
-            // dsFbl5n
-            // 
-            this.dsFbl5n.DataSetName = "DsFbl5n";
-            this.dsFbl5n.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_FINDCUSTOMERBYTEXTTableAdapter
-            // 
-            this.sP_FINDCUSTOMERBYTEXTTableAdapter.ClearBeforeFill = true;
-            // 
-            // panelGridView
-            // 
-            this.panelGridView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelGridView.Location = new System.Drawing.Point(0, 0);
-            this.panelGridView.Name = "panelGridView";
-            this.panelGridView.Size = new System.Drawing.Size(675, 472);
-            this.panelGridView.TabIndex = 3;
-            // 
             // customerDataGridViewTextBoxColumn
             // 
             this.customerDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -282,7 +264,30 @@ namespace CFS_Latam_cashApplicationTool
             this.companyCodeDataGridViewTextBoxColumn.Name = "companyCodeDataGridViewTextBoxColumn";
             this.companyCodeDataGridViewTextBoxColumn.ReadOnly = true;
             this.companyCodeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.companyCodeDataGridViewTextBoxColumn.Width = 104;
+            this.companyCodeDataGridViewTextBoxColumn.Width = 105;
+            // 
+            // sPFINDCUSTOMERBYTEXTBindingSource
+            // 
+            this.sPFINDCUSTOMERBYTEXTBindingSource.DataMember = "SP_FINDCUSTOMERBYTEXT";
+            this.sPFINDCUSTOMERBYTEXTBindingSource.DataSource = this.dsFbl5n;
+            // 
+            // dsFbl5n
+            // 
+            this.dsFbl5n.DataSetName = "DsFbl5n";
+            this.dsFbl5n.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_FINDCUSTOMERBYTEXTTableAdapter
+            // 
+            this.sP_FINDCUSTOMERBYTEXTTableAdapter.ClearBeforeFill = true;
+            // 
+            // panelGridView
+            // 
+            this.panelGridView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelGridView.Location = new System.Drawing.Point(0, 0);
+            this.panelGridView.Name = "panelGridView";
+            this.panelGridView.Size = new System.Drawing.Size(675, 472);
+            this.panelGridView.TabIndex = 3;
             // 
             // FrmSearchCustomerName
             // 
