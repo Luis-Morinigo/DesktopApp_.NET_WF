@@ -225,9 +225,11 @@
             this.lblCreditNotesTotal = new System.Windows.Forms.Label();
             this.lblInvoicesTotal = new System.Windows.Forms.Label();
             this.lblCreditBalanceTotal = new System.Windows.Forms.Label();
-            this.lblSubtotal = new System.Windows.Forms.Label();
             this.txtCustomerPayTotal = new System.Windows.Forms.TextBox();
             this.txtSubtotal = new System.Windows.Forms.TextBox();
+            this.lblSubtotal = new System.Windows.Forms.Label();
+            this.lblDisputesTotal = new System.Windows.Forms.Label();
+            this.txtDisputesTotal = new System.Windows.Forms.TextBox();
             this.pictSubmit = new System.Windows.Forms.PictureBox();
             this.TtMessage = new System.Windows.Forms.ToolTip(this.components);
             this.sP_AGREEMENTTableAdapter = new CFS_Latam_cashApplicationTool.SSC_Finance_DWDataSetTableAdapters.SP_AGREEMENTTableAdapter();
@@ -291,7 +293,7 @@
             this.panelBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBar.Location = new System.Drawing.Point(0, 0);
             this.panelBar.Name = "panelBar";
-            this.panelBar.Size = new System.Drawing.Size(1574, 64);
+            this.panelBar.Size = new System.Drawing.Size(1625, 64);
             this.panelBar.TabIndex = 0;
             // 
             // lblUserId
@@ -322,7 +324,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblTitle.Location = new System.Drawing.Point(631, 29);
+            this.lblTitle.Location = new System.Drawing.Point(656, 29);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(313, 25);
             this.lblTitle.TabIndex = 1;
@@ -336,7 +338,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1572, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1623, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -402,7 +404,7 @@
             this.panelFilters.Location = new System.Drawing.Point(0, 64);
             this.panelFilters.Name = "panelFilters";
             this.panelFilters.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelFilters.Size = new System.Drawing.Size(1574, 89);
+            this.panelFilters.Size = new System.Drawing.Size(1625, 89);
             this.panelFilters.TabIndex = 1;
             // 
             // lblFrmSearch
@@ -437,7 +439,7 @@
             this.lblExpExcel.AutoSize = true;
             this.lblExpExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblExpExcel.Location = new System.Drawing.Point(1493, 70);
+            this.lblExpExcel.Location = new System.Drawing.Point(1544, 70);
             this.lblExpExcel.Name = "lblExpExcel";
             this.lblExpExcel.Size = new System.Drawing.Size(62, 13);
             this.lblExpExcel.TabIndex = 8;
@@ -449,7 +451,7 @@
             this.pictExcel.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
             this.pictExcel.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
             this.pictExcel.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
-            this.pictExcel.Location = new System.Drawing.Point(1505, 29);
+            this.pictExcel.Location = new System.Drawing.Point(1556, 29);
             this.pictExcel.Name = "pictExcel";
             this.pictExcel.Size = new System.Drawing.Size(39, 37);
             this.pictExcel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -588,7 +590,7 @@
             this.panelTitleFilter.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleFilter.Location = new System.Drawing.Point(0, 0);
             this.panelTitleFilter.Name = "panelTitleFilter";
-            this.panelTitleFilter.Size = new System.Drawing.Size(1572, 25);
+            this.panelTitleFilter.Size = new System.Drawing.Size(1623, 25);
             this.panelTitleFilter.TabIndex = 0;
             // 
             // lblTitleFilter
@@ -611,7 +613,7 @@
             this.panelGeneral.Location = new System.Drawing.Point(0, 153);
             this.panelGeneral.Name = "panelGeneral";
             this.panelGeneral.Padding = new System.Windows.Forms.Padding(5);
-            this.panelGeneral.Size = new System.Drawing.Size(1574, 522);
+            this.panelGeneral.Size = new System.Drawing.Size(1625, 522);
             this.panelGeneral.TabIndex = 2;
             // 
             // tableLayoutPanelGeneral
@@ -635,7 +637,7 @@
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(1562, 510);
+            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(1613, 510);
             this.tableLayoutPanelGeneral.TabIndex = 0;
             // 
             // lblCustomerLine
@@ -656,7 +658,7 @@
             this.lblConciliation.AutoSize = true;
             this.lblConciliation.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConciliation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblConciliation.Location = new System.Drawing.Point(807, 2);
+            this.lblConciliation.Location = new System.Drawing.Point(833, 2);
             this.lblConciliation.Name = "lblConciliation";
             this.lblConciliation.Size = new System.Drawing.Size(170, 20);
             this.lblConciliation.TabIndex = 5;
@@ -686,7 +688,7 @@
             this.tabControlCustomerLine.Name = "tabControlCustomerLine";
             this.tabControlCustomerLine.SelectedIndex = 0;
             this.tabControlCustomerLine.ShowToolTips = true;
-            this.tabControlCustomerLine.Size = new System.Drawing.Size(751, 454);
+            this.tabControlCustomerLine.Size = new System.Drawing.Size(775, 454);
             this.tabControlCustomerLine.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlCustomerLine.TabIndex = 1;
             // 
@@ -698,7 +700,7 @@
             this.tabPageCustomerPayment.Controls.Add(this.AdtvgCustomerPay);
             this.tabPageCustomerPayment.Location = new System.Drawing.Point(4, 24);
             this.tabPageCustomerPayment.Name = "tabPageCustomerPayment";
-            this.tabPageCustomerPayment.Size = new System.Drawing.Size(743, 426);
+            this.tabPageCustomerPayment.Size = new System.Drawing.Size(767, 426);
             this.tabPageCustomerPayment.TabIndex = 0;
             this.tabPageCustomerPayment.Text = "Customer Payment";
             // 
@@ -752,7 +754,7 @@
             this.AdtvgCustomerPay.Name = "AdtvgCustomerPay";
             this.AdtvgCustomerPay.ReadOnly = true;
             this.AdtvgCustomerPay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgCustomerPay.Size = new System.Drawing.Size(741, 424);
+            this.AdtvgCustomerPay.Size = new System.Drawing.Size(765, 424);
             this.AdtvgCustomerPay.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgCustomerPay.TabIndex = 1;
             // 
@@ -936,7 +938,7 @@
             this.tabPageInvoices.Controls.Add(this.AdtvgInvoices);
             this.tabPageInvoices.Location = new System.Drawing.Point(4, 24);
             this.tabPageInvoices.Name = "tabPageInvoices";
-            this.tabPageInvoices.Size = new System.Drawing.Size(743, 426);
+            this.tabPageInvoices.Size = new System.Drawing.Size(767, 426);
             this.tabPageInvoices.TabIndex = 1;
             this.tabPageInvoices.Text = "Invoices";
             // 
@@ -989,7 +991,7 @@
             this.AdtvgInvoices.Name = "AdtvgInvoices";
             this.AdtvgInvoices.ReadOnly = true;
             this.AdtvgInvoices.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgInvoices.Size = new System.Drawing.Size(741, 424);
+            this.AdtvgInvoices.Size = new System.Drawing.Size(765, 424);
             this.AdtvgInvoices.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgInvoices.TabIndex = 2;
             // 
@@ -1163,7 +1165,7 @@
             this.tabPageCreditNotes.Controls.Add(this.AdtvgCreditNotes);
             this.tabPageCreditNotes.Location = new System.Drawing.Point(4, 24);
             this.tabPageCreditNotes.Name = "tabPageCreditNotes";
-            this.tabPageCreditNotes.Size = new System.Drawing.Size(743, 426);
+            this.tabPageCreditNotes.Size = new System.Drawing.Size(767, 426);
             this.tabPageCreditNotes.TabIndex = 2;
             this.tabPageCreditNotes.Text = "Credit Notes";
             // 
@@ -1216,7 +1218,7 @@
             this.AdtvgCreditNotes.Name = "AdtvgCreditNotes";
             this.AdtvgCreditNotes.ReadOnly = true;
             this.AdtvgCreditNotes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgCreditNotes.Size = new System.Drawing.Size(741, 424);
+            this.AdtvgCreditNotes.Size = new System.Drawing.Size(765, 424);
             this.AdtvgCreditNotes.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgCreditNotes.TabIndex = 3;
             // 
@@ -1390,7 +1392,7 @@
             this.tabPageCreditBalance.Controls.Add(this.AdtvgCreditBalance);
             this.tabPageCreditBalance.Location = new System.Drawing.Point(4, 24);
             this.tabPageCreditBalance.Name = "tabPageCreditBalance";
-            this.tabPageCreditBalance.Size = new System.Drawing.Size(743, 426);
+            this.tabPageCreditBalance.Size = new System.Drawing.Size(767, 426);
             this.tabPageCreditBalance.TabIndex = 3;
             this.tabPageCreditBalance.Text = "Credit Balance";
             // 
@@ -1443,7 +1445,7 @@
             this.AdtvgCreditBalance.Name = "AdtvgCreditBalance";
             this.AdtvgCreditBalance.ReadOnly = true;
             this.AdtvgCreditBalance.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgCreditBalance.Size = new System.Drawing.Size(741, 424);
+            this.AdtvgCreditBalance.Size = new System.Drawing.Size(765, 424);
             this.AdtvgCreditBalance.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgCreditBalance.TabIndex = 4;
             // 
@@ -1617,7 +1619,7 @@
             this.tabPageAllDocuments.Controls.Add(this.AdtvgAllDoc);
             this.tabPageAllDocuments.Location = new System.Drawing.Point(4, 24);
             this.tabPageAllDocuments.Name = "tabPageAllDocuments";
-            this.tabPageAllDocuments.Size = new System.Drawing.Size(743, 426);
+            this.tabPageAllDocuments.Size = new System.Drawing.Size(767, 426);
             this.tabPageAllDocuments.TabIndex = 4;
             this.tabPageAllDocuments.Text = "All Documents";
             // 
@@ -1671,7 +1673,7 @@
             this.AdtvgAllDoc.Name = "AdtvgAllDoc";
             this.AdtvgAllDoc.ReadOnly = true;
             this.AdtvgAllDoc.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgAllDoc.Size = new System.Drawing.Size(741, 424);
+            this.AdtvgAllDoc.Size = new System.Drawing.Size(765, 424);
             this.AdtvgAllDoc.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgAllDoc.TabIndex = 5;
             // 
@@ -1848,9 +1850,9 @@
             this.panelArrow.Controls.Add(this.pictUnselectAll);
             this.panelArrow.Controls.Add(this.pictLeft);
             this.panelArrow.Controls.Add(this.PictureRight);
-            this.panelArrow.Location = new System.Drawing.Point(760, 53);
+            this.panelArrow.Location = new System.Drawing.Point(784, 53);
             this.panelArrow.Name = "panelArrow";
-            this.panelArrow.Size = new System.Drawing.Size(41, 454);
+            this.panelArrow.Size = new System.Drawing.Size(43, 454);
             this.panelArrow.TabIndex = 8;
             // 
             // pictUnselectAll
@@ -1863,7 +1865,7 @@
             this.pictUnselectAll.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_UnselectAll;
             this.pictUnselectAll.Location = new System.Drawing.Point(0, 261);
             this.pictUnselectAll.Name = "pictUnselectAll";
-            this.pictUnselectAll.Size = new System.Drawing.Size(41, 35);
+            this.pictUnselectAll.Size = new System.Drawing.Size(43, 35);
             this.pictUnselectAll.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictUnselectAll.TabIndex = 2;
             this.pictUnselectAll.TabStop = false;
@@ -1881,7 +1883,7 @@
             this.pictLeft.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Left;
             this.pictLeft.Location = new System.Drawing.Point(0, 220);
             this.pictLeft.Name = "pictLeft";
-            this.pictLeft.Size = new System.Drawing.Size(41, 35);
+            this.pictLeft.Size = new System.Drawing.Size(43, 35);
             this.pictLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictLeft.TabIndex = 1;
             this.pictLeft.TabStop = false;
@@ -1899,7 +1901,7 @@
             this.PictureRight.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Right;
             this.PictureRight.Location = new System.Drawing.Point(0, 179);
             this.PictureRight.Name = "PictureRight";
-            this.PictureRight.Size = new System.Drawing.Size(41, 35);
+            this.PictureRight.Size = new System.Drawing.Size(43, 35);
             this.PictureRight.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureRight.TabIndex = 0;
             this.PictureRight.TabStop = false;
@@ -1913,10 +1915,10 @@
             this.panelReceiptNumber.Controls.Add(this.txtReceiptNumber);
             this.panelReceiptNumber.Controls.Add(this.lblReceiptNumber);
             this.panelReceiptNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelReceiptNumber.Location = new System.Drawing.Point(804, 25);
+            this.panelReceiptNumber.Location = new System.Drawing.Point(830, 25);
             this.panelReceiptNumber.Margin = new System.Windows.Forms.Padding(0);
             this.panelReceiptNumber.Name = "panelReceiptNumber";
-            this.panelReceiptNumber.Size = new System.Drawing.Size(758, 25);
+            this.panelReceiptNumber.Size = new System.Drawing.Size(783, 25);
             this.panelReceiptNumber.TabIndex = 9;
             // 
             // cboDescriptionAgreement
@@ -2008,11 +2010,11 @@
             this.adtvgConciliation.EnableHeadersVisualStyles = false;
             this.adtvgConciliation.FilterAndSortEnabled = true;
             this.adtvgConciliation.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.adtvgConciliation.Location = new System.Drawing.Point(807, 77);
+            this.adtvgConciliation.Location = new System.Drawing.Point(833, 77);
             this.adtvgConciliation.Margin = new System.Windows.Forms.Padding(3, 27, 3, 5);
             this.adtvgConciliation.Name = "adtvgConciliation";
             this.adtvgConciliation.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.adtvgConciliation.Size = new System.Drawing.Size(752, 428);
+            this.adtvgConciliation.Size = new System.Drawing.Size(777, 428);
             this.adtvgConciliation.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.adtvgConciliation.TabIndex = 10;
             this.adtvgConciliation.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.adtvgConciliation_CellEndEdit);
@@ -2197,7 +2199,7 @@
             this.ReasonCode.MinimumWidth = 22;
             this.ReasonCode.Name = "ReasonCode";
             this.ReasonCode.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ReasonCode.Width = 150;
+            this.ReasonCode.Width = 180;
             // 
             // Agreement
             // 
@@ -2240,17 +2242,19 @@
             this.panFooter.Location = new System.Drawing.Point(0, 675);
             this.panFooter.Name = "panFooter";
             this.panFooter.Padding = new System.Windows.Forms.Padding(10);
-            this.panFooter.Size = new System.Drawing.Size(1574, 100);
+            this.panFooter.Size = new System.Drawing.Size(1625, 100);
             this.panFooter.TabIndex = 3;
             // 
             // tableLayoutPanelTotals
             // 
             this.tableLayoutPanelTotals.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanelTotals.ColumnCount = 4;
-            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelTotals.ColumnCount = 6;
+            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanelTotals.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanelTotals.Controls.Add(this.txtCreditBalanceTotal, 3, 1);
             this.tableLayoutPanelTotals.Controls.Add(this.txtCreditNotesTotal, 1, 1);
             this.tableLayoutPanelTotals.Controls.Add(this.txtInvoicesTotal, 3, 0);
@@ -2258,46 +2262,48 @@
             this.tableLayoutPanelTotals.Controls.Add(this.lblCreditNotesTotal, 0, 1);
             this.tableLayoutPanelTotals.Controls.Add(this.lblInvoicesTotal, 2, 0);
             this.tableLayoutPanelTotals.Controls.Add(this.lblCreditBalanceTotal, 2, 1);
-            this.tableLayoutPanelTotals.Controls.Add(this.lblSubtotal, 2, 2);
             this.tableLayoutPanelTotals.Controls.Add(this.txtCustomerPayTotal, 1, 0);
-            this.tableLayoutPanelTotals.Controls.Add(this.txtSubtotal, 3, 2);
+            this.tableLayoutPanelTotals.Controls.Add(this.txtSubtotal, 5, 1);
+            this.tableLayoutPanelTotals.Controls.Add(this.lblSubtotal, 4, 1);
+            this.tableLayoutPanelTotals.Controls.Add(this.lblDisputesTotal, 4, 0);
+            this.tableLayoutPanelTotals.Controls.Add(this.txtDisputesTotal, 5, 0);
             this.tableLayoutPanelTotals.Location = new System.Drawing.Point(13, 6);
             this.tableLayoutPanelTotals.Name = "tableLayoutPanelTotals";
             this.tableLayoutPanelTotals.RowCount = 3;
             this.tableLayoutPanelTotals.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelTotals.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelTotals.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelTotals.Size = new System.Drawing.Size(629, 81);
+            this.tableLayoutPanelTotals.Size = new System.Drawing.Size(802, 81);
             this.tableLayoutPanelTotals.TabIndex = 2;
             // 
             // txtCreditBalanceTotal
             // 
             this.txtCreditBalanceTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtCreditBalanceTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCreditBalanceTotal.Location = new System.Drawing.Point(474, 30);
+            this.txtCreditBalanceTotal.Location = new System.Drawing.Point(402, 30);
             this.txtCreditBalanceTotal.Name = "txtCreditBalanceTotal";
             this.txtCreditBalanceTotal.ReadOnly = true;
-            this.txtCreditBalanceTotal.Size = new System.Drawing.Size(152, 23);
+            this.txtCreditBalanceTotal.Size = new System.Drawing.Size(127, 23);
             this.txtCreditBalanceTotal.TabIndex = 7;
             // 
             // txtCreditNotesTotal
             // 
             this.txtCreditNotesTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtCreditNotesTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCreditNotesTotal.Location = new System.Drawing.Point(160, 30);
+            this.txtCreditNotesTotal.Location = new System.Drawing.Point(136, 30);
             this.txtCreditNotesTotal.Name = "txtCreditNotesTotal";
             this.txtCreditNotesTotal.ReadOnly = true;
-            this.txtCreditNotesTotal.Size = new System.Drawing.Size(151, 23);
+            this.txtCreditNotesTotal.Size = new System.Drawing.Size(127, 23);
             this.txtCreditNotesTotal.TabIndex = 6;
             // 
             // txtInvoicesTotal
             // 
             this.txtInvoicesTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtInvoicesTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtInvoicesTotal.Location = new System.Drawing.Point(474, 3);
+            this.txtInvoicesTotal.Location = new System.Drawing.Point(402, 3);
             this.txtInvoicesTotal.Name = "txtInvoicesTotal";
             this.txtInvoicesTotal.ReadOnly = true;
-            this.txtInvoicesTotal.Size = new System.Drawing.Size(152, 23);
+            this.txtInvoicesTotal.Size = new System.Drawing.Size(127, 23);
             this.txtInvoicesTotal.TabIndex = 5;
             // 
             // lblCustPayTotal
@@ -2306,7 +2312,7 @@
             this.lblCustPayTotal.AutoSize = true;
             this.lblCustPayTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustPayTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblCustPayTotal.Location = new System.Drawing.Point(43, 6);
+            this.lblCustPayTotal.Location = new System.Drawing.Point(19, 6);
             this.lblCustPayTotal.Name = "lblCustPayTotal";
             this.lblCustPayTotal.Size = new System.Drawing.Size(111, 15);
             this.lblCustPayTotal.TabIndex = 5;
@@ -2318,7 +2324,7 @@
             this.lblCreditNotesTotal.AutoSize = true;
             this.lblCreditNotesTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreditNotesTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblCreditNotesTotal.Location = new System.Drawing.Point(79, 33);
+            this.lblCreditNotesTotal.Location = new System.Drawing.Point(55, 33);
             this.lblCreditNotesTotal.Name = "lblCreditNotesTotal";
             this.lblCreditNotesTotal.Size = new System.Drawing.Size(75, 15);
             this.lblCreditNotesTotal.TabIndex = 6;
@@ -2330,7 +2336,7 @@
             this.lblInvoicesTotal.AutoSize = true;
             this.lblInvoicesTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInvoicesTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblInvoicesTotal.Location = new System.Drawing.Point(414, 6);
+            this.lblInvoicesTotal.Location = new System.Drawing.Point(342, 6);
             this.lblInvoicesTotal.Name = "lblInvoicesTotal";
             this.lblInvoicesTotal.Size = new System.Drawing.Size(54, 15);
             this.lblInvoicesTotal.TabIndex = 9;
@@ -2342,11 +2348,32 @@
             this.lblCreditBalanceTotal.AutoSize = true;
             this.lblCreditBalanceTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreditBalanceTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblCreditBalanceTotal.Location = new System.Drawing.Point(383, 33);
+            this.lblCreditBalanceTotal.Location = new System.Drawing.Point(311, 33);
             this.lblCreditBalanceTotal.Name = "lblCreditBalanceTotal";
             this.lblCreditBalanceTotal.Size = new System.Drawing.Size(85, 15);
             this.lblCreditBalanceTotal.TabIndex = 7;
             this.lblCreditBalanceTotal.Text = "Credit Balance:";
+            // 
+            // txtCustomerPayTotal
+            // 
+            this.txtCustomerPayTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtCustomerPayTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerPayTotal.Location = new System.Drawing.Point(136, 3);
+            this.txtCustomerPayTotal.Name = "txtCustomerPayTotal";
+            this.txtCustomerPayTotal.ReadOnly = true;
+            this.txtCustomerPayTotal.Size = new System.Drawing.Size(127, 23);
+            this.txtCustomerPayTotal.TabIndex = 4;
+            // 
+            // txtSubtotal
+            // 
+            this.txtSubtotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtSubtotal.BackColor = System.Drawing.Color.Gainsboro;
+            this.txtSubtotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubtotal.Location = new System.Drawing.Point(668, 30);
+            this.txtSubtotal.Name = "txtSubtotal";
+            this.txtSubtotal.ReadOnly = true;
+            this.txtSubtotal.Size = new System.Drawing.Size(131, 23);
+            this.txtSubtotal.TabIndex = 8;
             // 
             // lblSubtotal
             // 
@@ -2355,32 +2382,33 @@
             this.lblSubtotal.BackColor = System.Drawing.Color.Transparent;
             this.lblSubtotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSubtotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.lblSubtotal.Location = new System.Drawing.Point(406, 59);
+            this.lblSubtotal.Location = new System.Drawing.Point(600, 32);
             this.lblSubtotal.Name = "lblSubtotal";
             this.lblSubtotal.Size = new System.Drawing.Size(62, 17);
             this.lblSubtotal.TabIndex = 8;
             this.lblSubtotal.Text = "Subtotal:";
             // 
-            // txtCustomerPayTotal
+            // lblDisputesTotal
             // 
-            this.txtCustomerPayTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtCustomerPayTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCustomerPayTotal.Location = new System.Drawing.Point(160, 3);
-            this.txtCustomerPayTotal.Name = "txtCustomerPayTotal";
-            this.txtCustomerPayTotal.ReadOnly = true;
-            this.txtCustomerPayTotal.Size = new System.Drawing.Size(151, 23);
-            this.txtCustomerPayTotal.TabIndex = 4;
+            this.lblDisputesTotal.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblDisputesTotal.AutoSize = true;
+            this.lblDisputesTotal.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDisputesTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.lblDisputesTotal.Location = new System.Drawing.Point(606, 6);
+            this.lblDisputesTotal.Name = "lblDisputesTotal";
+            this.lblDisputesTotal.Size = new System.Drawing.Size(56, 15);
+            this.lblDisputesTotal.TabIndex = 10;
+            this.lblDisputesTotal.Text = "Disputes:";
             // 
-            // txtSubtotal
+            // txtDisputesTotal
             // 
-            this.txtSubtotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtSubtotal.BackColor = System.Drawing.Color.Gainsboro;
-            this.txtSubtotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSubtotal.Location = new System.Drawing.Point(474, 57);
-            this.txtSubtotal.Name = "txtSubtotal";
-            this.txtSubtotal.ReadOnly = true;
-            this.txtSubtotal.Size = new System.Drawing.Size(152, 23);
-            this.txtSubtotal.TabIndex = 8;
+            this.txtDisputesTotal.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtDisputesTotal.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDisputesTotal.Location = new System.Drawing.Point(668, 3);
+            this.txtDisputesTotal.Name = "txtDisputesTotal";
+            this.txtDisputesTotal.ReadOnly = true;
+            this.txtDisputesTotal.Size = new System.Drawing.Size(131, 23);
+            this.txtDisputesTotal.TabIndex = 11;
             // 
             // pictSubmit
             // 
@@ -2388,7 +2416,7 @@
             this.pictSubmit.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
             this.pictSubmit.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
             this.pictSubmit.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
-            this.pictSubmit.Location = new System.Drawing.Point(1440, 41);
+            this.pictSubmit.Location = new System.Drawing.Point(1491, 41);
             this.pictSubmit.Name = "pictSubmit";
             this.pictSubmit.Size = new System.Drawing.Size(104, 46);
             this.pictSubmit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2436,7 +2464,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1591, 721);
+            this.ClientSize = new System.Drawing.Size(1642, 721);
             this.Controls.Add(this.panFooter);
             this.Controls.Add(this.panelGeneral);
             this.Controls.Add(this.panelFilters);
@@ -2675,6 +2703,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn66;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn67;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn68;
+        private System.Windows.Forms.Label lblDisputesTotal;
+        private System.Windows.Forms.TextBox txtDisputesTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn AltPayer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Account;

@@ -73,6 +73,16 @@ namespace CFS_Latam_cashApplicationTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_Alert {
+            get {
+                object obj = ResourceManager.GetObject("Icon_Alert", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_CFS {
             get {
                 object obj = ResourceManager.GetObject("Icon_CFS", resourceCulture);
@@ -116,6 +126,16 @@ namespace CFS_Latam_cashApplicationTool.Properties {
         internal static System.Drawing.Bitmap Icon_Login {
             get {
                 object obj = ResourceManager.GetObject("Icon_Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_Mail {
+            get {
+                object obj = ResourceManager.GetObject("Icon_Mail", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +196,16 @@ namespace CFS_Latam_cashApplicationTool.Properties {
         internal static System.Drawing.Bitmap Icon_User {
             get {
                 object obj = ResourceManager.GetObject("Icon_User", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_Whatsapp {
+            get {
+                object obj = ResourceManager.GetObject("Icon_Whatsapp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

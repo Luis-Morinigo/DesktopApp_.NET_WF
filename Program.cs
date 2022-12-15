@@ -18,6 +18,7 @@ namespace CFS_Latam_cashApplicationTool
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FrmLogin());
+            //Application.Run(new FrmLoginError());
             //Application.Run(new FrmMain());
             //Application.Run(new FrmDisputes()); 
             //Application.Run(new FrmLoading()); 
