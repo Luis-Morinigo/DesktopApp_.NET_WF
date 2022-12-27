@@ -133,6 +133,12 @@
   <data name="Icon_Excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_Excel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Icon_Exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_Exit2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Exit2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Icon_Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -153,6 +159,9 @@
   </data>
   <data name="Icon_Submit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_Submit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Icon_Submit_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon_Submit_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Icon_UnselectAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon_UnselectAll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

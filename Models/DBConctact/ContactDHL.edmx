@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SSC_Finance_DWModelContact.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="SSC_Finance_DWModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'SSC_Finance_DW.GLOBAL\B082193.CASH APPLICATION - Contacto_DHL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="CASH APPLICATION - Contacto_DHL">
@@ -15,7 +15,7 @@ warning 6002: The table/view 'SSC_Finance_DW.GLOBAL\B082193.CASH APPLICATION - C
           <Property Name="Whatsapp" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Mail_HelpDesk" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="SSC_Finance_DWModelContactStoreContainer">
+        <EntityContainer Name="SSC_Finance_DWModel2StoreContainer">
           <EntitySet Name="CASH APPLICATION - Contacto_DHL" EntityType="Self.CASH APPLICATION - Contacto_DHL" store:Type="Tables" store:Schema="GLOBAL\B082193">
             <DefiningQuery>SELECT 
     [CASH APPLICATION - Contacto_DHL].[Whatsapp] AS [Whatsapp], 
@@ -27,7 +27,7 @@ warning 6002: The table/view 'SSC_Finance_DW.GLOBAL\B082193.CASH APPLICATION - C
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="SSC_Finance_DWModelContact" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="SSC_Finance_DWModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="CASH_APPLICATION___Contacto_DHL">
           <Key>
             <PropertyRef Name="Whatsapp" />
@@ -36,7 +36,7 @@ warning 6002: The table/view 'SSC_Finance_DW.GLOBAL\B082193.CASH APPLICATION - C
           <Property Name="Whatsapp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Mail_HelpDesk" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="SSC_Finance_DWEntitiesContact" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SSC_Finance_DWEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CASH_APPLICATION___Contacto_DHL" EntityType="Self.CASH_APPLICATION___Contacto_DHL" />
         </EntityContainer>
       </Schema>
@@ -44,9 +44,9 @@ warning 6002: The table/view 'SSC_Finance_DW.GLOBAL\B082193.CASH APPLICATION - C
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="SSC_Finance_DWModelContactStoreContainer" CdmEntityContainer="SSC_Finance_DWEntitiesContact">
+        <EntityContainerMapping StorageEntityContainer="SSC_Finance_DWModel2StoreContainer" CdmEntityContainer="SSC_Finance_DWEntities2">
           <EntitySetMapping Name="CASH_APPLICATION___Contacto_DHL">
-            <EntityTypeMapping TypeName="SSC_Finance_DWModelContact.CASH_APPLICATION___Contacto_DHL">
+            <EntityTypeMapping TypeName="SSC_Finance_DWModel2.CASH_APPLICATION___Contacto_DHL">
               <MappingFragment StoreEntitySet="CASH APPLICATION - Contacto_DHL">
                 <ScalarProperty Name="Whatsapp" ColumnName="Whatsapp" />
                 <ScalarProperty Name="Mail_HelpDesk" ColumnName="Mail_HelpDesk" />

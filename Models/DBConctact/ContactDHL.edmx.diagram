@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="de6679e08df043799b577a18e49afb6f" Name="Diagram1">
-        <EntityTypeShape EntityType="SSC_Finance_DWModelContact.CASH_APPLICATION___Contacto_DHL" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="e921530040bd42c6bf06a1da964f5cb4" Name="Diagram1">
+        <EntityTypeShape EntityType="SSC_Finance_DWModel2.CASH_APPLICATION___Contacto_DHL" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

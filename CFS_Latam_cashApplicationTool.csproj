@@ -170,6 +170,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataBase.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\DBConctact\CASH_APPLICATION___Contacto_DHL.cs">
+      <DependentUpon>ContactDHL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBConctact\ContactDHL.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactDHL.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBConctact\ContactDHL.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactDHL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBConctact\ContactDHL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContactDHL.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SearchCustomerName.cs">
@@ -224,6 +242,13 @@
     </None>
     <None Include="Models\DataBase.edmx.diagram">
       <DependentUpon>DataBase.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Models\DBConctact\ContactDHL.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ContactDHL.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\DBConctact\ContactDHL.edmx.diagram">
+      <DependentUpon>ContactDHL.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -315,6 +340,23 @@
       <DependentUpon>DataBase.edmx</DependentUpon>
       <LastGenOutput>DataBase.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\DBConctact\ContactDHL.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ContactDHL.edmx</DependentUpon>
+      <LastGenOutput>ContactDHL.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DBConctact\ContactDHL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ContactDHL.edmx</DependentUpon>
+      <LastGenOutput>ContactDHL.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\Icon_Exit2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Icon_Exit.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\Icon_Submit_2.png" />
     <None Include="Resources\Icon_Alert.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -390,9 +432,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\EntityContact\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

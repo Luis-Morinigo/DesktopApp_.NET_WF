@@ -70,10 +70,6 @@ namespace CFS_Latam_cashApplicationTool
             }
         }
 
-        public void FrmLogin_Load(object sender, EventArgs e)
-        {
-        }
-
         private void pictLogin_MouseHover(object sender, EventArgs e)
         {
             this.pictLogin.Size = new System.Drawing.Size(162, 59);

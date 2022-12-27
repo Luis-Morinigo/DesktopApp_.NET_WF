@@ -13,7 +13,11 @@ using Outlook = Microsoft.Office.Interop.Outlook;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.InteropServices;
-
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using DocumentFormat.OpenXml.Office2010.PowerPoint;
+using DocumentFormat.OpenXml.ExtendedProperties;
+using Microsoft.Office.Interop.Outlook;
+using Exception = System.Exception;
 
 namespace CFS_Latam_cashApplicationTool
 {
@@ -29,13 +33,27 @@ namespace CFS_Latam_cashApplicationTool
             this.Close();
         }
 
-        // Abre Whatsapp ******************************************************************************************************
-        private void sendWhatsApp()
+        // Abrir Whatsapp ******************************************************************************************************
+        public void sendWhatsApp()
         {
             try
             {
-                // Traer NUMERO DE WHATSAPP de DB
-                System.Diagnostics.Process.Start("https://web.whatsapp.com/" + "send?phone=" + "5491131352843" + "&text=" + "Hola team DHL, me ayudan por favor");
+                //Genero conexión a la base de datos
+                using (Models.DBConctact.SSC_Finance_DWEntities2 whatsapplDhl = new Models.DBConctact.SSC_Finance_DWEntities2())
+                {
+                    // Traer número de Whatsapp de DB a lista
+                    var lst = (from d in whatsapplDhl.CASH_APPLICATION___Contacto_DHL
+                               where d.Whatsapp.Contains("54")
+                               select d).ToList();
+
+                    foreach (var e in lst)
+                    {
+                        List<string> lstAllRecipients = new List<string>();
+                        lstAllRecipients.Add(e.Whatsapp);
+                        // Traer NUMERO DE WHATSAPP de DB
+                        System.Diagnostics.Process.Start("https://web.whatsapp.com/" + "send?phone=" + e.Whatsapp + "&text=" + "Hola team DHL, me ayudan por favor");
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -43,13 +61,13 @@ namespace CFS_Latam_cashApplicationTool
             }
         }
 
-        private void pictWhatsapp_Click(object sender, EventArgs e)
+        public void pictWhatsapp_Click(object sender, EventArgs e)
         {
             sendWhatsApp();
         }
 
-        // Abre Outlook ******************************************************************************************************
-        private void sendEmail()
+        // Abrir Outlook ******************************************************************************************************
+        public void sendEmail()
         {
             try
             {
@@ -74,33 +92,44 @@ namespace CFS_Latam_cashApplicationTool
                     }
                 }
 
-                List<string> lstAllRecipients = new List<string>();
-                // Traer mail de DB
-                lstAllRecipients.Add("digitalhublatam@scj.com");
-
-                Outlook.Application outlookApp = new Outlook.Application();
-                Outlook._MailItem oMailItem = (Outlook._MailItem)outlookApp.CreateItem(Outlook.OlItemType.olMailItem);
-                Outlook.Inspector oInspector = oMailItem.GetInspector;
-
-                // Recipient
-                Outlook.Recipients oRecips = (Outlook.Recipients)oMailItem.Recipients;
-                foreach (String recipient in lstAllRecipients)
+                //Genero conexión a la base de datos
+                using (Models.DBConctact.SSC_Finance_DWEntities2 mailDhl = new Models.DBConctact.SSC_Finance_DWEntities2())
                 {
-                    Outlook.Recipient oRecip = (Outlook.Recipient)oRecips.Add(recipient);
-                    oRecip.Resolve();
-                }
+                    // Traer mail de DB a lista
+                    var lst = (from d in mailDhl.CASH_APPLICATION___Contacto_DHL
+                              where d.Mail_HelpDesk.Contains("scj")
+                              select d).ToList();
 
-                //Add CC
-                //Outlook.Recipient oCCRecip = oRecips.Add("test@testmail.com");
-                //oCCRecip.Type = (int)Outlook.OlMailRecipientType.olCC;
-                //oCCRecip.Resolve();
+                    foreach (var e in lst)
+                    {
+                        List<string> lstAllRecipients = new List<string>();                        
+                        lstAllRecipients.Add(e.Mail_HelpDesk);
 
-                //Add Subject
-                oMailItem.Subject = ".NET: Cash Application Tool - Consulta";
-                oMailItem.Body = "Hola team DHL," + "\n\n" + "Podrian ayudarme con...";
+                        Outlook.Application outlookApp = new Outlook.Application();
+                        Outlook._MailItem oMailItem = (Outlook._MailItem)outlookApp.CreateItem(Outlook.OlItemType.olMailItem);
+                        Outlook.Inspector oInspector = oMailItem.GetInspector;
 
-                //Display the mailbox
-                oMailItem.Display(true);
+                        // Recipient
+                        Outlook.Recipients oRecips = (Outlook.Recipients)oMailItem.Recipients;
+                        foreach (String recipient in lstAllRecipients)
+                        {
+                            Outlook.Recipient oRecip = (Outlook.Recipient)oRecips.Add(recipient);
+                            oRecip.Resolve();
+                        }
+
+                        // Add CC
+                        //Outlook.Recipient oCCRecip = oRecips.Add("test@testmail.com");
+                        //oCCRecip.Type = (int)Outlook.OlMailRecipientType.olCC;
+                        //oCCRecip.Resolve();
+
+                        // Agrega Subject 
+                        oMailItem.Subject = ".NET: Cash Application Tool - Consulta";
+                        oMailItem.Body = "Hola team DHL," + "\n\n" + "Podrian ayudarme con...";
+
+                        // Display mail
+                        oMailItem.Display(true);
+                    }
+                }                
             }
             catch (Exception ex)
             {

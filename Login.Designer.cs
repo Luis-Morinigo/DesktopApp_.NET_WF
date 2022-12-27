@@ -219,7 +219,6 @@
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login - Cash Application Tool CFS Latam";
-            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.panelGeneral.ResumeLayout(false);
             this.panelGeneral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictDhl)).EndInit();

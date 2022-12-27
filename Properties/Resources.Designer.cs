@@ -113,6 +113,26 @@ namespace CFS_Latam_cashApplicationTool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_Exit {
+            get {
+                object obj = ResourceManager.GetObject("Icon_Exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_Exit2 {
+            get {
+                object obj = ResourceManager.GetObject("Icon_Exit2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Icon_Left {
             get {
                 object obj = ResourceManager.GetObject("Icon_Left", resourceCulture);
@@ -176,6 +196,16 @@ namespace CFS_Latam_cashApplicationTool.Properties {
         internal static System.Drawing.Bitmap Icon_Submit {
             get {
                 object obj = ResourceManager.GetObject("Icon_Submit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Icon_Submit_2 {
+            get {
+                object obj = ResourceManager.GetObject("Icon_Submit_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

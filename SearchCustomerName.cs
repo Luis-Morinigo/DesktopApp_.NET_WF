@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
 using System.Windows.Forms;
+using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 namespace CFS_Latam_cashApplicationTool
 {
@@ -176,6 +177,14 @@ namespace CFS_Latam_cashApplicationTool
             {
                 cboCoCdSearch.Text = "-- Select Company --";
                 cboCoCdSearch.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void FrmSearchCustomerName_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Escape)
+            {
+                this.Close();
             }
         }
     }

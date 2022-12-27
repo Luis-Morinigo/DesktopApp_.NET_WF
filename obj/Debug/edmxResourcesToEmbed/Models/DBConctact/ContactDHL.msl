@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SSC_Finance_DWModel2StoreContainer" CdmEntityContainer="SSC_Finance_DWEntities2">
+    <EntitySetMapping Name="CASH_APPLICATION___Contacto_DHL">
+      <EntityTypeMapping TypeName="SSC_Finance_DWModel2.CASH_APPLICATION___Contacto_DHL">
+        <MappingFragment StoreEntitySet="CASH APPLICATION - Contacto_DHL">
+          <ScalarProperty Name="Whatsapp" ColumnName="Whatsapp" />
+          <ScalarProperty Name="Mail_HelpDesk" ColumnName="Mail_HelpDesk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

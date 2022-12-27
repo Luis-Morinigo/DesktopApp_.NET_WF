@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SSC_Finance_DWModelHistoricalCat.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'SSC_Finance_DW.GLOBAL\B082193.CASH APPLICATION - Input_Historical_CAT' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CASH APPLICATION - Input_Historical_CAT">
+          <Property Name="Document number CAT" Type="int" />
+          <Property Name="GUID" Type="varchar" MaxLength="50" />
+          <Property Name="User name" Type="varchar" MaxLength="255" />
+          <Property Name="Entry date CAT" Type="date" />
+          <Property Name="Day DD&#xD;&#xA;Status" Type="varchar" MaxLength="255" />
+          <Property Name="Posting date SAP" Type="date" />
+          <Property Name="Document number  F-32" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Company Code" Type="varchar" MaxLength="10" />
+          <Property Name="Alt Payer" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Account" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Customer name" Type="varchar" MaxLength="255" />
+          <Property Name="Document Type" Type="varchar" MaxLength="10" />
+          <Property Name="Document Type Description" Type="varchar" MaxLength="255" />
+          <Property Name="Amount in doc_curr_" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Document currency" Type="varchar" MaxLength="10" />
+          <Property Name="Document Number" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Reference" Type="varchar" MaxLength="255" />
+          <Property Name="Document Date" Type="date" />
+          <Property Name="Baseline Payment Dte" Type="date" />
+          <Property Name="Arrears for discount 1" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Amount  in local currency" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Local Currency" Type="varchar" MaxLength="10" />
+          <Property Name="Text SAP" Type="varchar" MaxLength="255" />
+          <Property Name="Receipt Number" Type="varchar" MaxLength="255" />
+          <Property Name="Dispute Amount" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Reason Code" Type="varchar" MaxLength="255" />
+          <Property Name="Agreement" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Description" Type="varchar" MaxLength="255" />
+        </EntityType>-->
+  <EntityContainer Name="SSC_Finance_DWModelHistoricalCatStoreContainer" />
+</Schema>

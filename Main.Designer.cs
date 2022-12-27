@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -46,19 +47,26 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.panelBar = new System.Windows.Forms.Panel();
             this.lblUserId = new System.Windows.Forms.Label();
             this.pictUser = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.findCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.submitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.systemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutCashApplicationToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contactToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.emailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.whatsappToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelFilters = new System.Windows.Forms.Panel();
+            this.pictSubmitDb = new System.Windows.Forms.PictureBox();
+            this.lblSubmit = new System.Windows.Forms.Label();
             this.lblFrmSearch = new System.Windows.Forms.Label();
             this.pictFormSearch = new System.Windows.Forms.PictureBox();
             this.lblExpExcel = new System.Windows.Forms.Label();
@@ -230,7 +238,6 @@
             this.lblSubtotal = new System.Windows.Forms.Label();
             this.lblDisputesTotal = new System.Windows.Forms.Label();
             this.txtDisputesTotal = new System.Windows.Forms.TextBox();
-            this.pictSubmit = new System.Windows.Forms.PictureBox();
             this.TtMessage = new System.Windows.Forms.ToolTip(this.components);
             this.sP_AGREEMENTTableAdapter = new CFS_Latam_cashApplicationTool.SSC_Finance_DWDataSetTableAdapters.SP_AGREEMENTTableAdapter();
             this.sP_SELECTFBL5NTableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_SELECTFBL5NTableAdapter();
@@ -243,6 +250,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictUser)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panelFilters.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictSubmitDb)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictFormSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictExcel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictSearch)).BeginInit();
@@ -279,7 +287,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.sSC_Finance_DWDataSet)).BeginInit();
             this.panFooter.SuspendLayout();
             this.tableLayoutPanelTotals.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictSubmit)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBar
@@ -293,7 +300,7 @@
             this.panelBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBar.Location = new System.Drawing.Point(0, 0);
             this.panelBar.Name = "panelBar";
-            this.panelBar.Size = new System.Drawing.Size(1625, 64);
+            this.panelBar.Size = new System.Drawing.Size(1642, 64);
             this.panelBar.TabIndex = 0;
             // 
             // lblUserId
@@ -324,7 +331,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lblTitle.Location = new System.Drawing.Point(656, 29);
+            this.lblTitle.Location = new System.Drawing.Point(665, 29);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(313, 25);
             this.lblTitle.TabIndex = 1;
@@ -335,26 +342,58 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.programToolStripMenuItem,
             this.systemToolStripMenuItem,
-            this.helpToolStripMenuItem});
+            this.helpToolStripMenuItem,
+            this.contactToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1623, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1640, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // programToolStripMenuItem
             // 
             this.programToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.searchToolStripMenuItem,
+            this.findCustomersToolStripMenuItem,
+            this.submitToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.programToolStripMenuItem.Name = "programToolStripMenuItem";
             this.programToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.programToolStripMenuItem.Text = "Program";
             // 
+            // searchToolStripMenuItem
+            // 
+            this.searchToolStripMenuItem.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Search;
+            this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
+            this.searchToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F8;
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.searchToolStripMenuItem.Text = "Search";
+            this.searchToolStripMenuItem.Click += new System.EventHandler(this.searchToolStripMenuItem_Click);
+            // 
+            // findCustomersToolStripMenuItem
+            // 
+            this.findCustomersToolStripMenuItem.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_SearchCustomerCfs;
+            this.findCustomersToolStripMenuItem.Name = "findCustomersToolStripMenuItem";
+            this.findCustomersToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F2)));
+            this.findCustomersToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.findCustomersToolStripMenuItem.Text = "Find customers";
+            this.findCustomersToolStripMenuItem.Click += new System.EventHandler(this.findCustomersToolStripMenuItem_Click);
+            // 
+            // submitToolStripMenuItem
+            // 
+            this.submitToolStripMenuItem.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit_2;
+            this.submitToolStripMenuItem.Name = "submitToolStripMenuItem";
+            this.submitToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F10;
+            this.submitToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.submitToolStripMenuItem.Text = "Submit";
+            this.submitToolStripMenuItem.Click += new System.EventHandler(this.submitToolStripMenuItem_Click);
+            // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Exit2;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
@@ -368,6 +407,7 @@
             // 
             // exportExcelToolStripMenuItem
             // 
+            this.exportExcelToolStripMenuItem.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
             this.exportExcelToolStripMenuItem.Name = "exportExcelToolStripMenuItem";
             this.exportExcelToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F1)));
             this.exportExcelToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
@@ -388,10 +428,39 @@
             this.aboutCashApplicationToolToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.aboutCashApplicationToolToolStripMenuItem.Text = "About Cash Application Tool";
             // 
+            // contactToolStripMenuItem
+            // 
+            this.contactToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.emailToolStripMenuItem,
+            this.whatsappToolStripMenuItem});
+            this.contactToolStripMenuItem.Name = "contactToolStripMenuItem";
+            this.contactToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.contactToolStripMenuItem.Text = "Contact";
+            // 
+            // emailToolStripMenuItem
+            // 
+            this.emailToolStripMenuItem.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Mail;
+            this.emailToolStripMenuItem.Name = "emailToolStripMenuItem";
+            this.emailToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F3)));
+            this.emailToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.emailToolStripMenuItem.Text = "E-mail";
+            this.emailToolStripMenuItem.Click += new System.EventHandler(this.emailToolStripMenuItem_Click);
+            // 
+            // whatsappToolStripMenuItem
+            // 
+            this.whatsappToolStripMenuItem.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Whatsapp;
+            this.whatsappToolStripMenuItem.Name = "whatsappToolStripMenuItem";
+            this.whatsappToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Shift | System.Windows.Forms.Keys.F4)));
+            this.whatsappToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.whatsappToolStripMenuItem.Text = "Whatsapp";
+            this.whatsappToolStripMenuItem.Click += new System.EventHandler(this.whatsappToolStripMenuItem_Click);
+            // 
             // panelFilters
             // 
             this.panelFilters.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelFilters.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelFilters.Controls.Add(this.pictSubmitDb);
+            this.panelFilters.Controls.Add(this.lblSubmit);
             this.panelFilters.Controls.Add(this.lblFrmSearch);
             this.panelFilters.Controls.Add(this.pictFormSearch);
             this.panelFilters.Controls.Add(this.lblExpExcel);
@@ -404,26 +473,52 @@
             this.panelFilters.Location = new System.Drawing.Point(0, 64);
             this.panelFilters.Name = "panelFilters";
             this.panelFilters.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.panelFilters.Size = new System.Drawing.Size(1625, 89);
+            this.panelFilters.Size = new System.Drawing.Size(1642, 89);
             this.panelFilters.TabIndex = 1;
+            // 
+            // pictSubmitDb
+            // 
+            this.pictSubmitDb.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictSubmitDb.ErrorImage")));
+            this.pictSubmitDb.Image = ((System.Drawing.Image)(resources.GetObject("pictSubmitDb.Image")));
+            this.pictSubmitDb.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictSubmitDb.InitialImage")));
+            this.pictSubmitDb.Location = new System.Drawing.Point(1039, 31);
+            this.pictSubmitDb.Name = "pictSubmitDb";
+            this.pictSubmitDb.Size = new System.Drawing.Size(43, 37);
+            this.pictSubmitDb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictSubmitDb.TabIndex = 12;
+            this.pictSubmitDb.TabStop = false;
+            this.pictSubmitDb.Click += new System.EventHandler(this.pictSubmitDb_Click);
+            this.pictSubmitDb.MouseLeave += new System.EventHandler(this.pictSubmitDb_MouseLeave);
+            this.pictSubmitDb.MouseHover += new System.EventHandler(this.pictSubmitDb_MouseHover);
+            // 
+            // lblSubmit
+            // 
+            this.lblSubmit.AutoSize = true;
+            this.lblSubmit.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubmit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lblSubmit.Location = new System.Drawing.Point(1040, 72);
+            this.lblSubmit.Name = "lblSubmit";
+            this.lblSubmit.Size = new System.Drawing.Size(43, 13);
+            this.lblSubmit.TabIndex = 11;
+            this.lblSubmit.Text = "Submit";
             // 
             // lblFrmSearch
             // 
             this.lblFrmSearch.AutoSize = true;
             this.lblFrmSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFrmSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblFrmSearch.Location = new System.Drawing.Point(932, 72);
+            this.lblFrmSearch.Location = new System.Drawing.Point(929, 72);
             this.lblFrmSearch.Name = "lblFrmSearch";
-            this.lblFrmSearch.Size = new System.Drawing.Size(120, 13);
+            this.lblFrmSearch.Size = new System.Drawing.Size(86, 13);
             this.lblFrmSearch.TabIndex = 10;
-            this.lblFrmSearch.Text = "Help - Find Customers";
+            this.lblFrmSearch.Text = "Find Customers";
             // 
             // pictFormSearch
             // 
             this.pictFormSearch.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_SearchCustomerCfs;
             this.pictFormSearch.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_SearchCustomerCfs;
             this.pictFormSearch.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_SearchCustomerCfs;
-            this.pictFormSearch.Location = new System.Drawing.Point(971, 31);
+            this.pictFormSearch.Location = new System.Drawing.Point(951, 31);
             this.pictFormSearch.Name = "pictFormSearch";
             this.pictFormSearch.Size = new System.Drawing.Size(43, 37);
             this.pictFormSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -439,7 +534,7 @@
             this.lblExpExcel.AutoSize = true;
             this.lblExpExcel.Font = new System.Drawing.Font("Segoe UI Semibold", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblExpExcel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblExpExcel.Location = new System.Drawing.Point(1544, 70);
+            this.lblExpExcel.Location = new System.Drawing.Point(1561, 70);
             this.lblExpExcel.Name = "lblExpExcel";
             this.lblExpExcel.Size = new System.Drawing.Size(62, 13);
             this.lblExpExcel.TabIndex = 8;
@@ -451,7 +546,7 @@
             this.pictExcel.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
             this.pictExcel.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
             this.pictExcel.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Excel;
-            this.pictExcel.Location = new System.Drawing.Point(1556, 29);
+            this.pictExcel.Location = new System.Drawing.Point(1573, 29);
             this.pictExcel.Name = "pictExcel";
             this.pictExcel.Size = new System.Drawing.Size(39, 37);
             this.pictExcel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -558,6 +653,7 @@
             this.txtCustomerNumber.Name = "txtCustomerNumber";
             this.txtCustomerNumber.Size = new System.Drawing.Size(132, 23);
             this.txtCustomerNumber.TabIndex = 2;
+            this.txtCustomerNumber.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCustomerNumber_KeyDown);
             this.txtCustomerNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCustomerNumber_KeyPress);
             // 
             // lblAltNumber
@@ -590,7 +686,7 @@
             this.panelTitleFilter.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleFilter.Location = new System.Drawing.Point(0, 0);
             this.panelTitleFilter.Name = "panelTitleFilter";
-            this.panelTitleFilter.Size = new System.Drawing.Size(1623, 25);
+            this.panelTitleFilter.Size = new System.Drawing.Size(1640, 25);
             this.panelTitleFilter.TabIndex = 0;
             // 
             // lblTitleFilter
@@ -613,7 +709,7 @@
             this.panelGeneral.Location = new System.Drawing.Point(0, 153);
             this.panelGeneral.Name = "panelGeneral";
             this.panelGeneral.Padding = new System.Windows.Forms.Padding(5);
-            this.panelGeneral.Size = new System.Drawing.Size(1625, 522);
+            this.panelGeneral.Size = new System.Drawing.Size(1642, 522);
             this.panelGeneral.TabIndex = 2;
             // 
             // tableLayoutPanelGeneral
@@ -637,7 +733,7 @@
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(1613, 510);
+            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(1630, 510);
             this.tableLayoutPanelGeneral.TabIndex = 0;
             // 
             // lblCustomerLine
@@ -658,7 +754,7 @@
             this.lblConciliation.AutoSize = true;
             this.lblConciliation.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConciliation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblConciliation.Location = new System.Drawing.Point(833, 2);
+            this.lblConciliation.Location = new System.Drawing.Point(842, 2);
             this.lblConciliation.Name = "lblConciliation";
             this.lblConciliation.Size = new System.Drawing.Size(170, 20);
             this.lblConciliation.TabIndex = 5;
@@ -688,7 +784,7 @@
             this.tabControlCustomerLine.Name = "tabControlCustomerLine";
             this.tabControlCustomerLine.SelectedIndex = 0;
             this.tabControlCustomerLine.ShowToolTips = true;
-            this.tabControlCustomerLine.Size = new System.Drawing.Size(775, 454);
+            this.tabControlCustomerLine.Size = new System.Drawing.Size(784, 454);
             this.tabControlCustomerLine.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlCustomerLine.TabIndex = 1;
             // 
@@ -700,7 +796,7 @@
             this.tabPageCustomerPayment.Controls.Add(this.AdtvgCustomerPay);
             this.tabPageCustomerPayment.Location = new System.Drawing.Point(4, 24);
             this.tabPageCustomerPayment.Name = "tabPageCustomerPayment";
-            this.tabPageCustomerPayment.Size = new System.Drawing.Size(767, 426);
+            this.tabPageCustomerPayment.Size = new System.Drawing.Size(776, 426);
             this.tabPageCustomerPayment.TabIndex = 0;
             this.tabPageCustomerPayment.Text = "Customer Payment";
             // 
@@ -754,7 +850,7 @@
             this.AdtvgCustomerPay.Name = "AdtvgCustomerPay";
             this.AdtvgCustomerPay.ReadOnly = true;
             this.AdtvgCustomerPay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgCustomerPay.Size = new System.Drawing.Size(765, 424);
+            this.AdtvgCustomerPay.Size = new System.Drawing.Size(774, 424);
             this.AdtvgCustomerPay.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgCustomerPay.TabIndex = 1;
             // 
@@ -938,7 +1034,7 @@
             this.tabPageInvoices.Controls.Add(this.AdtvgInvoices);
             this.tabPageInvoices.Location = new System.Drawing.Point(4, 24);
             this.tabPageInvoices.Name = "tabPageInvoices";
-            this.tabPageInvoices.Size = new System.Drawing.Size(767, 426);
+            this.tabPageInvoices.Size = new System.Drawing.Size(776, 426);
             this.tabPageInvoices.TabIndex = 1;
             this.tabPageInvoices.Text = "Invoices";
             // 
@@ -991,7 +1087,7 @@
             this.AdtvgInvoices.Name = "AdtvgInvoices";
             this.AdtvgInvoices.ReadOnly = true;
             this.AdtvgInvoices.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgInvoices.Size = new System.Drawing.Size(765, 424);
+            this.AdtvgInvoices.Size = new System.Drawing.Size(774, 424);
             this.AdtvgInvoices.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgInvoices.TabIndex = 2;
             // 
@@ -1165,7 +1261,7 @@
             this.tabPageCreditNotes.Controls.Add(this.AdtvgCreditNotes);
             this.tabPageCreditNotes.Location = new System.Drawing.Point(4, 24);
             this.tabPageCreditNotes.Name = "tabPageCreditNotes";
-            this.tabPageCreditNotes.Size = new System.Drawing.Size(767, 426);
+            this.tabPageCreditNotes.Size = new System.Drawing.Size(776, 426);
             this.tabPageCreditNotes.TabIndex = 2;
             this.tabPageCreditNotes.Text = "Credit Notes";
             // 
@@ -1218,7 +1314,7 @@
             this.AdtvgCreditNotes.Name = "AdtvgCreditNotes";
             this.AdtvgCreditNotes.ReadOnly = true;
             this.AdtvgCreditNotes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgCreditNotes.Size = new System.Drawing.Size(765, 424);
+            this.AdtvgCreditNotes.Size = new System.Drawing.Size(774, 424);
             this.AdtvgCreditNotes.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgCreditNotes.TabIndex = 3;
             // 
@@ -1392,7 +1488,7 @@
             this.tabPageCreditBalance.Controls.Add(this.AdtvgCreditBalance);
             this.tabPageCreditBalance.Location = new System.Drawing.Point(4, 24);
             this.tabPageCreditBalance.Name = "tabPageCreditBalance";
-            this.tabPageCreditBalance.Size = new System.Drawing.Size(767, 426);
+            this.tabPageCreditBalance.Size = new System.Drawing.Size(776, 426);
             this.tabPageCreditBalance.TabIndex = 3;
             this.tabPageCreditBalance.Text = "Credit Balance";
             // 
@@ -1445,7 +1541,7 @@
             this.AdtvgCreditBalance.Name = "AdtvgCreditBalance";
             this.AdtvgCreditBalance.ReadOnly = true;
             this.AdtvgCreditBalance.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgCreditBalance.Size = new System.Drawing.Size(765, 424);
+            this.AdtvgCreditBalance.Size = new System.Drawing.Size(774, 424);
             this.AdtvgCreditBalance.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgCreditBalance.TabIndex = 4;
             // 
@@ -1619,7 +1715,7 @@
             this.tabPageAllDocuments.Controls.Add(this.AdtvgAllDoc);
             this.tabPageAllDocuments.Location = new System.Drawing.Point(4, 24);
             this.tabPageAllDocuments.Name = "tabPageAllDocuments";
-            this.tabPageAllDocuments.Size = new System.Drawing.Size(767, 426);
+            this.tabPageAllDocuments.Size = new System.Drawing.Size(776, 426);
             this.tabPageAllDocuments.TabIndex = 4;
             this.tabPageAllDocuments.Text = "All Documents";
             // 
@@ -1673,7 +1769,7 @@
             this.AdtvgAllDoc.Name = "AdtvgAllDoc";
             this.AdtvgAllDoc.ReadOnly = true;
             this.AdtvgAllDoc.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgAllDoc.Size = new System.Drawing.Size(765, 424);
+            this.AdtvgAllDoc.Size = new System.Drawing.Size(774, 424);
             this.AdtvgAllDoc.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgAllDoc.TabIndex = 5;
             // 
@@ -1850,7 +1946,7 @@
             this.panelArrow.Controls.Add(this.pictUnselectAll);
             this.panelArrow.Controls.Add(this.pictLeft);
             this.panelArrow.Controls.Add(this.PictureRight);
-            this.panelArrow.Location = new System.Drawing.Point(784, 53);
+            this.panelArrow.Location = new System.Drawing.Point(793, 53);
             this.panelArrow.Name = "panelArrow";
             this.panelArrow.Size = new System.Drawing.Size(43, 454);
             this.panelArrow.TabIndex = 8;
@@ -1915,10 +2011,10 @@
             this.panelReceiptNumber.Controls.Add(this.txtReceiptNumber);
             this.panelReceiptNumber.Controls.Add(this.lblReceiptNumber);
             this.panelReceiptNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelReceiptNumber.Location = new System.Drawing.Point(830, 25);
+            this.panelReceiptNumber.Location = new System.Drawing.Point(839, 25);
             this.panelReceiptNumber.Margin = new System.Windows.Forms.Padding(0);
             this.panelReceiptNumber.Name = "panelReceiptNumber";
-            this.panelReceiptNumber.Size = new System.Drawing.Size(783, 25);
+            this.panelReceiptNumber.Size = new System.Drawing.Size(791, 25);
             this.panelReceiptNumber.TabIndex = 9;
             // 
             // cboDescriptionAgreement
@@ -1932,6 +2028,7 @@
             this.cboDescriptionAgreement.TabIndex = 5;
             this.cboDescriptionAgreement.ValueMember = "Descript_";
             this.cboDescriptionAgreement.Visible = false;
+            this.cboDescriptionAgreement.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cboDescriptionAgreement_KeyDown);
             // 
             // sPDESCRIPTIONAGREEMENTBindingSource
             // 
@@ -1963,6 +2060,7 @@
             // 
             // adtvgConciliation
             // 
+            this.adtvgConciliation.AllowUserToAddRows = false;
             this.adtvgConciliation.AllowUserToDeleteRows = false;
             this.adtvgConciliation.AllowUserToOrderColumns = true;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -2010,14 +2108,15 @@
             this.adtvgConciliation.EnableHeadersVisualStyles = false;
             this.adtvgConciliation.FilterAndSortEnabled = true;
             this.adtvgConciliation.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.adtvgConciliation.Location = new System.Drawing.Point(833, 77);
+            this.adtvgConciliation.Location = new System.Drawing.Point(842, 77);
             this.adtvgConciliation.Margin = new System.Windows.Forms.Padding(3, 27, 3, 5);
             this.adtvgConciliation.Name = "adtvgConciliation";
             this.adtvgConciliation.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.adtvgConciliation.Size = new System.Drawing.Size(777, 428);
+            this.adtvgConciliation.Size = new System.Drawing.Size(785, 428);
             this.adtvgConciliation.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.adtvgConciliation.TabIndex = 10;
             this.adtvgConciliation.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.adtvgConciliation_CellEndEdit);
+            this.adtvgConciliation.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.adtvgConciliation_CellFormatting);
             this.adtvgConciliation.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.adtvgConciliation_DataError);
             this.adtvgConciliation.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.adtvgConciliation_EditingControlShowing);
             // 
@@ -2237,12 +2336,11 @@
             this.panFooter.BackColor = System.Drawing.Color.White;
             this.panFooter.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panFooter.Controls.Add(this.tableLayoutPanelTotals);
-            this.panFooter.Controls.Add(this.pictSubmit);
             this.panFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panFooter.Location = new System.Drawing.Point(0, 675);
+            this.panFooter.Location = new System.Drawing.Point(0, 794);
             this.panFooter.Name = "panFooter";
             this.panFooter.Padding = new System.Windows.Forms.Padding(10);
-            this.panFooter.Size = new System.Drawing.Size(1625, 100);
+            this.panFooter.Size = new System.Drawing.Size(1642, 100);
             this.panFooter.TabIndex = 3;
             // 
             // tableLayoutPanelTotals
@@ -2410,22 +2508,6 @@
             this.txtDisputesTotal.Size = new System.Drawing.Size(131, 23);
             this.txtDisputesTotal.TabIndex = 11;
             // 
-            // pictSubmit
-            // 
-            this.pictSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictSubmit.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
-            this.pictSubmit.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
-            this.pictSubmit.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Submit;
-            this.pictSubmit.Location = new System.Drawing.Point(1491, 41);
-            this.pictSubmit.Name = "pictSubmit";
-            this.pictSubmit.Size = new System.Drawing.Size(104, 46);
-            this.pictSubmit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictSubmit.TabIndex = 0;
-            this.pictSubmit.TabStop = false;
-            this.pictSubmit.Click += new System.EventHandler(this.PictSubmit_Click);
-            this.pictSubmit.MouseLeave += new System.EventHandler(this.pictSubmit_MouseLeave);
-            this.pictSubmit.MouseHover += new System.EventHandler(this.pictSubmit_MouseHover);
-            // 
             // TtMessage
             // 
             this.TtMessage.IsBalloon = true;
@@ -2460,16 +2542,17 @@
             // 
             // FrmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1642, 721);
+            this.ClientSize = new System.Drawing.Size(1642, 894);
             this.Controls.Add(this.panFooter);
             this.Controls.Add(this.panelGeneral);
             this.Controls.Add(this.panelFilters);
             this.Controls.Add(this.panelBar);
             this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -2487,6 +2570,7 @@
             this.menuStrip1.PerformLayout();
             this.panelFilters.ResumeLayout(false);
             this.panelFilters.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictSubmitDb)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictFormSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictExcel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictSearch)).EndInit();
@@ -2528,7 +2612,6 @@
             this.panFooter.ResumeLayout(false);
             this.tableLayoutPanelTotals.ResumeLayout(false);
             this.tableLayoutPanelTotals.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictSubmit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2552,7 +2635,6 @@
         private System.Windows.Forms.Panel panelTitleFilter;
         private System.Windows.Forms.Label lblTitleFilter;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelFilters1;
-        private System.Windows.Forms.PictureBox pictSubmit;
         private System.Windows.Forms.PictureBox pictExcel;
         private System.Windows.Forms.PictureBox pictSearch;
         private System.Windows.Forms.Label lblCompanyCode;
@@ -2727,5 +2809,13 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn ReasonCode;
         private System.Windows.Forms.DataGridViewComboBoxColumn Agreement;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.ToolStripMenuItem searchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem findCustomersToolStripMenuItem;
+        private System.Windows.Forms.Label lblSubmit;
+        private System.Windows.Forms.PictureBox pictSubmitDb;
+        private System.Windows.Forms.ToolStripMenuItem submitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contactToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem emailToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem whatsappToolStripMenuItem;
     }
 }

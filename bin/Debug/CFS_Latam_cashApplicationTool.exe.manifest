@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CFS_Latam_cashApplicationTool.exe" size="1167800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CFS_Latam_cashApplicationTool.exe" size="1348536">
       <assemblyIdentity name="CFS_Latam_cashApplicationTool" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ecEWm+mm2uPVjM1m+XFxB+Mb3TM8UPbOzTTkWphN4Ko=</dsig:DigestValue>
+        <dsig:DigestValue>0fMVhEJLmwvgGl6bsq9vEBmb7trMNX2MhCnX/LJdkQA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -150,13 +150,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="CFS_Latam_cashApplicationTool.exe.config" size="2324">
+  <file name="CFS_Latam_cashApplicationTool.exe.config" size="4875">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>D9ryUviMNLXwS/h5RuN2e3n9sx0ZVzuhAkC8ajaA+RE=</dsig:DigestValue>
+      <dsig:DigestValue>tNCXYxQngeM2DSzS3nycAknAymGmrgpsBzHLaIeb2J8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Icon_CFS.ico" size="27838">
@@ -184,6 +184,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>fHV+nWU888rJINfZd/CvWPjyXxwGMllYv4+F0BJbGfo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBConctact\ContactDHL.Context.tt" size="22934">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>iWM21/LYhX/biTR5DnJTO6hkjf2ltoKAa6i6i43FHxg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBConctact\ContactDHL.tt" size="25279">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>G2pBdwLF/dEemiADv6GQHFErqwDMFbAaZ7Rkf5ofpS0=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

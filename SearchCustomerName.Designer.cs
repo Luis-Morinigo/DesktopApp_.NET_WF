@@ -301,6 +301,7 @@ namespace CFS_Latam_cashApplicationTool
             this.Controls.Add(this.panelGridView);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(691, 511);
             this.MinimumSize = new System.Drawing.Size(691, 511);
@@ -308,6 +309,7 @@ namespace CFS_Latam_cashApplicationTool
             this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "Search Customer - Cash Application Tool CFS Latam";
             this.Load += new System.EventHandler(this.FrmSearchCustomerName_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmSearchCustomerName_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

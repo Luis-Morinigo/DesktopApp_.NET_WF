@@ -8,6 +8,8 @@ C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\Resources\
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\Resources\Logo_SCJ.png
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\Resources\Icon_CFS.ico
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\Resources\Icon_Login.png
+C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\Resources\Icon_Exit2.png
+C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\Resources\Icon_Exit.png
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\Resources\Icon_Alert.png
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\Resources\Icon_Mail.png
 C:\Users\B082193\source\repos\CFS_Latam_cashApplicationTool\bin\Debug\Resources\Icon_Whatsapp.png

@@ -26,6 +26,8 @@ using ComboBox = System.Windows.Forms.ComboBox;
 using Label = System.Windows.Forms.Label;
 using System.Data.Entity.Infrastructure;
 using DocumentFormat.OpenXml.Drawing.Charts;
+using DocumentFormat.OpenXml.Drawing;
+//using CFS_Latam_cashApplicationTool.Models.DBConctact;
 
 namespace CFS_Latam_cashApplicationTool
 {
@@ -36,17 +38,21 @@ namespace CFS_Latam_cashApplicationTool
             InitializeComponent();
             this.TtMessage.SetToolTip(this.pictLeft, "Delete selected rows in Customer Conciliation");
             this.TtMessage.SetToolTip(this.PictureRight, "Selected Items in Customer Line Item Display");
-            this.TtMessage.SetToolTip(this.pictSearch, "Search customer information");
-            this.TtMessage.SetToolTip(this.pictSubmit, "Send Customer conciliation");
+            this.TtMessage.SetToolTip(this.pictSearch, "Search customer information    F8");
+            this.TtMessage.SetToolTip(this.pictSubmitDb, "Send Customer conciliation    F10");
             this.TtMessage.SetToolTip(this.pictUnselectAll, "Remove all rows in Customer conciliation");
             this.TtMessage.SetToolTip(this.pictExcel, "Export    Shift+F1");
-            this.TtMessage.SetToolTip(this.pictFormSearch, "Search customers by text");
+            this.TtMessage.SetToolTip(this.pictFormSearch, "Search customers by text    Shift+F2");
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            this.SetStyle(ControlStyles.UserPaint, true);
+            this.DoubleBuffered = true;
         }
 
         //Conexión GLOBAL a Data Set
         DsFbl5n ds = new DsFbl5n();
         //Creamos objeto de Clase MainInput
         MainInput objMain = new MainInput();
+        FrmLoginError objFrmError = new FrmLoginError();        
 
         // Obtenemos ID de usuario (Ex: B082193) 
         private readonly string userName = Environment.UserName;
@@ -60,7 +66,11 @@ namespace CFS_Latam_cashApplicationTool
             objetos();
             //Color a header de columnas Disputes
             adtvgConciliation.Columns[18].HeaderCell.Style.BackColor = Color.LightGreen; adtvgConciliation.Columns[19].HeaderCell.Style.BackColor = Color.LightGreen;
-            adtvgConciliation.Columns[20].HeaderCell.Style.BackColor = Color.LightGreen; adtvgConciliation.Columns[21].HeaderCell.Style.BackColor = Color.LightGreen;           
+            adtvgConciliation.Columns[20].HeaderCell.Style.BackColor = Color.LightGreen; adtvgConciliation.Columns[21].HeaderCell.Style.BackColor = Color.LightGreen;
+
+            this.SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
+            this.SetStyle(ControlStyles.UserPaint, true);
+            this.DoubleBuffered = true;
         }
 
         // Variables para obtener valores de Formulario Search Customer **********************************************************************************
@@ -105,178 +115,177 @@ namespace CFS_Latam_cashApplicationTool
         // Busca información del cliente seleccionado en SQL ***************************************************************************************
         public void PictSearch_Click(object sender, EventArgs e)
         {
-            //Limpia DataGrid Conciliation y subtotales
-            clearConciliation(); 
-            clearSubtotales();
-
             try
             {
+                //Limpia DataGrid Conciliation y subtotales
+                clearConciliation();
+                clearSubtotales();
+                
                 objMain.CompanyCode = cboCompanyCode.Text.ToString();
                 objMain.CustomerNumber = txtCustomerNumber.Text;
                 objMain.AltNumber = TxtAltNumber.Text;
-                objMain.DocDZ = "DZ";
-
+                objMain.DocDZ = "DZ";                
 
                 // Step 1: Valida que los campos de busqueda esten completos
                 //
-                if (string.IsNullOrEmpty(objMain.CompanyCode) || cboCompanyCode.Text == "Select Company")
+                if (string.IsNullOrEmpty(objMain.CompanyCode) || cboCompanyCode.Text.Contains("Select Company"))
                 {
-                    MessageBox.Show("Please select Company Code", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
+                    //MessageBox.Show("Please select Company Code", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Please select Company Code", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if (string.IsNullOrEmpty(objMain.CustomerNumber) && string.IsNullOrEmpty(objMain.AltNumber))
                 {
-                    MessageBox.Show("Please enter a customer number or alternative number", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    return;
-                }
-
-                // Step 2: Creamos objetos TableAdapter con procedimientos almacenados en SQL
-                //
-                // Tab CUSTOMER PAYMENT ---------------------------------- 01
-                //               
-                DsFbl5nTableAdapters.SP_SELECTPAYMENTSTableAdapter daPay = new DsFbl5nTableAdapters.SP_SELECTPAYMENTSTableAdapter();
-                // Tab INVOICES ------------------------------------------ 02
-                //
-                DsFbl5nTableAdapters.SP_SELECTINVOICESTableAdapter daInv = new DsFbl5nTableAdapters.SP_SELECTINVOICESTableAdapter();
-                // Tab CREDIT NOTES -------------------------------------- 03
-                //
-                DsFbl5nTableAdapters.SP_SELECTCREDITNOTESTableAdapter daCN = new DsFbl5nTableAdapters.SP_SELECTCREDITNOTESTableAdapter();
-                // Tab CREDIT BALANCE ------------------------------------ 04
-                //
-                DsFbl5nTableAdapters.SP_SELECTCREDITBALANCETableAdapter daCB = new DsFbl5nTableAdapters.SP_SELECTCREDITBALANCETableAdapter();
-                // Tab ALL DOCUMENTS ------------------------------------- 05
-                //
-                DsFbl5nTableAdapters.SP_SELECTFBL5NTableAdapter daAll = new DsFbl5nTableAdapters.SP_SELECTFBL5NTableAdapter();
-                // Filas AGREEMENTS ------------------------------------- 05
-                //
-                DsFbl5nTableAdapters.SP_AGREEMENTTableAdapter daAg = new DsFbl5nTableAdapters.SP_AGREEMENTTableAdapter();                
-                // Filas REASON CODES ------------------------------------- 07
-                //
-                DsFbl5nTableAdapters.SP_REASONCODETableAdapter daRc = new DsFbl5nTableAdapters.SP_REASONCODETableAdapter();
-
-                // Step 3: Pasa variables Customer Number o AltNumber a null si corresponde 
-                //
-                if (objMain.CustomerNumber == string.Empty && objMain.AltNumber != string.Empty)
-                {
-                    // Completa Tab CUSTOMER PAYMENT ---------------------------------- 01
-                    //               
-                    daPay.Fill(ds.SP_SELECTPAYMENTS, objMain.CompanyCode, null, Convert.ToDecimal(objMain.AltNumber), "DZ");
-                    AdtvgCustomerPay.DataSource = ds.SP_SELECTPAYMENTS;
-
-                    // Completa Tab INVOICES ------------------------------------------ 02
-                    //
-                    daInv.Fill(ds.SP_SELECTINVOICES, objMain.CompanyCode, null, Convert.ToDecimal(objMain.AltNumber));
-                    AdtvgInvoices.DataSource = ds.SP_SELECTINVOICES;
-
-                    // Completa Tab CREDIT NOTES -------------------------------------- 03
-                    //
-                    daCN.Fill(ds.SP_SELECTCREDITNOTES, objMain.CompanyCode, null, Convert.ToDecimal(objMain.AltNumber));
-                    AdtvgCreditNotes.DataSource = ds.SP_SELECTCREDITNOTES;
-
-                    // Completa Tab CREDIT BALANCE ------------------------------------ 04
-                    //
-                    daCB.Fill(ds.SP_SELECTCREDITBALANCE, objMain.CompanyCode, null, Convert.ToDecimal(objMain.AltNumber));
-                    AdtvgCreditBalance.DataSource = ds.SP_SELECTCREDITBALANCE;
-
-                    // Completa Tab ALL DOCUMENTS ------------------------------------- 05
-                    //
-                    daAll.Fill(ds.SP_SELECTFBL5N, objMain.CompanyCode, null, Convert.ToDecimal(objMain.AltNumber));
-                    AdtvgAllDoc.DataSource = ds.SP_SELECTFBL5N;
-
-                    //Completa combobox de columna AGREEMENTS------------------------------------ 06
-                    //
-                    daAg.Fill(ds.SP_AGREEMENT, objMain.CompanyCode, Convert.ToDecimal(objMain.AltNumber));
-                }
-                else if (objMain.CustomerNumber != string.Empty && objMain.AltNumber == string.Empty)
-                {
-                    // Completa Tab CUSTOMER PAYMENT ---------------------------------- 01
-                    //
-                    daPay.Fill(ds.SP_SELECTPAYMENTS, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), null, "DZ");
-                    AdtvgCustomerPay.DataSource = ds.SP_SELECTPAYMENTS;
-
-                    // Completa Tab INVOICES ------------------------------------------ 02
-                    //
-                    daInv.Fill(ds.SP_SELECTINVOICES, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), null);
-                    AdtvgInvoices.DataSource = ds.SP_SELECTINVOICES;
-
-                    // Completa Tab CREDIT NOTES -------------------------------------- 03
-                    //
-                    daCN.Fill(ds.SP_SELECTCREDITNOTES, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), null);
-                    AdtvgCreditNotes.DataSource = ds.SP_SELECTCREDITNOTES;
-
-                    // Completa Tab CREDIT BALANCE ------------------------------------ 04
-                    //
-                    daCB.Fill(ds.SP_SELECTCREDITBALANCE, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), null);
-                    AdtvgCreditBalance.DataSource = ds.SP_SELECTCREDITBALANCE;
-
-                    // Completa Tab ALL DOCUMENTS ------------------------------------- 05
-                    //
-                    daAll.Fill(ds.SP_SELECTFBL5N, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), null);
-                    AdtvgAllDoc.DataSource = ds.SP_SELECTFBL5N;
-
-                    //Completa combobox de columna AGREEMENTS------------------------------------ 06
-                    //
-                    daAg.Fill(ds.SP_AGREEMENT, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber));
+                    MessageBox.Show("Please enter a customer number or alternative number", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else
                 {
-                    // Completa Tab CUSTOMER PAYMENT ---------------------------------- 01
+                    // Step 2: Creamos objetos TableAdapter con procedimientos almacenados en SQL
                     //
-                    daPay.Fill(ds.SP_SELECTPAYMENTS, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), Convert.ToDecimal(objMain.AltNumber), "DZ");
-                    AdtvgCustomerPay.DataSource = ds.SP_SELECTPAYMENTS;
+                    // Tab CUSTOMER PAYMENT ---------------------------------- 01
+                    //               
+                    DsFbl5nTableAdapters.SP_SELECTPAYMENTSTableAdapter daPay = new DsFbl5nTableAdapters.SP_SELECTPAYMENTSTableAdapter();
+                    // Tab INVOICES ------------------------------------------ 02
+                    //
+                    DsFbl5nTableAdapters.SP_SELECTINVOICESTableAdapter daInv = new DsFbl5nTableAdapters.SP_SELECTINVOICESTableAdapter();
+                    // Tab CREDIT NOTES -------------------------------------- 03
+                    //
+                    DsFbl5nTableAdapters.SP_SELECTCREDITNOTESTableAdapter daCN = new DsFbl5nTableAdapters.SP_SELECTCREDITNOTESTableAdapter();
+                    // Tab CREDIT BALANCE ------------------------------------ 04
+                    //
+                    DsFbl5nTableAdapters.SP_SELECTCREDITBALANCETableAdapter daCB = new DsFbl5nTableAdapters.SP_SELECTCREDITBALANCETableAdapter();
+                    // Tab ALL DOCUMENTS ------------------------------------- 05
+                    //
+                    DsFbl5nTableAdapters.SP_SELECTFBL5NTableAdapter daAll = new DsFbl5nTableAdapters.SP_SELECTFBL5NTableAdapter();
+                    // Filas AGREEMENTS ------------------------------------- 05
+                    //
+                    DsFbl5nTableAdapters.SP_AGREEMENTTableAdapter daAg = new DsFbl5nTableAdapters.SP_AGREEMENTTableAdapter();
+                    // Filas REASON CODES ------------------------------------- 07
+                    //
+                    DsFbl5nTableAdapters.SP_REASONCODETableAdapter daRc = new DsFbl5nTableAdapters.SP_REASONCODETableAdapter();
 
-                    // Completa Tab INVOICES ------------------------------------------ 02
+                    // Step 3: Pasa variables Customer Number o AltNumber a null si corresponde 
                     //
-                    daInv.Fill(ds.SP_SELECTINVOICES, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), Convert.ToDecimal(objMain.AltNumber));
-                    AdtvgInvoices.DataSource = ds.SP_SELECTINVOICES;
+                    if (objMain.CustomerNumber == string.Empty && objMain.AltNumber != string.Empty)
+                    {
+                        // Completa Tab CUSTOMER PAYMENT ---------------------------------- 01
+                        //               
+                        daPay.Fill(ds.SP_SELECTPAYMENTS, objMain.CompanyCode, null, Convert.ToDecimal(objMain.AltNumber), "DZ");
+                        AdtvgCustomerPay.DataSource = ds.SP_SELECTPAYMENTS;
 
-                    // Completa Tab CREDIT NOTES -------------------------------------- 03
-                    //
-                    daCN.Fill(ds.SP_SELECTCREDITNOTES, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), Convert.ToDecimal(objMain.AltNumber));
-                    AdtvgCreditNotes.DataSource = ds.SP_SELECTCREDITNOTES;
+                        // Completa Tab INVOICES ------------------------------------------ 02
+                        //
+                        daInv.Fill(ds.SP_SELECTINVOICES, objMain.CompanyCode, null, Convert.ToDecimal(objMain.AltNumber));
+                        AdtvgInvoices.DataSource = ds.SP_SELECTINVOICES;
 
-                    // Completa Tab CREDIT BALANCE ------------------------------------ 04
-                    //
-                    daCB.Fill(ds.SP_SELECTCREDITBALANCE, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), Convert.ToDecimal(objMain.AltNumber));
-                    AdtvgCreditBalance.DataSource = ds.SP_SELECTCREDITBALANCE;
+                        // Completa Tab CREDIT NOTES -------------------------------------- 03
+                        //
+                        daCN.Fill(ds.SP_SELECTCREDITNOTES, objMain.CompanyCode, null, Convert.ToDecimal(objMain.AltNumber));
+                        AdtvgCreditNotes.DataSource = ds.SP_SELECTCREDITNOTES;
 
-                    // Completa Tab ALL DOCUMENTS ------------------------------------- 05
-                    //
-                    daAll.Fill(ds.SP_SELECTFBL5N, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), Convert.ToDecimal(objMain.AltNumber));
-                    AdtvgAllDoc.DataSource = ds.SP_SELECTFBL5N;
+                        // Completa Tab CREDIT BALANCE ------------------------------------ 04
+                        //
+                        daCB.Fill(ds.SP_SELECTCREDITBALANCE, objMain.CompanyCode, null, Convert.ToDecimal(objMain.AltNumber));
+                        AdtvgCreditBalance.DataSource = ds.SP_SELECTCREDITBALANCE;
 
-                    //Completa combobox de columna AGREEMENTS------------------------------------ 06
+                        // Completa Tab ALL DOCUMENTS ------------------------------------- 05
+                        //
+                        daAll.Fill(ds.SP_SELECTFBL5N, objMain.CompanyCode, null, Convert.ToDecimal(objMain.AltNumber));
+                        AdtvgAllDoc.DataSource = ds.SP_SELECTFBL5N;
+
+                        //Completa combobox de columna AGREEMENTS------------------------------------ 06
+                        //
+                        daAg.Fill(ds.SP_AGREEMENT, objMain.CompanyCode, Convert.ToDecimal(objMain.AltNumber));
+                    }
+                    else if (objMain.CustomerNumber != string.Empty && objMain.AltNumber == string.Empty)
+                    {
+                        // Completa Tab CUSTOMER PAYMENT ---------------------------------- 01
+                        //
+                        daPay.Fill(ds.SP_SELECTPAYMENTS, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), null, "DZ");
+                        AdtvgCustomerPay.DataSource = ds.SP_SELECTPAYMENTS;
+
+                        // Completa Tab INVOICES ------------------------------------------ 02
+                        //
+                        daInv.Fill(ds.SP_SELECTINVOICES, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), null);
+                        AdtvgInvoices.DataSource = ds.SP_SELECTINVOICES;
+
+                        // Completa Tab CREDIT NOTES -------------------------------------- 03
+                        //
+                        daCN.Fill(ds.SP_SELECTCREDITNOTES, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), null);
+                        AdtvgCreditNotes.DataSource = ds.SP_SELECTCREDITNOTES;
+
+                        // Completa Tab CREDIT BALANCE ------------------------------------ 04
+                        //
+                        daCB.Fill(ds.SP_SELECTCREDITBALANCE, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), null);
+                        AdtvgCreditBalance.DataSource = ds.SP_SELECTCREDITBALANCE;
+
+                        // Completa Tab ALL DOCUMENTS ------------------------------------- 05
+                        //
+                        daAll.Fill(ds.SP_SELECTFBL5N, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), null);
+                        AdtvgAllDoc.DataSource = ds.SP_SELECTFBL5N;
+
+                        //Completa combobox de columna AGREEMENTS------------------------------------ 06
+                        //
+                        daAg.Fill(ds.SP_AGREEMENT, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber));
+                    }
+                    else
+                    {
+                        // Completa Tab CUSTOMER PAYMENT ---------------------------------- 01
+                        //
+                        daPay.Fill(ds.SP_SELECTPAYMENTS, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), Convert.ToDecimal(objMain.AltNumber), "DZ");
+                        AdtvgCustomerPay.DataSource = ds.SP_SELECTPAYMENTS;
+
+                        // Completa Tab INVOICES ------------------------------------------ 02
+                        //
+                        daInv.Fill(ds.SP_SELECTINVOICES, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), Convert.ToDecimal(objMain.AltNumber));
+                        AdtvgInvoices.DataSource = ds.SP_SELECTINVOICES;
+
+                        // Completa Tab CREDIT NOTES -------------------------------------- 03
+                        //
+                        daCN.Fill(ds.SP_SELECTCREDITNOTES, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), Convert.ToDecimal(objMain.AltNumber));
+                        AdtvgCreditNotes.DataSource = ds.SP_SELECTCREDITNOTES;
+
+                        // Completa Tab CREDIT BALANCE ------------------------------------ 04
+                        //
+                        daCB.Fill(ds.SP_SELECTCREDITBALANCE, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), Convert.ToDecimal(objMain.AltNumber));
+                        AdtvgCreditBalance.DataSource = ds.SP_SELECTCREDITBALANCE;
+
+                        // Completa Tab ALL DOCUMENTS ------------------------------------- 05
+                        //
+                        daAll.Fill(ds.SP_SELECTFBL5N, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), Convert.ToDecimal(objMain.AltNumber));
+                        AdtvgAllDoc.DataSource = ds.SP_SELECTFBL5N;
+
+                        //Completa combobox de columna AGREEMENTS------------------------------------ 06
+                        //
+                        daAg.Fill(ds.SP_AGREEMENT, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber));
+                    }
+
+                    DataGridViewComboBoxColumn comboAgreement = adtvgConciliation.Columns[20] as DataGridViewComboBoxColumn;
+
+                    comboAgreement.DataSource = ds.SP_AGREEMENT;
+                    comboAgreement.DisplayMember = "Agreement";
+                    comboAgreement.ValueMember = "Agreement";
+
+                    // Carga Reason codes ------------------------------------- 07
                     //
-                    daAg.Fill(ds.SP_AGREEMENT, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber));
+                    daRc.Fill(ds.SP_REASONCODE, objMain.CompanyCode);
+
+                    DataGridViewComboBoxColumn comboReason = adtvgConciliation.Columns[19] as DataGridViewComboBoxColumn;
+
+                    comboReason.DataSource = ds.SP_REASONCODE;
+                    comboReason.DisplayMember = "Reason Code";
+                    comboReason.ValueMember = "Reason Code";
+
+                    // Step 4: Completamos lbl de Company Code - Customer Nuumber  o Alt Number - Customer Name
+                    //
+                    string nameSelect = AdtvgAllDoc.CurrentRow.Cells[3].Value.ToString();
+
+                    lblCustomerLoadName(nameSelect);
                 }
-
-                DataGridViewComboBoxColumn comboAgreement = adtvgConciliation.Columns[20] as DataGridViewComboBoxColumn;
-
-                comboAgreement.DataSource = ds.SP_AGREEMENT;
-                comboAgreement.DisplayMember = "Agreement";
-                comboAgreement.ValueMember = "Agreement";
-
-                // Carga Reason codes ------------------------------------- 07
-                //
-                daRc.Fill(ds.SP_REASONCODE, objMain.CompanyCode);
-
-                DataGridViewComboBoxColumn comboReason = adtvgConciliation.Columns[19] as DataGridViewComboBoxColumn;
-
-                comboReason.DataSource = ds.SP_REASONCODE;
-                comboReason.DisplayMember = "Reason Code";
-                comboReason.ValueMember = "Reason Code";
-
-                // Step 4: Completamos lbl de Company Code - Customer Nuumber  o Alt Number - Customer Name
-                //
-                string nameSelect = AdtvgAllDoc.CurrentRow.Cells[3].Value.ToString();
-
-                lblCustomerLoadName(nameSelect);          
             }
             catch(Exception)
             {                
-                MessageBox.Show("Customer number " + objMain.CustomerNumber + " not found in database.", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-           
+                MessageBox.Show("Customer number " + objMain.CustomerNumber + " not found in database.", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }           
         }
 
         // Carga nombre de cliente ********************************************************************************************************************
@@ -354,24 +363,86 @@ namespace CFS_Latam_cashApplicationTool
             // Subtotal
             double subtotal = totalRV + totalDV + totalDR + totalRG + totalDG + totalAB + totalRC + totalPayments - totalDP;
 
-            //Convierto a formato coma y punto
+            // Convierto a formato coma y punto
             txtSubtotal.Text = (subtotal.ToString("#,#0.00", CultureInfo.InvariantCulture));
-        }
-        
-        // Envia información de Datagrid Conciliation a SQL ****************************************************************************************************
-        private void PictSubmit_Click(object sender, EventArgs e)
-        {
 
+            // Cambia color de fondo según importe
             double totalsub = Convert.ToDouble(txtSubtotal.Text);
 
-            if (totalsub <= 10 && totalsub >= -10)
+            if (totalsub > 10 || totalsub < -10)
             {
-                MessageBox.Show("Your conciliation was sent successfully", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtSubtotal.BackColor = System.Drawing.Color.OrangeRed;
+                txtSubtotal.ForeColor = Color.White;
             }
-            else
+            else if (totalsub <= 10 && totalsub >= -10)
             {
-                MessageBox.Show("Please review your reconciliation, the subtotal must be between the ranges 10 and -10", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtSubtotal.BackColor = System.Drawing.Color.LightGreen;
+                txtSubtotal.ForeColor = Color.Black;
             }
+        }
+
+        // Envia información de Datagrid Conciliation a SQL ****************************************************************************************************
+        private void pictSubmitDb_Click(object sender, EventArgs e)
+        {
+            if (adtvgConciliation.RowCount > 0)
+            {
+                double totalsub = Convert.ToDouble(txtSubtotal.Text);
+                bool checkDisputes = false;
+
+                // Validamos los campos de Disputes Amount, Reason Code y Description
+                for (int i = 0; i < adtvgConciliation.RowCount; i++)
+                {
+                    double colDisputeAmount = Convert.ToDouble(adtvgConciliation.Rows[i].Cells[18].Value);
+                    string colReasonCode = Convert.ToString(adtvgConciliation.Rows[i].Cells[19].Value);
+                    string colAgreement = Convert.ToString(adtvgConciliation.Rows[i].Cells[20].Value);
+                    string colDescription = Convert.ToString(adtvgConciliation.Rows[i].Cells[21].Value);
+
+                    if (colDisputeAmount != 0 && (colReasonCode == string.Empty || colDescription == string.Empty))
+                    {
+                        adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
+                        checkDisputes = true;
+                    }
+                    else if (colReasonCode != string.Empty && (colDisputeAmount == 0 || colDescription == string.Empty))
+                    {
+                        adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
+                        checkDisputes = true;
+                    }
+                    else if (colAgreement != string.Empty && (colDisputeAmount == 0 || colReasonCode == string.Empty || colDescription == string.Empty))
+                    {
+                        adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.DarkSalmon;
+                        adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
+                        checkDisputes = true;
+                    }
+                    else if (colDescription != string.Empty && (colDisputeAmount == 0 || colReasonCode == string.Empty))
+                    {
+                        adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.DarkSalmon;
+                        checkDisputes = true;
+                    }
+                    else
+                    {
+                        adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.Empty; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.Empty;
+                        adtvgConciliation.Rows[i].Cells[20].Style.BackColor = Color.Empty; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.Empty;
+                    }
+                }
+
+                if (checkDisputes)
+                {
+                    MessageBox.Show("There are mandatory fields pending completion in your Customer Conciliation.", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (totalsub > 10 || totalsub < -10)
+                {
+                    MessageBox.Show("Please review your reconciliation, the subtotal must be between the ranges 10 and -10", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else if (totalsub <= 10 && totalsub >= -10)
+                {
+                    MessageBox.Show("Your conciliation was sent successfully", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            else if (adtvgConciliation.RowCount == 0)
+            {
+                MessageBox.Show("There isn't information to send in Customer Conciliation.", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         // Quita filas seleccionadas de Grid Conciliation
@@ -379,17 +450,20 @@ namespace CFS_Latam_cashApplicationTool
         {
             try
             {
-
-                foreach (DataGridViewRow rowPrincipal in adtvgConciliation.SelectedRows)
+                if (adtvgConciliation.SelectedRows.Count > 0)
                 {
-                    if (!rowPrincipal.IsNewRow)
-                        adtvgConciliation.Rows.Remove(rowPrincipal);
+                    foreach (DataGridViewRow rowPrincipal in adtvgConciliation.SelectedRows)
+                    {
+                        if (!rowPrincipal.IsNewRow)
+                            adtvgConciliation.Rows.Remove(rowPrincipal);
+                    }
+
+                    adtvgConciliation.ClearSelection();
+                    // Suma valores de columna Amount in Doc Curr (Col 6) de DataGridView Conciliation
+                    //            
+                    sumTotal();
                 }
 
-                adtvgConciliation.ClearSelection();
-                // Suma valores de columna Amount in Doc Curr (Col 6) de DataGridView Conciliation
-                //            
-                sumTotal();
             }
             catch (Exception)
             {
@@ -403,16 +477,18 @@ namespace CFS_Latam_cashApplicationTool
         // Pasar fila seleccionada a Grid Conciliation ***************************************************************************************       
         public void PictureRight_Click(object sender, EventArgs e)
         {
-            Stack<string> listDocuments = new Stack<string>();
-            bool check = false;
-
-            // Recorremos la colección de filas seleccionadas en el control ------------------------------------------ Tab 01 Customer Payment 
-            foreach (DataGridViewRow rowPrincipal in AdtvgCustomerPay.SelectedRows)
+            if (AdtvgCustomerPay.SelectedRows.Count > 0 || AdtvgInvoices.SelectedRows.Count > 0 || AdtvgCreditNotes.SelectedRows.Count > 0 || AdtvgCreditBalance.SelectedRows.Count > 0 || AdtvgAllDoc.SelectedRows.Count > 0)
             {
-                // Creamos un array con los valores que vamos a insertar en el segundo control DataGridView
-                // 
-                object[] values = 
+                Stack<string> listDocuments = new Stack<string>();
+                bool check = false;
+
+                // Recorremos la colección de filas seleccionadas en el control ------------------------------------------ Tab 01 Customer Payment 
+                foreach (DataGridViewRow rowPrincipal in AdtvgCustomerPay.SelectedRows)
                 {
+                    // Creamos un array con los valores que vamos a insertar en el segundo control DataGridView
+                    // 
+                    object[] values =
+                    {
                             rowPrincipal.Cells[0].Value, rowPrincipal.Cells[1].Value,
                             rowPrincipal.Cells[2].Value, rowPrincipal.Cells[3].Value,
                             rowPrincipal.Cells[4].Value, rowPrincipal.Cells[5].Value,
@@ -424,38 +500,39 @@ namespace CFS_Latam_cashApplicationTool
                             rowPrincipal.Cells[16].Value
                 };
 
-                if (adtvgConciliation.RowCount >= 0)
-                {
-                    for (int i = 0; i < adtvgConciliation.RowCount; i++)
+                    if (adtvgConciliation.RowCount >= 0)
                     {
-                        if (Convert.ToString(adtvgConciliation.Rows[i].Cells[8].Value) == Convert.ToString(rowPrincipal.Cells[8].Value))
+                        for (int i = 0; i < adtvgConciliation.RowCount; i++)
                         {
-                            listDocuments.Push(Convert.ToString(rowPrincipal.Cells[8].Value));
-                            check = true;
+                            if (Convert.ToString(adtvgConciliation.Rows[i].Cells[8].Value) == Convert.ToString(rowPrincipal.Cells[8].Value))
+                            {
+                                listDocuments.Push(Convert.ToString(rowPrincipal.Cells[8].Value));
+                                check = true;
+                            }
+                        }
+
+                        if (!check)
+                        {
+                            // Creamos un nuevo objeto DataGridViewRow.
+                            //
+                            DataGridViewRow row = new DataGridViewRow();
+                            // Creamos las celdas y las rellenamos con los valores existentes en el array.
+                            //
+                            row.CreateCells(adtvgConciliation, values);
+                            // Añadimos la nueva fila al segundo control DataGridView.
+                            //
+                            adtvgConciliation.Rows.Add(row);
+                            adtvgConciliation.AllowUserToAddRows = true;
                         }
                     }
-
-                    if (!check)
-                    {
-                        // Creamos un nuevo objeto DataGridViewRow.
-                        //
-                        DataGridViewRow row = new DataGridViewRow();
-                        // Creamos las celdas y las rellenamos con los valores existentes en el array.
-                        //
-                        row.CreateCells(adtvgConciliation, values);
-                        // Añadimos la nueva fila al segundo control DataGridView.
-                        //
-                        adtvgConciliation.Rows.Add(row);
-                    }
                 }
-            }
 
-            // Recorremos la colección de filas seleccionadas en el control -------------------------------------------------- Tab 02 Invoices   
-            foreach (DataGridViewRow rowPrincipal in AdtvgInvoices.SelectedRows)
-            {
-                // Creamos un array con los valores que vamos a insertar en el segundo control DataGridView.
-                object[] values = 
+                // Recorremos la colección de filas seleccionadas en el control -------------------------------------------------- Tab 02 Invoices   
+                foreach (DataGridViewRow rowPrincipal in AdtvgInvoices.SelectedRows)
                 {
+                    // Creamos un array con los valores que vamos a insertar en el segundo control DataGridView.
+                    object[] values =
+                    {
                             rowPrincipal.Cells[0].Value, rowPrincipal.Cells[1].Value,
                             rowPrincipal.Cells[2].Value, rowPrincipal.Cells[3].Value,
                             rowPrincipal.Cells[4].Value, rowPrincipal.Cells[5].Value,
@@ -467,38 +544,39 @@ namespace CFS_Latam_cashApplicationTool
                             rowPrincipal.Cells[16].Value
                 };
 
-                if (adtvgConciliation.RowCount >= 0)
-                {
-                    for (int i = 0; i < adtvgConciliation.RowCount; i++)
+                    if (adtvgConciliation.RowCount >= 0)
                     {
-                        if (Convert.ToString(adtvgConciliation.Rows[i].Cells[8].Value) == Convert.ToString(rowPrincipal.Cells[8].Value))
+                        for (int i = 0; i < adtvgConciliation.RowCount; i++)
                         {
-                            listDocuments.Push(Convert.ToString(rowPrincipal.Cells[8].Value));
-                            check = true;
+                            if (Convert.ToString(adtvgConciliation.Rows[i].Cells[8].Value) == Convert.ToString(rowPrincipal.Cells[8].Value))
+                            {
+                                listDocuments.Push(Convert.ToString(rowPrincipal.Cells[8].Value));
+                                check = true;
+                            }
+                        }
+
+                        if (!check)
+                        {
+                            // Creamos un nuevo objeto DataGridViewRow.
+                            //
+                            DataGridViewRow row = new DataGridViewRow();
+                            // Creamos las celdas y las rellenamos con los valores existentes en el array.
+                            //
+                            row.CreateCells(adtvgConciliation, values);
+                            // Añadimos la nueva fila al segundo control DataGridView.
+                            //
+                            adtvgConciliation.Rows.Add(row);
+                            adtvgConciliation.AllowUserToAddRows = true;
                         }
                     }
-
-                    if (!check)
-                    {
-                        // Creamos un nuevo objeto DataGridViewRow.
-                        //
-                        DataGridViewRow row = new DataGridViewRow();
-                        // Creamos las celdas y las rellenamos con los valores existentes en el array.
-                        //
-                        row.CreateCells(adtvgConciliation, values);
-                        // Añadimos la nueva fila al segundo control DataGridView.
-                        //
-                        adtvgConciliation.Rows.Add(row);
-                    }
                 }
-            }
 
-            // Recorremos la colección de filas seleccionadas en el control --------------------------------------------------- Tab 03 Credit Note   
-            foreach (DataGridViewRow rowPrincipal in AdtvgCreditNotes.SelectedRows)
-            {
-                // Creamos un array con los valores que vamos a insertar en el segundo control DataGridView.
-                object[] values =
+                // Recorremos la colección de filas seleccionadas en el control --------------------------------------------------- Tab 03 Credit Note   
+                foreach (DataGridViewRow rowPrincipal in AdtvgCreditNotes.SelectedRows)
                 {
+                    // Creamos un array con los valores que vamos a insertar en el segundo control DataGridView.
+                    object[] values =
+                    {
                             rowPrincipal.Cells[0].Value, rowPrincipal.Cells[1].Value,
                             rowPrincipal.Cells[2].Value, rowPrincipal.Cells[3].Value,
                             rowPrincipal.Cells[4].Value, rowPrincipal.Cells[5].Value,
@@ -510,39 +588,40 @@ namespace CFS_Latam_cashApplicationTool
                             rowPrincipal.Cells[16].Value
                 };
 
-                if (adtvgConciliation.RowCount >= 0)
-                {
-                    for (int i = 0; i < adtvgConciliation.RowCount; i++)
+                    if (adtvgConciliation.RowCount >= 0)
                     {
-                        if (Convert.ToString(adtvgConciliation.Rows[i].Cells[8].Value) == Convert.ToString(rowPrincipal.Cells[8].Value))
+                        for (int i = 0; i < adtvgConciliation.RowCount; i++)
                         {
-                            listDocuments.Push(Convert.ToString(rowPrincipal.Cells[8].Value));
-                            check = true;
+                            if (Convert.ToString(adtvgConciliation.Rows[i].Cells[8].Value) == Convert.ToString(rowPrincipal.Cells[8].Value))
+                            {
+                                listDocuments.Push(Convert.ToString(rowPrincipal.Cells[8].Value));
+                                check = true;
+                            }
+                        }
+
+                        if (!check)
+                        {
+                            // Creamos un nuevo objeto DataGridViewRow.
+                            //
+                            DataGridViewRow row = new DataGridViewRow();
+                            // Creamos las celdas y las rellenamos con los valores existentes en el array.
+                            //
+                            row.CreateCells(adtvgConciliation, values);
+                            // Añadimos la nueva fila al segundo control DataGridView.
+                            //
+                            adtvgConciliation.Rows.Add(row);
+                            adtvgConciliation.AllowUserToAddRows = true;
                         }
                     }
-
-                    if (!check)
-                    {
-                        // Creamos un nuevo objeto DataGridViewRow.
-                        //
-                        DataGridViewRow row = new DataGridViewRow();
-                        // Creamos las celdas y las rellenamos con los valores existentes en el array.
-                        //
-                        row.CreateCells(adtvgConciliation, values);
-                        // Añadimos la nueva fila al segundo control DataGridView.
-                        //
-                        adtvgConciliation.Rows.Add(row);
-                    }
                 }
-            }
 
-            // Recorremos la colección de filas seleccionadas en el control --------------------------------------------------- Tab 04 Credit Balance
-            // DataGridView principal.  
-            foreach (DataGridViewRow rowPrincipal in AdtvgCreditBalance.SelectedRows)
-            {
-                // Creamos un array con los valores que vamos a insertar en el segundo control DataGridView.
-                object[] values =
+                // Recorremos la colección de filas seleccionadas en el control --------------------------------------------------- Tab 04 Credit Balance
+                // DataGridView principal.  
+                foreach (DataGridViewRow rowPrincipal in AdtvgCreditBalance.SelectedRows)
                 {
+                    // Creamos un array con los valores que vamos a insertar en el segundo control DataGridView.
+                    object[] values =
+                    {
                             rowPrincipal.Cells[0].Value, rowPrincipal.Cells[1].Value,
                             rowPrincipal.Cells[2].Value, rowPrincipal.Cells[3].Value,
                             rowPrincipal.Cells[4].Value, rowPrincipal.Cells[5].Value,
@@ -554,39 +633,40 @@ namespace CFS_Latam_cashApplicationTool
                             rowPrincipal.Cells[16].Value
                 };
 
-                if (adtvgConciliation.RowCount >= 0)
-                {
-                    for (int i = 0; i < adtvgConciliation.RowCount; i++)
+                    if (adtvgConciliation.RowCount >= 0)
                     {
-                        if (Convert.ToString(adtvgConciliation.Rows[i].Cells[8].Value) == Convert.ToString(rowPrincipal.Cells[8].Value))
+                        for (int i = 0; i < adtvgConciliation.RowCount; i++)
                         {
-                            listDocuments.Push(Convert.ToString(rowPrincipal.Cells[8].Value));
-                            check = true;
+                            if (Convert.ToString(adtvgConciliation.Rows[i].Cells[8].Value) == Convert.ToString(rowPrincipal.Cells[8].Value))
+                            {
+                                listDocuments.Push(Convert.ToString(rowPrincipal.Cells[8].Value));
+                                check = true;
+                            }
+                        }
+
+                        if (!check)
+                        {
+                            // Creamos un nuevo objeto DataGridViewRow.
+                            //
+                            DataGridViewRow row = new DataGridViewRow();
+                            // Creamos las celdas y las rellenamos con los valores existentes en el array.
+                            //
+                            row.CreateCells(adtvgConciliation, values);
+                            // Añadimos la nueva fila al segundo control DataGridView.
+                            //
+                            adtvgConciliation.Rows.Add(row);
+                            adtvgConciliation.AllowUserToAddRows = true;
                         }
                     }
-
-                    if (!check)
-                    {
-                        // Creamos un nuevo objeto DataGridViewRow.
-                        //
-                        DataGridViewRow row = new DataGridViewRow();
-                        // Creamos las celdas y las rellenamos con los valores existentes en el array.
-                        //
-                        row.CreateCells(adtvgConciliation, values);
-                        // Añadimos la nueva fila al segundo control DataGridView.
-                        //
-                        adtvgConciliation.Rows.Add(row);
-                    }
                 }
-            }
 
-            // Recorremos la colección de filas seleccionadas en el control ------------------------------------------------ Tab 05 All Documents
-            // DataGridView principal.            
-            foreach (DataGridViewRow rowPrincipal in AdtvgAllDoc.SelectedRows)
-            {
-                // Creamos un array con los valores que vamos a insertar en el segundo control DataGridView.
-                object[] values =
+                // Recorremos la colección de filas seleccionadas en el control ------------------------------------------------ Tab 05 All Documents
+                // DataGridView principal.            
+                foreach (DataGridViewRow rowPrincipal in AdtvgAllDoc.SelectedRows)
                 {
+                    // Creamos un array con los valores que vamos a insertar en el segundo control DataGridView.
+                    object[] values =
+                    {
                             rowPrincipal.Cells[0].Value, rowPrincipal.Cells[1].Value,
                             rowPrincipal.Cells[2].Value, rowPrincipal.Cells[3].Value,
                             rowPrincipal.Cells[4].Value, rowPrincipal.Cells[5].Value,
@@ -598,62 +678,73 @@ namespace CFS_Latam_cashApplicationTool
                             rowPrincipal.Cells[16].Value
                 };
 
-                if (adtvgConciliation.RowCount >= 0)
-                {
-                    for (int i = 0; i < adtvgConciliation.RowCount; i++)
+                    if (adtvgConciliation.RowCount >= 0)
                     {
-                        if (Convert.ToString(adtvgConciliation.Rows[i].Cells[8].Value) == Convert.ToString(rowPrincipal.Cells[8].Value))
+                        for (int i = 0; i < adtvgConciliation.RowCount; i++)
                         {
-                            listDocuments.Push(Convert.ToString(rowPrincipal.Cells[8].Value));
-                            check = true;
+                            if (Convert.ToString(adtvgConciliation.Rows[i].Cells[8].Value) == Convert.ToString(rowPrincipal.Cells[8].Value))
+                            {
+                                listDocuments.Push(Convert.ToString(rowPrincipal.Cells[8].Value));
+                                check = true;
+                            }
+                        }
+
+                        if (!check)
+                        {
+                            // Creamos un nuevo objeto DataGridViewRow.
+                            //
+                            DataGridViewRow row = new DataGridViewRow();
+                            // Creamos las celdas y las rellenamos con los valores existentes en el array.
+                            //
+                            row.CreateCells(adtvgConciliation, values);
+                            // Añadimos la nueva fila al segundo control DataGridView.
+                            //
+                            adtvgConciliation.Rows.Add(row);
+                            adtvgConciliation.AllowUserToAddRows = true;
                         }
                     }
-
-                    if (!check)
-                    {
-                        // Creamos un nuevo objeto DataGridViewRow.
-                        //
-                        DataGridViewRow row = new DataGridViewRow();
-                        // Creamos las celdas y las rellenamos con los valores existentes en el array.
-                        //
-                        row.CreateCells(adtvgConciliation, values);
-                        // Añadimos la nueva fila al segundo control DataGridView.
-                        //
-                        adtvgConciliation.Rows.Add(row);
-                    }
                 }
+
+                if (check)
+                {
+                    MessageBox.Show("The following documents have already been selected: " + "\n\n" + string.Join(", ", listDocuments.ToArray()) + "\n\n" + "Please review your conciliation (Column name: Document number). Thanks", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    listDocuments.Clear();
+                }
+
+                //Limpia selección
+                //
+                AdtvgCustomerPay.ClearSelection();
+                AdtvgInvoices.ClearSelection();
+                AdtvgCreditNotes.ClearSelection();
+                AdtvgCreditBalance.ClearSelection();
+                AdtvgAllDoc.ClearSelection();
+
+                // Suma valores de columna Amount in Doc Curre (Col 6) de DataGridView Conciliation
+                //            
+                sumTotal();
             }
-
-            if (check)
-            {
-                MessageBox.Show("The following documents have already been selected: " + "\n\n" + string.Join(", ", listDocuments.ToArray()) + "\n\n" + "Please review your conciliation (Column name: Document number). Thanks", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                listDocuments.Clear();
-            }
-
-            //Limpia selección
-            AdtvgCustomerPay.ClearSelection();
-            AdtvgInvoices.ClearSelection();
-            AdtvgCreditNotes.ClearSelection();
-            AdtvgCreditBalance.ClearSelection();
-            AdtvgAllDoc.ClearSelection();
-
-            // Suma valores de columna Amount in Doc Curre (Col 6) de DataGridView Conciliation
-            //            
-            sumTotal();
         }
        
         // Quita todas las filas seleccionadas en Datagrid Conciliation ***************************************************************************************
         private void pictUnselectAll_Click(object sender, EventArgs e)
         {
-            //adtvgConciliation.Rows.Clear();
-            clearConciliation();
-            sumTotal();
+            if (adtvgConciliation.RowCount > 0)
+            {
+                DialogResult dialogRemoveAll = MessageBox.Show("Are you sure to remove all documents from your conciliation?", MainInput.APPNAME, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+
+                if (dialogRemoveAll == DialogResult.Yes)
+                {
+                    clearConciliation();
+                    sumTotal();               
+                }
+            }
         }
 
         void clearConciliation()
         {
             adtvgConciliation.Rows.Clear();
-            txtReceiptNumber.Clear();   
+            txtReceiptNumber.Clear();
+            adtvgConciliation.AllowUserToAddRows = false;
         }
 
         // Llama a método para Exportar Datagrid Conciliation a Excel ***************************************************************************************
@@ -673,58 +764,65 @@ namespace CFS_Latam_cashApplicationTool
         {
             try
             {
-                Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
-                Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
-                Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
-                app.Visible = true;
-                worksheet = (Microsoft.Office.Interop.Excel._Worksheet)workbook.Sheets["Sheet1"];
-                worksheet = (Microsoft.Office.Interop.Excel._Worksheet)workbook.ActiveSheet;
-                //worksheet = workbook.Sheets["Sheet1"];
-                //worksheet = workbook.ActiveSheet;
-                worksheet.Name = "Records";
-
-                try
+                if (adtvgConciliation.RowCount > 0)
                 {
-                    for (int i = 0; i < adtvgConciliation.Columns.Count; i++)
+                    Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+                    Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+                    Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+                    app.Visible = true;
+                    worksheet = (Microsoft.Office.Interop.Excel._Worksheet)workbook.Sheets["Sheet1"];
+                    worksheet = (Microsoft.Office.Interop.Excel._Worksheet)workbook.ActiveSheet;
+                    //worksheet = workbook.Sheets["Sheet1"];
+                    //worksheet = workbook.ActiveSheet;
+                    worksheet.Name = "Records";
+
+                    try
                     {
-                        worksheet.Cells[1, i + 1] = adtvgConciliation.Columns[i].HeaderText;
-                    }
-                    for (int i = 0; i < adtvgConciliation.Rows.Count; i++)
-                    {
-                        for (int j = 0; j < adtvgConciliation.Columns.Count; j++)
+                        for (int i = 0; i < adtvgConciliation.Columns.Count; i++)
                         {
-                            if (adtvgConciliation.Rows[i].Cells[j].Value != null)
+                            worksheet.Cells[1, i + 1] = adtvgConciliation.Columns[i].HeaderText;
+                        }
+                        for (int i = 0; i < adtvgConciliation.Rows.Count; i++)
+                        {
+                            for (int j = 0; j < adtvgConciliation.Columns.Count; j++)
                             {
-                                worksheet.Cells[i + 2, j + 1] = adtvgConciliation.Rows[i].Cells[j].Value.ToString();
-                            }
-                            else
-                            {
-                                worksheet.Cells[i + 2, j + 1] = "";
+                                if (adtvgConciliation.Rows[i].Cells[j].Value != null)
+                                {
+                                    worksheet.Cells[i + 2, j + 1] = adtvgConciliation.Rows[i].Cells[j].Value.ToString();
+                                }
+                                else
+                                {
+                                    worksheet.Cells[i + 2, j + 1] = "";
+                                }
                             }
                         }
+
+                        //Obtener ubicación y el nombre del archivo de Excel para guardar según Usuario. 
+                        SaveFileDialog saveDialog = new SaveFileDialog();
+                        saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                        saveDialog.FilterIndex = 2;
+
+                        if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                        {
+                            workbook.SaveAs(saveDialog.FileName);
+                            MessageBox.Show("Export Successful", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-
-                    //Obtener ubicación y el nombre del archivo de Excel para guardar según Usuario. 
-                    SaveFileDialog saveDialog = new SaveFileDialog();
-                    saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
-                    saveDialog.FilterIndex = 2;
-
-                    if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    catch (System.Exception ex)
                     {
-                        workbook.SaveAs(saveDialog.FileName);
-                        MessageBox.Show("Export Successful", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(ex.Message);
+                    }
+
+                    finally
+                    {
+                        app.Quit();
+                        workbook = null;
+                        worksheet = null;
                     }
                 }
-                catch (System.Exception ex)
+                else if (adtvgConciliation.RowCount == 0)
                 {
-                    MessageBox.Show(ex.Message);
-                }
-
-                finally
-                {
-                    app.Quit();
-                    workbook = null;
-                    worksheet = null;
+                    MessageBox.Show("There isn´t information to export in your customer conciliation", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -746,6 +844,11 @@ namespace CFS_Latam_cashApplicationTool
 
         // Abre ventana de busqueda de cliente por texto **********************************************************************************************
         private void pictFormSearch_Click(object sender, EventArgs e)
+        {
+            callFormSearch();
+        }
+
+        void callFormSearch()
         {
             FrmSearchCustomerName frmSearch = new FrmSearchCustomerName();
             AddOwnedForm(frmSearch);
@@ -791,44 +894,40 @@ namespace CFS_Latam_cashApplicationTool
             this.PictureRight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PictureRight.Cursor = System.Windows.Forms.Cursors.Hand;
         }
-
         private void PictureRight_MouseLeave(object sender, EventArgs e)
         {
             this.PictureRight.BorderStyle = System.Windows.Forms.BorderStyle.None;
         }
-
         private void pictLeft_MouseHover(object sender, EventArgs e)
         {
             this.pictLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictLeft.Cursor = System.Windows.Forms.Cursors.Hand;
         }
-
         private void pictLeft_MouseLeave(object sender, EventArgs e)
         {
             this.pictLeft.BorderStyle = System.Windows.Forms.BorderStyle.None;
         }
-
         private void pictUnselectAll_MouseHover(object sender, EventArgs e)
         {
             this.pictUnselectAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictUnselectAll.Cursor = System.Windows.Forms.Cursors.Hand;
         }
-
         private void pictUnselectAll_MouseLeave(object sender, EventArgs e)
         {
             this.pictUnselectAll.BorderStyle = System.Windows.Forms.BorderStyle.None;
         }
-        private void pictSubmit_MouseHover(object sender, EventArgs e)
+        private void pictSubmitDb_MouseHover(object sender, EventArgs e)
         {
-            this.pictSubmit.Size = new System.Drawing.Size(110, 52);
-            this.pictSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictSubmitDb.Size = new System.Drawing.Size(46, 40);
+            this.pictSubmitDb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictSubmitDb.Cursor = System.Windows.Forms.Cursors.Hand;
         }
 
-        private void pictSubmit_MouseLeave(object sender, EventArgs e)
+        private void pictSubmitDb_MouseLeave(object sender, EventArgs e)
         {
-            this.pictSubmit.Size = new System.Drawing.Size(104, 46);
+            this.pictSubmitDb.Size = new System.Drawing.Size(43, 37);
+            this.pictSubmitDb.BorderStyle = System.Windows.Forms.BorderStyle.None;
         }
-
         void fillPlaceHolder()
         {
             if (cboCompanyCode.Text == "")
@@ -918,7 +1017,7 @@ namespace CFS_Latam_cashApplicationTool
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                MessageBox.Show("This field only supports numbers", "Cash Application Tool", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("This field only supports numbers", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
             }
@@ -949,6 +1048,82 @@ namespace CFS_Latam_cashApplicationTool
             {
                 e.Handled = true;
             }
+        }       
+            
+        private void adtvgConciliation_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {   
+            // Validamos los campos de Disputes Amount, Reason Code y Description
+            for (int i = 0; i < adtvgConciliation.RowCount; i++)
+            {
+                double colDisputeAmount = Convert.ToDouble(adtvgConciliation.Rows[i].Cells[18].Value);
+                string colReasonCode = Convert.ToString(adtvgConciliation.Rows[i].Cells[19].Value);
+                string colAgreement = Convert.ToString(adtvgConciliation.Rows[i].Cells[20].Value);
+                string colDescription = Convert.ToString(adtvgConciliation.Rows[i].Cells[21].Value);
+
+                if (colDisputeAmount != 0 && (colReasonCode == string.Empty || colDescription == string.Empty))
+                {
+                    adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
+                }
+                else if (colReasonCode != string.Empty && (colDisputeAmount == 0 || colDescription == string.Empty))
+                {
+                    adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
+                }
+                else if (colAgreement != string.Empty && (colDisputeAmount == 0 || colReasonCode == string.Empty || colDescription == string.Empty))
+                {
+                    adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.DarkSalmon;
+                    adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
+                }
+                else if (colDescription != string.Empty && (colDisputeAmount == 0 || colReasonCode == string.Empty))
+                {
+                    adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.DarkSalmon;
+                }
+                else
+                {
+                    adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.Empty; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.Empty;
+                    adtvgConciliation.Rows[i].Cells[20].Style.BackColor = Color.Empty; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.Empty;
+                }
+            }
+        }
+
+        private void searchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PictSearch_Click(Owner, e);
+        }
+
+        private void txtCustomerNumber_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F8)
+            {
+                PictSearch_Click(Owner, e);
+            }
+        }
+
+        private void findCustomersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            callFormSearch();
+        }
+
+        private void cboDescriptionAgreement_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F10)
+            {
+                pictSubmitDb_Click(Owner, e);
+            }
+        }
+
+        private void submitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pictSubmitDb_Click(Owner, e);
+        }
+
+        private void emailToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            objFrmError.sendEmail();
+        }
+
+        private void whatsappToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            objFrmError.sendWhatsApp();
         }
     }
 }

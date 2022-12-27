@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CFS_Latam_cashApplicationTool
-{   
+{
     public class MainInput
     {
-        //Atributos Públicos de la Clase
+        // Name
+        static public string APPNAME = "Cash Application Tool";
+        // Atributos Públicos de la Clase
         private string _CompanyCode;
         public string CompanyCode
         {
