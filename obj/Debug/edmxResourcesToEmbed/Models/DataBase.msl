@@ -4,9 +4,12 @@
     <EntitySetMapping Name="CASH_APPLICATION___Users_Desktop_App">
       <EntityTypeMapping TypeName="SSC_Finance_DWModel.CASH_APPLICATION___Users_Desktop_App">
         <MappingFragment StoreEntitySet="CASH APPLICATION - Users Desktop App">
+          <ScalarProperty Name="user_area" ColumnName="user_area" />
+          <ScalarProperty Name="user_status" ColumnName="user_status" />
+          <ScalarProperty Name="user_mail" ColumnName="user_mail" />
+          <ScalarProperty Name="user_names" ColumnName="user_names" />
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="user_id" ColumnName="user_id" />
-          <ScalarProperty Name="password" ColumnName="password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

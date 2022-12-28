@@ -11,7 +11,10 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="user_id" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_names" Type="varchar" MaxLength="255" />
+          <Property Name="user_mail" Type="varchar" MaxLength="255" />
+          <Property Name="user_status" Type="varchar" MaxLength="50" />
+          <Property Name="user_area" Type="varchar" MaxLength="255" />
         </EntityType>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
         <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -57,7 +60,10 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="user_id" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="user_names" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="user_mail" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="user_status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_area" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="SSC_Finance_DWEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CASH_APPLICATION___Users_Desktop_App" EntityType="Self.CASH_APPLICATION___Users_Desktop_App" />
@@ -277,9 +283,12 @@
           <EntitySetMapping Name="CASH_APPLICATION___Users_Desktop_App">
             <EntityTypeMapping TypeName="SSC_Finance_DWModel.CASH_APPLICATION___Users_Desktop_App">
               <MappingFragment StoreEntitySet="CASH APPLICATION - Users Desktop App">
+                <ScalarProperty Name="user_area" ColumnName="user_area" />
+                <ScalarProperty Name="user_status" ColumnName="user_status" />
+                <ScalarProperty Name="user_mail" ColumnName="user_mail" />
+                <ScalarProperty Name="user_names" ColumnName="user_names" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
-                <ScalarProperty Name="password" ColumnName="password" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

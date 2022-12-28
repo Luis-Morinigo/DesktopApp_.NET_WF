@@ -10,15 +10,13 @@
 namespace CFS_Latam_cashApplicationTool.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class CASH_APPLICATION___Users_Desktop_App
+    public partial class sp_helpdiagrams_Result
     {
-        public int id { get; set; }
-        public string user_id { get; set; }
-        public string user_names { get; set; }
-        public string user_mail { get; set; }
-        public string user_status { get; set; }
-        public string user_area { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }
