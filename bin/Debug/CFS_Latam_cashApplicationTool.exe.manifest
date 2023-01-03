@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CFS_Latam_cashApplicationTool.exe" size="1368504">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CFS_Latam_cashApplicationTool.exe" size="1377720">
       <assemblyIdentity name="CFS_Latam_cashApplicationTool" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fOpiCCvSmwRt5UGA7bFXBLUpeg5S9ODSqiOBJL30teM=</dsig:DigestValue>
+        <dsig:DigestValue>sXIbaHLUhxjUICXguijmK4N17gNb6XzmcZ3A2c0iszU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -150,13 +150,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="CFS_Latam_cashApplicationTool.exe.config" size="4875">
+  <file name="CFS_Latam_cashApplicationTool.exe.config" size="5384">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>tNCXYxQngeM2DSzS3nycAknAymGmrgpsBzHLaIeb2J8=</dsig:DigestValue>
+      <dsig:DigestValue>V4DfJiMjSEBGYpi8A9js30DB9RGC40zULSBGwP4BMMg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Icon_CFS.ico" size="27838">
@@ -202,6 +202,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>G2pBdwLF/dEemiADv6GQHFErqwDMFbAaZ7Rkf5ofpS0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBUsersActivity\DBUsersActivity.Context.tt" size="22939">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nx/IE4BKixDkH6oTgYHtikM6WL0Dw8wFLeMLrfni1PY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBUsersActivity\DBUsersActivity.tt" size="25284">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>FVKF8y1+IvznYxtJSqfMzeYu0DhU04w6a9wH0oY0QFE=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

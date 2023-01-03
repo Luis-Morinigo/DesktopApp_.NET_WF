@@ -27,6 +27,7 @@ using Label = System.Windows.Forms.Label;
 using System.Data.Entity.Infrastructure;
 using DocumentFormat.OpenXml.Drawing.Charts;
 using DocumentFormat.OpenXml.Drawing;
+using CFS_Latam_cashApplicationTool.Models.DBUsersActivity;
 //using CFS_Latam_cashApplicationTool.Models.DBConctact;
 
 namespace CFS_Latam_cashApplicationTool
@@ -384,65 +385,135 @@ namespace CFS_Latam_cashApplicationTool
         // Envia información de Datagrid Conciliation a SQL ****************************************************************************************************
         private void pictSubmitDb_Click(object sender, EventArgs e)
         {
-            if (adtvgConciliation.RowCount > 0)
+            try
             {
-                double totalsub = Convert.ToDouble(txtSubtotal.Text);
-                bool checkDisputes = false;
-
-                // Validamos los campos de Disputes Amount, Reason Code y Description
-                for (int i = 0; i < adtvgConciliation.RowCount; i++)
+                if (adtvgConciliation.RowCount > 0)
                 {
-                    double colDisputeAmount = Convert.ToDouble(adtvgConciliation.Rows[i].Cells[18].Value);
-                    string colReasonCode = Convert.ToString(adtvgConciliation.Rows[i].Cells[19].Value);
-                    string colAgreement = Convert.ToString(adtvgConciliation.Rows[i].Cells[20].Value);
-                    string colDescription = Convert.ToString(adtvgConciliation.Rows[i].Cells[21].Value);
+                    double totalsub = Convert.ToDouble(txtSubtotal.Text);
+                    bool checkDisputes = false;
 
-                    if (colDisputeAmount != 0 && (colReasonCode == string.Empty || colDescription == string.Empty))
+                    // Validamos los campos de Disputes Amount, Reason Code y Description
+                    for (int i = 0; i < adtvgConciliation.RowCount; i++)
                     {
-                        adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
-                        checkDisputes = true;
+                        double colDisputeAmount = Convert.ToDouble(adtvgConciliation.Rows[i].Cells[18].Value);
+                        string colReasonCode = Convert.ToString(adtvgConciliation.Rows[i].Cells[19].Value);
+                        string colAgreement = Convert.ToString(adtvgConciliation.Rows[i].Cells[20].Value);
+                        string colDescription = Convert.ToString(adtvgConciliation.Rows[i].Cells[21].Value);
+
+                        if (colDisputeAmount != 0 && (colReasonCode == string.Empty || colDescription == string.Empty))
+                        {
+                            adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
+                            checkDisputes = true;
+                        }
+                        else if (colReasonCode != string.Empty && (colDisputeAmount == 0 || colDescription == string.Empty))
+                        {
+                            adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
+                            checkDisputes = true;
+                        }
+                        else if (colAgreement != string.Empty && (colDisputeAmount == 0 || colReasonCode == string.Empty || colDescription == string.Empty))
+                        {
+                            adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.DarkSalmon;
+                            adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
+                            checkDisputes = true;
+                        }
+                        else if (colDescription != string.Empty && (colDisputeAmount == 0 || colReasonCode == string.Empty))
+                        {
+                            adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.DarkSalmon;
+                            checkDisputes = true;
+                        }
+                        else
+                        {
+                            adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.Empty; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.Empty;
+                            adtvgConciliation.Rows[i].Cells[20].Style.BackColor = Color.Empty; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.Empty;
+                        }
                     }
-                    else if (colReasonCode != string.Empty && (colDisputeAmount == 0 || colDescription == string.Empty))
+
+                    if (checkDisputes)
                     {
-                        adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
-                        checkDisputes = true;
+                        MessageBox.Show("There are mandatory fields pending completion in your Customer Conciliation.", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
                     }
-                    else if (colAgreement != string.Empty && (colDisputeAmount == 0 || colReasonCode == string.Empty || colDescription == string.Empty))
+                    if (totalsub > 10 || totalsub < -10)
                     {
-                        adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.DarkSalmon;
-                        adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
-                        checkDisputes = true;
+                        MessageBox.Show("Please review your reconciliation, the subtotal must be between the ranges 10 and -10", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
                     }
-                    else if (colDescription != string.Empty && (colDisputeAmount == 0 || colReasonCode == string.Empty))
+                    if (totalsub <= 10 && totalsub >= -10)
                     {
-                        adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.DarkSalmon;
-                        checkDisputes = true;
-                    }
-                    else
-                    {
-                        adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.Empty; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.Empty;
-                        adtvgConciliation.Rows[i].Cells[20].Style.BackColor = Color.Empty; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.Empty;
+                        // Agregar columnas a Datagrid Conciliation                      
+                        addColumns(Owner,e);
+
+                        MessageBox.Show("Your conciliation was sent successfully", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
                     }
                 }
-
-                if (checkDisputes)
+                // No existe información para enviar en Customer Conciliation
+                else if (adtvgConciliation.RowCount == 0)
                 {
-                    MessageBox.Show("There are mandatory fields pending completion in your Customer Conciliation.", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else if (totalsub > 10 || totalsub < -10)
-                {
-                    MessageBox.Show("Please review your reconciliation, the subtotal must be between the ranges 10 and -10", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                else if (totalsub <= 10 && totalsub >= -10)
-                {
-                    MessageBox.Show("Your conciliation was sent successfully", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("There isn't information to send in Customer Conciliation.", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (adtvgConciliation.RowCount == 0)
+            catch (System.Exception ex)
             {
-                MessageBox.Show("There isn't information to send in Customer Conciliation.", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
             }
+        }
 
+        // Método para agregar columnas a datagrid de Customer Conciliation
+        private void addColumns(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewTextBoxColumn Col_IdDocNumber; DataGridViewTextBoxColumn Col_EntruDate; DataGridViewTextBoxColumn Col_Guid;
+                DataGridViewTextBoxColumn Col_UserName; DataGridViewTextBoxColumn Col_DocNumberCAT; DataGridViewTextBoxColumn Col_Tool;
+                DataGridViewTextBoxColumn Col_Status; DataGridViewTextBoxColumn Col_PostingDateSAP; DataGridViewTextBoxColumn Col_DocumentNumberSAP;
+
+                Col_IdDocNumber = new DataGridViewTextBoxColumn() { Name = "ID_Doc_Number", HeaderText = "ID Doc Number", Width = 150 };
+                Col_EntruDate = new DataGridViewTextBoxColumn() { Name = "Entry_date_CAT", HeaderText = "Entry date CAT", Width = 150 };
+                Col_Guid = new DataGridViewTextBoxColumn() { Name = "Guid", HeaderText = "GUID", Width = 50 };
+                Col_UserName = new DataGridViewTextBoxColumn() { Name = "User_Name", HeaderText = "User Name", Width = 150 };
+                Col_DocNumberCAT = new DataGridViewTextBoxColumn() { Name = "Doc_Number_CAT", HeaderText = "Doc Number CAT", Width = 150 };
+                Col_Tool = new DataGridViewTextBoxColumn() { Name = "Tool", HeaderText = "Tool", Width = 150 };
+                Col_Status = new DataGridViewTextBoxColumn() { Name = "Status", HeaderText = "Status", Width = 150 };
+                Col_PostingDateSAP = new DataGridViewTextBoxColumn() { Name = "Posting_Date_SAP", HeaderText = "Posting Date SAP", Width = 150 };
+                Col_DocumentNumberSAP = new DataGridViewTextBoxColumn() { Name = "Document_number_SAP", HeaderText = "Document number SAP", Width = 150 };
+
+                this.adtvgConciliation.Columns.Add(Col_IdDocNumber); this.adtvgConciliation.Columns.Add(Col_EntruDate); this.adtvgConciliation.Columns.Add(Col_Guid);
+                this.adtvgConciliation.Columns.Add(Col_UserName); this.adtvgConciliation.Columns.Add(Col_DocNumberCAT); this.adtvgConciliation.Columns.Add(Col_Tool);
+                this.adtvgConciliation.Columns.Add(Col_Status); this.adtvgConciliation.Columns.Add(Col_PostingDateSAP); this.adtvgConciliation.Columns.Add(Col_DocumentNumberSAP);
+
+                // Elimina última fila de Datagrid Customer Conciliation
+                adtvgConciliation.AllowUserToAddRows = false;
+
+                //Genero conexión a la base de datos
+                using (Models.SSC_Finance_DWEntities DataBaseUser = new Models.SSC_Finance_DWEntities())
+                {
+                    // Busca nombre de tabla USER DESKTOP APP *******************************************
+                    var userNames = (from d in DataBaseUser.CASH_APPLICATION___Users_Desktop_App
+                                     where (d.user_id == Environment.UserName)
+                                     select d.user_names).ToList().FirstOrDefault();
+               
+                    // Completamos información de las columnas agregadas
+                    for (int i = 0; i < adtvgConciliation.RowCount; i++)
+                    {
+                        string userLogin = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
+
+                        if ((string)adtvgConciliation.Rows[i].Cells[0].Value != string.Empty && i < adtvgConciliation.RowCount)
+                        {
+                            adtvgConciliation.Rows[i].Cells[22].Value = string.Concat((string)adtvgConciliation.Rows[i].Cells[0].Value + (string)adtvgConciliation.Rows[i].Cells[9].Value);
+                            adtvgConciliation.Rows[i].Cells[23].Value = userLogin;
+                            adtvgConciliation.Rows[i].Cells[24].Value = Environment.UserName;
+                            adtvgConciliation.Rows[i].Cells[25].Value = userNames;
+                            adtvgConciliation.Rows[i].Cells[27].Value = MainInput.APPNAME;
+                            adtvgConciliation.Rows[i].Cells[28].Value = "Pending F-32";
+                        }
+                    }
+                }
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         // Quita filas seleccionadas de Grid Conciliation
@@ -463,7 +534,6 @@ namespace CFS_Latam_cashApplicationTool
                     //            
                     sumTotal();
                 }
-
             }
             catch (Exception)
             {
@@ -1067,6 +1137,17 @@ namespace CFS_Latam_cashApplicationTool
                 else if (colReasonCode != string.Empty && (colDisputeAmount == 0 || colDescription == string.Empty))
                 {
                     adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
+                    
+                    // Carga company code y habilita columna Reference
+                    if(Convert.ToString(adtvgConciliation.Rows[i].Cells[0].Value) == string.Empty)
+                    {
+                        adtvgConciliation.Rows[i].Cells[0].Value = adtvgConciliation.Rows[0].Cells[0].Value;
+                        adtvgConciliation.Rows[i].Cells[1].Value = adtvgConciliation.Rows[0].Cells[1].Value;
+                        adtvgConciliation.Rows[i].Cells[2].Value = adtvgConciliation.Rows[0].Cells[2].Value;
+                        adtvgConciliation.Rows[i].Cells[3].Value = adtvgConciliation.Rows[0].Cells[3].Value;
+                        adtvgConciliation.Rows[i].Cells[15].Value = adtvgConciliation.Rows[0].Cells[15].Value;
+                        adtvgConciliation.Columns[9].ReadOnly = false;
+                    }
                 }
                 else if (colAgreement != string.Empty && (colDisputeAmount == 0 || colReasonCode == string.Empty || colDescription == string.Empty))
                 {

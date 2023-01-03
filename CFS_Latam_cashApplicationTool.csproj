@@ -188,6 +188,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ContactDHL.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\DBUsersActivity\CASH_APPLICATION___Users_Activity.cs">
+      <DependentUpon>DBUsersActivity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBUsersActivity\DBUsersActivity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBUsersActivity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBUsersActivity\DBUsersActivity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBUsersActivity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBUsersActivity\DBUsersActivity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBUsersActivity.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>DataBase.tt</DependentUpon>
     </Compile>
@@ -282,6 +300,13 @@
     </EntityDeploy>
     <None Include="Models\DBConctact\ContactDHL.edmx.diagram">
       <DependentUpon>ContactDHL.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Models\DBUsersActivity\DBUsersActivity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBUsersActivity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\DBUsersActivity\DBUsersActivity.edmx.diagram">
+      <DependentUpon>DBUsersActivity.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -383,6 +408,16 @@
       <DependentUpon>ContactDHL.edmx</DependentUpon>
       <LastGenOutput>ContactDHL.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\DBUsersActivity\DBUsersActivity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBUsersActivity.edmx</DependentUpon>
+      <LastGenOutput>DBUsersActivity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DBUsersActivity\DBUsersActivity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBUsersActivity.edmx</DependentUpon>
+      <LastGenOutput>DBUsersActivity.cs</LastGenOutput>
+    </Content>
     <None Include="Resources\Icon_Exit2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -465,9 +500,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\DBUsersActivity\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SSC_Finance_DWModelEntitiesUsersActivity.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CASH APPLICATION - Users_Activity">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="users_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="users_names" Type="varchar" MaxLength="255" />
+    <Property Name="users_area" Type="varchar" MaxLength="255" />
+    <Property Name="users_status" Type="varchar" MaxLength="50" />
+    <Property Name="usersDatetime_login" Type="varchar" MaxLength="50" />
+    <Property Name="usersDatetime_logout" Type="varchar" MaxLength="50" />
+    <Property Name="usersClose_window" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="SSC_Finance_DWModelEntitiesUsersActivityStoreContainer">
+    <EntitySet Name="CASH APPLICATION - Users_Activity" EntityType="Self.CASH APPLICATION - Users_Activity" Schema="GLOBAL\B082193" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
