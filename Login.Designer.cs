@@ -36,17 +36,21 @@
             this.panelPolitic = new System.Windows.Forms.Panel();
             this.lblPolitic = new System.Windows.Forms.Label();
             this.panelLogin = new System.Windows.Forms.Panel();
+            this.pictureGifLogin = new System.Windows.Forms.PictureBox();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.pictLogin = new System.Windows.Forms.PictureBox();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.lblTitle2 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.pictLogoScj = new System.Windows.Forms.PictureBox();
+            this.backgroundWorkerLogin = new System.ComponentModel.BackgroundWorker();
             this.panelGeneral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictDhl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelPolitic.SuspendLayout();
             this.panelLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureGifLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictLogin)).BeginInit();
             this.panelTitle.SuspendLayout();
             this.panelLogo.SuspendLayout();
@@ -132,6 +136,8 @@
             // 
             // panelLogin
             // 
+            this.panelLogin.Controls.Add(this.pictureGifLogin);
+            this.panelLogin.Controls.Add(this.lblVersion);
             this.panelLogin.Controls.Add(this.pictLogin);
             this.panelLogin.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogin.Location = new System.Drawing.Point(5, 260);
@@ -139,12 +145,34 @@
             this.panelLogin.Size = new System.Drawing.Size(478, 135);
             this.panelLogin.TabIndex = 2;
             // 
+            // pictureGifLogin
+            // 
+            this.pictureGifLogin.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Gif_Loading;
+            this.pictureGifLogin.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Gif_Loading;
+            this.pictureGifLogin.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Gif_Loading;
+            this.pictureGifLogin.Location = new System.Drawing.Point(166, 3);
+            this.pictureGifLogin.Name = "pictureGifLogin";
+            this.pictureGifLogin.Size = new System.Drawing.Size(156, 129);
+            this.pictureGifLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureGifLogin.TabIndex = 1;
+            this.pictureGifLogin.TabStop = false;
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersion.ForeColor = System.Drawing.Color.DimGray;
+            this.lblVersion.Location = new System.Drawing.Point(201, 1);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(0, 17);
+            this.lblVersion.TabIndex = 1;
+            // 
             // pictLogin
             // 
             this.pictLogin.ErrorImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Login;
             this.pictLogin.Image = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Login;
             this.pictLogin.InitialImage = global::CFS_Latam_cashApplicationTool.Properties.Resources.Icon_Login;
-            this.pictLogin.Location = new System.Drawing.Point(166, 40);
+            this.pictLogin.Location = new System.Drawing.Point(166, 43);
             this.pictLogin.Name = "pictLogin";
             this.pictLogin.Size = new System.Drawing.Size(156, 53);
             this.pictLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -207,6 +235,13 @@
             this.pictLogoScj.TabIndex = 0;
             this.pictLogoScj.TabStop = false;
             // 
+            // backgroundWorkerLogin
+            // 
+            this.backgroundWorkerLogin.WorkerReportsProgress = true;
+            this.backgroundWorkerLogin.WorkerSupportsCancellation = true;
+            this.backgroundWorkerLogin.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerLogin_DoWork);
+            this.backgroundWorkerLogin.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerLogin_RunWorkerCompleted);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,6 +254,7 @@
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login - Cash Application Tool CFS Latam";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.panelGeneral.ResumeLayout(false);
             this.panelGeneral.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictDhl)).EndInit();
@@ -226,6 +262,8 @@
             this.panelPolitic.ResumeLayout(false);
             this.panelPolitic.PerformLayout();
             this.panelLogin.ResumeLayout(false);
+            this.panelLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureGifLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictLogin)).EndInit();
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
@@ -250,6 +288,9 @@
         private System.Windows.Forms.PictureBox pictDhl;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblPowered;
+        private System.Windows.Forms.Label lblVersion;
+        private System.Windows.Forms.PictureBox pictureGifLogin;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerLogin;
     }
 }
 

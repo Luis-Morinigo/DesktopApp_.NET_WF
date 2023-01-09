@@ -188,6 +188,42 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ContactDHL.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\DBHistoricalDocNumbers\CASH_APPLICATION___Historical_Document_Numbers.cs">
+      <DependentUpon>DBHistoricalDocNumbers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBHistoricalDocNumbers\DBHistoricalDocNumbers.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBHistoricalDocNumbers.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBHistoricalDocNumbers\DBHistoricalDocNumbers.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBHistoricalDocNumbers.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBHistoricalDocNumbers\DBHistoricalDocNumbers.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBHistoricalDocNumbers.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBHistoricalInputUsers\CASH_APPLICATION___Historical_Input_Users.cs">
+      <DependentUpon>DBHistoricalInputUser.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBHistoricalInputUsers\DBHistoricalInputUser.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBHistoricalInputUser.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBHistoricalInputUsers\DBHistoricalInputUser.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBHistoricalInputUser.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBHistoricalInputUsers\DBHistoricalInputUser.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBHistoricalInputUser.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\DBUsersActivity\CASH_APPLICATION___Users_Activity.cs">
       <DependentUpon>DBUsersActivity.tt</DependentUpon>
     </Compile>
@@ -305,6 +341,20 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBUsersActivity.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="Models\DBHistoricalDocNumbers\DBHistoricalDocNumbers.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBHistoricalDocNumbers.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\DBHistoricalDocNumbers\DBHistoricalDocNumbers.edmx.diagram">
+      <DependentUpon>DBHistoricalDocNumbers.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Models\DBHistoricalInputUsers\DBHistoricalInputUser.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBHistoricalInputUser.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\DBHistoricalInputUsers\DBHistoricalInputUser.edmx.diagram">
+      <DependentUpon>DBHistoricalInputUser.edmx</DependentUpon>
+    </None>
     <None Include="Models\DBUsersActivity\DBUsersActivity.edmx.diagram">
       <DependentUpon>DBUsersActivity.edmx</DependentUpon>
     </None>
@@ -407,6 +457,26 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ContactDHL.edmx</DependentUpon>
       <LastGenOutput>ContactDHL.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DBHistoricalDocNumbers\DBHistoricalDocNumbers.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBHistoricalDocNumbers.edmx</DependentUpon>
+      <LastGenOutput>DBHistoricalDocNumbers.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DBHistoricalDocNumbers\DBHistoricalDocNumbers.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBHistoricalDocNumbers.edmx</DependentUpon>
+      <LastGenOutput>DBHistoricalDocNumbers.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DBHistoricalInputUsers\DBHistoricalInputUser.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBHistoricalInputUser.edmx</DependentUpon>
+      <LastGenOutput>DBHistoricalInputUser.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DBHistoricalInputUsers\DBHistoricalInputUser.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBHistoricalInputUser.edmx</DependentUpon>
+      <LastGenOutput>DBHistoricalInputUser.cs</LastGenOutput>
     </Content>
     <Content Include="Models\DBUsersActivity\DBUsersActivity.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

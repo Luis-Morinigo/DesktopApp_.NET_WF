@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CFS_Latam_cashApplicationTool.exe" size="1377720">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CFS_Latam_cashApplicationTool.exe" size="1409976">
       <assemblyIdentity name="CFS_Latam_cashApplicationTool" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sXIbaHLUhxjUICXguijmK4N17gNb6XzmcZ3A2c0iszU=</dsig:DigestValue>
+        <dsig:DigestValue>vgLOb0AOV34be5yFwMfZGWx977uUH2douq0I8yUwsu8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -150,13 +150,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="CFS_Latam_cashApplicationTool.exe.config" size="5384">
+  <file name="CFS_Latam_cashApplicationTool.exe.config" size="6525">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>V4DfJiMjSEBGYpi8A9js30DB9RGC40zULSBGwP4BMMg=</dsig:DigestValue>
+      <dsig:DigestValue>F5kZriWvt5FLoIQE54BEBxUp/GpIgqvAIhdQB6ntdag=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Icon_CFS.ico" size="27838">
@@ -202,6 +202,42 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>G2pBdwLF/dEemiADv6GQHFErqwDMFbAaZ7Rkf5ofpS0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBHistoricalDocNumbers\DBHistoricalDocNumbers.Context.tt" size="22946">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4WzydD08I4ps0XyVProq2FGHxPz34uX6RNRgliUjBPQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBHistoricalDocNumbers\DBHistoricalDocNumbers.tt" size="25291">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Exk9A8FTbTzqaiPiByxNurYCoP/J66l3JsWy9//4PVw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBHistoricalInputUsers\DBHistoricalInputUser.Context.tt" size="22945">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+aOYFnSuJQEg4pp+GgQEf4QPFb7XCdyeKyRL2p9UUf0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBHistoricalInputUsers\DBHistoricalInputUser.tt" size="25290">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>V5b1Xi70pTfU54pk+ynOLtR67tpSeuzy3Np49xCJl6M=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Models\DBUsersActivity\DBUsersActivity.Context.tt" size="22939">

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SSC_Finance_DWModelHistoricalDocNumbers.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CASH APPLICATION - Historical_Document_Numbers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company_Code" Type="varchar" MaxLength="10" />
+          <Property Name="Alt_Payer" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Account" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Customer_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Amnt_Cust_Payment" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Amnt_Invoices" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Amnt_Disputes" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Amnt_Cred_Notes" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Amnt_Cred_Balance" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Subtotal" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Guid_User" Type="varchar" MaxLength="10" />
+          <Property Name="users_name" Type="varchar" MaxLength="255" />
+          <Property Name="entry_date_CAT" Type="varchar" MaxLength="50" />
+          <Property Name="Doc_Number_CAT" Type="int" />
+        </EntityType>
+        <EntityContainer Name="SSC_Finance_DWModelHistoricalDocNumbersStoreContainer">
+          <EntitySet Name="CASH APPLICATION - Historical_Document_Numbers" EntityType="Self.CASH APPLICATION - Historical_Document_Numbers" Schema="GLOBAL\B082193" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SSC_Finance_DWModelHistoricalDocNumbers" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CASH_APPLICATION___Historical_Document_Numbers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Alt_Payer" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Account" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Amnt_Cust_Payment" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amnt_Invoices" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amnt_Disputes" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amnt_Cred_Notes" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Amnt_Cred_Balance" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Subtotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Guid_User" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="users_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="entry_date_CAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Doc_Number_CAT" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="SSC_Finance_DWEntitiesHistoricalDocNumbers" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CASH_APPLICATION___Historical_Document_Numbers" EntityType="Self.CASH_APPLICATION___Historical_Document_Numbers" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SSC_Finance_DWModelHistoricalDocNumbersStoreContainer" CdmEntityContainer="SSC_Finance_DWEntitiesHistoricalDocNumbers">
+          <EntitySetMapping Name="CASH_APPLICATION___Historical_Document_Numbers">
+            <EntityTypeMapping TypeName="SSC_Finance_DWModelHistoricalDocNumbers.CASH_APPLICATION___Historical_Document_Numbers">
+              <MappingFragment StoreEntitySet="CASH APPLICATION - Historical_Document_Numbers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Company_Code" ColumnName="Company_Code" />
+                <ScalarProperty Name="Alt_Payer" ColumnName="Alt_Payer" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Amnt_Cust_Payment" ColumnName="Amnt_Cust_Payment" />
+                <ScalarProperty Name="Amnt_Invoices" ColumnName="Amnt_Invoices" />
+                <ScalarProperty Name="Amnt_Disputes" ColumnName="Amnt_Disputes" />
+                <ScalarProperty Name="Amnt_Cred_Notes" ColumnName="Amnt_Cred_Notes" />
+                <ScalarProperty Name="Amnt_Cred_Balance" ColumnName="Amnt_Cred_Balance" />
+                <ScalarProperty Name="Subtotal" ColumnName="Subtotal" />
+                <ScalarProperty Name="Guid_User" ColumnName="Guid_User" />
+                <ScalarProperty Name="users_name" ColumnName="users_name" />
+                <ScalarProperty Name="entry_date_CAT" ColumnName="entry_date_CAT" />
+                <ScalarProperty Name="Doc_Number_CAT" ColumnName="Doc_Number_CAT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

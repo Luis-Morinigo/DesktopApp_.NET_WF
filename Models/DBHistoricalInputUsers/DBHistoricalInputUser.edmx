@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SSC_Finance_DWModelHistoricalInputUsers.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CASH APPLICATION - Historical_Input_Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company_Code" Type="varchar" MaxLength="10" />
+          <Property Name="Alt_Payer" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Account" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Customer_Name" Type="varchar" MaxLength="255" />
+          <Property Name="Document_Type" Type="varchar" MaxLength="10" />
+          <Property Name="Document_Type_Description" Type="varchar" MaxLength="255" />
+          <Property Name="Amount_in_doc_curr" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Document_currency" Type="varchar" MaxLength="10" />
+          <Property Name="Document_Number" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Reference" Type="varchar" MaxLength="255" />
+          <Property Name="Document_Date" Type="date" />
+          <Property Name="Baseline_Payment_Dte" Type="date" />
+          <Property Name="Net_due_date" Type="date" />
+          <Property Name="Arrears_for_discount_1" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Amount_in_local_currency" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Local_Currency" Type="varchar" MaxLength="10" />
+          <Property Name="Text_SAP" Type="varchar" MaxLength="255" />
+          <Property Name="Receipt_Number" Type="varchar" MaxLength="255" />
+          <Property Name="Dispute_Amount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Reason_Code" Type="varchar" MaxLength="255" />
+          <Property Name="Agreement" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Description_Agreement" Type="varchar" MaxLength="255" />
+          <Property Name="ID_Doc_Number" Type="varchar" MaxLength="255" />
+          <Property Name="Entry_date_CAT" Type="varchar" MaxLength="50" />
+          <Property Name="GUID_Users" Type="varchar" MaxLength="50" />
+          <Property Name="Users_name" Type="varchar" MaxLength="255" />
+          <Property Name="Doc_Number_CAT" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="Tool" Type="varchar" MaxLength="50" />
+          <Property Name="Status_" Type="varchar" MaxLength="255" />
+          <Property Name="Posting_Date_SAP" Type="varchar" MaxLength="50" />
+          <Property Name="Document_number_SAP" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="SSC_Finance_DWModelHistoricalInputUsersStoreContainer">
+          <EntitySet Name="CASH APPLICATION - Historical_Input_Users" EntityType="Self.CASH APPLICATION - Historical_Input_Users" Schema="GLOBAL\B082193" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SSC_Finance_DWModelHistoricalInputUsers" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CASH_APPLICATION___Historical_Input_Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Alt_Payer" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Account" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Document_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Document_Type_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Amount_in_doc_curr" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Document_currency" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Document_Number" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Reference" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Document_Date" Type="DateTime" Precision="0" />
+          <Property Name="Baseline_Payment_Dte" Type="DateTime" Precision="0" />
+          <Property Name="Net_due_date" Type="DateTime" Precision="0" />
+          <Property Name="Arrears_for_discount_1" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Amount_in_local_currency" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Local_Currency" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Text_SAP" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Receipt_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Dispute_Amount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Reason_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Agreement" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Description_Agreement" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ID_Doc_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Entry_date_CAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GUID_Users" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Users_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Doc_Number_CAT" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Tool" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status_" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Posting_Date_SAP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Document_number_SAP" Type="Decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityContainer Name="SSC_Finance_DWEntitiesHistoricalInputUsers" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CASH_APPLICATION___Historical_Input_Users" EntityType="Self.CASH_APPLICATION___Historical_Input_Users" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SSC_Finance_DWModelHistoricalInputUsersStoreContainer" CdmEntityContainer="SSC_Finance_DWEntitiesHistoricalInputUsers">
+          <EntitySetMapping Name="CASH_APPLICATION___Historical_Input_Users">
+            <EntityTypeMapping TypeName="SSC_Finance_DWModelHistoricalInputUsers.CASH_APPLICATION___Historical_Input_Users">
+              <MappingFragment StoreEntitySet="CASH APPLICATION - Historical_Input_Users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Company_Code" ColumnName="Company_Code" />
+                <ScalarProperty Name="Alt_Payer" ColumnName="Alt_Payer" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Document_Type" ColumnName="Document_Type" />
+                <ScalarProperty Name="Document_Type_Description" ColumnName="Document_Type_Description" />
+                <ScalarProperty Name="Amount_in_doc_curr" ColumnName="Amount_in_doc_curr" />
+                <ScalarProperty Name="Document_currency" ColumnName="Document_currency" />
+                <ScalarProperty Name="Document_Number" ColumnName="Document_Number" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="Document_Date" ColumnName="Document_Date" />
+                <ScalarProperty Name="Baseline_Payment_Dte" ColumnName="Baseline_Payment_Dte" />
+                <ScalarProperty Name="Net_due_date" ColumnName="Net_due_date" />
+                <ScalarProperty Name="Arrears_for_discount_1" ColumnName="Arrears_for_discount_1" />
+                <ScalarProperty Name="Amount_in_local_currency" ColumnName="Amount_in_local_currency" />
+                <ScalarProperty Name="Local_Currency" ColumnName="Local_Currency" />
+                <ScalarProperty Name="Text_SAP" ColumnName="Text_SAP" />
+                <ScalarProperty Name="Receipt_Number" ColumnName="Receipt_Number" />
+                <ScalarProperty Name="Dispute_Amount" ColumnName="Dispute_Amount" />
+                <ScalarProperty Name="Reason_Code" ColumnName="Reason_Code" />
+                <ScalarProperty Name="Agreement" ColumnName="Agreement" />
+                <ScalarProperty Name="Description_Agreement" ColumnName="Description_Agreement" />
+                <ScalarProperty Name="ID_Doc_Number" ColumnName="ID_Doc_Number" />
+                <ScalarProperty Name="Entry_date_CAT" ColumnName="Entry_date_CAT" />
+                <ScalarProperty Name="GUID_Users" ColumnName="GUID_Users" />
+                <ScalarProperty Name="Users_name" ColumnName="Users_name" />
+                <ScalarProperty Name="Doc_Number_CAT" ColumnName="Doc_Number_CAT" />
+                <ScalarProperty Name="Tool" ColumnName="Tool" />
+                <ScalarProperty Name="Status_" ColumnName="Status_" />
+                <ScalarProperty Name="Posting_Date_SAP" ColumnName="Posting_Date_SAP" />
+                <ScalarProperty Name="Document_number_SAP" ColumnName="Document_number_SAP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -89,6 +89,7 @@
             this.lblCustomerSearch = new System.Windows.Forms.Label();
             this.tabControlCustomerLine = new System.Windows.Forms.TabControl();
             this.tabPageCustomerPayment = new System.Windows.Forms.TabPage();
+            this.lblLoadingCP = new System.Windows.Forms.Label();
             this.AdtvgCustomerPay = new Zuby.ADGV.AdvancedDataGridView();
             this.companyCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.altPayerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,6 +112,7 @@
             this.dsFbl5nBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsFbl5n = new CFS_Latam_cashApplicationTool.DsFbl5n();
             this.tabPageInvoices = new System.Windows.Forms.TabPage();
+            this.lblLoadingINV = new System.Windows.Forms.Label();
             this.AdtvgInvoices = new Zuby.ADGV.AdvancedDataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -131,6 +133,7 @@
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPSELECTINVOICESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageCreditNotes = new System.Windows.Forms.TabPage();
+            this.lblLoadingCN = new System.Windows.Forms.Label();
             this.AdtvgCreditNotes = new Zuby.ADGV.AdvancedDataGridView();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -151,6 +154,7 @@
             this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPSELECTCREDITNOTESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageCreditBalance = new System.Windows.Forms.TabPage();
+            this.lblLoadingCB = new System.Windows.Forms.Label();
             this.AdtvgCreditBalance = new Zuby.ADGV.AdvancedDataGridView();
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -171,6 +175,7 @@
             this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPSELECTCREDITBALANCEBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageAllDocuments = new System.Windows.Forms.TabPage();
+            this.lblLoadingALL = new System.Windows.Forms.Label();
             this.AdtvgAllDoc = new Zuby.ADGV.AdvancedDataGridView();
             this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -246,6 +251,7 @@
             this.sP_SELECTINVOICESTableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_SELECTINVOICESTableAdapter();
             this.sP_SELECTPAYMENTSTableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_SELECTPAYMENTSTableAdapter();
             this.sP_DESCRIPTIONAGREEMENTTableAdapter = new CFS_Latam_cashApplicationTool.DsFbl5nTableAdapters.SP_DESCRIPTIONAGREEMENTTableAdapter();
+            this.backgroundWorkerSearch = new System.ComponentModel.BackgroundWorker();
             this.panelBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictUser)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -291,7 +297,7 @@
             // 
             // panelBar
             // 
-            this.panelBar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panelBar.BackColor = System.Drawing.Color.SteelBlue;
             this.panelBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelBar.Controls.Add(this.lblUserId);
             this.panelBar.Controls.Add(this.pictUser);
@@ -793,12 +799,25 @@
             this.tabPageCustomerPayment.AutoScroll = true;
             this.tabPageCustomerPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tabPageCustomerPayment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPageCustomerPayment.Controls.Add(this.lblLoadingCP);
             this.tabPageCustomerPayment.Controls.Add(this.AdtvgCustomerPay);
             this.tabPageCustomerPayment.Location = new System.Drawing.Point(4, 24);
             this.tabPageCustomerPayment.Name = "tabPageCustomerPayment";
             this.tabPageCustomerPayment.Size = new System.Drawing.Size(776, 426);
             this.tabPageCustomerPayment.TabIndex = 0;
             this.tabPageCustomerPayment.Text = "Customer Payment";
+            // 
+            // lblLoadingCP
+            // 
+            this.lblLoadingCP.AutoSize = true;
+            this.lblLoadingCP.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblLoadingCP.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoadingCP.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblLoadingCP.Location = new System.Drawing.Point(260, 178);
+            this.lblLoadingCP.Name = "lblLoadingCP";
+            this.lblLoadingCP.Size = new System.Drawing.Size(254, 32);
+            this.lblLoadingCP.TabIndex = 2;
+            this.lblLoadingCP.Text = "Loading, please wait...";
             // 
             // AdtvgCustomerPay
             // 
@@ -1031,12 +1050,25 @@
             this.tabPageInvoices.AutoScroll = true;
             this.tabPageInvoices.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tabPageInvoices.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPageInvoices.Controls.Add(this.lblLoadingINV);
             this.tabPageInvoices.Controls.Add(this.AdtvgInvoices);
             this.tabPageInvoices.Location = new System.Drawing.Point(4, 24);
             this.tabPageInvoices.Name = "tabPageInvoices";
             this.tabPageInvoices.Size = new System.Drawing.Size(776, 426);
             this.tabPageInvoices.TabIndex = 1;
             this.tabPageInvoices.Text = "Invoices";
+            // 
+            // lblLoadingINV
+            // 
+            this.lblLoadingINV.AutoSize = true;
+            this.lblLoadingINV.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblLoadingINV.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoadingINV.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblLoadingINV.Location = new System.Drawing.Point(265, 196);
+            this.lblLoadingINV.Name = "lblLoadingINV";
+            this.lblLoadingINV.Size = new System.Drawing.Size(254, 32);
+            this.lblLoadingINV.TabIndex = 3;
+            this.lblLoadingINV.Text = "Loading, please wait...";
             // 
             // AdtvgInvoices
             // 
@@ -1258,12 +1290,25 @@
             this.tabPageCreditNotes.AutoScroll = true;
             this.tabPageCreditNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tabPageCreditNotes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPageCreditNotes.Controls.Add(this.lblLoadingCN);
             this.tabPageCreditNotes.Controls.Add(this.AdtvgCreditNotes);
             this.tabPageCreditNotes.Location = new System.Drawing.Point(4, 24);
             this.tabPageCreditNotes.Name = "tabPageCreditNotes";
             this.tabPageCreditNotes.Size = new System.Drawing.Size(776, 426);
             this.tabPageCreditNotes.TabIndex = 2;
             this.tabPageCreditNotes.Text = "Credit Notes";
+            // 
+            // lblLoadingCN
+            // 
+            this.lblLoadingCN.AutoSize = true;
+            this.lblLoadingCN.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblLoadingCN.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoadingCN.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblLoadingCN.Location = new System.Drawing.Point(260, 196);
+            this.lblLoadingCN.Name = "lblLoadingCN";
+            this.lblLoadingCN.Size = new System.Drawing.Size(254, 32);
+            this.lblLoadingCN.TabIndex = 4;
+            this.lblLoadingCN.Text = "Loading, please wait...";
             // 
             // AdtvgCreditNotes
             // 
@@ -1485,12 +1530,25 @@
             this.tabPageCreditBalance.AutoScroll = true;
             this.tabPageCreditBalance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tabPageCreditBalance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPageCreditBalance.Controls.Add(this.lblLoadingCB);
             this.tabPageCreditBalance.Controls.Add(this.AdtvgCreditBalance);
             this.tabPageCreditBalance.Location = new System.Drawing.Point(4, 24);
             this.tabPageCreditBalance.Name = "tabPageCreditBalance";
             this.tabPageCreditBalance.Size = new System.Drawing.Size(776, 426);
             this.tabPageCreditBalance.TabIndex = 3;
             this.tabPageCreditBalance.Text = "Credit Balance";
+            // 
+            // lblLoadingCB
+            // 
+            this.lblLoadingCB.AutoSize = true;
+            this.lblLoadingCB.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblLoadingCB.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoadingCB.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblLoadingCB.Location = new System.Drawing.Point(260, 196);
+            this.lblLoadingCB.Name = "lblLoadingCB";
+            this.lblLoadingCB.Size = new System.Drawing.Size(254, 32);
+            this.lblLoadingCB.TabIndex = 5;
+            this.lblLoadingCB.Text = "Loading, please wait...";
             // 
             // AdtvgCreditBalance
             // 
@@ -1712,12 +1770,25 @@
             this.tabPageAllDocuments.AutoScroll = true;
             this.tabPageAllDocuments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.tabPageAllDocuments.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPageAllDocuments.Controls.Add(this.lblLoadingALL);
             this.tabPageAllDocuments.Controls.Add(this.AdtvgAllDoc);
             this.tabPageAllDocuments.Location = new System.Drawing.Point(4, 24);
             this.tabPageAllDocuments.Name = "tabPageAllDocuments";
             this.tabPageAllDocuments.Size = new System.Drawing.Size(776, 426);
             this.tabPageAllDocuments.TabIndex = 4;
             this.tabPageAllDocuments.Text = "All Documents";
+            // 
+            // lblLoadingALL
+            // 
+            this.lblLoadingALL.AutoSize = true;
+            this.lblLoadingALL.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblLoadingALL.Font = new System.Drawing.Font("Segoe UI Light", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoadingALL.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lblLoadingALL.Location = new System.Drawing.Point(260, 196);
+            this.lblLoadingALL.Name = "lblLoadingALL";
+            this.lblLoadingALL.Size = new System.Drawing.Size(254, 32);
+            this.lblLoadingALL.TabIndex = 6;
+            this.lblLoadingALL.Text = "Loading, please wait...";
             // 
             // AdtvgAllDoc
             // 
@@ -2540,6 +2611,13 @@
             // 
             this.sP_DESCRIPTIONAGREEMENTTableAdapter.ClearBeforeFill = true;
             // 
+            // backgroundWorkerSearch
+            // 
+            this.backgroundWorkerSearch.WorkerReportsProgress = true;
+            this.backgroundWorkerSearch.WorkerSupportsCancellation = true;
+            this.backgroundWorkerSearch.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerSearch_DoWork);
+            this.backgroundWorkerSearch.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerSearch_RunWorkerCompleted);
+            // 
             // FrmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -2583,20 +2661,25 @@
             this.tableLayoutPanelGeneral.PerformLayout();
             this.tabControlCustomerLine.ResumeLayout(false);
             this.tabPageCustomerPayment.ResumeLayout(false);
+            this.tabPageCustomerPayment.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdtvgCustomerPay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPSELECTPAYMENTSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsFbl5nBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsFbl5n)).EndInit();
             this.tabPageInvoices.ResumeLayout(false);
+            this.tabPageInvoices.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdtvgInvoices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPSELECTINVOICESBindingSource)).EndInit();
             this.tabPageCreditNotes.ResumeLayout(false);
+            this.tabPageCreditNotes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdtvgCreditNotes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPSELECTCREDITNOTESBindingSource)).EndInit();
             this.tabPageCreditBalance.ResumeLayout(false);
+            this.tabPageCreditBalance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdtvgCreditBalance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPSELECTCREDITBALANCEBindingSource)).EndInit();
             this.tabPageAllDocuments.ResumeLayout(false);
+            this.tabPageAllDocuments.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AdtvgAllDoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPSELECTFBL5NBindingSource)).EndInit();
             this.panelArrow.ResumeLayout(false);
@@ -2817,5 +2900,11 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn ReasonCode;
         private System.Windows.Forms.DataGridViewComboBoxColumn Agreement;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerSearch;
+        private System.Windows.Forms.Label lblLoadingCP;
+        private System.Windows.Forms.Label lblLoadingINV;
+        private System.Windows.Forms.Label lblLoadingCN;
+        private System.Windows.Forms.Label lblLoadingCB;
+        private System.Windows.Forms.Label lblLoadingALL;
     }
 }
