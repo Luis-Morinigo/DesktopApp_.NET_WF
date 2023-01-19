@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="CFS_Latam_cashApplicationTool.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="CFS_Latam_cashApplicationTool.exe" version="1.0.0.12" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Icon_CFS.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CFS_Latam_cashApplicationTool.exe" size="1068472">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CFS_Latam_cashApplicationTool.exe" size="1394104">
       <assemblyIdentity name="CFS_Latam_cashApplicationTool" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>h5qpQWP6ad5et7fF1DAb7PvtDASfLrZtvj65ok6xcJQ=</dsig:DigestValue>
+        <dsig:DigestValue>KsAhWhURYPPPYIjdf+ze1o9G+9PZxW83aoYvwnul5f8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -103,6 +103,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Microsoft.Office.Tools.Excel.v4.0.Utilities.dll" size="236952">
+      <assemblyIdentity name="Microsoft.Office.Tools.Excel.v4.0.Utilities" version="10.0.0.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>VHxUls44p8MaWppeHxIcIFwP2CzTLWVYrTgIddFqrHE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SpreadsheetLight.dll" size="1433600">
       <assemblyIdentity name="SpreadsheetLight" version="3.5.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -138,13 +150,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="CFS_Latam_cashApplicationTool.exe.config" size="2324">
+  <file name="CFS_Latam_cashApplicationTool.exe.config" size="6999">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>D9ryUviMNLXwS/h5RuN2e3n9sx0ZVzuhAkC8ajaA+RE=</dsig:DigestValue>
+      <dsig:DigestValue>z2dAtVWXmeMabJrtDrrWPEERj2jYYWnwJfOdcKGwPPo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Icon_CFS.ico" size="27838">
@@ -172,6 +184,96 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>fHV+nWU888rJINfZd/CvWPjyXxwGMllYv4+F0BJbGfo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBConctact\ContactDHL.Context.tt" size="22934">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>iWM21/LYhX/biTR5DnJTO6hkjf2ltoKAa6i6i43FHxg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBConctact\ContactDHL.tt" size="25279">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>G2pBdwLF/dEemiADv6GQHFErqwDMFbAaZ7Rkf5ofpS0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBErrors\DBErrors.Context.tt" size="22932">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>qbCT493oJ/g9tobiIafSEED55S/1/z5HYu4JGruw6nY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBErrors\DBErrors.tt" size="25277">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Nw0LZNCYeMDh8lKle6rIL0NpIXoF6hFKG0TdiVZ7VMY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBHistoricalDocNumbers\DBHistoricalDocNumbers.Context.tt" size="22946">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4WzydD08I4ps0XyVProq2FGHxPz34uX6RNRgliUjBPQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBHistoricalDocNumbers\DBHistoricalDocNumbers.tt" size="25291">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Exk9A8FTbTzqaiPiByxNurYCoP/J66l3JsWy9//4PVw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBHistoricalInputUsers\DBHistoricalInputUser.Context.tt" size="22945">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+aOYFnSuJQEg4pp+GgQEf4QPFb7XCdyeKyRL2p9UUf0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBHistoricalInputUsers\DBHistoricalInputUser.tt" size="25290">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>V5b1Xi70pTfU54pk+ynOLtR67tpSeuzy3Np49xCJl6M=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBUsersActivity\DBUsersActivity.Context.tt" size="22939">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nx/IE4BKixDkH6oTgYHtikM6WL0Dw8wFLeMLrfni1PY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBUsersActivity\DBUsersActivity.tt" size="25284">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>FVKF8y1+IvznYxtJSqfMzeYu0DhU04w6a9wH0oY0QFE=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

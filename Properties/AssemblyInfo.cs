@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CFS_Latam_cashApplicationTool")]
+[assembly: AssemblyTitle("Cash Application Tool - CFS Latam")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("SC JOHNSON")]
-[assembly: AssemblyProduct("CFS_Latam_cashApplicationTool")]
+[assembly: AssemblyProduct("Cash Application Tool - CFS Latam")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

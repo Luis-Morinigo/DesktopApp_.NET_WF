@@ -34,6 +34,8 @@ using System.Data.Entity.Core.Mapping;
 using System.Data.Entity.Core.Common.CommandTrees;
 using CFS_Latam_cashApplicationTool.Models.DBHistoricalInputUsers;
 using System.Runtime.InteropServices.WindowsRuntime;
+using CFS_Latam_cashApplicationTool.Models.DBErrors;
+using DocumentFormat.OpenXml.Office2013.PowerPoint.Roaming;
 
 //using CFS_Latam_cashApplicationTool.Models.DBConctact;
 
@@ -60,10 +62,12 @@ namespace CFS_Latam_cashApplicationTool
         DsFbl5n ds = new DsFbl5n();
         //Creamos objeto de Clase MainInput
         MainInput objMain = new MainInput();
-        FrmLoginError objFrmError = new FrmLoginError();        
+        FrmLoginError objFrmError = new FrmLoginError();
+        FrmLogin objFrmLogin = new FrmLogin();
 
+        bool check = false;
         // Obtenemos ID de usuario (Ex: B082193) 
-        private readonly string userName = Environment.UserName;
+        //private readonly string userName = Environment.UserName;
         public int LastDocNumber { get; private set; }
 
         // Inicializa objeto DB Cash Application Hisotical Input Users
@@ -73,11 +77,21 @@ namespace CFS_Latam_cashApplicationTool
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            //Carga User ID en header
-            lblUserId.Text = "User: " + userName;
+            using (Models.SSC_Finance_DWEntities DataBaseUser = new Models.SSC_Finance_DWEntities())
+            {
+                // Busca nombre de tabla USER DESKTOP APP *******************************************
+                var userNames = (from d in DataBaseUser.CASH_APPLICATION___Users_Desktop_App
+                                 where (d.user_id == objFrmLogin.userID)
+                                 select d.user_names).ToList().FirstOrDefault();
+
+                //Carga User ID en header
+                lblUserId.Text = "User: " + objFrmLogin.userID.ToString() + " - " + userNames;
+            }
+
             //Carga combobox de company codes
             fillCompanyCodes();
             objetos();
+
             //Color a header de columnas Disputes
             adtvgConciliation.Columns[18].HeaderCell.Style.BackColor = Color.LightGreen; adtvgConciliation.Columns[19].HeaderCell.Style.BackColor = Color.LightGreen;
             adtvgConciliation.Columns[20].HeaderCell.Style.BackColor = Color.LightGreen; adtvgConciliation.Columns[21].HeaderCell.Style.BackColor = Color.LightGreen;
@@ -85,6 +99,7 @@ namespace CFS_Latam_cashApplicationTool
             this.SetStyle(ControlStyles.UserPaint, true);
             this.DoubleBuffered = true;
 
+            // Mensaje Loading desactivado
             lblLoadingCP.Visible = false; lblLoadingALL.Visible = false; lblLoadingCB.Visible = false;
             lblLoadingCN.Visible = false; lblLoadingINV.Visible = false;
 
@@ -112,15 +127,24 @@ namespace CFS_Latam_cashApplicationTool
         }
 
         // Método para completar combobox de company codes ****************************************************************************************
-        void fillCompanyCodes()
+        public void fillCompanyCodes()
         {
-            DsFbl5nTableAdapters.SP_COMPANYCODESTableAdapter daCoCd = new DsFbl5nTableAdapters.SP_COMPANYCODESTableAdapter();
-            daCoCd.Fill(ds.SP_COMPANYCODES);
-            cboCompanyCode.DataSource = ds.SP_COMPANYCODES;
-            cboCompanyCode.DisplayMember = "Company Code";
-            cboCompanyCode.ValueMember = "Company Code";
-            cboCompanyCode.Text = "-- Select Company --";
-            cboCompanyCode.ForeColor = Color.Black;
+            try
+            {
+                DsFbl5nTableAdapters.SP_COMPANYCODESTableAdapter daCoCd = new DsFbl5nTableAdapters.SP_COMPANYCODESTableAdapter();
+                daCoCd.Fill(ds.SP_COMPANYCODES);
+                cboCompanyCode.DataSource = ds.SP_COMPANYCODES;
+                cboCompanyCode.DisplayMember = "Company Code";
+                cboCompanyCode.ValueMember = "Company Code";
+                cboCompanyCode.Text = "-- Select Company --";
+                cboCompanyCode.ForeColor = Color.Black;
+            }
+            catch(Exception ex)
+            {
+                string ErrorWindow = "Main - Método fillCompanyCodes";
+                string ErrorMessage = ex.Message.ToString();
+                objFrmLogin.saveErrorSql(ref ErrorMessage, ref ErrorWindow);
+            }
         }
 
         // Cierra ventana Main desde el menu PROGRAM - EXIT ****************************************************************************************
@@ -142,9 +166,13 @@ namespace CFS_Latam_cashApplicationTool
                     lblLoadingCN.Visible = true; lblLoadingINV.Visible = true;
                 }
             }
-            catch(Exception)
+            catch(Exception ex)
             {                
-                MessageBox.Show("Customer number " + objMain.CustomerNumber + " not found in database.", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Customer number " + objMain.CustomerNumber + " not found in database.", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                string ErrorWindow = "Main - BackgroundWorker";
+                string ErrorMessage = ex.Message.ToString();
+                objFrmLogin.saveErrorSql(ref ErrorMessage, ref ErrorWindow);
             }           
         }
 
@@ -192,52 +220,61 @@ namespace CFS_Latam_cashApplicationTool
         //Suma subtotales por tipo de documento ******************************************************************************************************
         void sumTotal()
         {
-            // Total DZ
-            double totalPayments = adtvgConciliation.Rows.OfType<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DZ").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            txtCustomerPayTotal.Text = (totalPayments.ToString("#,#0.00", CultureInfo.InvariantCulture));
-                
-            // Total Invoices
-            double totalRV = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "RV").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            double totalDV = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DV").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            double totalDR = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DR").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            double totalInvoce = totalRV + totalDV + totalDR;
-            txtInvoicesTotal.Text = (totalInvoce.ToString("#,#0.00", CultureInfo.InvariantCulture));
-
-            // Total Credit Notes
-            double totalRG = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "RG").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            double totalDG = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DG").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            double totalCreditNote = totalRG + totalDG;
-            txtCreditNotesTotal.Text = (totalCreditNote.ToString("#,#0.00", CultureInfo.InvariantCulture));
-
-            // Total Credit Balance
-            double totalAB = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "AB").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            double totalRC = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "RC").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
-            double totalCreditBalance = totalAB + totalRC;
-            txtCreditBalanceTotal.Text = (totalCreditBalance.ToString("#,#0.00", CultureInfo.InvariantCulture));
-
-            // Total Disputes
-            double totalDP = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[18].Value != null).ToList().Sum(y => Convert.ToDouble(y.Cells[18].Value));
-            double totalDisputes = totalDP * -1;
-            txtDisputesTotal.Text = (totalDisputes.ToString("#,#0.00", CultureInfo.InvariantCulture));
-
-            // Subtotal
-            double subtotal = totalRV + totalDV + totalDR + totalRG + totalDG + totalAB + totalRC + totalPayments - totalDP;
-
-            // Convierto a formato coma y punto
-            txtSubtotal.Text = (subtotal.ToString("#,#0.00", CultureInfo.InvariantCulture));
-
-            // Cambia color de fondo según importe
-            double totalsub = Convert.ToDouble(txtSubtotal.Text);
-
-            if (totalsub > 10 || totalsub < -10)
+            try 
             {
-                txtSubtotal.BackColor = System.Drawing.Color.OrangeRed;
-                txtSubtotal.ForeColor = Color.White;
+                // Total DZ
+                double totalPayments = adtvgConciliation.Rows.OfType<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DZ").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
+                txtCustomerPayTotal.Text = (totalPayments.ToString("#,#0.00", CultureInfo.InvariantCulture));
+
+                // Total Invoices
+                double totalRV = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "RV").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
+                double totalDV = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DV").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
+                double totalDR = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DR").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
+                double totalInvoce = totalRV + totalDV + totalDR;
+                txtInvoicesTotal.Text = (totalInvoce.ToString("#,#0.00", CultureInfo.InvariantCulture));
+
+                // Total Credit Notes
+                double totalRG = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "RG").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
+                double totalDG = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "DG").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
+                double totalCreditNote = totalRG + totalDG;
+                txtCreditNotesTotal.Text = (totalCreditNote.ToString("#,#0.00", CultureInfo.InvariantCulture));
+
+                // Total Credit Balance
+                double totalAB = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "AB").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
+                double totalRC = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[6].Value != null && x.Cells[4].Value.ToString() == "RC").ToList().Sum(y => Convert.ToDouble(y.Cells[6].Value));
+                double totalCreditBalance = totalAB + totalRC;
+                txtCreditBalanceTotal.Text = (totalCreditBalance.ToString("#,#0.00", CultureInfo.InvariantCulture));
+
+                // Total Disputes
+                double totalDP = adtvgConciliation.Rows.Cast<DataGridViewRow>().Where(x => x.Cells[18].Value != null).ToList().Sum(y => Convert.ToDouble(y.Cells[18].Value));
+                double totalDisputes = totalDP * -1;
+                txtDisputesTotal.Text = (totalDisputes.ToString("#,#0.00", CultureInfo.InvariantCulture));
+
+                // Subtotal
+                double subtotal = totalRV + totalDV + totalDR + totalRG + totalDG + totalAB + totalRC + totalPayments - totalDP;
+
+                // Convierto a formato coma y punto
+                txtSubtotal.Text = (subtotal.ToString("#,#0.00", CultureInfo.InvariantCulture));
+
+                // Cambia color de fondo según importe
+                double totalsub = Convert.ToDouble(txtSubtotal.Text);
+
+                if (totalsub > 10 || totalsub < -10)
+                {
+                    txtSubtotal.BackColor = System.Drawing.Color.OrangeRed;
+                    txtSubtotal.ForeColor = Color.White;
+                }
+                else if (totalsub <= 10 && totalsub >= -10)
+                {
+                    txtSubtotal.BackColor = System.Drawing.Color.LightGreen;
+                    txtSubtotal.ForeColor = Color.Black;
+                }
             }
-            else if (totalsub <= 10 && totalsub >= -10)
+            catch (Exception ex)
             {
-                txtSubtotal.BackColor = System.Drawing.Color.LightGreen;
-                txtSubtotal.ForeColor = Color.Black;
+                string ErrorWindow = "Main - Método sumTotal";
+                string ErrorMessage = ex.Message.ToString();
+                objFrmLogin.saveErrorSql(ref ErrorMessage, ref ErrorWindow);
             }
         }
 
@@ -299,31 +336,35 @@ namespace CFS_Latam_cashApplicationTool
                     }
                     if (totalsub <= 10 && totalsub >= -10)
                     {
-                        // Agregar columnas a Datagrid Conciliation                      
-                        addColumns(Owner,e);
+                        // Agregar columnas a Datagrid Conciliation y envia información a base de datos                      
+                        sendConciliation(Owner,e);
                     }
                 }
                 // No existe información para enviar en Customer Conciliation
                 else if (adtvgConciliation.RowCount == 0)
                 {
-                    MessageBox.Show("There isn't information to send in Customer Conciliation.", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("There isn't information to send in Customer Conciliation.",MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                string ErrorWindow = "Main - Método pictSubmitDb";
+                string ErrorMessage = ex.Message.ToString();
+                objFrmLogin.saveErrorSql(ref ErrorMessage, ref ErrorWindow);
             }
         }
 
-        // Método para agregar columnas a datagrid de Customer Conciliation
-        private void addColumns(object sender, EventArgs e)
+        // Método para enviar información de datagrid Customer Conciliation a SQL SERVER
+        public void sendConciliation(object sender, EventArgs e)
         {
             try
             {
                 // Agrega columnas
                 if (adtvgConciliation.ColumnCount == 22) 
                 {
-                    AddColumns(Owner, e);
+                    AddColumnsConciliation(Owner, e);
                 }
 
                 // Elimina última fila de Datagrid Customer Conciliation
@@ -352,17 +393,20 @@ namespace CFS_Latam_cashApplicationTool
                         {
                             if ((string)adtvgConciliation.Rows[i].Cells[0].Value != string.Empty && i < adtvgConciliation.RowCount)
                             {
-                                string idDocNum = string.Concat((string)adtvgConciliation.Rows[i].Cells[0].Value + (string)adtvgConciliation.Rows[i].Cells[9].Value);
-
-                                using (SSC_Finance_DWEntitiesHistoricalInputUsers db = new SSC_Finance_DWEntitiesHistoricalInputUsers())
+                                if (adtvgConciliation.Rows[i].Cells[9].Value != DBNull.Value)
                                 {
-                                    var idExist = (from d in db.CASH_APPLICATION___Historical_Input_Users
-                                                   where (d.ID_Doc_Number == idDocNum)
-                                                   select d.ID_Doc_Number).ToList().FirstOrDefault();
+                                    string idDocNum = string.Concat((string)adtvgConciliation.Rows[i].Cells[0].Value + (string)adtvgConciliation.Rows[i].Cells[9].Value);
 
-                                    if (idExist != null)
+                                    using (SSC_Finance_DWEntitiesHistoricalInputUsers db = new SSC_Finance_DWEntitiesHistoricalInputUsers())
                                     {
-                                        listdoc.Push(idExist);
+                                        var idExist = (from d in db.CASH_APPLICATION___Historical_Input_Users
+                                                       where (d.ID_Doc_Number == idDocNum)
+                                                       select d.ID_Doc_Number).ToList().FirstOrDefault();
+
+                                        if (idExist != null)
+                                        {
+                                            listdoc.Push(idExist);
+                                        }
                                     }
                                 }
                             }
@@ -371,18 +415,20 @@ namespace CFS_Latam_cashApplicationTool
                         if (listdoc.Count > 0)
                         {
                             MessageBox.Show("The following documents have already exist in DATABASE: " + "\n\n" + string.Join(", ", listdoc.ToArray()) + "\n\n" + "Please review your conciliation (Column name: Document number). Thanks", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            // Remove columns
+                            adtvgConciliation.Columns.RemoveAt(22); adtvgConciliation.Columns.RemoveAt(22); adtvgConciliation.Columns.RemoveAt(22);
+                            adtvgConciliation.Columns.RemoveAt(22); adtvgConciliation.Columns.RemoveAt(22); adtvgConciliation.Columns.RemoveAt(22);
+                            adtvgConciliation.Columns.RemoveAt(22); adtvgConciliation.Columns.RemoveAt(22); adtvgConciliation.Columns.RemoveAt(22);
                             return;
                         }
 
                         // Completamos información de las columnas agregadas
                         for (int i = 0; i < adtvgConciliation.RowCount; i++)
                         {
-                            string userLogin = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
-
                             if ((string)adtvgConciliation.Rows[i].Cells[0].Value != string.Empty && i < adtvgConciliation.RowCount)
                             {
                                 adtvgConciliation.Rows[i].Cells[22].Value = string.Concat((string)adtvgConciliation.Rows[i].Cells[0].Value + (string)adtvgConciliation.Rows[i].Cells[9].Value);
-                                adtvgConciliation.Rows[i].Cells[23].Value = userLogin;
+                                adtvgConciliation.Rows[i].Cells[23].Value = objFrmLogin.userLogin.ToString();
                                 adtvgConciliation.Rows[i].Cells[24].Value = Environment.UserName;
                                 adtvgConciliation.Rows[i].Cells[25].Value = userNames;
                                 adtvgConciliation.Rows[i].Cells[26].Value = docNumberCat;
@@ -406,8 +452,6 @@ namespace CFS_Latam_cashApplicationTool
                                              where (d.user_id == Environment.UserName)
                                              select d.user_names).ToList().FirstOrDefault();
 
-                            string userLogin = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
-
                             historicalDocumentNumbers.Company_Code = adtvgConciliation.Rows[0].Cells[0].Value?.ToString();
                             historicalDocumentNumbers.Alt_Payer = Convert.ToDecimal(adtvgConciliation.Rows[0].Cells[1].Value);
                             historicalDocumentNumbers.Account = Convert.ToDecimal(adtvgConciliation.Rows[0].Cells[2].Value);
@@ -420,7 +464,7 @@ namespace CFS_Latam_cashApplicationTool
                             historicalDocumentNumbers.Subtotal = Convert.ToDecimal(txtSubtotal.Text);
                             historicalDocumentNumbers.Guid_User = Environment.UserName;
                             historicalDocumentNumbers.users_name = userNames.ToString();
-                            historicalDocumentNumbers.entry_date_CAT = userLogin.ToString();
+                            historicalDocumentNumbers.entry_date_CAT = objFrmLogin.userLogin.ToString();
                             historicalDocumentNumbers.Doc_Number_CAT = (int)docNumberCat;
 
                             dbDocNumber.CASH_APPLICATION___Historical_Document_Numbers.Add(historicalDocumentNumbers);
@@ -438,18 +482,22 @@ namespace CFS_Latam_cashApplicationTool
                         }
                     }
 
-                    // VALIDAR QUE HAYA ENVIADO LA INFO A SQL
-                    MessageBox.Show("Your conciliation " + docNumberCat + " was sent successfully" + "\n\n" + "Thanks..!", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Confirmación a usuario con número de documento generado
+                    MessageBox.Show("Your conciliation " + docNumberCat + " was sent successfully" + "\n\n" + "Thanks", MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, MainInput.APPNAME, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                string ErrorWindow = "Main - Método sendConciliation";
+                string ErrorMessage = ex.Message.ToString();
+                objFrmLogin.saveErrorSql(ref ErrorMessage, ref ErrorWindow);
             }
         }
 
-        private void AddColumns(object sender, EventArgs e)
+        private void AddColumnsConciliation(object sender, EventArgs e)
         {
             DataGridViewTextBoxColumn Col_IdDocNumber; DataGridViewTextBoxColumn Col_EntruDate; DataGridViewTextBoxColumn Col_Guid;
             DataGridViewTextBoxColumn Col_UserName; DataGridViewTextBoxColumn Col_DocNumberCAT; DataGridViewTextBoxColumn Col_Tool;
@@ -521,6 +569,7 @@ namespace CFS_Latam_cashApplicationTool
                 db.SaveChanges();                                
             }
         }
+
         // Quita filas seleccionadas de Datagridview Customer Conciliation
         private void pictLeft_Click(object sender, EventArgs e)
         {
@@ -540,10 +589,11 @@ namespace CFS_Latam_cashApplicationTool
                     sumTotal();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                //Capurar error y enviar a base de datos ************************************************
-                //***************************************************************************************
+                string ErrorWindow = "Main - Método pictLeft";
+                string ErrorMessage = ex.Message.ToString();
+                objFrmLogin.saveErrorSql(ref ErrorMessage, ref ErrorWindow);
             }
         }
 
@@ -1140,17 +1190,6 @@ namespace CFS_Latam_cashApplicationTool
                 else if (colReasonCode != string.Empty && (colDisputeAmount == 0 || colDescription == string.Empty))
                 {
                     adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
-                    
-                    // Carga company code y habilita columna Reference
-                    if(Convert.ToString(adtvgConciliation.Rows[i].Cells[0].Value) == string.Empty)
-                    {
-                        adtvgConciliation.Rows[i].Cells[0].Value = adtvgConciliation.Rows[0].Cells[0].Value;
-                        adtvgConciliation.Rows[i].Cells[1].Value = adtvgConciliation.Rows[0].Cells[1].Value;
-                        adtvgConciliation.Rows[i].Cells[2].Value = adtvgConciliation.Rows[0].Cells[2].Value;
-                        adtvgConciliation.Rows[i].Cells[3].Value = adtvgConciliation.Rows[0].Cells[3].Value;
-                        adtvgConciliation.Rows[i].Cells[15].Value = adtvgConciliation.Rows[0].Cells[15].Value;
-                        adtvgConciliation.Columns[9].ReadOnly = false;
-                    }
                 }
                 else if (colAgreement != string.Empty && (colDisputeAmount == 0 || colReasonCode == string.Empty || colDescription == string.Empty))
                 {
@@ -1165,6 +1204,17 @@ namespace CFS_Latam_cashApplicationTool
                 {
                     adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.Empty; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.Empty;
                     adtvgConciliation.Rows[i].Cells[20].Style.BackColor = Color.Empty; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.Empty;
+                }
+
+                // Carga company code y habilita columna Reference
+                if (Convert.ToString(adtvgConciliation.Rows[i].Cells[0].Value) == string.Empty)
+                {
+                    adtvgConciliation.Rows[i].Cells[0].Value = adtvgConciliation.Rows[0].Cells[0].Value;
+                    adtvgConciliation.Rows[i].Cells[1].Value = adtvgConciliation.Rows[0].Cells[1].Value;
+                    adtvgConciliation.Rows[i].Cells[2].Value = adtvgConciliation.Rows[0].Cells[2].Value;
+                    adtvgConciliation.Rows[i].Cells[3].Value = adtvgConciliation.Rows[0].Cells[3].Value;
+                    adtvgConciliation.Rows[i].Cells[15].Value = adtvgConciliation.Rows[0].Cells[15].Value;
+                    adtvgConciliation.Columns[9].ReadOnly = false;
                 }
             }
         }
@@ -1360,8 +1410,11 @@ namespace CFS_Latam_cashApplicationTool
                 }
 
                 // Ocultamos etiquetas Loading
-                lblLoadingCP.Visible = false; lblLoadingALL.Visible = false; lblLoadingCB.Visible = false;
-                lblLoadingCN.Visible = false; lblLoadingINV.Visible = false;
+                if (lblLoadingCP.Visible == true)
+                {
+                    lblLoadingCP.Visible = false; lblLoadingALL.Visible = false; lblLoadingCB.Visible = false;
+                    lblLoadingCN.Visible = false; lblLoadingINV.Visible = false;
+                }
 
                 DataGridViewComboBoxColumn comboAgreement = adtvgConciliation.Columns[20] as DataGridViewComboBoxColumn;
 

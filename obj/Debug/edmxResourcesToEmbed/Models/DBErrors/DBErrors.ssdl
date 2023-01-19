@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SSC_Finance_DWModelErrors.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CASH APPLICATION - Errors">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Guid_User" Type="varchar" MaxLength="10" />
+    <Property Name="Window" Type="varchar" MaxLength="255" />
+    <Property Name="Date_error" Type="varchar" MaxLength="50" />
+    <Property Name="Descrip_error" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityContainer Name="SSC_Finance_DWModelErrorsStoreContainer">
+    <EntitySet Name="CASH APPLICATION - Errors" EntityType="Self.CASH APPLICATION - Errors" Schema="GLOBAL\B082193" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

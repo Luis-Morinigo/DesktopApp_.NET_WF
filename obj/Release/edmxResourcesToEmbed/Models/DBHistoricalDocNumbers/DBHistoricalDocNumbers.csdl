@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SSC_Finance_DWModelHistoricalDocNumbers" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CASH_APPLICATION___Historical_Document_Numbers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Company_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Alt_Payer" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Account" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Amnt_Cust_Payment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Amnt_Invoices" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Amnt_Disputes" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Amnt_Cred_Notes" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Amnt_Cred_Balance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Subtotal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Guid_User" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="users_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="entry_date_CAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Doc_Number_CAT" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="SSC_Finance_DWEntitiesHistoricalDocNumbers" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CASH_APPLICATION___Historical_Document_Numbers" EntityType="Self.CASH_APPLICATION___Historical_Document_Numbers" />
+  </EntityContainer>
+</Schema>

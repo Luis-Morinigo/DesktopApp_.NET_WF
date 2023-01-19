@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SSC_Finance_DWModelEntitiesUsersActivityStoreContainer" CdmEntityContainer="EntitiesUsersActivity">
+    <EntitySetMapping Name="CASH_APPLICATION___Users_Activity">
+      <EntityTypeMapping TypeName="SSC_Finance_DWModelEntitiesUsersActivity.CASH_APPLICATION___Users_Activity">
+        <MappingFragment StoreEntitySet="CASH APPLICATION - Users_Activity">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="users_id" ColumnName="users_id" />
+          <ScalarProperty Name="users_names" ColumnName="users_names" />
+          <ScalarProperty Name="users_area" ColumnName="users_area" />
+          <ScalarProperty Name="users_status" ColumnName="users_status" />
+          <ScalarProperty Name="usersDatetime_login" ColumnName="usersDatetime_login" />
+          <ScalarProperty Name="usersDatetime_logout" ColumnName="usersDatetime_logout" />
+          <ScalarProperty Name="usersClose_window" ColumnName="usersClose_window" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

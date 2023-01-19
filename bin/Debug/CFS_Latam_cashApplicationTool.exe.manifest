@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="CFS_Latam_cashApplicationTool.exe" version="1.0.0.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="CFS_Latam_cashApplicationTool.exe" version="1.0.0.12" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Icon_CFS.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CFS_Latam_cashApplicationTool.exe" size="1409976">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CFS_Latam_cashApplicationTool.exe" size="1416120">
       <assemblyIdentity name="CFS_Latam_cashApplicationTool" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>vgLOb0AOV34be5yFwMfZGWx977uUH2douq0I8yUwsu8=</dsig:DigestValue>
+        <dsig:DigestValue>niaJuS6M+NOpCbZY5R68JD5c3AGecu25a19VICTZ+hE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -150,13 +150,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="CFS_Latam_cashApplicationTool.exe.config" size="6525">
+  <file name="CFS_Latam_cashApplicationTool.exe.config" size="6999">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>F5kZriWvt5FLoIQE54BEBxUp/GpIgqvAIhdQB6ntdag=</dsig:DigestValue>
+      <dsig:DigestValue>z2dAtVWXmeMabJrtDrrWPEERj2jYYWnwJfOdcKGwPPo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Icon_CFS.ico" size="27838">
@@ -202,6 +202,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>G2pBdwLF/dEemiADv6GQHFErqwDMFbAaZ7Rkf5ofpS0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBErrors\DBErrors.Context.tt" size="22932">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>qbCT493oJ/g9tobiIafSEED55S/1/z5HYu4JGruw6nY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Models\DBErrors\DBErrors.tt" size="25277">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Nw0LZNCYeMDh8lKle6rIL0NpIXoF6hFKG0TdiVZ7VMY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Models\DBHistoricalDocNumbers\DBHistoricalDocNumbers.Context.tt" size="22946">

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SSC_Finance_DWModelHistoricalInputUsers" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CASH_APPLICATION___Historical_Input_Users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Company_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Alt_Payer" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Account" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Customer_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Document_Type" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Document_Type_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Amount_in_doc_curr" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Document_currency" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Document_Number" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Reference" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Document_Date" Type="DateTime" Precision="0" />
+    <Property Name="Baseline_Payment_Dte" Type="DateTime" Precision="0" />
+    <Property Name="Net_due_date" Type="DateTime" Precision="0" />
+    <Property Name="Arrears_for_discount_1" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Amount_in_local_currency" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Local_Currency" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Text_SAP" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Receipt_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Dispute_Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Reason_Code" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Agreement" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Description_Agreement" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ID_Doc_Number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Entry_date_CAT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="GUID_Users" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Users_name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Doc_Number_CAT" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Tool" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status_" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Posting_Date_SAP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Document_number_SAP" Type="Decimal" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityContainer Name="SSC_Finance_DWEntitiesHistoricalInputUsers" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CASH_APPLICATION___Historical_Input_Users" EntityType="Self.CASH_APPLICATION___Historical_Input_Users" />
+  </EntityContainer>
+</Schema>

@@ -19,7 +19,7 @@
     <PublishUrl>C:\Users\B082193\Desktop\Luis\SCJ\04. Automation\06. C# - .NET\03. Projects\Cash Application Tool - CFS\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>Days</UpdateIntervalUnits>
@@ -27,7 +27,8 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <UpdateUrl>http://localhost/CFS_Latam_cashApplicationTool/</UpdateUrl>
-    <ApplicationRevision>3</ApplicationRevision>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -67,6 +68,8 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="AdvancedDataGridView, Version=1.2.26803.6, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\DG.AdvancedDataGridView.1.2.26803.6\lib\net40\AdvancedDataGridView.dll</HintPath>
@@ -187,6 +190,24 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ContactDHL.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBErrors\CASH_APPLICATION___Errors.cs">
+      <DependentUpon>DBErrors.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBErrors\DBErrors.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBErrors.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBErrors\DBErrors.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBErrors.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DBErrors\DBErrors.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBErrors.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\DBHistoricalDocNumbers\CASH_APPLICATION___Historical_Document_Numbers.cs">
       <DependentUpon>DBHistoricalDocNumbers.tt</DependentUpon>
@@ -345,6 +366,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBHistoricalDocNumbers.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="Models\DBErrors\DBErrors.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBErrors.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\DBErrors\DBErrors.edmx.diagram">
+      <DependentUpon>DBErrors.edmx</DependentUpon>
+    </None>
     <None Include="Models\DBHistoricalDocNumbers\DBHistoricalDocNumbers.edmx.diagram">
       <DependentUpon>DBHistoricalDocNumbers.edmx</DependentUpon>
     </None>
@@ -458,6 +486,16 @@
       <DependentUpon>ContactDHL.edmx</DependentUpon>
       <LastGenOutput>ContactDHL.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\DBErrors\DBErrors.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBErrors.edmx</DependentUpon>
+      <LastGenOutput>DBErrors.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DBErrors\DBErrors.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBErrors.edmx</DependentUpon>
+      <LastGenOutput>DBErrors.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\DBHistoricalDocNumbers\DBHistoricalDocNumbers.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBHistoricalDocNumbers.edmx</DependentUpon>
@@ -494,7 +532,9 @@
     <None Include="Resources\Icon_Exit.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\Icon_Submit_2.png" />
+    <None Include="Resources\Icon_Submit_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\Icon_Alert.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

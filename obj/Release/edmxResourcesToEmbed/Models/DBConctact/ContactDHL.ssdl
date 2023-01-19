@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SSC_Finance_DWModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SSC_Finance_DW.GLOBAL\B082193.CASH APPLICATION - Contacto_DHL' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CASH APPLICATION - Contacto_DHL">
+    <Key>
+      <PropertyRef Name="Whatsapp" />
+      <PropertyRef Name="Mail_HelpDesk" />
+    </Key>
+    <Property Name="Whatsapp" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mail_HelpDesk" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SSC_Finance_DWModel2StoreContainer">
+    <EntitySet Name="CASH APPLICATION - Contacto_DHL" EntityType="Self.CASH APPLICATION - Contacto_DHL" store:Type="Tables" store:Schema="GLOBAL\B082193">
+      <DefiningQuery>SELECT 
+    [CASH APPLICATION - Contacto_DHL].[Whatsapp] AS [Whatsapp], 
+    [CASH APPLICATION - Contacto_DHL].[Mail_HelpDesk] AS [Mail_HelpDesk]
+    FROM [GLOBAL\B082193].[CASH APPLICATION - Contacto_DHL] AS [CASH APPLICATION - Contacto_DHL]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
