@@ -67,7 +67,7 @@ namespace CFS_Latam_cashApplicationTool
                     DsFbl5nTableAdapters.SP_FINDCUSTOMERBYTEXTTableAdapter daSearch = new DsFbl5nTableAdapters.SP_FINDCUSTOMERBYTEXTTableAdapter();
 
                     daSearch.Fill(ds.SP_FINDCUSTOMERBYTEXT, Convert.ToString(cboCoCdSearch.Text), Convert.ToString(txtLettersFind.Text));
-                    AdtvgSearchCustomer.DataSource = ds.SP_FINDCUSTOMERBYTEXT;
+                    AdtvgSearchCustomer.DataSource = daSearch;
                 }                
             }
             catch (Exception ex)
@@ -187,5 +187,6 @@ namespace CFS_Latam_cashApplicationTool
                 this.Close();
             }
         }
+
     }
 }
