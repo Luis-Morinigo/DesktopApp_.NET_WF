@@ -102,7 +102,6 @@ namespace CFS_Latam_cashApplicationTool
             // Mensaje Loading desactivado
             lblLoadingCP.Visible = false; lblLoadingALL.Visible = false; lblLoadingCB.Visible = false;
             lblLoadingCN.Visible = false; lblLoadingINV.Visible = false;
-
         }
 
         // Variables para obtener valores de Formulario Search Customer **********************************************************************************
@@ -161,7 +160,7 @@ namespace CFS_Latam_cashApplicationTool
                 // Verifica que el componente este libre
                 if (backgroundWorkerSearch.IsBusy != true)
                 {
-                    backgroundWorkerSearch.RunWorkerAsync();                    
+                    backgroundWorkerSearch.RunWorkerAsync();
                     lblLoadingCP.Visible = true; lblLoadingALL.Visible = true; lblLoadingCB.Visible = true;
                     lblLoadingCN.Visible = true; lblLoadingINV.Visible = true;
                 }
@@ -180,6 +179,8 @@ namespace CFS_Latam_cashApplicationTool
         //
         public void lblCustomerLoadName(string nameSelect)
         {
+            lblCustomerSearch.Text = string.Empty;
+
             if (nameSelect != string.Empty && objMain.CustomerNumber != string.Empty)
             {
                 lblCustomerSearch.Text = objMain.CompanyCode + " - " + objMain.CustomerNumber + " - " + nameSelect;
@@ -1156,10 +1157,16 @@ namespace CFS_Latam_cashApplicationTool
                 TextBox tb = e.Control as TextBox;
 
                 if (tb != null)
-                {
-                     tb.KeyPress += new KeyPressEventHandler(Columns_KeyPress);
+                {                                         
+                    tb.KeyPress += new KeyPressEventHandler(Columns_KeyPress);
+
+                    if (tb.Text.Contains(","))
+                    {
+                        tb.Text.Replace(",", "");
+                    }
+                                       
                     //Convierte a formato 1,000.00 números de columna de Dispute Amount
-                    adtvgConciliation.Columns[18].ValueType = typeof(double);                    
+                    adtvgConciliation.Columns[18].ValueType = typeof(double);
                 }
             }
         }
@@ -1171,52 +1178,49 @@ namespace CFS_Latam_cashApplicationTool
             {
                 e.Handled = true;
             }
-        }       
-            
+        }
+
+        // Cambia color de celdas de ultimas 4 columnas (Disputes)
         private void adtvgConciliation_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {   
-            // Validamos los campos de Disputes Amount, Reason Code y Description
-            for (int i = 0; i < adtvgConciliation.RowCount; i++)
+        {
+            try
             {
-                double colDisputeAmount = Convert.ToDouble(adtvgConciliation.Rows[i].Cells[18].Value);
-                string colReasonCode = Convert.ToString(adtvgConciliation.Rows[i].Cells[19].Value);
-                string colAgreement = Convert.ToString(adtvgConciliation.Rows[i].Cells[20].Value);
-                string colDescription = Convert.ToString(adtvgConciliation.Rows[i].Cells[21].Value);
+                // Validamos los campos de Disputes Amount, Reason Code y Description
+                for (int i = 0; i < adtvgConciliation.RowCount; i++)
+                {
+                    double colDisputeAmount = Convert.ToDouble(adtvgConciliation.Rows[i].Cells[18].Value);
+                    string colReasonCode = Convert.ToString(adtvgConciliation.Rows[i].Cells[19].Value);
+                    string colAgreement = Convert.ToString(adtvgConciliation.Rows[i].Cells[20].Value);
+                    string colDescription = Convert.ToString(adtvgConciliation.Rows[i].Cells[21].Value);
 
-                if (colDisputeAmount != 0 && (colReasonCode == string.Empty || colDescription == string.Empty))
-                {
-                    adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
-                }
-                else if (colReasonCode != string.Empty && (colDisputeAmount == 0 || colDescription == string.Empty))
-                {
-                    adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
-                }
-                else if (colAgreement != string.Empty && (colDisputeAmount == 0 || colReasonCode == string.Empty || colDescription == string.Empty))
-                {
-                    adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.DarkSalmon;
-                    adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.DarkSalmon;
-                }
-                else if (colDescription != string.Empty && (colDisputeAmount == 0 || colReasonCode == string.Empty))
-                {
-                    adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.DarkSalmon; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.DarkSalmon;
-                }
-                else
-                {
-                    adtvgConciliation.Rows[i].Cells[18].Style.BackColor = Color.Empty; adtvgConciliation.Rows[i].Cells[19].Style.BackColor = Color.Empty;
-                    adtvgConciliation.Rows[i].Cells[20].Style.BackColor = Color.Empty; adtvgConciliation.Rows[i].Cells[21].Style.BackColor = Color.Empty;
+                    if (colDisputeAmount != 0 || colReasonCode != string.Empty || colAgreement != string.Empty || colDescription != string.Empty)
+                    {
+                        adtvgConciliation.Rows[i].DefaultCellStyle.BackColor = Color.Wheat;
+                    }
+                    else if (colDisputeAmount == 0 && colReasonCode == string.Empty && colAgreement == string.Empty && colDescription == string.Empty)
+                    {
+                        adtvgConciliation.Rows[i].DefaultCellStyle.BackColor = Color.Empty;
+                    }
+
+                    // Carga company code y habilita columna Reference para ingreso de datos del usuario
+                    if (Convert.ToString(adtvgConciliation.Rows[i].Cells[0].Value) == string.Empty)
+                    {
+                        adtvgConciliation.Rows[i].Cells[0].Value = adtvgConciliation.Rows[0].Cells[0].Value;
+                        adtvgConciliation.Rows[i].Cells[1].Value = adtvgConciliation.Rows[0].Cells[1].Value;
+                        adtvgConciliation.Rows[i].Cells[2].Value = adtvgConciliation.Rows[0].Cells[2].Value;
+                        adtvgConciliation.Rows[i].Cells[3].Value = adtvgConciliation.Rows[0].Cells[3].Value;
+                        adtvgConciliation.Rows[i].Cells[15].Value = adtvgConciliation.Rows[0].Cells[15].Value;
+                        adtvgConciliation.Columns[9].ReadOnly = false;
+                    }                    
                 }
 
-                // Carga company code y habilita columna Reference
-                if (Convert.ToString(adtvgConciliation.Rows[i].Cells[0].Value) == string.Empty)
-                {
-                    adtvgConciliation.Rows[i].Cells[0].Value = adtvgConciliation.Rows[0].Cells[0].Value;
-                    adtvgConciliation.Rows[i].Cells[1].Value = adtvgConciliation.Rows[0].Cells[1].Value;
-                    adtvgConciliation.Rows[i].Cells[2].Value = adtvgConciliation.Rows[0].Cells[2].Value;
-                    adtvgConciliation.Rows[i].Cells[3].Value = adtvgConciliation.Rows[0].Cells[3].Value;
-                    adtvgConciliation.Rows[i].Cells[15].Value = adtvgConciliation.Rows[0].Cells[15].Value;
-                    adtvgConciliation.Columns[9].ReadOnly = false;
-                }
+                sumTotal();
             }
+            catch (Exception)
+            {
+
+            }
+
         }
 
         private void searchToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1393,7 +1397,6 @@ namespace CFS_Latam_cashApplicationTool
                     //
                     daCN.Fill(ds.SP_SELECTCREDITNOTES, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), Convert.ToDecimal(objMain.AltNumber));
                     AdtvgCreditNotes.DataSource = ds.SP_SELECTCREDITNOTES;
-
                     // Completa Tab CREDIT BALANCE ------------------------------------ 04
                     //
                     daCB.Fill(ds.SP_SELECTCREDITBALANCE, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber), Convert.ToDecimal(objMain.AltNumber));
@@ -1409,8 +1412,10 @@ namespace CFS_Latam_cashApplicationTool
                     daAg.Fill(ds.SP_AGREEMENT, objMain.CompanyCode, Convert.ToDecimal(objMain.CustomerNumber));
                 }
 
+                AdtvgCreditNotes.Columns[6].ValueType = typeof(double);
+
                 // Ocultamos etiquetas Loading
-                if (lblLoadingCP.Visible == true)
+                if (lblLoadingCP.Visible == true || lblLoadingALL.Visible == true || lblLoadingCB.Visible == true || lblLoadingCN.Visible == true || lblLoadingINV.Visible == true)
                 {
                     lblLoadingCP.Visible = false; lblLoadingALL.Visible = false; lblLoadingCB.Visible = false;
                     lblLoadingCN.Visible = false; lblLoadingINV.Visible = false;
@@ -1436,6 +1441,23 @@ namespace CFS_Latam_cashApplicationTool
                 //
                 lblCustomerLoadName(AdtvgAllDoc.CurrentRow.Cells[3].Value.ToString());
 
+            }
+        }
+
+        private void adtvgConciliation_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int colSelect = adtvgConciliation.CurrentRow.Cells[e.ColumnIndex].ColumnIndex;
+
+                if (colSelect == 18 && Convert.ToDouble(txtSubtotal.Text) != 0)
+                {
+                    adtvgConciliation.CurrentRow.Cells[e.ColumnIndex].Value = txtSubtotal.Text;                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
             }
         }
     }

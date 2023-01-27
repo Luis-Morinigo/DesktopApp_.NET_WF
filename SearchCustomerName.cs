@@ -20,10 +20,9 @@ namespace CFS_Latam_cashApplicationTool
         public FrmSearchCustomerName()
         {
             InitializeComponent();
-
         }
-      
-        private void FrmSearchCustomerName_Load(object sender, EventArgs e)
+
+        public void FrmSearchCustomerName_Load(object sender, EventArgs e)
         {
             //Carga combobox de company codes
             fillCompanyCodes();
@@ -67,7 +66,7 @@ namespace CFS_Latam_cashApplicationTool
                     DsFbl5nTableAdapters.SP_FINDCUSTOMERBYTEXTTableAdapter daSearch = new DsFbl5nTableAdapters.SP_FINDCUSTOMERBYTEXTTableAdapter();
 
                     daSearch.Fill(ds.SP_FINDCUSTOMERBYTEXT, Convert.ToString(cboCoCdSearch.Text), Convert.ToString(txtLettersFind.Text));
-                    AdtvgSearchCustomer.DataSource = daSearch;
+                    AdtvgSearchCustomer.DataSource = ds.SP_FINDCUSTOMERBYTEXT;
                 }                
             }
             catch (Exception ex)
@@ -129,11 +128,11 @@ namespace CFS_Latam_cashApplicationTool
         // Método para pasar información de celda seleccionada a Formulario Main
         public void AdtvgSearchCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-
             try
             {
                 int colSelect = AdtvgSearchCustomer.CurrentRow.Cells[e.ColumnIndex].ColumnIndex;
 
+                //Formulario destino - Main
                 FrmMain frmDestine = Owner as FrmMain;
 
                 if (colSelect == 0)
@@ -150,7 +149,6 @@ namespace CFS_Latam_cashApplicationTool
                     frmDestine.LblCustNameMain.Text = AdtvgSearchCustomer.CurrentRow.Cells[2].Value.ToString();
                     frmDestine.CboCoCdMain.Text = AdtvgSearchCustomer.CurrentRow.Cells[3].Value.ToString();
                 }
-
             }
             catch (Exception ex)
             {

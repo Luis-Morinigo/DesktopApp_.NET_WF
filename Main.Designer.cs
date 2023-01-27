@@ -47,6 +47,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelBar = new System.Windows.Forms.Panel();
             this.lblUserId = new System.Windows.Forms.Label();
             this.pictUser = new System.Windows.Forms.PictureBox();
@@ -715,7 +716,7 @@
             this.panelGeneral.Location = new System.Drawing.Point(0, 153);
             this.panelGeneral.Name = "panelGeneral";
             this.panelGeneral.Padding = new System.Windows.Forms.Padding(5);
-            this.panelGeneral.Size = new System.Drawing.Size(1642, 522);
+            this.panelGeneral.Size = new System.Drawing.Size(1642, 611);
             this.panelGeneral.TabIndex = 2;
             // 
             // tableLayoutPanelGeneral
@@ -739,7 +740,7 @@
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanelGeneral.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(1630, 510);
+            this.tableLayoutPanelGeneral.Size = new System.Drawing.Size(1630, 599);
             this.tableLayoutPanelGeneral.TabIndex = 0;
             // 
             // lblCustomerLine
@@ -748,7 +749,7 @@
             this.lblCustomerLine.AutoSize = true;
             this.lblCustomerLine.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerLine.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblCustomerLine.Location = new System.Drawing.Point(3, 2);
+            this.lblCustomerLine.Location = new System.Drawing.Point(3, 4);
             this.lblCustomerLine.Name = "lblCustomerLine";
             this.lblCustomerLine.Size = new System.Drawing.Size(207, 20);
             this.lblCustomerLine.TabIndex = 4;
@@ -760,7 +761,7 @@
             this.lblConciliation.AutoSize = true;
             this.lblConciliation.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConciliation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblConciliation.Location = new System.Drawing.Point(842, 2);
+            this.lblConciliation.Location = new System.Drawing.Point(842, 4);
             this.lblConciliation.Name = "lblConciliation";
             this.lblConciliation.Size = new System.Drawing.Size(170, 20);
             this.lblConciliation.TabIndex = 5;
@@ -771,7 +772,7 @@
             this.lblCustomerSearch.AutoSize = true;
             this.lblCustomerSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCustomerSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblCustomerSearch.Location = new System.Drawing.Point(3, 25);
+            this.lblCustomerSearch.Location = new System.Drawing.Point(3, 29);
             this.lblCustomerSearch.Name = "lblCustomerSearch";
             this.lblCustomerSearch.Size = new System.Drawing.Size(0, 17);
             this.lblCustomerSearch.TabIndex = 6;
@@ -785,12 +786,12 @@
             this.tabControlCustomerLine.Controls.Add(this.tabPageAllDocuments);
             this.tabControlCustomerLine.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlCustomerLine.ItemSize = new System.Drawing.Size(120, 20);
-            this.tabControlCustomerLine.Location = new System.Drawing.Point(3, 53);
+            this.tabControlCustomerLine.Location = new System.Drawing.Point(3, 61);
             this.tabControlCustomerLine.Multiline = true;
             this.tabControlCustomerLine.Name = "tabControlCustomerLine";
             this.tabControlCustomerLine.SelectedIndex = 0;
             this.tabControlCustomerLine.ShowToolTips = true;
-            this.tabControlCustomerLine.Size = new System.Drawing.Size(784, 454);
+            this.tabControlCustomerLine.Size = new System.Drawing.Size(784, 535);
             this.tabControlCustomerLine.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlCustomerLine.TabIndex = 1;
             // 
@@ -803,7 +804,7 @@
             this.tabPageCustomerPayment.Controls.Add(this.AdtvgCustomerPay);
             this.tabPageCustomerPayment.Location = new System.Drawing.Point(4, 24);
             this.tabPageCustomerPayment.Name = "tabPageCustomerPayment";
-            this.tabPageCustomerPayment.Size = new System.Drawing.Size(776, 426);
+            this.tabPageCustomerPayment.Size = new System.Drawing.Size(776, 507);
             this.tabPageCustomerPayment.TabIndex = 0;
             this.tabPageCustomerPayment.Text = "Customer Payment";
             // 
@@ -870,7 +871,7 @@
             this.AdtvgCustomerPay.Name = "AdtvgCustomerPay";
             this.AdtvgCustomerPay.ReadOnly = true;
             this.AdtvgCustomerPay.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgCustomerPay.Size = new System.Drawing.Size(774, 424);
+            this.AdtvgCustomerPay.Size = new System.Drawing.Size(774, 505);
             this.AdtvgCustomerPay.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgCustomerPay.TabIndex = 1;
             // 
@@ -1055,7 +1056,7 @@
             this.tabPageInvoices.Controls.Add(this.AdtvgInvoices);
             this.tabPageInvoices.Location = new System.Drawing.Point(4, 24);
             this.tabPageInvoices.Name = "tabPageInvoices";
-            this.tabPageInvoices.Size = new System.Drawing.Size(776, 426);
+            this.tabPageInvoices.Size = new System.Drawing.Size(776, 507);
             this.tabPageInvoices.TabIndex = 1;
             this.tabPageInvoices.Text = "Invoices";
             // 
@@ -1121,7 +1122,7 @@
             this.AdtvgInvoices.Name = "AdtvgInvoices";
             this.AdtvgInvoices.ReadOnly = true;
             this.AdtvgInvoices.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgInvoices.Size = new System.Drawing.Size(774, 424);
+            this.AdtvgInvoices.Size = new System.Drawing.Size(774, 505);
             this.AdtvgInvoices.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgInvoices.TabIndex = 2;
             // 
@@ -1296,7 +1297,7 @@
             this.tabPageCreditNotes.Controls.Add(this.AdtvgCreditNotes);
             this.tabPageCreditNotes.Location = new System.Drawing.Point(4, 24);
             this.tabPageCreditNotes.Name = "tabPageCreditNotes";
-            this.tabPageCreditNotes.Size = new System.Drawing.Size(776, 426);
+            this.tabPageCreditNotes.Size = new System.Drawing.Size(776, 507);
             this.tabPageCreditNotes.TabIndex = 2;
             this.tabPageCreditNotes.Text = "Credit Notes";
             // 
@@ -1362,7 +1363,7 @@
             this.AdtvgCreditNotes.Name = "AdtvgCreditNotes";
             this.AdtvgCreditNotes.ReadOnly = true;
             this.AdtvgCreditNotes.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgCreditNotes.Size = new System.Drawing.Size(774, 424);
+            this.AdtvgCreditNotes.Size = new System.Drawing.Size(774, 505);
             this.AdtvgCreditNotes.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgCreditNotes.TabIndex = 3;
             // 
@@ -1537,7 +1538,7 @@
             this.tabPageCreditBalance.Controls.Add(this.AdtvgCreditBalance);
             this.tabPageCreditBalance.Location = new System.Drawing.Point(4, 24);
             this.tabPageCreditBalance.Name = "tabPageCreditBalance";
-            this.tabPageCreditBalance.Size = new System.Drawing.Size(776, 426);
+            this.tabPageCreditBalance.Size = new System.Drawing.Size(776, 507);
             this.tabPageCreditBalance.TabIndex = 3;
             this.tabPageCreditBalance.Text = "Credit Balance";
             // 
@@ -1603,7 +1604,7 @@
             this.AdtvgCreditBalance.Name = "AdtvgCreditBalance";
             this.AdtvgCreditBalance.ReadOnly = true;
             this.AdtvgCreditBalance.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgCreditBalance.Size = new System.Drawing.Size(774, 424);
+            this.AdtvgCreditBalance.Size = new System.Drawing.Size(774, 505);
             this.AdtvgCreditBalance.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgCreditBalance.TabIndex = 4;
             // 
@@ -1666,6 +1667,9 @@
             // dataGridViewTextBoxColumn41
             // 
             this.dataGridViewTextBoxColumn41.DataPropertyName = "Amount in doc_ curr_";
+            dataGridViewCellStyle9.Format = "N2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.dataGridViewTextBoxColumn41.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn41.HeaderText = "Amount in doc_ curr_";
             this.dataGridViewTextBoxColumn41.MinimumWidth = 22;
             this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
@@ -1778,7 +1782,7 @@
             this.tabPageAllDocuments.Controls.Add(this.AdtvgAllDoc);
             this.tabPageAllDocuments.Location = new System.Drawing.Point(4, 24);
             this.tabPageAllDocuments.Name = "tabPageAllDocuments";
-            this.tabPageAllDocuments.Size = new System.Drawing.Size(776, 426);
+            this.tabPageAllDocuments.Size = new System.Drawing.Size(776, 507);
             this.tabPageAllDocuments.TabIndex = 4;
             this.tabPageAllDocuments.Text = "All Documents";
             // 
@@ -1798,24 +1802,24 @@
             // 
             this.AdtvgAllDoc.AllowUserToDeleteRows = false;
             this.AdtvgAllDoc.AllowUserToResizeRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdtvgAllDoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdtvgAllDoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.AdtvgAllDoc.AutoGenerateColumns = false;
             this.AdtvgAllDoc.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.AdtvgAllDoc.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.AdtvgAllDoc.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.AdtvgAllDoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.AdtvgAllDoc.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.AdtvgAllDoc.ColumnHeadersHeight = 34;
             this.AdtvgAllDoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.AdtvgAllDoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1845,16 +1849,16 @@
             this.AdtvgAllDoc.Name = "AdtvgAllDoc";
             this.AdtvgAllDoc.ReadOnly = true;
             this.AdtvgAllDoc.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.AdtvgAllDoc.Size = new System.Drawing.Size(774, 424);
+            this.AdtvgAllDoc.Size = new System.Drawing.Size(774, 505);
             this.AdtvgAllDoc.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.AdtvgAllDoc.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn52
             // 
             this.dataGridViewTextBoxColumn52.DataPropertyName = "Company Code";
-            dataGridViewCellStyle11.Format = "N2";
-            dataGridViewCellStyle11.NullValue = null;
-            this.dataGridViewTextBoxColumn52.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Format = "N2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.dataGridViewTextBoxColumn52.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTextBoxColumn52.HeaderText = "Company Code";
             this.dataGridViewTextBoxColumn52.MinimumWidth = 22;
             this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
@@ -2020,10 +2024,10 @@
             this.panelReceiptNumber.Controls.Add(this.txtReceiptNumber);
             this.panelReceiptNumber.Controls.Add(this.lblReceiptNumber);
             this.panelReceiptNumber.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelReceiptNumber.Location = new System.Drawing.Point(839, 25);
+            this.panelReceiptNumber.Location = new System.Drawing.Point(839, 29);
             this.panelReceiptNumber.Margin = new System.Windows.Forms.Padding(0);
             this.panelReceiptNumber.Name = "panelReceiptNumber";
-            this.panelReceiptNumber.Size = new System.Drawing.Size(791, 25);
+            this.panelReceiptNumber.Size = new System.Drawing.Size(791, 29);
             this.panelReceiptNumber.TabIndex = 9;
             // 
             // cboDescriptionAgreement
@@ -2048,7 +2052,7 @@
             // 
             this.txtReceiptNumber.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtReceiptNumber.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReceiptNumber.Location = new System.Drawing.Point(98, 2);
+            this.txtReceiptNumber.Location = new System.Drawing.Point(98, 4);
             this.txtReceiptNumber.Name = "txtReceiptNumber";
             this.txtReceiptNumber.Size = new System.Drawing.Size(126, 23);
             this.txtReceiptNumber.TabIndex = 3;
@@ -2061,7 +2065,7 @@
             this.lblReceiptNumber.AutoSize = true;
             this.lblReceiptNumber.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReceiptNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblReceiptNumber.Location = new System.Drawing.Point(4, 7);
+            this.lblReceiptNumber.Location = new System.Drawing.Point(4, 9);
             this.lblReceiptNumber.Name = "lblReceiptNumber";
             this.lblReceiptNumber.Size = new System.Drawing.Size(89, 13);
             this.lblReceiptNumber.TabIndex = 4;
@@ -2073,22 +2077,22 @@
             this.adtvgConciliation.AllowUserToDeleteRows = false;
             this.adtvgConciliation.AllowUserToOrderColumns = true;
             this.adtvgConciliation.AllowUserToResizeRows = false;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.adtvgConciliation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.adtvgConciliation.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.adtvgConciliation.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.adtvgConciliation.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.adtvgConciliation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.adtvgConciliation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.adtvgConciliation.ColumnHeadersHeight = 34;
             this.adtvgConciliation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.adtvgConciliation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -2118,13 +2122,14 @@
             this.adtvgConciliation.EnableHeadersVisualStyles = false;
             this.adtvgConciliation.FilterAndSortEnabled = true;
             this.adtvgConciliation.FilterStringChangedInvokeBeforeDatasourceUpdate = true;
-            this.adtvgConciliation.Location = new System.Drawing.Point(842, 77);
+            this.adtvgConciliation.Location = new System.Drawing.Point(842, 85);
             this.adtvgConciliation.Margin = new System.Windows.Forms.Padding(3, 27, 3, 5);
             this.adtvgConciliation.Name = "adtvgConciliation";
             this.adtvgConciliation.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.adtvgConciliation.Size = new System.Drawing.Size(785, 428);
+            this.adtvgConciliation.Size = new System.Drawing.Size(785, 509);
             this.adtvgConciliation.SortStringChangedInvokeBeforeDatasourceUpdate = true;
             this.adtvgConciliation.TabIndex = 10;
+            this.adtvgConciliation.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.adtvgConciliation_CellDoubleClick);
             this.adtvgConciliation.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.adtvgConciliation_CellEndEdit);
             this.adtvgConciliation.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.adtvgConciliation_CellFormatting);
             this.adtvgConciliation.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.adtvgConciliation_DataError);
@@ -2214,9 +2219,9 @@
             // 
             // DocumentDate
             // 
-            dataGridViewCellStyle14.Format = "d";
-            dataGridViewCellStyle14.NullValue = null;
-            this.DocumentDate.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Format = "d";
+            dataGridViewCellStyle15.NullValue = null;
+            this.DocumentDate.DefaultCellStyle = dataGridViewCellStyle15;
             this.DocumentDate.HeaderText = "Document Date";
             this.DocumentDate.MinimumWidth = 22;
             this.DocumentDate.Name = "DocumentDate";
@@ -2225,9 +2230,9 @@
             // 
             // BaselinePaymentDte
             // 
-            dataGridViewCellStyle15.Format = "d";
-            dataGridViewCellStyle15.NullValue = null;
-            this.BaselinePaymentDte.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle16.Format = "d";
+            dataGridViewCellStyle16.NullValue = null;
+            this.BaselinePaymentDte.DefaultCellStyle = dataGridViewCellStyle16;
             this.BaselinePaymentDte.HeaderText = "Baseline Payment Dte";
             this.BaselinePaymentDte.MinimumWidth = 22;
             this.BaselinePaymentDte.Name = "BaselinePaymentDte";
@@ -2236,9 +2241,9 @@
             // 
             // Netduedate
             // 
-            dataGridViewCellStyle16.Format = "d";
-            dataGridViewCellStyle16.NullValue = null;
-            this.Netduedate.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle17.Format = "d";
+            dataGridViewCellStyle17.NullValue = null;
+            this.Netduedate.DefaultCellStyle = dataGridViewCellStyle17;
             this.Netduedate.HeaderText = "Net due date";
             this.Netduedate.MinimumWidth = 22;
             this.Netduedate.Name = "Netduedate";
@@ -2288,9 +2293,9 @@
             // 
             // DisputeAmount
             // 
-            dataGridViewCellStyle17.Format = "N2";
-            dataGridViewCellStyle17.NullValue = "0.00";
-            this.DisputeAmount.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle18.Format = "N2";
+            dataGridViewCellStyle18.NullValue = "0.00";
+            this.DisputeAmount.DefaultCellStyle = dataGridViewCellStyle18;
             this.DisputeAmount.HeaderText = "Dispute Amount";
             this.DisputeAmount.MinimumWidth = 22;
             this.DisputeAmount.Name = "DisputeAmount";
@@ -2346,7 +2351,7 @@
             this.panelArrow.Controls.Add(this.pictUnselectAll);
             this.panelArrow.Controls.Add(this.pictLeft);
             this.panelArrow.Controls.Add(this.PictureRight);
-            this.panelArrow.Location = new System.Drawing.Point(793, 53);
+            this.panelArrow.Location = new System.Drawing.Point(793, 61);
             this.panelArrow.Name = "panelArrow";
             this.panelArrow.Size = new System.Drawing.Size(43, 454);
             this.panelArrow.TabIndex = 8;
@@ -2837,23 +2842,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn39;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn40;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn41;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn42;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn43;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn44;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn45;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn46;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn47;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn48;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn49;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn50;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn51;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn52;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn53;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn54;
@@ -2881,6 +2869,29 @@
         private System.Windows.Forms.ToolStripMenuItem contactToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem emailToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem whatsappToolStripMenuItem;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerSearch;
+        private System.Windows.Forms.Label lblLoadingCP;
+        private System.Windows.Forms.Label lblLoadingINV;
+        private System.Windows.Forms.Label lblLoadingCN;
+        private System.Windows.Forms.Label lblLoadingCB;
+        private System.Windows.Forms.Label lblLoadingALL;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn39;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn40;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn41;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn42;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn43;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn44;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn45;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn46;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn47;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn48;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn49;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn50;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn51;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn AltPayer;
         private System.Windows.Forms.DataGridViewTextBoxColumn Account;
@@ -2903,11 +2914,5 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn ReasonCode;
         private System.Windows.Forms.DataGridViewComboBoxColumn Agreement;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;
-        private System.ComponentModel.BackgroundWorker backgroundWorkerSearch;
-        private System.Windows.Forms.Label lblLoadingCP;
-        private System.Windows.Forms.Label lblLoadingINV;
-        private System.Windows.Forms.Label lblLoadingCN;
-        private System.Windows.Forms.Label lblLoadingCB;
-        private System.Windows.Forms.Label lblLoadingALL;
     }
 }
